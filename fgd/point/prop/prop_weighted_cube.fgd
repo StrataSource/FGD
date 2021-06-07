@@ -61,6 +61,7 @@
 		"212 60 146 255" : "Pink"
 		"65 97 0 255" : "Dark Green"
 	]
+	partner(target_destination):"Set Schrodinger Cube Partner" : "" : "set the Schrodingers cube's partner"
 	uselaserfilter(boolean) : "Use Laser Filter" : 0 : "If enabled, this cube can only redirect lasers that match the filter color. If disabled, any laser color can be redirected."
 	reflectfiltercolor(choices) : "Laser Filter Color (R G B A)" : "255 0 0 255" : "Filter reflected lasers by this colour. Only applicable to reflection and Schrodinger cubes." =
 	[
