@@ -29,9 +29,18 @@ $modelname "{path}"
 $body body "cable.smd"
 $cdmaterials ""
 $sequence idle "cable.smd" act_idle 1
+$illumposition {light_origin}
 
 $keyvalues {{
     no_propcombine 1
+}}
+'''
+
+QC_TEMPLATE_PHYS = '''\
+$collisionmodel "cable_phy.smd" {{
+    $automass
+    $concave
+    $maxconvexpieces {count}
 }}
 '''
 
@@ -41,6 +50,7 @@ class InterpType(Enum):
     STRAIGHT = 0
     CATMULL_ROM = 1
     ROPE = 2
+
 
 class RopePhys:
     """Holds the data for move_rope simulation."""
@@ -71,6 +81,8 @@ class Config(NamedTuple):
     u_max: float
     v_scale: float
     flip_uv: bool
+    coll_segments: int
+    coll_side_count: int
     prop_rendercolor: Tuple[float, float, float]
     prop_renderalpha: int
     prop_no_shadows: bool
@@ -149,6 +161,8 @@ class Config(NamedTuple):
             u_min, u_max,
             v_scale,
             conv_bool(ent['mat_rotate']),
+            coll_segments,
+            coll_side_count,
             tuple(Vec.from_str(ent['rendercolor'], 255, 255, 255)),
             alpha,
             conv_bool(ent['disableshadows']),
@@ -158,6 +172,14 @@ class Config(NamedTuple):
             conv_float(ent['fademindist'], -1.0),
             conv_float(ent['fademaxdist'], 0.0),
             conv_float(ent['fadescale'], 0.0),
+        )
+
+    def coll(self) -> Optional['Config']:
+        """Extract the collision options from the ent."""
+        return self._replace(
+            material='phy',
+            segments=self.segments if self.coll_segments == -1 else self.coll_segments,
+            side_count=self.coll_side_count,
         )
 
 
@@ -174,6 +196,15 @@ class NodeEnt:
         self.config = config
         self.group = group  # Nodes with the same group compile together.
         self.pos = pos
+
+    def relative_to(self, off: Vec) -> 'NodeEnt':
+        """Return a copy relative to the specified origin."""
+        return NodeEnt(
+            self.pos - off,
+            self.config,
+            self.id,
+            self.group,
+        )
 
     def __repr__(self) -> str:
         return f'<NodeEnt "{self.id}" @ {self.pos}>'
@@ -256,21 +287,31 @@ def build_rope(
     temp_folder: Path,
     mdl_name: str,
     offset: Vec,
-) -> List[Tuple[Vec, float, Vec, float]]:
+) -> Tuple[Vec, List[Tuple[Vec, float, Vec, float]]]:
     """Construct the geometry for a rope."""
     LOGGER.info('Building rope {}', mdl_name)
     ents, connections = nodes_and_conn
     mesh = Mesh.blank('root')
+    coll_mesh = Mesh.blank('root')
     [bone] = mesh.bones.values()
 
-    nodes = build_node_tree(ents, connections, offset)
+    nodes, coll_nodes = build_node_tree(ents, connections, offset)
 
     interpolate_all(nodes)
     compute_orients(nodes)
-    compute_verts(nodes, bone)
+    compute_verts(nodes, bone, is_coll=False)
 
     generate_straights(nodes, mesh)
-    generate_caps(nodes, mesh)
+    generate_caps(nodes, mesh, is_coll=False)
+
+    if coll_nodes:
+        # Generate the collision mesh.
+        interpolate_all(coll_nodes)
+        compute_orients(coll_nodes)
+        compute_verts(coll_nodes, bone, is_coll=True)
+
+        generate_straights(coll_nodes, coll_mesh)
+        generate_caps(coll_nodes, coll_mesh, is_coll=True)
 
     # Move the UVs around so they don't extend too far.
     for tri in mesh.triangles:
@@ -281,34 +322,51 @@ def build_rope(
             tri.point2 = tri.point2.with_uv(tri.point2.tex_u - u, tri.point2.tex_v - v)
             tri.point3 = tri.point3.with_uv(tri.point3.tex_u - u, tri.point3.tex_v - v)
 
+
+    # Use the node closest to the center. That way
+    # it shouldn't be inside walls, and be about representative of
+    # the whole model.
+    light_origin = min((node.pos for node in nodes), key=Vec.mag_sq)
+
     with (temp_folder / 'cable.smd').open('wb') as fb:
         mesh.export(fb)
+    if coll_nodes:
+        with (temp_folder / 'cable_phy.smd').open('wb') as fb:
+            coll_mesh.export(fb)
 
     with (temp_folder / 'model.qc').open('w') as f:
-        f.write(QC_TEMPLATE.format(path=mdl_name))
+        f.write(QC_TEMPLATE.format(path=mdl_name, light_origin=light_origin))
+        if coll_nodes:
+            f.write(QC_TEMPLATE_PHYS.format(count=sum(node.next is not None for node in coll_nodes)))
 
-    # For visleaf computation, return a list of all the actual segments generated.
-    return [
+    # For visleaf computation, build a list of all the actual segments generated.
+    coll_data = [
         (node.pos + offset, node.radius, node.next.pos + offset, node.next.radius)
         for node in nodes
         if node.next
     ]
+
+    return (light_origin, coll_data)
 
 
 def build_node_tree(
     ents: FrozenSet[NodeEnt],
     connections: FrozenSet[Tuple[NodeID, NodeID]],
     offset: Vec,
-) -> Set[Node]:
+) -> Tuple[Set[Node], Set[Node]]:
     """Convert the ents/connections definitions into a node tree."""
     # Convert them all into the real node objects.
     id_to_node = {
-        node.id: Node(node.pos.copy(), node.config, node.config.radius)
+        node.id: (
+            Node(node.pos.copy(), node.config, node.config.radius),
+            Node(node.pos.copy(), node.config.coll(), node.config.radius) if node.config.coll_side_count >= 3 else None,
+        )
         for node in ents
     }
-    nodes: Set[Node] = set(id_to_node.values())
+    vis_nodes: Set[Node] = {vis for vis, coll in id_to_node.values()}
+    coll_nodes: Set[Node] = {coll for vis, coll in id_to_node.values() if coll is not None}
 
-    def maybe_split(node: Node, attr: str) -> Node:
+    def maybe_split(nodes: Set[Node], node: Node, attr: str) -> Node:
         """Split nodes to ensure they only have 1 or 2 connections.
 
         If it has more, or multiple in one side, it will be converted
@@ -337,18 +395,27 @@ def build_node_tree(
         return node
 
     for id1, id2 in connections:
-        first = maybe_split(id_to_node[id1], "next")
-        second = maybe_split(id_to_node[id2], "prev")
+        a_vis, a_coll = id_to_node[id1]
+        b_vis, b_coll = id_to_node[id2]
+        first = maybe_split(vis_nodes, a_vis, "next")
+        second = maybe_split(vis_nodes, b_vis, "prev")
 
         first.next = second
         second.prev = first
+        if a_coll is not None and b_coll is not None:
+            first = maybe_split(coll_nodes, a_coll, "next")
+            second = maybe_split(coll_nodes, b_coll, "prev")
+
+            first.next = second
+            second.prev = first
 
     # Sometimes that ends up creating extra copies, so discard those.
-    for node in list(nodes):
-        if node.prev is None and node.next is None:
-            nodes.discard(node)
+    for nodeset in [vis_nodes, coll_nodes]:
+        for node in list(nodeset):
+            if node.prev is None and node.next is None:
+                nodeset.discard(node)
 
-    return nodes
+    return vis_nodes, coll_nodes
 
 
 def interpolate_straight(node1: Node, node2: Node, seg_count: int) -> List[Node]:
@@ -540,7 +607,7 @@ def compute_orients(nodes: Iterable[Node]) -> None:
             node1 = node2
 
 
-def compute_verts(nodes: Iterable[Node], bone: Bone) -> None:
+def compute_verts(nodes: Iterable[Node], bone: Bone, is_coll: bool) -> None:
     """Build the initial vertexes of each node."""
     bone_weight = [(bone, 1.0)]
     todo = set(nodes)
@@ -563,13 +630,22 @@ def compute_verts(nodes: Iterable[Node], bone: Bone) -> None:
             config = node1.config
             count = node1.config.side_count
             v_end = v_start + config.v_scale * (node2.pos - node1.pos).mag()
+            # For collisions, adjust the normal so that it points away from the
+            # midpoint.
+            if is_coll:
+                coll_off = (node2.pos - node1.pos) / 2.0
+            else:
+                coll_off = Vec()
             for i in range(count):
                 ang = lerp(i, 0, count, 0, 2*math.pi)
                 local = Vec(0, math.cos(ang), math.sin(ang))
                 u = lerp(i, 0, count, config.u_min, config.u_max)
-                node1.points_next.append(vert(node1.pos, node1.radius * local @ node1.orient, u, v_start))
-                if node1.next is not None:
-                    node1.next.points_prev.append(vert(node2.pos, node2.radius * local @ node2.orient, u, v_end))
+                point_1 = node1.radius * local @ node1.orient
+                point_2 = node2.radius * local @ node2.orient
+
+                node1.points_next.append(vert(node1.pos + coll_off, point_1 - coll_off, u, v_start))
+                if node1 is not node2:
+                    node2.points_prev.append(vert(node2.pos - coll_off, point_2 + coll_off, u, v_end))
             v_start = v_end
 
 
@@ -605,16 +681,16 @@ def generate_straights(nodes: Iterable[Node], mesh: Mesh) -> None:
             mesh.triangles.append(Triangle(mat, left_a, right_a, right_b))
 
 
-def generate_caps(nodes: Iterable[Node], mesh: Mesh) -> None:
+def generate_caps(nodes: Iterable[Node], mesh: Mesh, is_coll: bool) -> None:
     """Cap off any unfinished sides.
 
     We just use a simple fan layout.
     """
-    def make_cap(orig, norm):
+    def make_cap(orig: 'Iterable[Vertex]', norm: Vec):
         # Recompute the UVs to use the first bit of the cable.
         points = [
             Vertex(
-                point.pos, norm,
+                point.pos, (point.norm if is_coll else norm),
                 lerp(Vec.dot(point.norm, node.orient.up()), -1, 1, node.config.u_min, node.config.u_max),
                 lerp(Vec.dot(point.norm, node.orient.left()), -1, 1, 0, v_max),
                 point.links,
@@ -637,13 +713,13 @@ def generate_caps(nodes: Iterable[Node], mesh: Mesh) -> None:
 def compute_visleafs(
     coll_data: List[Tuple[Vec, float, Vec, float]],
     vis_tree_top: VisTree,
-) -> List[int]:
+) -> List[VisLeaf]:
     """Compute the visleafs this rope is present in."""
     # Each tree node defines a plane. For each side we touch, we need to
     # continue looking down that side of the tree for visleafs.
     # We need to do this individually for each segment pair. That way
     # we correctly handle cases like ropes encircling a room without entering it.
-    used_leafs: Set[int] = set()
+    used_leafs: Set[VisLeaf] = set()
 
     # Check if we collide with either side of the tree (or both).
     # This just involves doing a sphere-plane check with each side of the node.
@@ -651,26 +727,25 @@ def compute_visleafs(
     for point1, radius1, point2, radius2 in coll_data:
         todo_trees: List[VisTree] = [vis_tree_top]
         for tree in todo_trees:
-            off1 = Vec.dot(tree.plane_norm, point1) - tree.plane_dist
-            off2 = Vec.dot(tree.plane_norm, point2) - tree.plane_dist
+            off1 = Vec.dot(tree.plane.normal, point1) - tree.plane.dist
+            off2 = Vec.dot(tree.plane.normal, point2) - tree.plane.dist
             if off1 >= -radius1 or off2 >= -radius2:
                 if isinstance(tree.child_neg, VisLeaf):
-                    used_leafs.add(tree.child_neg.id)
+                    used_leafs.add(tree.child_neg)
                 else:
                     todo_trees.append(tree.child_neg)
             if off1 <= radius1 or off2 <= radius2:
                 if isinstance(tree.child_pos, VisLeaf):
-                    used_leafs.add(tree.child_pos.id)
+                    used_leafs.add(tree.child_pos)
                 else:
                     todo_trees.append(tree.child_pos)
 
-    return sorted(used_leafs)
+    return list(used_leafs)
 
 
 @trans('Model Ropes')
 def comp_prop_rope(ctx: Context) -> None:
     """Build static props for ropes."""
-    compiler = ModelCompiler.from_ctx(ctx, 'ropes')
     # id -> node.
     all_nodes: MutableMapping[NodeID, NodeEnt] = {}
     # Given a targetname, all the nodes with that name.
@@ -679,6 +754,8 @@ def comp_prop_rope(ctx: Context) -> None:
     group_to_node: Dict[str, List[NodeEnt]] = defaultdict(list)
     # Store the node/next-key pairs for linking after they're all parsed.
     temp_conns: List[Tuple[NodeEnt, str]] = []
+    # Dynamic ents which will be given the static props.
+    group_dyn_ents: Dict[str, List[Entity]] = defaultdict(list)
 
     for ent in ctx.vmf.by_class['comp_prop_rope'] | ctx.vmf.by_class['comp_prop_cable']:
         ent.remove()
@@ -698,9 +775,25 @@ def comp_prop_rope(ctx: Context) -> None:
         if ent['nextkey']:
             temp_conns.append((node, ent['nextkey'].casefold()))
 
+    for ent in ctx.vmf.by_class['comp_prop_rope_dynamic'] | ctx.vmf.by_class['comp_prop_cable_dynamic']:
+        ent['classname'] = 'prop_dynamic'
+        group_name = ent['group']
+        del ent['group']
+        if group_name not in group_to_node:
+            if ent['targetname']:
+                LOGGER.warning('Dynamic rope "{}" has no nodes in group {}!', ent['targetname'], group_name)
+            else:
+                LOGGER.warning('Dynamic rope at ({}) has no nodes in group {}!', ent['origin'], group_name)
+            ent.remove()
+            continue
+        group_dyn_ents[group_name].append(ent)
+
     if not all_nodes:
         return
     LOGGER.info('{} rope nodes found.', len(all_nodes))
+    if ctx.studiomdl is None:
+        LOGGER.warning('Ropes cannot be compiled, no StudioMDL.exe found!')
+        return
 
     connections_to: Dict[NodeID, List[NodeEnt]] = defaultdict(list)
     connections_from: Dict[NodeID, List[NodeEnt]] = defaultdict(list)
@@ -719,13 +812,13 @@ def comp_prop_rope(ctx: Context) -> None:
             connections_to[dest.id].append(node)
 
     static_props = list(ctx.bsp.static_props())
-    vis_tree_top = ctx.bsp.vis_tree()
 
     # To group nodes, take each group out, then search recursively through
     # all connections from it to other nodes.
     todo = set(all_nodes.values())
     with ModelCompiler.from_ctx(ctx, 'ropes', version=2) as compiler:
         while todo:
+            dyn_ents: List[Entity] = []
             node = todo.pop()
             connections: Set[Tuple[NodeID, NodeID]] = set()
             # We need the set for fast is-in checks, and the list
@@ -737,6 +830,7 @@ def comp_prop_rope(ctx: Context) -> None:
                 # Three links to others - connections to/from, and groups.
                 # We'll only ever follow a path once, so pop from the dicts.
                 if node.group:
+                    dyn_ents.extend(group_dyn_ents[node.group])
                     for subnode in group_to_node.pop(node.group, ()):
                         if subnode not in nodes:
                             nodes.add(subnode)
@@ -756,54 +850,64 @@ def comp_prop_rope(ctx: Context) -> None:
                 LOGGER.warning('Node at {} has no connections to it! Skipping.', node.pos)
                 continue
 
-            bbox_min, bbox_max = Vec.bbox(node.pos for node in nodes)
-            center = (bbox_min + bbox_max) / 2
-            node = None
-            for node in nodes:
-                node.pos -= center
+            for ent in dyn_ents:
+                origin = Vec.from_str(ent['origin'])
+                dyn_nodes = frozenset({
+                    node.relative_to(origin)
+                    for node in nodes
+                })
+                model_name, light_pos_and_coll_data = compiler.get_model(
+                    (dyn_nodes, frozenset(connections)),
+                    build_rope,
+                    origin,
+                )
+                ent['model'] = model_name
+                ang = Angle.from_str(ent['angles'])
+                ang.yaw -= 90.0
+                ent['angles'] = ang
 
-            model_name, coll_data = compiler.get_model(
-                (frozenset(nodes), frozenset(connections)),
-                build_rope,
-                center,
-            )
+            if not dyn_ents:  # Static prop.
+                bbox_min, bbox_max = Vec.bbox(node.pos for node in nodes)
+                center = (bbox_min + bbox_max) / 2
+                node = None
+                has_coll = False
+                for node in nodes:
+                    node.pos -= center
+                    if node.config.coll_side_count >= 3:
+                        has_coll = True
 
-            # Use the node closest to the center. That way
-            # it shouldn't be inside walls, and be about representative of
-            # the whole model.
-            light_origin = min(
-                (point
-                 for point1, radius1, point2, radius2 in coll_data
-                 for point in [point1, point2]),
-                key=lambda pos: (pos - center).mag_sq()
-            )
+                model_name, (light_origin, coll_data) = compiler.get_model(
+                    (frozenset(nodes), frozenset(connections)),
+                    build_rope,
+                    center,
+                )
 
-            # Compute the flags. Just pick a random node, from above.
-            conf = node.config
-            flags = StaticPropFlags.NONE
-            if conf.prop_light_bounce:
-                flags |= StaticPropFlags.BOUNCED_LIGHTING
-            if conf.prop_no_shadows:
-                flags |= StaticPropFlags.NO_SHADOW
-            if conf.prop_no_vert_light:
-                flags |= StaticPropFlags.NO_PER_VERTEX_LIGHTING
-            if conf.prop_no_self_shadow:
-                flags |= StaticPropFlags.NO_SELF_SHADOWING
+                # Compute the flags. Just pick a random node, from above.
+                conf = node.config
+                flags = StaticPropFlags.NONE
+                if conf.prop_light_bounce:
+                    flags |= StaticPropFlags.BOUNCED_LIGHTING
+                if conf.prop_no_shadows:
+                    flags |= StaticPropFlags.NO_SHADOW
+                if conf.prop_no_vert_light:
+                    flags |= StaticPropFlags.NO_PER_VERTEX_LIGHTING
+                if conf.prop_no_self_shadow:
+                    flags |= StaticPropFlags.NO_SELF_SHADOWING
 
-            static_props.append(StaticProp(
-                model=model_name,
-                origin=center,
-                angles=Angle(0, 270, 0),
-                scaling=1.0,
-                visleafs=compute_visleafs(coll_data, vis_tree_top),
-                solidity=0,
-                flags=flags,
-                tint=Vec(conf.prop_rendercolor),
-                renderfx=conf.prop_renderalpha,
-                lighting_origin=light_origin,
-                min_fade=conf.prop_fade_min_dist,
-                max_fade=conf.prop_fade_max_dist,
-                fade_scale=conf.prop_fade_scale,
-            ))
+                static_props.append(StaticProp(
+                    model=model_name,
+                    origin=center,
+                    angles=Angle(0, 270, 0),
+                    scaling=1.0,
+                    visleafs=compute_visleafs(coll_data, ctx.bsp.vis_tree()),
+                    solidity=6 if has_coll else 0,
+                    flags=flags,
+                    tint=Vec(conf.prop_rendercolor),
+                    renderfx=conf.prop_renderalpha,
+                    lighting=center + light_origin,
+                    min_fade=conf.prop_fade_min_dist,
+                    max_fade=conf.prop_fade_max_dist,
+                    fade_scale=conf.prop_fade_scale,
+                ))
     LOGGER.info('Built {} models.', len(all_nodes))
     ctx.bsp.write_static_props(static_props)
