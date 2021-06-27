@@ -133,6 +133,7 @@ env_spritetrail
 env_steam
 env_steamjet
 env_sun
+env_surface_teleport
 env_texturetoggle
 env_tilt
 env_tonemap_controller
@@ -155,6 +156,7 @@ filter_multi
 filter_player_held
 filter_paint_power
 filter_size
+filter_velocity
 fish
 fizzler_multiorigin_sound_player
 floorturret_tipcontroller
@@ -535,14 +537,17 @@ trigger_portal_cleanser
 trigger_proximity
 trigger_push
 trigger_remove
+trigger_reversespeed
 trigger_rpgfire
 trigger_serverragdoll
+trigger_setspeed
 trigger_soundscape
 trigger_teleport
 trigger_togglesave
 trigger_tonemap
 trigger_tractorbeam
 trigger_transition
+trigger_userinput
 trigger_vphysics_motion
 trigger_waterydeath
 trigger_weapon_dissolve
