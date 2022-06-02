@@ -181,7 +181,6 @@ info_landmark
 info_landmark_entry
 info_landmark_exit
 info_mass_center
-info_momentum_map
 info_node
 info_node_air
 info_node_air_hint
@@ -386,10 +385,6 @@ trigger_tractorbeam
 trigger_userinput
 trigger_vphysics_motion
 trigger_wind
-vgui_indicator_panel
-vgui_movie_display
-vgui_screen
-vgui_slideshow_display
 viewmodel
 water_lod_control
 waterbullet
