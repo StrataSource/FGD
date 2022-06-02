@@ -1,4 +1,5 @@
-@PointClass base(BaseEntityPoint)
+@PointClass appliesto(-MOMENTUM)
+		base(BaseEntityPoint)
 	size(-4 -4 -4, 4 4 4) 
 	color(200 200 0) 
 	studioprop("models/editor/vgui_arrows.mdl") 
