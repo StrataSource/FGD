@@ -381,6 +381,10 @@ trigger_tractorbeam
 trigger_userinput
 trigger_vphysics_motion
 trigger_wind
+vgui_indicator_panel
+vgui_movie_display
+vgui_screen
+vgui_slideshow_displa
 viewmodel
 water_lod_control
 waterbullet
