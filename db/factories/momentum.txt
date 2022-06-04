@@ -384,7 +384,7 @@ trigger_wind
 vgui_indicator_panel
 vgui_movie_display
 vgui_screen
-vgui_slideshow_displa
+vgui_slideshow_display
 viewmodel
 water_lod_control
 waterbullet
