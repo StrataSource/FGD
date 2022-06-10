@@ -1,5 +1,5 @@
 @PointClass base(BasePropPhysics)
-	studioprop("models/npcs/personality_sphere/personality_sphere.mdl")
+	studioprop("models/props_bts/glados_ball_reference.mdl")
 	appliesto(P2CE)
 = prop_glados_core: "The P1 personality cores for GlaDOS. Resemble little eyeballs with handles. " +
 	"These play lines and look around when near the player. "
