@@ -204,7 +204,6 @@ logic_auto
 logic_branch
 logic_branch_listener
 logic_case
-logic_choreographed_scene
 logic_collision_pair
 logic_compare
 logic_coop_manager
@@ -219,7 +218,6 @@ logic_proximity
 logic_random_outputs
 logic_register_activator
 logic_relay
-logic_scene_list_manager
 logic_script
 logic_timer
 material_modify_control
@@ -312,11 +310,6 @@ prop_telescopic_arm
 prop_tic_tac_toe_panel
 raggib
 scene_manager
-script_intro
-scripted_scene
-scripted_sentence
-scripted_sequence
-scripted_target
 shadow_control
 simple_physics_brush
 simple_physics_prop
