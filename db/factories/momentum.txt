@@ -153,12 +153,8 @@ func_water
 func_water_analog
 func_weight_button
 funCBaseFlex
-game_end
 game_gib_manager
-game_player_equip
-game_player_team
 game_ragdoll_manager
-game_score
 game_text
 game_ui
 game_weapon_manager
@@ -180,7 +176,6 @@ info_landmark
 info_landmark_entry
 info_landmark_exit
 info_mass_center
-info_momentum_map
 info_null
 info_overlay_accessor
 info_particle_system
