@@ -117,7 +117,7 @@
 		"+forward": "Forward"
 		"+back": "Backward"
 		"+left": "Strafe Left"
-		"+right": "strafe Right"
+		"+right": "Strafe Right"
 		"+duck": "Crouch"
 		"+jump": "Jump"
 		"+attack": "Primary Attack" [!P2CE]
