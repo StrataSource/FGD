@@ -1,5 +1,5 @@
 @PointClass base(BaseEntityAnimating) 
-	appliesto(P2CE) 
+	appliesto(SINCE_P2CE) 
 	studioprop("models/effects/cappoint_hologram.mdl")
 = portal_race_checkpoint: "Checkpoint for race maps. When touched, lights up and ticks down like a pedestal button."
 	[

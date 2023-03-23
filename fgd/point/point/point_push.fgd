@@ -1,5 +1,5 @@
 @PointClass base(BaseEntityPoint)
-	appliesto(P2CE)
+	appliesto(SINCE_P2CE)
 	sphere(radius) 
 	sphere(inner_radius) 
 	studio("models/editor/cone_helper.mdl") 

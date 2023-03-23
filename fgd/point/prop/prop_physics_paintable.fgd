@@ -1,5 +1,5 @@
 @PointClass base(prop_physics) 
-	appliesto(P2CE) 
+	appliesto(SINCE_P2CE) 
 	sphere(fademindist) 
 	sphere(fademaxdist) 
 	studioprop()

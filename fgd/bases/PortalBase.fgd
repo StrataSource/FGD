@@ -1,5 +1,5 @@
 @BaseClass 
-	appliesto(P2CE) 
+	appliesto(SINCE_P2CE) 
 = PortalBase
 	[
 	activated[engine](boolean) : "Start Activated" : 0

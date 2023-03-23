@@ -1,5 +1,5 @@
 @PointClass base(BaseEntityAnimating) 
-	appliesto(P2CE)
+	appliesto(SINCE_P2CE)
 	studioprop()
 = env_portal_laser: " A Thermal Discouragement Beam that will move through portals, redirect using Redirection Cubes and reflect off of Reflection Gel."
 	[

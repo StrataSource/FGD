@@ -1,5 +1,5 @@
 @SolidClass base(trigger_playerteam)
-	appliesto(P2CE, +srctools)
+	appliesto(SINCE_P2CE, +srctools)
 = comp_trigger_coop: "Only activates once both Coop players have reached the trigger."
 	[
 	// Outputs

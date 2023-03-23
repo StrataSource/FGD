@@ -1,5 +1,5 @@
 @PointClass base(BaseEntityPoint)
-	appliesto(P2CE)
+	appliesto(SINCE_P2CE)
 = portalmp_gamerules: "Proxy entity for Portal 2 Gamerules. Appears nonfunctional."
 	[
 

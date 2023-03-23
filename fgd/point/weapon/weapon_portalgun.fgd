@@ -1,5 +1,5 @@
 @PointClass base(Weapon) 
-	appliesto(P2CE)
+	appliesto(SINCE_P2CE)
 	studioprop("models/weapons/w_portalgun.mdl") 
 = weapon_portalgun: "Aperture Science Handheld Portal Device"
 	[

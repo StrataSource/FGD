@@ -1,5 +1,5 @@
 @PointClass base(BaseEntityPoint)
-	appliesto(+P2CE, +srctools, -engine)
+	appliesto(+SINCE_P2CE, +srctools, -engine)
 	studioprop("models/editor/vactubes/end_point.mdl")
 	sphere()
 = comp_vactube_end : "Marks the end point of a vactube. Objects reaching here will be cleaned up."

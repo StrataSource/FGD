@@ -1,5 +1,5 @@
 @PointClass base(BaseEntityAnimating) 
-	appliesto(P2CE) 
+	appliesto(SINCE_P2CE) 
 	studioprop("models/effects/cappoint_hologram.mdl")
 = item_nugget: "Aperture Incentivizing Nugget. Useless."
 	[

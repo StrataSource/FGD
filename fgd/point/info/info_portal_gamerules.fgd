@@ -1,5 +1,5 @@
 @PointClass base(BaseEntityPoint) 
-	appliesto(P2CE)
+	appliesto(SINCE_P2CE)
 	iconsprite("editor/info_target.vmt")
 = info_portal_gamerules: "Determines game various rules for gameplay"
 	[
