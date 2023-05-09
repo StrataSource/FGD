@@ -1,5 +1,5 @@
 @SolidClass base(Trigger) 
-	appliesto(P2CE) 
+	appliesto(SINCE_P2CE) 
 = trigger_ping_detector: "Detects whether a player has pinged in its region."
 	[
 

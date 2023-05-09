@@ -1,5 +1,5 @@
 @PointClass base(BasePropPhysics) 
-	appliesto(P2CE)
+	appliesto(SINCE_P2CE)
 	studioprop() 
 = prop_weighted_cube: "Aperture Science Weighted Cube. Presses floor buttons, and can be moved around."
 	[

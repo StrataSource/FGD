@@ -1,6 +1,6 @@
 @PointClass base(BaseNPC, ResponseContext)
 	studioprop() line(0 0 255, targetname, TripwireAimTarget) 
-	appliesto(P2CE)
+	appliesto(SINCE_P2CE)
 	sphere(_sphere_radius)
 = npc_rocket_turret: "Portal 1 rocket sentry, aims a rocket at a target. " +
 		"In Portal 2, the rocket spawns with a speed of 0 and sometimes gets " +

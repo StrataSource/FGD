@@ -1,5 +1,5 @@
 @PointClass base(BaseEntityAnimating)
-	appliesto(P2CE)
+	appliesto(SINCE_P2CE)
 	studioprop() 
 	line(255 255 0, targetname, areaPortalWindow) 
 	line(255 255 0, targetname, lightingorigin) 

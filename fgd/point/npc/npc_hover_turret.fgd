@@ -1,5 +1,5 @@
 @PointClass base(BaseNPC)
-	appliesto(P2CE)
+	appliesto(SINCE_P2CE)
 	studioprop("models/npcs/hover_turret.mdl")
 	line(255 255 255, targetname, attachtarget)
 	frustum(_frustum_fov, _frustum_near, _frustum_far, _frustum_color, -1)

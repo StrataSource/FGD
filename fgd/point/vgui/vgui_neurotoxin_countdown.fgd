@@ -1,5 +1,5 @@
 @PointClass base(BaseEntityPoint)
-	appliesto(P2CE) 
+	appliesto(SINCE_P2CE) 
 	studioprop("models/editor/vgui_arrows.mdl") 
 = vgui_neurotoxin_countdown: "Neurotoxin Countdown display. AddOutput can be used to change/reset timer countdown."
 	[

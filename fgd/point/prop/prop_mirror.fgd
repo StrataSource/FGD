@@ -1,5 +1,5 @@
 @PointClass base(BaseEntityAnimating, SetModel) 
-	appliesto(P2CE) 
+	appliesto(SINCE_P2CE) 
 	studioprop()
 = prop_mirror: "A basic mirror model"
 	[

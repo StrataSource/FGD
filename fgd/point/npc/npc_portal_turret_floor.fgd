@@ -1,5 +1,5 @@
 @PointClass base(BaseNPC)
-	appliesto(P2CE) 
+	appliesto(SINCE_P2CE) 
 	studioprop()
 	frustum(_frustum_fov, _frustum_near, TurretRange, _frustum_color, -1)
 = npc_portal_turret_floor: "Aperture Science Sentry Turret."

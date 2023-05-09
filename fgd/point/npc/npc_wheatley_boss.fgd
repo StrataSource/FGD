@@ -1,5 +1,5 @@
 @PointClass base(BaseNPC, SetSkin) 
-	appliesto(P2CE)
+	appliesto(SINCE_P2CE)
 	studioprop() 
 = npc_wheatley_boss: "Wheatley NPC stub"
 	[

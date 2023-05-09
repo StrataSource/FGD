@@ -1,5 +1,5 @@
 @PointClass base(BaseEntityPoint) 
-	appliesto(P2CE) 
+	appliesto(SINCE_P2CE) 
 	iconsprite("editor/env_portal_credits")
 	color(200 0 0) = env_portal_credits: "The entity that controls the Portal credits, loaded from 'scripts/credits.txt'."
 	[
