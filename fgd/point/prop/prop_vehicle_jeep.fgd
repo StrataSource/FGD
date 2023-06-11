@@ -1,9 +1,9 @@
 @PointClass base(BaseDriveableVehicle) 
 	appliesto(+HL2_ENTITIES, +USE_VEHICLES)
 	studioprop()
-= prop_vehicle_jeep: "Driveable jeep. In HL2 it's the Scout Car, in EP2 and Portal it's the Jalopy."
+= prop_vehicle_jeep: "Driveable jeep"
 	[
-	model(studio) : "World model" : "models/jalopy.mdl"
+	model(studio) : "World model" : "models/buggy.mdl"
 
 	cargovisible(boolean) : "Hopper Visible" : "0" : "Is the striderbuster cargo hopper visible?"
 
@@ -12,7 +12,8 @@
 		1: "HUD Locator Precache" : 0
 		]
 
-	NoHazardLights(boolean) : "No Hazard Lights" : 0 : "Stops the jalopy's hazard lights from turning on and flashing when the player exits the vehicle."
+	NoHazardLights(boolean) : "No Hazard Lights" : 0 : "Stops the hazard lights from turning on and flashing when the player exits the vehicle."
+	EnableGun(boolean) : "Has Gun" : 0 : "Whether the jeep's tau cannon is enabled or disabled."
 
 	// Mapbase re-adds these for the episodic jeep, so if any it's present.
 	input DisablePhysGun(void) : "Disable physgun interactions with the jeep."
@@ -30,9 +31,12 @@
 	input SetCargoHopperVisibility(boolean) : "Set the strider buster hopper thingy to be visible, or invisible."
 	input CreateLinkController(void) : "Automatically builds and attaches a link controller to the car, which cuts the node connections under the car while the car is standing still."
 	input DestroyLinkController(void) : "Destroys the link controller created by CreateLinkController."	
-	input EnableHazardLights( void ) : "Enables the jalopy's hazard lights."
-	input DisableHazardLights( void ) : "Disables the jalopy's hazard lights."
+	input EnableHazardLights( void ) : "Enables the vehicles's hazard lights."
+	input DisableHazardLights( void ) : "Disables the behicles's hazard lights."
 
+	// HL2 Jeep inputs
+	input StartRemoveTauCannon(void) : "Start the tau removal sequence."
+	input FinishRemoveTauCannon(void) : "Finish the tau removal sequence."
 
 	// Outputs
 	output OnCompanionEnteredVehicle(void) : "Companion has entered the vehicle."
