@@ -18,10 +18,11 @@
 	modelindex(choices) : "Model" : 0 : "Which model the turret uses. The skeleton turret is still functional." =
 		[
 		0: "Normal"
-		1: "Custom Model"
+		1: "Custom Model (old gel skins)"
 		2: "Box"
 		3: "Backwards"
 		4: "Skeleton"
+		5: "Custom Model (new gel skins)"
 		]
 
 	skinnumber[engine](integer) : "Skin" : 0 
@@ -48,7 +49,7 @@
 		]
 
 	model[engine](studio) : "Custom Model" : "models/npcs/turret/turret.mdl"
-	model(choices) : "Custom Model" : "models/npcs/turret/turret.mdl" : "The model to show as in Hammer, or a custom model to use." =
+	model(choices) : "Custom Model" : "models/npcs/turret/turret.mdl" : "The model to show as in Hammer, or a custom model to use. You can type/paste in a model path here." =
 		[
 		"models/npcs/turret/turret.mdl": "Normal"
 		"models/npcs/turret/turret_boxed.mdl": "Box"
