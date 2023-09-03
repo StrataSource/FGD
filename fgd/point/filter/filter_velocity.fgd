@@ -1,26 +1,20 @@
 @FilterClass base(filter_base)
 = filter_velocity : "Filter that checks the player's velocity"
 	[
-	Mode[engine](integer) : "Mode" : 0
-	Mode(choices) : "Mode" : 0 : "Set which mode to use for velocity comparisons" =
+	SpeedThreshold(float) : "Speed Threshold" : 500 : ""
+	Dimension[engine](integer) : "Dimension" : 0	
+	Dimension(choices) : "Dimension" : 0 : "Which component of the entity's velocity to check" =
 		[
-		0 : "Total Velocity"
-		1 : "Per-axis"
+		0 : "Horizontal Speed (Actual)"
+		1 : "Horizontal Speed (Along Specified Yaw Angle)"
+		2 : "Vertical Speed"
+		3 : "All Axes"
 		]
-	Above[engine](integer) : "Above/Below" : 1
-	Above(choices) : "Above/Below" : 1 : "Sets whether to check if the player goes above or below the given velocity." =
+	MatchMode[engine](integer) : "Match Mode" : 0
+	MatchMode(choices) : "Match Mode" : 0 : "How the entity's speed should be compared to the threshold" =
 		[
-		0 : "Below"
-		1 : "Above"
+		0 : "Match when at or above speed"
+		1 : "Match when at or below speed"
 		]
-	EnableVertical(boolean) : "Enable Vertical" : 0 : "Check vertical velocity (total velocity mode only)"
-	EnableHorizontal(boolean) : "Enable Horizontal" : 0 : "Check horizontal velocity (total velocity mode only)"
-
-	VerticalVelocity(float) : "Vertical velocity" : 500 : "The amount of units per second for vertical (Z axis) speed."
-	HorizontalVelocity(float) : "Horizontal velocity" : 1000 : "The amount of units per second for horizontal (XY axis) speed."
-
-	IgnoreSign(boolean) : "Use Absolute Value" : 0 : "Whether to check the absolute value of the velocity components (per-axis mode only)"
-
-	VelocityVector(vector) : "Per-axis Velocity" : "0 0 0" : "The velocity vector for per-axis mode"
-	VelocityAxes(vector) : "Per-axis Enable" : "0 0 0" : "Which axes to use when checking velocity, zero means the corresponding axis is ignored (per-axis mode only)"
+	YawAngle(float) : "Check Horizontal Speed Along Yaw Angle" : 0 : "In Specified Yaw Angle mode, compare against the component of the entity's horizontal velocity in this direction."
 	]
