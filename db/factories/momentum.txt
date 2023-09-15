@@ -94,7 +94,6 @@ filter_base
 filter_momentum_campaign_progress
 filter_momentum_collectibles
 filter_momentum_player_state
-filter_momentum_progress
 filter_multi
 filter_velocity
 fish
@@ -135,7 +134,6 @@ func_pushable
 func_reflective_glass
 func_rot_button
 func_rotating
-func_shootboost
 func_slide
 func_smokevolume
 func_tank
@@ -344,7 +342,6 @@ trigger_momentum_campaign_changelevel
 trigger_momentum_limitmovement
 trigger_momentum_progress
 trigger_momentum_promptinput
-trigger_momentum_push
 trigger_momentum_teleport_progress
 trigger_momentum_timer_start
 trigger_momentum_timer_stop
@@ -356,7 +353,6 @@ trigger_playermovement
 trigger_proximity
 trigger_push
 trigger_remove
-trigger_reversespeed
 trigger_setspeed
 trigger_soundscape
 trigger_stick_explosive

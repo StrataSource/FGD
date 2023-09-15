@@ -530,7 +530,6 @@ trigger_portal_cleanser
 trigger_proximity
 trigger_push
 trigger_remove
-trigger_reversespeed
 trigger_rpgfire
 trigger_serverragdoll
 trigger_setspeed
