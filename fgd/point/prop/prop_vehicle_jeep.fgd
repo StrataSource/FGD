@@ -32,7 +32,7 @@
 	input CreateLinkController(void) : "Automatically builds and attaches a link controller to the car, which cuts the node connections under the car while the car is standing still."
 	input DestroyLinkController(void) : "Destroys the link controller created by CreateLinkController."	
 	input EnableHazardLights( void ) : "Enables the vehicles's hazard lights."
-	input DisableHazardLights( void ) : "Disables the behicles's hazard lights."
+	input DisableHazardLights( void ) : "Disables the vehicles's hazard lights."
 
 	// HL2 Jeep inputs
 	input StartRemoveTauCannon(void) : "Start the tau removal sequence."
