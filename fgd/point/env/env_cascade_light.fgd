@@ -18,17 +18,6 @@
 		"the CSM shadow angles are automatically harvested from the light_environment's angles. " +
 		"If false, this entity's angles are used."
 
-	CSMVolumeMode[engine](integer) : "Volume Mode"
-	CSMVolumeMode(choices) : "CSM_Volume_Mode" : 0 : "CSM Volume Modes " +
-		"- Auto: Static cache will update once every 10 frames (approx) covering max shadow distance or whole map around player. " +
-		"Manual : Static cache area coverage and updates are managed via csm volumes i/o. \n " +
-		"Use Manual mode for better quality and performence. \n " +
-		"In near future Auto mode will be removed from the game." =
-		[
-		0 : "Auto"
-		1 : "Manual"
-		]
-
 	// Inputs
 	input LightColor(color255) : "Set the light color."
 	input LightColorScale(integer) : "Set the light color scale"
