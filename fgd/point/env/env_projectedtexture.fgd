@@ -46,6 +46,7 @@
 	texturename(texture) : "Texture Name" : "effects/flashlight001" : "VTF Texture to 'project' onto the enviroment. " + 
 		"Please note that env_projectedtexture uses .vtf files directly and does not use .vmt files. " +
 		"The material browser is only available here to assist with finding textures since materials typically have the same name as their textures."
+	moviename(string) : "Movie Name" : : ".webm file used in place of the texture."
 	textureframe(integer) : "Texture Frame" : 0 : "If the VTF is multi-frame, specify the frame to use."
 
 	volumetric(boolean) : "Enable Volumetrics" : 0 : "Enables/disables volumetrics from this projected texture."
