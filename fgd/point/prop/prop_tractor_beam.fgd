@@ -12,14 +12,19 @@
 
 	noemitterparticles(boolean) : "Disable Emitter Particles" : 0 : "Disable the whirly particles on the emitter."
 
+	// The name here is a bit misleading, but this is for a good reason
+	// before it used to be a boolean, but we changed to an integer.
+	// I kept the old name here for backwards compatibility.
 	use128model[engine](boolean) : "Use PeTI Model?" : 0
-	use128model(choices) : "Model" : 0 : "Which model should this use?" =
+	use128model(choices) : "Model Type" : 0 : "Which model should this use?" =
 		[
 		0: "192 Model"
 		1: "128 Model (PeTI)"
+		2: "Custom Model"
 		]
 
-	model(choices) : "[H] Model" : "models/props/tractor_beam_emitter.mdl" : "Sets the model to appear as in Hammer." =
+	model[engine](studio) : "Model" : ""
+	model(choices) : "[H] Model" : "models/props/tractor_beam_emitter.mdl" : "The model to show in Hammer, or a custom model when 'Custom Model' is selected." =
 		[
 		"models/props/tractor_beam_emitter.mdl": "192 Model"
 		"models/props_ingame/tractor_beam_128.mdl": "128 Model (PeTI)"
