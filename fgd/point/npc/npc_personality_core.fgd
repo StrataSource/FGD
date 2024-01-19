@@ -4,7 +4,9 @@
 = npc_personality_core: "Aperture Science Personality Construct. Animated balls with handles."
 	[
 	modelskin[engine](integer) : "Model Skin" : 0
-	modelskin(choices) : "Model Skin" : 0 : "If using the 'alt' skin, this sets the eye color -- If not using the alt skin, (0 = broken) (1=normal)" =
+	modelskin(choices) : "Model Skin" : 0 : "If using the 'alt' skin, this sets the eye color.\n" + 
+		"If not using the alt skin, (0 = broken) (1=normal).\n " + 
+		"If using custom model, you can enter any skin number. " =
 		[
 		0: "Blue Eye / Broken"
 		1: "Green Eye / Normal"
@@ -12,22 +14,30 @@
 		3: "Purple Eye / NA"
 		]
 
-	altmodel[engine](boolean) : "Use Alternate Skins" : 0
-	altmodel(choices) : "Use Alternate Skins" : 0 : "Use the model with corrupted skins, instead of the skins in the original model. " =
+	// The name here is a bit misleading, but this is for a good reason
+	// before it used to be a boolean, but we changed to an integer.
+	// I kept the old name here for backwards compatibility.
+	altmodel[engine](integer) : "Core Model Type" : 0
+	altmodel(choices) : "Core Model Type" : 0 : "Was 'Use alternate skins'. Now determines which 'core type' to use." =
 		[
-		0: "No"
-		1: "Yes"
+		0: "Original"
+		1: "Alternate"
+		2: "Custom"
 		]
 
 	model[engine](studio) : "Model" : "models/npcs/personality_sphere/personality_sphere.mdl" 
-	model(choices) : "[H] Model" : "models/npcs/personality_sphere/personality_sphere.mdl" : "Choose the model to show in hammer. Set to the same as Use Alternate Skins." =
+	model(choices) : "[H] Model" : "models/npcs/personality_sphere/personality_sphere.mdl" : "Choose the model to show in hammer.\n" +
+		"If using 'Alternate' type, use the corrupt core model\n " +
+		"If using custom model, you can enter any model path here." =
 		[
 		"models/npcs/personality_sphere/personality_sphere.mdl": "Original (Wheatley)"
 		"models/npcs/personality_sphere/personality_sphere_skins.mdl": "Alternate (Corrupt Cores)"
 		]
 
 	skin[engine](integer) : "Skin" : 0
-	skin(choices) : "[H] Skin" : 0 : "If using the 'alt' skin, this sets the eye color (in hammer) -- If not using the alt skin, (0 = broken) (1=normal)" =
+	skin(choices) : "[H] Skin" : 0 : "If using the 'alt' skin, this sets the eye color.\n" + 
+		"If not using the alt skin, (0 = broken) (1=normal).\n" + 
+		"If using custom model, you can enter any skin number. " =
 		[
 		0: "Blue Eye / Broken"
 		1: "Green Eye / Normal"
