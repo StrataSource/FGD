@@ -13,7 +13,7 @@
 
 	// Inputs
 	input Toggle(void) : "Toggle the sensor between enabled and disabled."
-
+	input SetTargetEntity(target_destination) : "Sets the target entity and begins output. The targetnames !activator and !caller are accepted."
 	// Outputs
 	output Distance(float) : "Distance of the target entity away from this entity."
 	]
