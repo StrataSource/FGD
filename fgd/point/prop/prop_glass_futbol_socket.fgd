@@ -1,8 +1,10 @@
 @PointClass base(BaseEntityPoint) 
 	appliesto(P2CE) 
-	studio("models/editor/angle_helper.mdl")
+	studio()
 = prop_glass_futbol_socket: "Invisible entity that holds futbols and fires an output. When a futbol comes close it will snap into place."
 	[
+
+	model(studio) : "Model" : "models/props/futbol_socket.mdl" : "Model to use in-game"
 
 	// Outputs
 	output OnFutbolReleased(void) : "Player has taken the futbol out of this socket."
