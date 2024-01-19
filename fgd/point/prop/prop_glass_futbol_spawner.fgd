@@ -1,10 +1,12 @@
 @PointClass base(BaseEntityPoint) 
 	appliesto(P2CE) 
-	studioprop("models/props/futbol_dispenser.mdl")
+	studioprop()
 = prop_glass_futbol_spawner: "Spawns futbols. Will re-create a futbol when its created futbol breaks."
 	[
 	startwithfutbol(boolean) : "Start with Futbol" : 1 : "Set true if this spawner starts with a futbol in it. " +
 		"Set to false if this spawner's futbol will be manually placed in the map."
+
+	model(studio) : "Model" : "models/props/futbol_dispenser.mdl" : "Model to use in-game"
 
 	// Inputs
 	input ForceSpawn(void) : "Spawns a new futbol. Usually isn't necessary, because futbols respawn automatically if broken."
