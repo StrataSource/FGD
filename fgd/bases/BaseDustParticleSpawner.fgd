@@ -20,4 +20,5 @@
 	// Inputs
 	input TurnOn(void) : "Turn on."
 	input TurnOff(void) : "Turn off."
+	input SetFallDirection(vector) : "Update the particle fall direction."
 	]

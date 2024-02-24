@@ -33,4 +33,5 @@
 	input SetAngVelocityLimit(float) : "Max angular velocity in field."
 	input SetAngVelocityScale(float) : "Angular Velocity scale/drag"
 	input SetLinearForce(float) : "Linear force (0 disables)"
+	input SetGravityDirection(vector) : "Update the gravity direction."
 	]
