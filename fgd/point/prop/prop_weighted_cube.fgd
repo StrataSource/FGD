@@ -97,4 +97,6 @@
 	output OnPainted(integer) : "Cube got painted, only if the state changed. Has the paint type as parameter."
 	output OnPowered(void) : "Cube got powered by a laser."
 	output OnUnpowered(void) : "Cube is no longer powered by a laser."
+	output OnActivated(void) : "Fired when a cube is placed on a button."
+	output OnDeactivated(void) : "Fired when a cube is removed from a button."
 	]
