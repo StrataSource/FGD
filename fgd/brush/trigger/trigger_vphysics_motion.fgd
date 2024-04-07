@@ -8,6 +8,7 @@
 
 	setgravityscale(float) : "Gravity Scale" : 1.0 : "Scale gravity of objects in the field by this amount."
 	setgravitydirection(vector) : "Gravity Direction" : "0 0 0" : "Orient gravity for objects in the field towards this direction."
+	disableaircontrol(boolean) : "Disable Air Control" : 1 : "Disable air control for players touching this volume."
 	setadditionalairdensity(float) : "Additional air density for drag" : 0
 	setvelocitylimit(float) : "Velocity Limit" : 0.0 : "Max velocity in field (0 disables)"
 	setvelocitylimitdelta(float) : "Velocity Limit Force" : 0.0 : "Max amount to reduce velocity per second when it exceeds the velocity limit (0 disables)"
