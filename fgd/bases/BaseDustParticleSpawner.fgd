@@ -3,7 +3,8 @@
 = BaseDustParticleSpawner
 	[
 	startdisabled(boolean) : "Start Disabled" : 0
-	color(color255) : "Particle Color (R G B)" : "255 255 255"
+	color(color255) : "Start Particle Color (R G B)" : "255 255 255"
+	color2(color255) : "End Particle Color (R G B)" : "255 255 255"
 	spawnrate(integer) : "Particle Per Second" : 40 : "Number of particles to spawn, per second."
 	speedmax(integer) : "Maximum Particle Speed" : 13 : "Maximum speed that the particles can move after spawning."
 	fallspeed(integer) : "Particle Fall Speed" : 0 : "How fast the particles fall to the ground. This value is subtracted from the particle speed in the Z-axis only."
