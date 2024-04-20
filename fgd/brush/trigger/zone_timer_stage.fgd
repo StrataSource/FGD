@@ -1,5 +1,5 @@
 @SolidClass appliesto(MOMENTUM)
-= trigger_momentum_timer_stage : "Starting zone for each stage of a map. trigger_momentum_timer_start is automatically stage 1!" 
+= zone_timer_stage : "Starting zone for each stage of a map. zone_timer_start is automatically stage 1!" 
 	[
 	stage_name(string) : "Stage Name" : : "A custom name for this stage (optional)."
 	filter_name(string) : "Filter Name" : : "filter_activator entity to use for this zone."

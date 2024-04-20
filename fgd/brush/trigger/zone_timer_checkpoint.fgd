@@ -1,5 +1,5 @@
 @SolidClass appliesto(MOMENTUM)
-= trigger_momentum_timer_checkpoint : "Zone used to denote progress in a linear map. trigger_momentum_timer_start is automatically checkpoint (zone number) 1!" 
+= zone_timer_checkpoint : "Zone used to denote progress in a linear map. zone_timer_start is automatically checkpoint (zone number) 1!" 
 	[
 	filter_name(string) : "Filter Name" : : "filter_activator entity to use for this zone."
 	track_number(integer) : "Track Number" : 0 : "Track number that this entity belongs to. 0 = main map, 1+ = bonus (of that number)."
