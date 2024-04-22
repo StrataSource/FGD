@@ -343,10 +343,6 @@ trigger_momentum_limitmovement
 trigger_momentum_progress
 trigger_momentum_promptinput
 trigger_momentum_teleport_progress
-trigger_momentum_timer_start
-trigger_momentum_timer_stop
-trigger_momentum_timer_stage
-trigger_momentum_timer_checkpoint
 trigger_multiple
 trigger_once
 trigger_playermovement
@@ -382,3 +378,9 @@ weapon_momentum_stickybomblauncher
 window_pane
 world_items
 worldspawn
+zone_timer_start
+zone_timer_cancel
+zone_timer_end
+zone_timer_stage
+zone_timer_stage_end
+zone_timer_checkpoint
