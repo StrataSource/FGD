@@ -1,5 +1,6 @@
-@PointClass base(BaseEntityPoint, BaseLight, BaseLightFalloff)
+@PointClass base(BaseEntityPoint, BaseLight, BaseLightFalloff, BaseClusteredLight)
 	light() 
+	clusteredlight(point)
 	iconsprite("editor/light.vmt") 
 	line(255 255 255, targetname, target)
 = light: "An invisible omnidirectional light-source."
