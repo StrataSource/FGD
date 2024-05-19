@@ -1,6 +1,0 @@
-@SolidClass appliesto(MOMENTUM)
-= zone_timer_stage_end : "Zone that finishes the timer for a stage track. If not used for a stage, the start of the following stage (or map end) will automatically become the stage end."
-	[
-	filter_name(string) : "Filter Name" : : "filter_activator entity to use for this zone."
-	stage_number(integer) : "Stage Number" : 2 : "The stage number of this zone. NOTE: 1 is reserved for start! 2+ are free for your stage zones, so start at 2!"
-	]

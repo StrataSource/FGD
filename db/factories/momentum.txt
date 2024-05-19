@@ -382,5 +382,4 @@ zone_timer_start
 zone_timer_cancel
 zone_timer_end
 zone_timer_stage
-zone_timer_stage_end
 zone_timer_checkpoint
