@@ -28,4 +28,6 @@
 		"Only entities that passed this trigger's filters will cause this output to fire."
 	output OnEndTouchAll(void) : "Fires when an entity stops touching this trigger, and no other entities are touching it. " +
 		"Only entities that passed this trigger's filters are considered."
+	output OnJump(void) : "Fires when a player jumps in this trigger. " +
+		"Only entities that passed this trigger's filters are considered."
 	]

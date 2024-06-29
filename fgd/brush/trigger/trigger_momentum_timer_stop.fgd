@@ -1,6 +1,0 @@
-@SolidClass base(ZoneTrigger)
-	appliesto(MOMENTUM)
-= trigger_momentum_timer_stop : "Trigger that stops the timer."
-	[
-	cancel(boolean) : "Cancel Timer" : 0 : "Stop the timer without submitting a run."
-	]
