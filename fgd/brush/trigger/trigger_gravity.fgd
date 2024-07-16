@@ -3,7 +3,7 @@
 	[
 	gravity(float) : "Gravity (0-1)" : 1
 	persist(boolean) : "Persist" : 0 : "Whether the gravity change persists. A setting of 0 will reset gravity to default on exiting. 1 will persist and thus act like how it did in older games like TF2."
-	gravityvector(vector) : "Gravity Vector (X Y Z)" : "0 0 0" : "Override the gravity vector of players touching the volume to this direction."
+	gravityvector(angle) : "Gravity Direction" : "90 0 0" : "Override the gravity vector of players and paint blobs touching the volume to this direction."
 	
 	input SetGravityDirection(vector) : "Update the gravity vector."
 	]
