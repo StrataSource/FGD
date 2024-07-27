@@ -1,4 +1,4 @@
-@SolidClass base(TeleTrigger)
+@SolidClass base(Trigger)
 	line(255 255 255, targetname, filtername)
 	line(255 255 0, targetname, target)
 	line(0 255 0, target, landmark)
@@ -7,4 +7,50 @@
 	"If a Local Destination Landmark is specified, teleported entities are offset from " +
 	"the target by their initial offset from the landmark, and their angles are left alone."
 	[
+	spawnflags(flags) =
+		[
+		32: "Preserve angles even when a local landmark is not specified" : 0
+		8388608: "Teleport explosives" : 0 [MOMENTUM]
+
+		// Restore the other spawnflags.
+		1: "Clients/Players" : 1
+		8192: "Allow ghosts to fire this trigger" : 0 [MOMENTUM]
+		2: "NPCs" : 0 [+USE_AI]
+		4: "func_pushable" : 0
+		8: "Physics Objects" : 0
+		16: "Only player ally NPCs" : 0 [+USE_AI]
+		64: "Everything (not including physics debris)" : 0
+		512: "Only clients *not* in vehicles" : 0 [+USE_VEHICLES]
+		1024: "Physics debris" : 0
+		2048: "Only NPCs in vehicles (respects player ally flag)" : 0 [+USE_VEHICLES]
+		4096: "Correctly account for object mass (trigger_push used to assume 100Kg) and multiple component physobjs (car, blob...)" : 1
+		]
+
+	target(target_destination) : "Remote Destination" : : "The entity specifying the point to which the player should be teleported."
+
+	landmark(target_destination) : "Local Destination Landmark" : : "In landmark mode, teleported entities are offset from the target by " +
+		"their initial offset from the landmark. Angles and velocity are also reoriented to the destination if enabled."
+
+	uselandmarkangles(boolean) : "Use Destination Angles" : 0 : "Forces the teleported object to snap to the angles of the destination."
+
+	checkdestifclearforplayer[-MOMENTUM](boolean) : "Only Spawn-Valid Destinations" : 0 : "Only teleport if there is a clear teleport destination."
+
+	TeleportOnEndTouch(choices) : "Teleport On" : 0 =
+		[
+		0 : "Start Touch"
+		1 : "End Touch"
+		]
+
+	VelocityMode(choices) : "Velocity Mode" : 0 =
+		[
+		0 : "Keep Velocity"
+		1 : "Reset Velocity"
+		2 : "Keep Negative Z Velocity Only"
+		3 : "Set Velocity"
+		]
+
+	SetSpeed(float) : "Set Velocity Speed" : 400 : "If Velocity Mode is set to Set Velocity, the entity's speed will be set to this amount when teleported."
+
+	// Inputs
+	input SetRemoteDestination(string) : "Set a new remote teleport destination."
 	]
