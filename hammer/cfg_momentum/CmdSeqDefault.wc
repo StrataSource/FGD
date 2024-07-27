@@ -5,7 +5,7 @@
     // 257 - Copy File
     // 258 - Delete File
     // 259 - Rename File
-    // 261 - Copy File if it exists
+    // 260 - Copy File if it exists
     // And they have no "run" string
     "Zonmaker Only"
     {
@@ -23,7 +23,7 @@
         "2"
         {
             "enabled" "1"
-            "special_cmd" "261" // Copy File if it exists
+            "special_cmd" "260" // Copy File if it exists
             "run" ""
             "params" "$path\\$file.zon $bspdir\\..\\zones\\$file.zon"
             "ensure_check" "0"
@@ -48,7 +48,7 @@
         "2"
         {
             "enabled" "1"
-            "special_cmd" "261" // Copy File if it exists
+            "special_cmd" "260" // Copy File if it exists
             "run" ""
             "params" "$path\\$file.zon $bspdir\\..\\zones\\$file.zon"
             "ensure_check" "0"
@@ -139,7 +139,7 @@
         "2"
         {
             "enabled" "1"
-            "special_cmd" "261" // Copy File if it exists
+            "special_cmd" "260" // Copy File if it exists
             "run" ""
             "params" "$path\\$file.zon $bspdir\\..\\zones\\$file.zon"
             "ensure_check" "0"
@@ -230,7 +230,7 @@
         "2"
         {
             "enabled" "1"
-            "special_cmd" "261" // Copy File if it exists
+            "special_cmd" "260" // Copy File if it exists
             "run" ""
             "params" "$path\\$file.zon $bspdir\\..\\zones\\$file.zon"
             "ensure_check" "0"
@@ -321,7 +321,7 @@
         "2"
         {
             "enabled" "1"
-            "special_cmd" "261" // Copy File if it exists
+            "special_cmd" "260" // Copy File if it exists
             "run" ""
             "params" "$path\\$file.zon $bspdir\\..\\zones\\$file.zon"
             "ensure_check" "0"
