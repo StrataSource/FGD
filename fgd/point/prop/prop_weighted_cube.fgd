@@ -5,50 +5,40 @@
 	[
 	line_cube[-engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
-	cubetype[engine](integer) : "Cube Type" : 0
-	cubetype(choices) : "Cube Type" : "0" : "What cube type is this? Use a prop_monster_box for FrankenTurrets. " +
-		"If set to Custom, use AddOutput to change it back OnMapSpawn so gel skins behave correctly." =
+	CubeBehavior[engine](integer) : "Cube Behavior" : 0
+	CubeBehavior(choices) : "Cube Behavior" : 0 : "How does this cube function? Use a prop_monster_box for Frankenturrets." =
 		[
-		0: "[0] Weighted Storage Cube"
-		1: "[1] Weighted Companion Cube"
-		2: "[2] Discouragement Redirection Cube"
-		3: "[3] Edgeless Safety Cube"
-		4: "[4] Antique Storage Cube"
-		5: "[5] Schrodinger's Cube"
-		6: "[6] Custom model"
-		]
-
-	skintype[engine](boolean) : "Skin Type" : 0
-	skintype(choices) : "Skin Type" : "0" : "Is the cube clean or rusty? Storage and Reflection cubes are the only types with a rusty version." =
-		[
-		0: "Clean"
-		1: "Rusted"
+		0: "Standard Cube"
+		1: "Reflection Cube"
+		2: "Sphere (presses sphere buttons)"
+		3: "Schrodinger's Cube"
 		]
 
 	model[engine](studio) : "Model" : ""
-	model(choices) : "Model" : "models/props/metal_box.mdl" : "The model to show in Hammer, or a custom model for cube type 6." =
+	model(choices) : "Cube Model" : "models/props/cubes/standard_cube.mdl" : "What model to use. You can also type/paste in a custom model path here." =
 		[
-		"models/props/metal_box.mdl": "Weighted Storage/Companion Cube"
-		"models/props/reflection_cube.mdl": "Discouragement Redirection"
-		"models/props_gameplay/mp_ball.mdl": "Edgeless Safety"
-		"models/props_underground/underground_weighted_cube.mdl": "Antique"
-		"models/props/schrodinger_cube.mdl": "Schrodinger"
+		"models/props/cubes/standard_cube.mdl": "Weighted Storage Cube"
+		"models/props/cubes/standard_cube_rusty.mdl": "Weighted Storage Cube (rusty)"
+		"models/props/cubes/companion_cube.mdl": "Weighted Companion Cube"
+		"models/props/cubes/reflection_cube.mdl": "Discouragement Redirection Cube"
+		"models/props/cubes/reflection_cube_rusty.mdl": "Discouragement Redirection Cube (rusty)"
+		"models/props/cubes/sphere.mdl": "Edgeless Safety Cube"
+		"models/props/cubes/antique_cube.mdl": "Antique Cube"
+		"models/props/cubes/schrodinger_cube.mdl": "Schrodinger's Cube"
 		]
-
-	skin(integer) : "Skin" : 0 : "The old skin property, mainly to show in Hammer. "
 
 	paintpower[engine](integer) : "Starting Paint" : 4
 	paintpower(choices) : "Starting paint" : "4" : "The cube starts painted with the set gel." =
 		[
 		0: "Repulsion Gel"
-		1: "Adhesion Gel"
+		1: "Reflection Gel"
 		2: "Propulsion Gel"
 		3: "Conversion Gel"
 		4: "None"
+		5: "Adhesion Gel"
 		]
 
 	allowfunnel(boolean) : "Allow Portal Funneling" : 1 : "Whether or not this object should auto-funnel into a floor portal."
-	newskins(integer) readonly : "Use new skins" : 1 : "Use the values in the Cube Type and Skin Type fields instead of the Skin(OLD) field. You shouldn't need to touch this."
 	
 	uselasermodifier(boolean) : "Use Laser Modifier" : 0 : "If enabled, this cube will recolor incoming lasers to the modifier color."
 	reflectmodifycolor(choices) : "Laser Modifier Color" : "255 0 0 255" : "Set reflected lasers to this color. Only applicable to reflection and Schrodinger cubes. You can also specify a custom RGBA color here." =
@@ -72,6 +62,37 @@
 		"212 60 146 255" : "Pink"
 		"65 97 0 255" : "Dark Green"
 		]
+
+	line_cube_oldskins(string) readonly : "----------------------------------------------------------------------------------------------------------"
+
+	newskins[engine](integer) : "Configuration Mode" : 2
+	newskins(choices) : "Configuration Mode" : 2 : "How cube models and behaviors are selected. This determines which of the other keyvalues are used and is present for backwards compatibility." =
+		[
+		2: "New style (behavior/model)"
+		1: "Old style (cube type/skin type)"
+		0: "Oldest style (skin)"
+		]
+
+	cubetype[engine](integer) : "Cube Type (old)" : 0
+	cubetype(choices) : "Cube Type (old)" : 0 : "The old cube type keyvalue, which overrides the model and behavior." =
+		[
+		0: "[0] Weighted Storage Cube"
+		1: "[1] Weighted Companion Cube"
+		2: "[2] Discouragement Redirection Cube"
+		3: "[3] Edgeless Safety Cube"
+		4: "[4] Antique Storage Cube"
+		5: "[5] Schrodinger's Cube"
+		6: "Custom model (old)"
+		]
+
+	skintype[engine](boolean) : "Skin Type (old)" : 0
+	skintype(choices) : "Skin Type (old)" : 0 : "The old skin type keyvalue. Storage and Reflection cubes are the only types with a rusty version." =
+		[
+		0: "Clean"
+		1: "Rusted"
+		]
+
+	skin(integer) : "Skin" : 0 : "The old skin keyvalue, mainly to show in Hammer."
 
 	// Inputs
 	input EnablePortalFunnel(void) : "Enable portal funneling behavior."
