@@ -142,6 +142,7 @@ func_tankmortar
 func_tankphyscannister
 func_tankpulselaser
 func_tanktrain
+func_touch
 func_trackautochange
 func_trackchange
 func_tracktrain
