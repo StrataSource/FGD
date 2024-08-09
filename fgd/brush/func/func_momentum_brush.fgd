@@ -1,9 +1,0 @@
-@SolidClass base(func_brush, Campaign)
-	appliesto(MOMENTUM)
-= func_momentum_brush : "Brush entity used for the final stages in the campaign. The brush activates when the given stage of the given world is beat (or not beat, if this brush is inverted)" 
-	[
-	Invert(boolean) : "Invert behavior" : 0 : "Set this to Yes if the behavior of the brush should be inverted (Yes = If the player has the stage beaten, the brush should be Disabled)."
-
-	DisabledAlpha(integer) : "Disabled Alpha" : 102 : "The amount of translucency this brush has when disabled. 0 is transparent, 255 is opaque."
-	DisableUI(boolean) : "Disable UI Popup" : 0 : "If set to Yes, disables the UI popup/warning that occurs when the user touches the deactivated brush."
-	]
