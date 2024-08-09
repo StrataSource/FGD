@@ -1,0 +1,8 @@
+@SolidClass base(func_brush)
+	appliesto(MOMENTUM)
+= func_reflect: "A brush entity that reflects the player's velocity on impact."
+	[
+	linedivider_reflect(string) readonly : "----------------------------------------------------------------------------------------------------------"
+
+	ReflectScale(float) : "Reflect Scale" : 1 : "How much to scale the reflected velocity."
+	]
