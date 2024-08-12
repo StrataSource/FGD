@@ -47,8 +47,6 @@ build() {
 
 build_fgd_p2ce() {
   copy_hammer_files p2ce
-  copy_vscript_files
-  copy_postcompiler_files
   build_game_fgd p2ce
 }
 
@@ -87,28 +85,6 @@ build_game_fgd() {
 
   if [ $? -ne 0 ]; then
     echo "Building FGD for $1 has failed. Exitting." && exit 1
-  fi
-  return 0
-}
-
-copy_vscript_files() {
-  echo "Copying VScript files (hammer/scripts)..."
-  mkdir -p "$build_dir/hammer"
-  cp -rf hammer/scripts "$build_dir/hammer"
-
-  if [ $? -ne 0 ]; then
-    echo "Failed copying VScript files (hammer/scripts). Exitting." && exit 1
-  fi
-  return 0
-}
-
-copy_postcompiler_files() {
-  echo "Copying postcompiler transforms..."
-  mkdir -p "$build_dir/$bin_dir/postcompiler"
-  cp -rf transforms "$build_dir/$bin_dir/postcompiler"
-
-  if [ $? -ne 0 ]; then
-    echo "Failed copying postcompiler transforms. Exitting." && exit 1
   fi
   return 0
 }
