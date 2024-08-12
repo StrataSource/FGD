@@ -1,5 +1,8 @@
 # Strata FGDs
-Hammer FDG files for Strata games
+Hammer FDG files for Strata games.
+
+The repo is a stripped-down version of [TeamSpen210's HammerAddons](https://github.com/TeamSpen210/HammerAddons) project, with only the FTD-related stuff kept.
+To see the code of the postcompiler we ship with Portal 2: Community Edition, look at [this repo](https://github.com/StrataSource/HammerAddons).
 
 ## Credits
 Some entity sprites are taken from: 
