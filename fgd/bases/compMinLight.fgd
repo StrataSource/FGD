@@ -1,4 +1,0 @@
-@BaseClass = compMinLight
-	[
-	_minlight(float) : "Minimum Light Level" : : "The minimum level of ambient light that hits this brush."
-	]
