@@ -1,6 +1,5 @@
 # Strata FGDs
 Hammer FDG files for Strata games
-<hr>
 
 ## Credits
 Some entity sprites are taken from: 
