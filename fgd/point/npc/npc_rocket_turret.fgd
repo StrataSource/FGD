@@ -2,9 +2,7 @@
 	studioprop() line(0 0 255, targetname, TripwireAimTarget) 
 	appliesto(P2CE)
 	sphere(turretrange)
-= npc_rocket_turret: "Portal 1 rocket sentry, aims a rocket at a target. " +
-		"In Portal 2, the rocket spawns with a speed of 0 and sometimes gets " +
-		"stuck inside the model, so this will need to be worked around."
+= npc_rocket_turret: "Aims a rocket at a target."
 	[
 	spawnflags(flags) : "spawnflags" =
 		[
@@ -13,6 +11,8 @@
 
 	rocketspeed(float) : "Rocket Speed" : 450 : "Speed the rocket will travel at."
 	rocketlifetime(float) : "Rocket Lifetime" : 20 : "The rocket will automatically detonate after this number of seconds."
+	FireCooldown(float) : "Fire Cooldown" : 4 : "The time it takes for the rocket turret to reset after firing a rocket."
+	LockonTime(float) : "Lockon Time" : 1.5 : "The time it takes for the rocket turret to fire a rocket after locking onto a target."
 	TripwireMode(boolean) : "Tripwire Mode" : 0 : "Makes the turret aim in a specific direction instead of following the target. When the beam is crossed, a rocket instantly fires."
 	TripwireAimTarget(target_destination) : "Tripwire Aim Target" : : "In tripwire mode, the entity to aim at."
 	model(studio) : "Model" : "models/props_bts/rocket_sentry.mdl" : "Model to use in-game"
