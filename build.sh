@@ -57,8 +57,8 @@ build_fgd_momentum() {
 
 build_game_markdown() {
   echo "Generating markdown from FGD for $1..."
-  mkdir -p "$build_md_dir/$1"
-  python3 unify_fgd.py expmd $1 srctools -o "$build_md_dir/$1"
+  mkdir -p "$build_md_dir"
+  python3 unify_fgd.py dump $1 srctools -o "$build_md_dir/$1.json"
 
   if [ $? -ne 0 ]; then
     echo "Building markdown for $1 has failed. Exitting." && exit 1

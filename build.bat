@@ -106,8 +106,8 @@ IF /I %game%==ALL (
 
 :build_game_markdown
   echo Generating markdown from FGD for %1...
-  mkdir "%build_md_dir%/%1"
-  python unify_fgd.py expmd %1 srctools -o "%build_md_dir%/%1"
+  mkdir "%build_md_dir%"
+  python unify_fgd.py dump %1 srctools -o "%build_md_dir%/%1.json"
   
   IF %ERRORLEVEL% NEQ 0 (echo Building markdown for %1 has failed. Exitting. & EXIT)
   EXIT /B

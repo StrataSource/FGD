@@ -3,9 +3,11 @@
 This allows sharing definitions among different engine versions.
 """
 import html
+import json
 import os
 import sys
 import argparse
+import typing
 from collections import Counter, defaultdict
 from pathlib import Path
 from lzma import LZMAFile
@@ -21,9 +23,8 @@ from typing import (
 from srctools.fgd import (
     FGD, validate_tags, match_tags,
     EntityDef, EntityTypes, IODef,
-    KeyValues, ValueTypes,
+    KVDef, ValueTypes,
     HelperExtAppliesTo,
-    HelperWorldText,
     AutoVisgroup,
 )
 from srctools.filesys import RawFileSystem
@@ -401,9 +402,9 @@ def get_clean_fgd(
             if ent.classname != BASE_ENTITY:
                 ent.bases = [base_entity_def]
 
-            value: Union[IODef, KeyValues]
-            category: Dict[str, Dict[FrozenSet[str], Union[IODef, KeyValues]]]
-            base_cat: Dict[str, Dict[FrozenSet[str], Union[IODef, KeyValues]]]
+            value: Union[IODef, KVDef]
+            category: Dict[str, Dict[FrozenSet[str], Union[IODef, KVDef]]]
+            base_cat: Dict[str, Dict[FrozenSet[str], Union[IODef, KVDef]]]
             for attr_name in ['inputs', 'outputs', 'keyvalues']:
                 category = getattr(ent, attr_name)
                 base_cat = getattr(base_entity_def, attr_name)
@@ -439,7 +440,7 @@ def get_clean_fgd(
                         [value] = tag_map.values()
                     else:
                         # More than one tag.
-                        # IODef and KeyValues have a type attr.
+                        # IODef and KVDef have a type attr.
                         types = {val.type for val in tag_map.values()}
                         if len(types) > 1 and verbose:
                             print('{}.{} has multiple types! ({})'.format(
@@ -462,7 +463,7 @@ def get_clean_fgd(
                                 'provide ENGINE '
                                 'tag!'.format(ent.classname, key)
                             )
-                        if isinstance(value, KeyValues):
+                        if isinstance(value, KVDef):
                             assert value.val_list is not None
                             try:
                                 for choice_val, name, tag in value.val_list:
@@ -477,7 +478,7 @@ def get_clean_fgd(
                     # Check if this is a shared property among all ents,
                     # and if so skip exporting.
                     if ent.classname != BASE_ENTITY:
-                        base_value: Union[KeyValues, IODef]
+                        base_value: Union[KVDef, IODef]
                         try:
                             [base_value] = base_cat[key].values()
                         except KeyError:
@@ -873,7 +874,7 @@ def action_import(
                     ent.helpers.append(helper)
 
             for cat in ('keyvalues', 'inputs', 'outputs'):
-                cur_map = getattr(ent, cat)  # type: Dict[str, Dict[FrozenSet[str], Union[KeyValues, IODef]]]
+                cur_map = getattr(ent, cat)  # type: Dict[str, Dict[FrozenSet[str], Union[KVDef, IODef]]]
                 new_map = getattr(new_ent, cat)
                 new_names = set()
                 for name, tag_map in new_map.items():
@@ -1006,132 +1007,93 @@ def action_visgroup(
         write_vis(AutoVisgroup('Auto', ''), '')
 
 
-def action_exportmd(
-    dbase: Path,
-    tags: FrozenSet[str],
-    output_path: Path,
-) -> None:
-    """Create markdown documentation for FGDs using the given tags."""
+def action_dump( dbase: Path, tags: FrozenSet[str], outputPath: str ) -> None:
+    """Create json dump of the documentation for FGDs using the given tags."""
     
     fgd = get_clean_fgd(dbase, None, tags, False, True)
 
-    print('Exporting markdown...')
+    print('Dumping data...')
 
-    separator = '-------------------\n<br/>\n\n'
+    class Dumped(typing.TypedDict):
+        type: str       #: brush, point, filter, misc
+        classname: str  #: info_player_spawn
+        desc: str       #: This entity indicates the...
+        spawnFlags: List[dict]
+        keyvalues: List[dict]
+        inputs: List[dict]
+        outputs: List[dict]
+
+    dump: typing.List[Dumped] = [ ]
+
     for ent in fgd:
         if ent.type == EntityTypes.BASE:
             continue
 
-        if ent.type == EntityTypes.BRUSH:
-            subfolder = 'brush'
-        elif ent.type == EntityTypes.POINT:
-            subfolder = 'point'
-        elif ent.type == EntityTypes.FILTER:
-            subfolder = 'filter'
-        else:
-            subfolder = 'misc'
+        dumped: Dumped = {
+            'type': 'misc',
+            'classname': ent.classname,
+            'desc': html.escape( f'{ent.desc}\n' ),
+            'spawnFlags': [],
+            'keyvalues': [],
+            'inputs': [],
+            'outputs': []
+        }
+        dump.append( dumped )
+        if ent.type is EntityTypes.BRUSH:
+            dumped['type'] = 'brush'
+        elif ent.type is EntityTypes.POINT:
+            dumped['type'] = 'point'
+        elif ent.type is EntityTypes.FILTER:
+            dumped['type'] = 'filter'
 
-        full_folder_path = Path(output_path, subfolder)
-        try:
-            os.mkdir(full_folder_path)
-        except OSError as _error:
-            pass
-        
-        sf_info_header = [
-            '## Spawnflags\n'
-            '| Num | Desc | Default | Inherited from |\n'
-            '--- | --- | --- | --- |\n'
-        ]
-        kv_info_header = [
-            '## Keyvalues\n'
-            '| Name | Type | Default | Desc | Inherited from |\n'
-            '--- | --- | --- | --- | --- |\n'
-        ]
-        input_info_header = [
-            '## Inputs\n'
-            '| Name | Type | Desc | Inherited from |\n'
-            '--- | --- | --- | --- |\n'
-        ]
-        output_info_header = [
-            '## Outputs\n'
-            '| Name | Type | Desc | Inherited from |\n'
-            '--- | --- | --- | --- |\n'
-        ]
+        # Combine the bases into this for a full kv listing in the entity
+        entities = collapse_bases(ent.bases)
+        entities.append(ent)  # So bases are listed first, with the entity's own info last
 
-        ent_out_path = Path(full_folder_path, '{}.md'.format(ent.classname))
-        with open(ent_out_path, 'w+') as txt_f:
-            txt_info : List[str] = []
-            txt_info.append('# {}\n'.format(ent.classname))
-            txt_info.append(html.escape('{}\n'.format(ent.desc)))
+        for entity in entities:
+            derived_class = '' if entity.classname == ent.classname else entity.classname
 
-            sf_info : List[str] = []
-            kv_info : List[str] = []
-            input_info : List[str] = []
-            output_info : List[str] = []
+            for kv_dict in entity.keyvalues.values():
+                for kv in kv_dict.values():
+                    if kv.name.find('linedivider_') != -1:
+                        continue
 
-            # Combine the bases into this for a full kv listing in the entity
-            entities = collapse_bases(ent.bases)
-            entities.append(ent) # So bases are listed first, with the entity's own info last
-            
-            for entity in entities:
+                    if kv.type == ValueTypes.SPAWNFLAGS:
+                        for val in kv.val_list:
+                            escaped_desc = html.escape(val[1]).replace('\n', '<br/>')
+                            dumped['spawnFlags'].append({ 'num': val[0], 'desc': escaped_desc, 'default': val[2], 'origin': derived_class })
+                        continue
 
-                dervied_class = '' if entity.classname == ent.classname else entity.classname
+                    default_value = kv.default
+                    if kv.type == ValueTypes.BOOL:
+                        default_value = 'Yes' if kv.default == 1 else 'No'
 
-                for kv_dict in entity.keyvalues.values():
-                    for kv in kv_dict.values():
-                        if kv.name.find('linedivider_') != -1:
-                            continue
+                    if kv.type == ValueTypes.CHOICES:
+                        disp_type = ''
+                        for idx, choice in enumerate(kv.choices_list):
+                            if choice[0] == kv.default:
+                                default_value = '{} ({})'.format(choice[1], kv.default)
 
-                        if kv.type == ValueTypes.SPAWNFLAGS:
-                            for val in kv.val_list:
-                                escaped_desc = html.escape(val[1]).replace('\n', '<br/>')
-                                sf_info.append('|{num}|{desc}|{defval}|{basename}|'.format(num=val[0], desc=escaped_desc, defval=val[2], basename=dervied_class))
-                            continue
+                            disp_type += ('<br/>{}: {}' if idx != 0 else '{}: {}').format(choice[0], choice[1])
+                    else:
+                        disp_type = kv.type.value
 
-                        default_value = kv.default
-                        if kv.type == ValueTypes.BOOL:
-                            default_value = 'Yes' if kv.default == 1 else 'No'
+                    escaped_desc = html.escape(kv.desc).replace('\n', '<br/>')
+                    dumped['keyvalues'].append({ 'name': kv.disp_name, 'type': disp_type, 'default': default_value, 'desc': escaped_desc, 'origin': derived_class })
 
-                        if kv.type == ValueTypes.CHOICES:
-                            disp_type = ''
-                            for idx, choice in enumerate(kv.choices_list):
-                                if choice[0] == kv.default:
-                                    default_value = '{} ({})'.format(choice[1], kv.default)
-                                
-                                disp_type += ('<br/>{}: {}' if idx != 0 else '{}: {}').format(choice[0], choice[1])
-                        else:
-                            disp_type = kv.type.value
+            for input_dict in entity.inputs.values():
+                # noinspection PyShadowingBuiltins
+                for input in input_dict.values():
+                    escaped_desc = html.escape(input.desc).replace('\n', '<br/>')
+                    dumped['inputs'].append({ 'name': input.name, 'type': input.type.value, 'desc': escaped_desc, 'origin': derived_class })
 
-                        escaped_desc = html.escape(kv.desc).replace('\n', '<br/>')
-                        kv_info.append('|{dname}|{type}|{defval}|{desc}|{basename}|\n'.format(dname=kv.disp_name, type=disp_type, defval=default_value, desc=escaped_desc, basename=dervied_class))
+            for output_dict in entity.outputs.values():
+                for output in output_dict.values():
+                    escaped_desc = html.escape(output.desc).replace('\n', '<br/>')
+                    dumped['outputs'].append({ 'name': output.name, 'type': output.type.value, 'desc': escaped_desc, 'origin': derived_class })
 
-                for input_dict in entity.inputs.values():
-                    for input in input_dict.values():
-                        escaped_desc = html.escape(input.desc).replace('\n', '<br/>')
-                        input_info.append('|{dname}|{type}|{desc}|{basename}|\n'.format(dname=input.name, type=input.type.value, desc=escaped_desc, basename=dervied_class))
-
-                for output_dict in entity.outputs.values():
-                    for output in output_dict.values():
-                        escaped_desc = html.escape(output.desc).replace('\n', '<br/>')
-                        output_info.append('|{dname}|{type}|{desc}|{basename}|\n'.format(dname=output.name, type=output.type.value, desc=escaped_desc, basename=dervied_class))
-
-            if len(sf_info) > 0:
-                sf_info.append(separator)
-                txt_info += sf_info_header + sf_info
-            
-            if len(kv_info) > 0:
-                kv_info.append(separator)
-                txt_info += kv_info_header + kv_info
-
-            if len(input_info) > 0:
-                input_info.append(separator)
-                txt_info += input_info_header + input_info
-                
-            if len(output_info) > 0:
-                output_info.append(separator)
-                txt_info += output_info_header + output_info
-            
-            txt_f.writelines(txt_info)
+    with open( outputPath, 'wt' ) as file:
+        json.dump( dump, file )
             
 
 def main(args: List[str]=None):
@@ -1168,18 +1130,17 @@ def main(args: List[str]=None):
              "present in each engine branch.",
     )
 
-    parser_expmd = subparsers.add_parser(
-        "exportmd",
-        help=action_exportmd.__doc__,
-        aliases=["expmd"],
+    parser_dump = subparsers.add_parser(
+        "dump",
+        help=action_dump.__doc__
     )
 
-    parser_expmd.add_argument(
+    parser_dump.add_argument(
         "-o", "--output",
-        default="build_md",
+        default="dump",
         help="Destination folder for markdown gen."
     )
-    parser_expmd.add_argument(
+    parser_dump.add_argument(
         "tags",
         nargs="*",
         help="Tags to include in the output.",
@@ -1294,7 +1255,7 @@ def main(args: List[str]=None):
             result.binary,
             result.engine,
         )
-    elif result.mode in ("exportmd", "expmd"):
+    elif result.mode == "dump":
         if not result.tags:
             parser.error("At least one tag must be specified!")
         
@@ -1307,11 +1268,7 @@ def main(args: List[str]=None):
                     format_all_tags()
                 )
         
-        action_exportmd(
-            dbase,
-            tags,
-            result.output,
-        )
+        action_dump( dbase, tags, result.output )
 
     elif result.mode in ("c", "count"):
         action_count(dbase, extra_db)
