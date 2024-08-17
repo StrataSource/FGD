@@ -14,7 +14,7 @@
 		"no_taunting_blue": "Prevent Taunting ATLAS"
 		"no_taunting_orange": "Prevent Taunting P-Body"
 		"player_regenerates_health": "Prevent player health regen from turrets"
-		"slowtime_disabled": "Prevent player +slowtime"
+		"slowtime_enabled": "Enable player usage of +slowtime"
 		"gordon_precriminal": "Gordon is pre-criminal"
 		"antlion_allied": "Antlions are player allies"
 		"suit_no_sprint": "HEV suit sprint disabled"
