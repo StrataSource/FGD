@@ -4,7 +4,6 @@ This allows sharing definitions among different engine versions.
 """
 import html
 import json
-import os
 import sys
 import argparse
 import typing
@@ -1032,7 +1031,7 @@ def action_dump( dbase: Path, tags: FrozenSet[str], outputPath: str ) -> None:
         dumped: Dumped = {
             'type': 'misc',
             'classname': ent.classname,
-            'desc': html.escape( f'{ent.desc}\n' ),
+            'desc': ent.desc,
             'spawnFlags': [],
             'keyvalues': [],
             'inputs': [],
@@ -1060,8 +1059,7 @@ def action_dump( dbase: Path, tags: FrozenSet[str], outputPath: str ) -> None:
 
                     if kv.type == ValueTypes.SPAWNFLAGS:
                         for val in kv.val_list:
-                            escaped_desc = html.escape(val[1]).replace('\n', '<br/>')
-                            dumped['spawnFlags'].append({ 'num': val[0], 'desc': escaped_desc, 'default': val[2], 'origin': derived_class })
+                            dumped['spawnFlags'].append({ 'num': val[0], 'desc': val[1], 'default': val[2], 'origin': derived_class })
                         continue
 
                     default_value = kv.default
@@ -1074,26 +1072,23 @@ def action_dump( dbase: Path, tags: FrozenSet[str], outputPath: str ) -> None:
                             if choice[0] == kv.default:
                                 default_value = '{} ({})'.format(choice[1], kv.default)
 
-                            disp_type += ('<br/>{}: {}' if idx != 0 else '{}: {}').format(choice[0], choice[1])
+                            disp_type += ('\n{}: {}' if idx != 0 else '{}: {}').format(choice[0], choice[1])
                     else:
                         disp_type = kv.type.value
 
-                    escaped_desc = html.escape(kv.desc).replace('\n', '<br/>')
-                    dumped['keyvalues'].append({ 'name': kv.disp_name, 'type': disp_type, 'default': default_value, 'desc': escaped_desc, 'origin': derived_class })
+                    dumped['keyvalues'].append({ 'name': kv.disp_name, 'type': disp_type, 'default': default_value, 'desc': kv.desc, 'origin': derived_class })
 
             for input_dict in entity.inputs.values():
                 # noinspection PyShadowingBuiltins
                 for input in input_dict.values():
-                    escaped_desc = html.escape(input.desc).replace('\n', '<br/>')
-                    dumped['inputs'].append({ 'name': input.name, 'type': input.type.value, 'desc': escaped_desc, 'origin': derived_class })
+                    dumped['inputs'].append({ 'name': input.name, 'type': input.type.value, 'desc': input.desc, 'origin': derived_class })
 
             for output_dict in entity.outputs.values():
                 for output in output_dict.values():
-                    escaped_desc = html.escape(output.desc).replace('\n', '<br/>')
-                    dumped['outputs'].append({ 'name': output.name, 'type': output.type.value, 'desc': escaped_desc, 'origin': derived_class })
+                    dumped['outputs'].append({ 'name': output.name, 'type': output.type.value, 'desc': output.desc, 'origin': derived_class })
 
     with open( outputPath, 'wt' ) as file:
-        json.dump( dump, file )
+        json.dump( dump, file, indent=4 )
             
 
 def main(args: List[str]=None):
