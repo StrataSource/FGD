@@ -1048,13 +1048,9 @@ def action_dump( dbase: Path, tags: FrozenSet[str], outputPath: str ) -> None:
                 if kv.name.find('linedivider_') != -1:
                     continue
 
-                if kv.type is ValueTypes.SPAWNFLAGS:
-                    for val in kv.val_list:
-                        dumped['keyvalues'].append({ 'name': '', 'type': 'flag', 'default': val[2], 'desc': val[1], 'num': val[0] })
-                    continue
-
                 it = {
                     'name': kv.disp_name,
+                    'key': kv.name,
                     'type': kv.type.value,
                     'default': kv.default,
                     'desc': kv.desc
@@ -1067,6 +1063,8 @@ def action_dump( dbase: Path, tags: FrozenSet[str], outputPath: str ) -> None:
                         if num == kv.default:
                             it['default'] = f'{choice} ({num})'
                         it['choices'][choice] = num
+                elif kv.type is ValueTypes.SPAWNFLAGS:
+                    it['flags'] = { desc: { 'default': default, 'num': num } for num, desc, default, *_ in kv.flags_list }
 
                 dumped['keyvalues'].append(it)
 
