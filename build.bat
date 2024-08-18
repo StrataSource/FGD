@@ -5,7 +5,7 @@ SET games=momentum p2ce
 SET modes=fgd md
 
 SET "build_dir=build"
-SET "build_md_dir=build_md"
+SET "dump_dir=build_dump"
 SET bin_dir=bin/win64
 
 :: Setup hammer folder copy exclusions (*_momentum, *_p2ce, etc)
@@ -27,7 +27,7 @@ IF [%game%]==[] (echo Games: %games% & echo Enter game to build. Use ALL to buil
 
 IF /I %mode%==ALL (
   CALL :build_fgd_cleanup
-  CALL :build_md_cleanup
+  CALL :build_dump_cleanup
   GOTO :main_build_step
 )
 IF /I %mode%==FGD (
@@ -35,7 +35,7 @@ IF /I %mode%==FGD (
   GOTO :main_build_step
 )
 IF /I %mode%==MD (
-  CALL :build_md_cleanup
+  CALL :build_dump_cleanup
   GOTO :main_build_step
 )
 
@@ -56,7 +56,7 @@ IF /I %game%==ALL (
       EXIT
     )
   )
-  echo Unknown game. Exitting. & EXIT /B 1
+  echo Unknown game. Exiting. & EXIT /B 1
 )
 
 :build_fgd_cleanup
@@ -64,15 +64,15 @@ IF /I %game%==ALL (
   rmdir /S /Q "%build_dir%"
   EXIT /B
 
-:build_md_cleanup
-  echo Removing previous markdown build in ./%build_md_dir%/
-  rmdir /S /Q "%build_md_dir%"
+:build_dump_cleanup
+  echo Removing previous dump in ./%dump_dir%/
+  rmdir /S /Q "%dump_dir%"
   EXIT /B
 
 :build
   IF /I %mode%==ALL (
     CALL :build_fgd_%%1
-    CALL :build_game_markdown %1
+    CALL :build_game_dump %1
     EXIT /B
   )
   IF /I %mode%==FGD (
@@ -80,7 +80,7 @@ IF /I %game%==ALL (
     EXIT /B
   )
   IF /I %mode%==MD (
-    CALL :build_game_markdown %1
+    CALL :build_game_dump %1
   )
   EXIT /B
 
@@ -101,15 +101,15 @@ IF /I %game%==ALL (
   mkdir "%build_dir%/%1"
   python unify_fgd.py exp %1 srctools -o "%build_dir%/%1/%1.fgd"
 
-  IF %ERRORLEVEL% NEQ 0 (echo Building FGD for %1 has failed. Exitting. & EXIT)
+  IF %ERRORLEVEL% NEQ 0 (echo Building FGD for %1 has failed. Exiting. & EXIT)
   EXIT /B
 
-:build_game_markdown
-  echo Generating markdown from FGD for %1...
-  mkdir "%build_md_dir%"
-  python unify_fgd.py dump %1 srctools -o "%build_md_dir%/%1.json"
+:build_game_dump
+  echo Dumping data from FGD for %1...
+  mkdir "%dump_dir%"
+  python unify_fgd.py dump %1 srctools -o "%dump_dir%/%1.json"
   
-  IF %ERRORLEVEL% NEQ 0 (echo Building markdown for %1 has failed. Exitting. & EXIT)
+  IF %ERRORLEVEL% NEQ 0 (echo Dump for %1 has failed. Exiting. & EXIT)
   EXIT /B
 
 :copy_hammer_files
@@ -118,18 +118,18 @@ IF /I %game%==ALL (
   IF %ERRORLEVEL% LSS 8 robocopy hammer/cfg_%1 %build_dir%/hammer/cfg /S
 
   IF %ERRORLEVEL% LSS 8 EXIT /B 0
-  echo Failed copying Hammer files for %1. Exitting. & EXIT
+  echo Failed copying Hammer files for %1. Exiting. & EXIT
 
 :copy_vscript_files
   echo Copying VScript files (hammer/scripts)...
   robocopy hammer/scripts %build_dir%/hammer/scripts /S /PURGE
 
   IF %ERRORLEVEL% LSS 8 EXIT /B 0
-  echo Failed copying VScript files (hammer/scripts). Exitting. & EXIT
+  echo Failed copying VScript files (hammer/scripts). Exiting. & EXIT
 
 :copy_postcompiler_files
   echo Copying postcompiler transforms...
   robocopy transforms %build_dir%/%bin_dir%/postcompiler/transforms /S /PURGE
   
   IF %ERRORLEVEL% LSS 8 EXIT /B 0
-  echo Failed copying postcompiler transforms. Exitting. & EXIT
+  echo Failed copying postcompiler transforms. Exiting. & EXIT
