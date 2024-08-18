@@ -2,7 +2,6 @@
 
 This allows sharing definitions among different engine versions.
 """
-import html
 import json
 import sys
 import argparse
@@ -1014,16 +1013,15 @@ def action_dump( dbase: Path, tags: FrozenSet[str], outputPath: str ) -> None:
     print('Dumping data...')
 
     class Dumped(typing.TypedDict):
-        type: str       #: brush, point, filter, misc
-        classname: str  #: info_player_spawn
-        desc: str       #: This entity indicates the...
-        spawnFlags: List[dict]
+        type: str         #: brush, point, filter, misc
+        classname: str    #: info_player_start
+        desc: str         #: This entity indicates the...
+        bases: List[str]  #: BaseEntityPoint, PlayerClass
         keyvalues: List[dict]
         inputs: List[dict]
         outputs: List[dict]
 
     dump: typing.List[Dumped] = [ ]
-
     for ent in fgd:
         if ent.type == EntityTypes.BASE:
             continue
@@ -1032,7 +1030,7 @@ def action_dump( dbase: Path, tags: FrozenSet[str], outputPath: str ) -> None:
             'type': 'misc',
             'classname': ent.classname,
             'desc': ent.desc,
-            'spawnFlags': [],
+            'bases': [ base if isinstance( base, str ) else base.classname for base in ent.bases ],
             'keyvalues': [],
             'inputs': [],
             'outputs': []
@@ -1045,53 +1043,47 @@ def action_dump( dbase: Path, tags: FrozenSet[str], outputPath: str ) -> None:
         elif ent.type is EntityTypes.FILTER:
             dumped['type'] = 'filter'
 
-        # Combine the bases into this for a full kv listing in the entity
-        entities = collapse_bases(ent.bases)
-        entities.append(ent)  # So bases are listed first, with the entity's own info last
+        for kv_dict in ent.keyvalues.values():
+            for kv in kv_dict.values():
+                if kv.name.find('linedivider_') != -1:
+                    continue
 
-        for entity in entities:
-            derived_class = '' if entity.classname == ent.classname else entity.classname
+                if kv.type is ValueTypes.SPAWNFLAGS:
+                    for val in kv.val_list:
+                        dumped['keyvalues'].append({ 'name': '', 'type': 'flag', 'default': val[2], 'desc': val[1], 'num': val[0] })
+                    continue
 
-            for kv_dict in entity.keyvalues.values():
-                for kv in kv_dict.values():
-                    if kv.name.find('linedivider_') != -1:
-                        continue
+                it = {
+                    'name': kv.disp_name,
+                    'type': kv.type.value,
+                    'default': kv.default,
+                    'desc': kv.desc
+                }
+                if kv.type is ValueTypes.BOOL:
+                    it['default'] = 'Yes' if kv.default == 1 else 'No'
+                elif kv.type is ValueTypes.CHOICES:
+                    it['choices'] = { }
+                    for num, choice, _ in kv.choices_list:
+                        if num == kv.default:
+                            it['default'] = f'{choice} ({num})'
+                        it['choices'][choice] = num
 
-                    if kv.type == ValueTypes.SPAWNFLAGS:
-                        for val in kv.val_list:
-                            dumped['spawnFlags'].append({ 'num': val[0], 'desc': val[1], 'default': val[2], 'origin': derived_class })
-                        continue
+                dumped['keyvalues'].append(it)
 
-                    default_value = kv.default
-                    if kv.type == ValueTypes.BOOL:
-                        default_value = 'Yes' if kv.default == 1 else 'No'
+        for input_dict in ent.inputs.values():
+            # noinspection PyShadowingBuiltins
+            for input in input_dict.values():
+                dumped['inputs'].append({ 'name': input.name, 'type': input.type.value, 'desc': input.desc })
 
-                    if kv.type == ValueTypes.CHOICES:
-                        disp_type = ''
-                        for idx, choice in enumerate(kv.choices_list):
-                            if choice[0] == kv.default:
-                                default_value = '{} ({})'.format(choice[1], kv.default)
-
-                            disp_type += ('\n{}: {}' if idx != 0 else '{}: {}').format(choice[0], choice[1])
-                    else:
-                        disp_type = kv.type.value
-
-                    dumped['keyvalues'].append({ 'name': kv.disp_name, 'type': disp_type, 'default': default_value, 'desc': kv.desc, 'origin': derived_class })
-
-            for input_dict in entity.inputs.values():
-                # noinspection PyShadowingBuiltins
-                for input in input_dict.values():
-                    dumped['inputs'].append({ 'name': input.name, 'type': input.type.value, 'desc': input.desc, 'origin': derived_class })
-
-            for output_dict in entity.outputs.values():
-                for output in output_dict.values():
-                    dumped['outputs'].append({ 'name': output.name, 'type': output.type.value, 'desc': output.desc, 'origin': derived_class })
+        for output_dict in ent.outputs.values():
+            for output in output_dict.values():
+                dumped['outputs'].append({ 'name': output.name, 'type': output.type.value, 'desc': output.desc })
 
     with open( outputPath, 'wt' ) as file:
         json.dump( dump, file, indent=4 )
             
 
-def main(args: List[str]=None):
+def main(args: List[str]):
     """Entry point."""
     parser = argparse.ArgumentParser(
         description="Manage a set of unified FGDs, sharing configs "
@@ -1275,7 +1267,3 @@ def main(args: List[str]=None):
 
 if __name__ == '__main__':
     main(sys.argv[1:])
-
-    #for game in GAME_ORDER:
-    #    print('\n'+ game + ':')
-    #    main(['export', '-o', 'fgd_out/' + game + '.fgd', game])
