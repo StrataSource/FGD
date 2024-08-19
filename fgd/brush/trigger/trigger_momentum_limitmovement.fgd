@@ -1,4 +1,4 @@
-@SolidClass base(MomentumTrigger)
+@SolidClass base(Trigger)
 	appliesto(MOMENTUM)
 = trigger_momentum_limitmovement : "Trigger that prevents the player from doing specific keypress movements inside the volume."
 	[

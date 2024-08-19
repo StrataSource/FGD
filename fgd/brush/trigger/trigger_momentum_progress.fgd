@@ -1,4 +1,4 @@
-@SolidClass base(MomentumTrigger)
+@SolidClass base(Trigger)
 	appliesto(MOMENTUM)
 = trigger_momentum_progress : "A trigger volume that sets the teleport destination the player will be sent to when they activate a progress teleport."
 	[
