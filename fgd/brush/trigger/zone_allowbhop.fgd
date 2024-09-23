@@ -1,0 +1,4 @@
+@SolidClass appliesto(MOMENTUM)
+= zone_allowbhop : "Zone that allows the player to keep speed while bhopping in game modes that prevent it." 
+	[
+	]
