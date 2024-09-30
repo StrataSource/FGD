@@ -46,10 +46,10 @@
 		0 : "Keep Velocity"
 		1 : "Reset Velocity"
 		2 : "Keep Negative Z Velocity Only"
-		3 : "Set Velocity"
+		3 : "Redirect Velocity"
 		]
 
-	SetSpeed(float) : "Set Velocity Speed" : 400 : "If Velocity Mode is set to Set Velocity, the entity's speed will be set to this amount when teleported."
+	SetSpeed(float) : "Redirect Velocity Speed" : 400 : "If Velocity Mode is set to Redirect Velocity, the entity's speed will be set to this amount when teleported. When this speed is <= 0, use the entity's current speed instead."
 
 	// Inputs
 	input SetRemoteDestination(string) : "Set a new remote teleport destination."
