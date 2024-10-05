@@ -1023,11 +1023,9 @@ def action_dump( dbase: Path, tags: FrozenSet[str], outputPath: str ) -> None:
 
     dump: typing.List[Dumped] = [ ]
     for ent in fgd:
-        if ent.type == EntityTypes.BASE:
-            continue
 
         dumped: Dumped = {
-            'type': 'misc',
+            'type': ent.type.name,
             'classname': ent.classname,
             'desc': ent.desc,
             'bases': [ base if isinstance( base, str ) else base.classname for base in ent.bases ],
@@ -1036,13 +1034,7 @@ def action_dump( dbase: Path, tags: FrozenSet[str], outputPath: str ) -> None:
             'outputs': []
         }
         dump.append( dumped )
-        if ent.type is EntityTypes.BRUSH:
-            dumped['type'] = 'brush'
-        elif ent.type is EntityTypes.POINT:
-            dumped['type'] = 'point'
-        elif ent.type is EntityTypes.FILTER:
-            dumped['type'] = 'filter'
-
+        
         for kv_dict in ent.keyvalues.values():
             for kv in kv_dict.values():
                 if kv.name.find('linedivider_') != -1:
