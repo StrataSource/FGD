@@ -276,7 +276,6 @@ point_entity_finder
 point_gamestats_counter
 point_laser_target
 point_message
-point_momentum_serversettings
 point_playermoveconstraint
 point_posecontroller
 point_proximity_sensor
