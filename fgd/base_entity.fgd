@@ -23,19 +23,12 @@
 
 	globalname(string) : "Global Entity Name"
 
-	vscript_init_code[+VSCRIPT, +srctools](string) : "Init Code"
-	vscript_init_code2[+VSCRIPT, +srctools](string) : "Init Code"
-	vscript_init_code3[+VSCRIPT, +srctools](string) : "Init Code"
-	vscript_init_code4[+VSCRIPT, +srctools](string) : "Init Code"
-	vscript_init_code5[+VSCRIPT, +srctools](string) : "Init Code"
-
 	mincpulevel(integer) : "Min CPU Level" : 0
 	maxcpulevel(integer) : "Max CPU Level" : 0
 	mingpulevel(integer) : "Min GPU Level" : 0
 	maxgpulevel(integer) : "Max GPU Level" : 0
 
 	parentname(target_destination) : "Parent"
-	parent_attachment_point[srctools](string) : "Attachment Point"
 
 	teamnumber[+USE_TEAM](integer) : "Team number" : : "Team number this entity is on."
 	pendingteamnumber[+USE_TEAM](integer) : "Pending Team Number" : : "Team numer this entity will be on at the beginning of the next round."
@@ -111,8 +104,7 @@
 	input DispatchEffect(string) : "Dispatch an effect from the entity's origin. See https://developer.valvesoftware.com/wiki/List_of_Client_Effects"
 
 	input RunScriptFile[VSCRIPT](string) : "Execute a game script file from disk."
-	input RunScriptCode[+VSCRIPT, -srctools](script) : "Execute a string of script source code."
-	input RunScriptCode[+VSCRIPT, +srctools](script) : "Execute a string of script source code. Backtick ( ` ) characters will be converted to quotes in-game for strings."
+	input RunScriptCode[+VSCRIPT](script) : "Execute a string of script source code."
 	input CallScriptFunction[VSCRIPT](string) : "Execute the given function name."
 
 	input Alpha(integer) : "Set the entity's alpha (0 - 255)."
