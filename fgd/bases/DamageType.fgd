@@ -16,9 +16,9 @@
 		256: "Shock"
 		512: "Sonic"
 		1024: "Energy Beam"
-		2048 : "No Physics Force" [!srctools]
-		4096 : "Never Gib" [!srctools]
-		8192 : "Always Gib" [!srctools]
+		2048 : "No Physics Force"
+		4096 : "Never Gib"
+		8192 : "Always Gib"
 		16384: "Drown (blue faded)"
 		32768: "Paralyse"
 		65536: "Nerve Gas"
@@ -35,19 +35,5 @@
 		134217728 : "Blast Surface"
 		268435456 : "Direct"
 		536870912 : "Buckshot"
-		]
-	
-	damageor1[engine](integer) : "Damage Gib Mode" : 0
-	damageor1[srctools](choices) : "Damage Gibbing" : 0 : "Optional flags that can accompany the damage type." =
-		[
-		0 : "Normal Behaviour"
-		4096 : "Never use gibs"
-		8192 : "Always gib if possible"
-		]
-	damageor2[engine](integer) : "Prevent Physics Force" : 0
-	damageor2[srctools](choices) : "Prevent Physics Force" : 0 : "Prevent applying physics force to the target." =
-		[
-		0 : "No"
-		2048 : "Yes"
 		]
 	]

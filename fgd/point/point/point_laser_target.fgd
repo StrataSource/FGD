@@ -1,4 +1,4 @@
-@PointClass base(BaseEntityPoint, SRCIndicator) 
+@PointClass base(BaseEntityPoint) 
 	appliesto(P2CE) 
 	studio("models/editor/axis_helper.mdl") 
 	iconsprite("editor/point_laser_target.vmt")
