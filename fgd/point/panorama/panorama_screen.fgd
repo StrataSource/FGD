@@ -1,0 +1,33 @@
+@PointClass base(BaseEntityPoint)
+	size(-4 -4 -4, 4 4 4) 
+	color(200 200 0) 
+	orientedwidthheight(width, height)
+	studioprop("models/editor/vgui_arrows.mdl") 
+= panorama_screen: "A Panorama world screen entity."
+	[
+	layout(string) : "Layout File" : : "Panorama layout file to display, example: file://{resources}/layout/mycoollayout.xml"
+
+	width(float) : "Panel Width in World (Green)" : 128 : "Width of the panel in units."
+	height(float) : "Panel Height in World (Blue)" : 256 : "Height of the panel in units."
+	panel_scale(float) : "Panel Scale" : 32 : "Scale of the panel NOTE: Does nothing right now!"
+
+	panel_class_name(string) : "Panel Class" : "" : "Class to append to the panel."
+	panel_id(string) : "Panel ID" : "" : "ID to append to the panel."
+
+	ignore_input(boolean) : "Ignore Input" : "0" : "NOTE: Does nothing right now!"
+	interact_distance(float) : "Interact Distance" : "8" : "NOTE: Does nothing right now!"
+
+	//input Enable(void) : "Enable the UI"
+	//input Disable(void) : "Disable the UI"
+
+	// Inputs
+	//input SetActive(void) : "Make the vgui screen visible."
+	//input SetInactive(void) : "Make the vgui screen invisible."
+
+	//input IgnoreUserInput(void) : "Ignore user input."
+	//input AcceptUserInput(void) : "Accept user input."
+	//input AddCSSClass(string) : "Add a CSS class to the panel."
+	//input RemoveCSSClass(string) : "Remove a CSS class from the panel."
+
+	input CallFunction(string) : ""
+	]
