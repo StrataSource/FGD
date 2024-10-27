@@ -7,13 +7,13 @@
     // 259 - Rename File
     // 260 - Copy File if it exists
     // And they have no "run" string
-    "Zonmaker Only"
+    "Zonemaker Only"
     {
         "1"
         {
             "enabled" "1"
             "special_cmd" "0"
-            "run" "zonmaker.exe"
+            "run" "zonemaker.exe"
             "params" "$path\\$file.vmf"
             "ensure_check" "0"
             "ensure_fn" ""
@@ -25,7 +25,7 @@
             "enabled" "1"
             "special_cmd" "260" // Copy File if it exists
             "run" ""
-            "params" "$path\\$file.zon $bspdir\\..\\zones\\$file.zon"
+            "params" "$path\\$file.json $bspdir\\zones\\local\\$file.json"
             "ensure_check" "0"
             "ensure_fn" "" 
             "use_process_wnd" "1"
@@ -38,7 +38,7 @@
         {
             "enabled" "1"
             "special_cmd" "0"
-            "run" "zonmaker.exe"
+            "run" "zonemaker.exe"
             "params" "$path\\$file.vmf"
             "ensure_check" "0"
             "ensure_fn" ""
@@ -50,7 +50,7 @@
             "enabled" "1"
             "special_cmd" "260" // Copy File if it exists
             "run" ""
-            "params" "$path\\$file.zon $bspdir\\..\\zones\\$file.zon"
+            "params" "$path\\$file.json $bspdir\\zones\\local\\$file.json"
             "ensure_check" "0"
             "ensure_fn" "" 
             "use_process_wnd" "1"
@@ -129,7 +129,7 @@
         {
             "enabled" "1"
             "special_cmd" "0"
-            "run" "zonmaker.exe"
+            "run" "zonemaker.exe"
             "params" "$path\\$file.vmf"
             "ensure_check" "0"
             "ensure_fn" ""
@@ -141,7 +141,7 @@
             "enabled" "1"
             "special_cmd" "260" // Copy File if it exists
             "run" ""
-            "params" "$path\\$file.zon $bspdir\\..\\zones\\$file.zon"
+            "params" "$path\\$file.json $bspdir\\zones\\local\\$file.json"
             "ensure_check" "0"
             "ensure_fn" "" 
             "use_process_wnd" "1"
@@ -220,7 +220,7 @@
         {
             "enabled" "1"
             "special_cmd" "0"
-            "run" "zonmaker.exe"
+            "run" "zonemaker.exe"
             "params" "$path\\$file.vmf"
             "ensure_check" "0"
             "ensure_fn" ""
@@ -232,7 +232,7 @@
             "enabled" "1"
             "special_cmd" "260" // Copy File if it exists
             "run" ""
-            "params" "$path\\$file.zon $bspdir\\..\\zones\\$file.zon"
+            "params" "$path\\$file.json $bspdir\\zones\\local\\$file.json"
             "ensure_check" "0"
             "ensure_fn" "" 
             "use_process_wnd" "1"
@@ -311,7 +311,7 @@
         {
             "enabled" "1"
             "special_cmd" "0"
-            "run" "zonmaker.exe"
+            "run" "zonemaker.exe"
             "params" "$path\\$file.vmf"
             "ensure_check" "0"
             "ensure_fn" ""
@@ -323,7 +323,7 @@
             "enabled" "1"
             "special_cmd" "260" // Copy File if it exists
             "run" ""
-            "params" "$path\\$file.zon $bspdir\\..\\zones\\$file.zon"
+            "params" "$path\\$file.json $bspdir\\zones\\local\\$file.json"
             "ensure_check" "0"
             "ensure_fn" "" 
             "use_process_wnd" "1"
