@@ -47,7 +47,7 @@ build() {
 
 build_fgd_p2ce() {
   copy_hammer_files p2ce
-  build_game_fgd p2ce
+  build_game_fgd p2ce srctools --extra patch_postcompiler.fgd
 }
 
 build_fgd_momentum() {
@@ -58,7 +58,7 @@ build_fgd_momentum() {
 build_game_markdown() {
   echo "Generating markdown from FGD for $1..."
   mkdir -p "$build_md_dir/$1"
-  python3 unify_fgd.py expmd $1 srctools -o "$build_md_dir/$1"
+  python3 unify_fgd.py expmd $1 -o "$build_md_dir/$1"
 
   if [ $? -ne 0 ]; then
     echo "Building markdown for $1 has failed. Exitting." && exit 1
@@ -81,7 +81,7 @@ copy_hammer_files() {
 build_game_fgd() {
   echo "Building FGD for $1..."
   mkdir -p "$build_dir/$1"
-  python3 unify_fgd.py exp $1 srctools -o "$build_dir/$1/$1.fgd"
+  python3 unify_fgd.py $3 $4 exp $1 $2 -o "$build_dir/$1/$1.fgd"
 
   if [ $? -ne 0 ]; then
     echo "Building FGD for $1 has failed. Exitting." && exit 1

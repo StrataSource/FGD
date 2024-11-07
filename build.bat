@@ -86,9 +86,7 @@ IF /I %game%==ALL (
 
 :build_fgd_p2ce
   CALL :copy_hammer_files p2ce
-  CALL :copy_vscript_files
-  CALL :copy_postcompiler_files
-  CALL :build_game_fgd p2ce
+  CALL :build_game_fgd p2ce srctools --extra patch_postcompiler.fgd
   EXIT /B
 
 :build_fgd_momentum
@@ -99,7 +97,7 @@ IF /I %game%==ALL (
 :build_game_fgd
   echo Building FGD for %1...
   mkdir "%build_dir%/%1"
-  python unify_fgd.py exp %1 srctools -o "%build_dir%/%1/%1.fgd"
+  python unify_fgd.py %3 %4 exp %1 %2 -o "%build_dir%/%1/%1.fgd"
 
   IF %ERRORLEVEL% NEQ 0 (echo Building FGD for %1 has failed. Exitting. & EXIT)
   EXIT /B
@@ -107,7 +105,7 @@ IF /I %game%==ALL (
 :build_game_markdown
   echo Generating markdown from FGD for %1...
   mkdir "%build_md_dir%/%1"
-  python unify_fgd.py expmd %1 srctools -o "%build_md_dir%/%1"
+  python unify_fgd.py expmd %1 -o "%build_md_dir%/%1"
   
   IF %ERRORLEVEL% NEQ 0 (echo Building markdown for %1 has failed. Exitting. & EXIT)
   EXIT /B
@@ -119,17 +117,3 @@ IF /I %game%==ALL (
 
   IF %ERRORLEVEL% LSS 8 EXIT /B 0
   echo Failed copying Hammer files for %1. Exitting. & EXIT
-
-:copy_vscript_files
-  echo Copying VScript files (hammer/scripts)...
-  robocopy hammer/scripts %build_dir%/hammer/scripts /S /PURGE
-
-  IF %ERRORLEVEL% LSS 8 EXIT /B 0
-  echo Failed copying VScript files (hammer/scripts). Exitting. & EXIT
-
-:copy_postcompiler_files
-  echo Copying postcompiler transforms...
-  robocopy transforms %build_dir%/%bin_dir%/postcompiler/transforms /S /PURGE
-  
-  IF %ERRORLEVEL% LSS 8 EXIT /B 0
-  echo Failed copying postcompiler transforms. Exitting. & EXIT
