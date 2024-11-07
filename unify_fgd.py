@@ -226,7 +226,7 @@ def load_database(dbase: Path, extra_loc: Path=None, fgd_vis: bool=False) -> Tup
     load_visgroup_conf(fgd, dbase)
 
     if extra_loc is not None:
-        print('\nLoading extra file:')
+        print(f'\nLoading extra file "{extra_loc}":')
         if extra_loc.is_file():
             # One file.
             fsys = RawFileSystem(str(extra_loc.parent))
