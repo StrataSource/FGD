@@ -622,6 +622,25 @@ def get_clean_fgd(
         if not visgroup.ents:
             del fgd.auto_visgroups[key]
 
+    if engine_mode:
+        res_tags: dict[str, set[str]] = defaultdict(set)
+        for ent in fgd.entities.values():
+            for res in ent.resources:
+                for tag in res.tags:
+                    res_tags[tag.lstrip('-+!').upper()].add(ent.classname)
+        print('Resource tags:')
+        for tag, classnames in res_tags.items():
+            print(f'- {tag}: {len(classnames)} ents')
+    else:
+        for ent in fgd.entities.values():
+            ent.resources = ()
+
+    # Check for any failure to apply an extend class, and throw an error if we find any
+    # These will break Hammer if they sneak through!
+    for ent in fgd.entities.values():
+        if ent.type == EntityTypes.EXTEND:
+            raise RuntimeError(f'Found unmatched @ExtendClass "{ent.classname}"! Please ensure all @ExtendClass entries in patch_postcompiler.fgd are properly paired with an equivalent entry in the base FGD!')
+
     return fgd
 
 
