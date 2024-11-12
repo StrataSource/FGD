@@ -2,7 +2,7 @@
 	size(-4 -4 -4, 4 4 4) 
 	color(200 200 0) 
 	orientedwidthheight(width, height)
-	studioprop("models/editor/vgui_arrows.mdl") 
+	studio("models/editor/angle_helper.mdl")
 = panorama_screen: "A Panorama world screen entity."
 	[
 	layout(string) : "Layout File" : : "Panorama layout file to display, example: file://{resources}/layout/mycoollayout.xml"
