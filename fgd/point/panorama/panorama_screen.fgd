@@ -7,8 +7,8 @@
 	[
 	layout(string) : "Layout File" : : "Panorama layout file to display, example: file://{resources}/layout/mycoollayout.xml"
 
-	width(float) : "Panel Width in World (Green)" : 128 : "Width of the panel in units."
-	height(float) : "Panel Height in World (Blue)" : 256 : "Height of the panel in units."
+	width(integer) : "Panel Width in World (Green)" : 128 : "Width of the panel in units."
+	height(integer) : "Panel Height in World (Blue)" : 128 : "Height of the panel in units."
 	panel_scale(float) : "Panel Scale" : 32 : "Scale of the panel NOTE: Does nothing right now!"
 
 	panel_class_name(string) : "Panel Class" : "" : "Class to append to the panel."
