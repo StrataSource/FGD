@@ -1,4 +1,5 @@
-@SolidClass base(trigger_userinput) 
+@SolidClass base(trigger_userinput)
+	appliesto(MOMENTUM)
 	line(255 255 255, targetname, filtername)
 = trigger_momentum_promptinput: "Trigger that prompts the player to press a button if inside trigger. Has support for up to 3 keys."
 	[
