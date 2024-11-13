@@ -1,0 +1,177 @@
+"Command Sequences"
+{
+    "Fast"
+    {
+        "1"
+        {
+            "enabled" "1"
+            "special_cmd" "none"
+            "run" "$bsp_exe"
+            "params" "-game $gamedir $path\\$file"
+            "ensure_check" "0"
+            "ensure_fn" ""
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "2"
+        {
+            "enabled" "1"
+            "special_cmd" "none"
+            "run" "$vis_exe"
+            "params" "-fast -game $gamedir $path\\$file"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "3"
+        {
+            "enabled" "1"
+            "special_cmd" "none"
+            "run" "$light_exe"
+            "params" "-fast -StaticPropLighting -StaticPropPolys -game $gamedir $path\\$file"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "4"
+        {
+            "enabled" "1"
+            "special_cmd" "copy_file"
+            "run" ""
+            "params" "$path\\$file.bsp $bspdir\\$file.bsp"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "5"
+        {
+            "enabled" "1"
+            "special_cmd" "none"
+            "run" "$game_exe"
+            "params" "-dev -console -allowdebug -hijack -game $gamedir +map $file"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "1" // All game_exe things apparently have no wait, but it isn't used so whatever
+        }
+    }
+    "Full Compile"
+    {
+        "1"
+        {
+            "enabled" "1"
+            "special_cmd" "none"
+            "run" "$bsp_exe"
+            "params" "-game $gamedir $path\\$file"
+            "ensure_check" "0"
+            "ensure_fn" ""
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "2"
+        {
+            "enabled" "1"
+            "special_cmd" "none"
+            "run" "$vis_exe"
+            "params" "-game $gamedir $path\\$file"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "3"
+        {
+            "enabled" "1"
+            "special_cmd" "none"
+            "run" "$light_exe"
+            "params" "-StaticPropLighting -StaticPropPolys -game $gamedir $path\\$file"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "4"
+        {
+            "enabled" "1"
+            "special_cmd" "copy_file"
+            "run" ""
+            "params" "$path\\$file.bsp $bspdir\\$file.bsp"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "5"
+        {
+            "enabled" "0"
+            "special_cmd" "none"
+            "run" "$game_exe"
+            "params" "-dev -console -allowdebug -hijack -game $gamedir +map $file"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "1" // All game_exe things apparently have no wait, but it isn't used so whatever
+        }
+    }
+    "AO Full Compile"
+    {
+        "1"
+        {
+            "enabled" "1"
+            "special_cmd" "none"
+            "run" "$bsp_exe"
+            "params" "-game $gamedir $path\\$file"
+            "ensure_check" "0"
+            "ensure_fn" ""
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "2"
+        {
+            "enabled" "1"
+            "special_cmd" "none"
+            "run" "$vis_exe"
+            "params" "-game $gamedir $path\\$file"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "3"
+        {
+            "enabled" "1"
+            "special_cmd" "none"
+            "run" "$light_exe"
+            "params" "-StaticPropLighting -StaticPropPolys -game $gamedir $path\\$file"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "4"
+        {
+            "enabled" "1"
+            "special_cmd" "copy_file"
+            "run" ""
+            "params" "$path\\$file.bsp $bspdir\\$file.bsp"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "0"
+        }
+        "5"
+        {
+            "enabled" "0"
+            "special_cmd" "none"
+            "run" "$game_exe"
+            "params" "-dev -console -allowdebug -hijack -game $gamedir +map $file"
+            "ensure_check" "0"
+            "ensure_fn" "" 
+            "use_process_wnd" "1"
+            "no_wait" "1" // All game_exe things apparently have no wait, but it isn't used so whatever
+        }
+    }
+}
