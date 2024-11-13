@@ -51,6 +51,13 @@ jobs:
           directory: ./${{ env.FGD_BUILD_DIR }}/p2ce/
           filename: 'fgd-p2ce.zip'
 
+      - name: Zip templategame FGD
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          directory: ./${{ env.FGD_BUILD_DIR }}/templategame/
+          filename: 'fgd-templategame.zip'
+
       - name: MD build
         run: .\build.bat md all
 
@@ -67,6 +74,13 @@ jobs:
           type: 'zip'
           directory: ./${{ env.MD_BUILD_DIR }}/p2ce/
           filename: 'md-p2ce.zip'
+          
+      - name: Zip templategame MD
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          directory: ./${{ env.MD_BUILD_DIR }}/templategame/
+          filename: 'md-templategame.zip'
 
       - name: Artifact Upload
         uses: actions/upload-artifact@v3
@@ -75,8 +89,10 @@ jobs:
           path: |
             ./${{ env.FGD_BUILD_DIR }}/momentum/fgd-momentum.zip
             ./${{ env.FGD_BUILD_DIR }}/p2ce/fgd-p2ce.zip
+            ./${{ env.FGD_BUILD_DIR }}/templategame/fgd-templategame.zip
             ./${{ env.MD_BUILD_DIR }}/momentum/md-momentum.zip
             ./${{ env.MD_BUILD_DIR }}/p2ce/md-p2ce.zip
+            ./${{ env.MD_BUILD_DIR }}/templategame/md-templategame.zip
           if-no-files-found: error
 
       - name: Get previous tag
@@ -99,8 +115,10 @@ jobs:
           files: |
             ${{ env.FGD_BUILD_DIR }}/momentum/fgd-momentum.zip
             ${{ env.FGD_BUILD_DIR }}/p2ce/fgd-p2ce.zip
+            ${{ env.FGD_BUILD_DIR }}/templategame/fgd-templategame.zip
             ${{ env.MD_BUILD_DIR }}/momentum/md-momentum.zip
             ${{ env.MD_BUILD_DIR }}/p2ce/md-p2ce.zip
+            ${{ env.MD_BUILD_DIR }}/templategame/md-templategame.zip
           fail_on_unmatched_files: true
 
       - name: Create Manual Release
@@ -111,6 +129,8 @@ jobs:
           files: |
             ${{ env.FGD_BUILD_DIR }}/momentum/fgd-momentum.zip
             ${{ env.FGD_BUILD_DIR }}/p2ce/fgd-p2ce.zip
+            ${{ env.FGD_BUILD_DIR }}/templategame/fgd-templategame.zip
             ${{ env.MD_BUILD_DIR }}/momentum/md-momentum.zip
             ${{ env.MD_BUILD_DIR }}/p2ce/md-p2ce.zip
+            ${{ env.MD_BUILD_DIR }}/templategame/md-templategame.zip
           fail_on_unmatched_files: true

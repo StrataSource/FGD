@@ -1,7 +1,7 @@
 #!/bin/bash
 
 modes="fgd md"
-games="momentum p2ce"
+games="momentum p2ce templategame"
 
 build_dir="build"
 build_md_dir="build_md"
@@ -53,6 +53,11 @@ build_fgd_p2ce() {
 build_fgd_momentum() {
   copy_hammer_files momentum
   build_game_fgd momentum
+}
+
+build_fgd_templategame() {
+  copy_hammer_files templategame
+  build_game_fgd templategame
 }
 
 build_game_markdown() {

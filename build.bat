@@ -1,7 +1,7 @@
 @echo off
 SETLOCAL enabledelayedexpansion
 
-SET games=momentum p2ce
+SET games=momentum p2ce templategame
 SET modes=fgd md
 
 SET "build_dir=build"
@@ -92,6 +92,11 @@ IF /I %game%==ALL (
 :build_fgd_momentum
   CALL :copy_hammer_files momentum
   CALL :build_game_fgd momentum
+  EXIT /B
+
+:build_fgd_templategame
+  CALL :copy_hammer_files templategame
+  CALL :build_game_fgd templategame
   EXIT /B
 
 :build_game_fgd
