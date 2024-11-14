@@ -1,6 +1,6 @@
 @PointClass base(TwoObjectPhysics)
 	halfgridsnap
-	studio("models/editor/axis_helper.mdl") 
+	iconsprite("editor/phys_slideconstraint")
 	line(255 255 255, targetname, attach1) 
 	line(255 255 255, targetname, attach2) 
 	line(128 128 128, targetname, attach1, targetname, attach2) 
