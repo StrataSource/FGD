@@ -130,6 +130,7 @@ func_precipitation
 func_precipitation_blocker
 func_proprrespawnzone
 func_pushable
+func_reflect
 func_reflective_glass
 func_rot_button
 func_rotating
