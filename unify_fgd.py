@@ -199,6 +199,7 @@ def load_database(dbase: Path, extra_loc: Path=None, fgd_vis: bool=False) -> Tup
             fsys,
             fsys[rel_loc],
             eval_bases=False,
+            ignore_unknown_valuetype=True,
             encoding='utf8',
         )
         for clsname, ent in file_fgd.entities.items():
@@ -236,6 +237,7 @@ def load_database(dbase: Path, extra_loc: Path=None, fgd_vis: bool=False) -> Tup
                 fsys,
                 fsys[extra_loc.name],
                 eval_bases=False,
+                ignore_unknown_valuetype=True,
             )
         else:
             print('\nLoading extra files:')
@@ -245,6 +247,7 @@ def load_database(dbase: Path, extra_loc: Path=None, fgd_vis: bool=False) -> Tup
                     fsys,
                     fsys[str(file.relative_to(extra_loc))],
                     eval_bases=False,
+                    ignore_unknown_valuetype=True,
                 )
                 print('.', end='', flush=True)
     print()
@@ -858,7 +861,7 @@ def action_import(
     for path in fgd_paths:
         print(path)
         with RawFileSystem(str(path.parent)) as fsys:
-            new_fgd.parse_file(fsys, fsys[path.name], eval_bases=False)
+            new_fgd.parse_file(fsys, fsys[path.name], eval_bases=False, ignore_unknown_valuetype=True)
 
     print('\nImporting {} entiti{}...'.format(
         len(new_fgd),
@@ -871,7 +874,7 @@ def action_import(
         if path.exists():
             old_fgd = FGD()
             with RawFileSystem(str(path.parent)) as fsys:
-                old_fgd.parse_file(fsys, fsys[path.name], eval_bases=False)
+                old_fgd.parse_file(fsys, fsys[path.name], eval_bases=False, ignore_unknown_valuetype=True)
             try:
                 ent = old_fgd[new_ent.classname]
             except KeyError:
