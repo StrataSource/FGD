@@ -29,5 +29,5 @@
 	//input AddCSSClass(string) : "Add a CSS class to the panel."
 	//input RemoveCSSClass(string) : "Remove a CSS class from the panel."
 
-	input CallFunction(string) : ""
+	input RunJSScript(string) : ""
 	]
