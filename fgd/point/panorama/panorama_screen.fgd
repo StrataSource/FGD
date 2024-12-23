@@ -26,8 +26,8 @@
 
 	//input IgnoreUserInput(void) : "Ignore user input."
 	//input AcceptUserInput(void) : "Accept user input."
-	//input AddCSSClass(string) : "Add a CSS class to the panel."
-	//input RemoveCSSClass(string) : "Remove a CSS class from the panel."
 
 	input RunJSScript(string) : ""
+	input AddCSSClass(string) : "Add a CSS class to the panel."
+	input RemoveCSSClass(string) : "Remove a CSS class from the panel."
 	]
