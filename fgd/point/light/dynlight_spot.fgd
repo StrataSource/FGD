@@ -1,0 +1,4 @@
+@PointClass base(light_spot, BaseEntityPoint, BaseLight, BaseLightFalloff, BaseClusteredDynLight)
+= dynlight_spot: "An invisible and directional spotlight."
+	[
+	]
