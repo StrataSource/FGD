@@ -44,6 +44,8 @@
 	
 	modelscale(float) : "Model Scale" : : "A multiplier for the size of the model."
 	
+	AllowSilentDissolve[+P2](boolean) : "Allow SilentDissolve input" : 1 : "Allow the SilentDissolve input to dissolve this object."
+	
 	linedivider_animbase[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 
 	LightingOrigin(target_destination) : "Lighting Origin" :  : "Select any entity (not info_lighting!) from which to sample lighting instead of the entity's origin."
@@ -94,7 +96,11 @@
 	input AlternativeSorting(boolean) : "Used to attempt to fix sorting problems when rendering. True activates, false deactivates"
 
 	input SetModelScale(vector) : "Sets the scale of the model. Secondary parameter (space delimited) sets the duration of time to scale the model."
+	
+	input Dissolve[+P2](void) : "Fizzles the object, firing the OnFizzled output."
+	input SilentDissolve[+P2](void) : "Kills the object immediately, firing the OnFizzled output."
 
 	// Outputs
 	output OnIgnite(void) : "Fired when this object catches fire."
+	output OnFizzled[+P2](void) : "Fired when this object is fizzled."
 	]
