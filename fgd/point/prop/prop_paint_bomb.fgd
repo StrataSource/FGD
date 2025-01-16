@@ -11,18 +11,14 @@
 		]
 
 	allowfunnel(boolean) : "Allow Portal Funneling" : 1 : "Whether or not this object should auto-funnel into a portal."
-	allowsilentdissolve(boolean) : "Allow SilentDissolve input" : 0 : "Allow the SilentDissolve input to dissolve this bomb."
 	playspawnsound(boolean) : "Play Spawn Sound" : 1 : "Whether or not this bomb should play a sound on spawn (PaintBlob.Inception)."
 	
 	model(studio) readonly : "Model" : "models/error.mdl" : "Paint bombs need a model set to suppress a warning message. This model would be loaded already."
 
 	// Inputs
-	input Dissolve(void) : "Dissolves the paint bomb."
-	input SilentDissolve(void) : "Kills the paint bomb and fires its OnFizzled output."
 	input EnablePortalFunnel(void) : "Enable portal funneling behavior."
 	input DisablePortalFunnel(void) : "Disable portal funneling behavior."
 
 	// Outputs
-	output OnFizzled(void) : "Fired when a paint bomb is fizzled (by trigger_paint_cleanser?)."
 	output OnExploded(void) : "Fired when a paint bomb explodes."
 	]

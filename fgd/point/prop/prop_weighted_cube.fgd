@@ -78,18 +78,14 @@
 	input DisablePortalFunnel(void) : "Disable portal funneling behavior."
 	input EnableMotion(void) : "Allow physics simulation."
 	input DisableMotion(void) : "Prevent Physics simulation, freezing the cube in place."
-	input SetPaint(integer) : "Force the cube to be painted with 0 (Repulsion), 2 (Propulsion), or 4 (No) gel."
-	
-	input Dissolve(void) : "Fizzles the cube, firing the OnFizzled output."
-	input SilentDissolve(void) : "Kills the cube immediately and fires its OnFizzled output."
 	input ExitDisabledState(void) : "Exits the disabled state of a reflective cube."
+	input SetPaint(integer) : "Force the cube to be painted with 0 (Repulsion), 2 (Propulsion), or 4 (No) gel."
 
 	input SetReflectModifyColor(color255) : "Changes the laser modifier colour of the cube."
 	input SetReflectFilterColor(color255) : "Changes the laser filter colour of the cube."
 	input EmitLaser(boolean) : "Makes this cube emit or stop emitting its own laser."
 
 	// Outputs
-	output OnFizzled(void) : "Fired when a cube is fizzled."
 	output OnOrangePickUp(void) : "P-Body picked up the cube."
 	output OnBluePickUp(void) : "ATLAS picked up the cube."
 	output OnPlayerPickup(void) : "Any player picked up the cube."
