@@ -87,6 +87,7 @@
 	input SetReflectModifyColor(color255) : "Changes the laser modifier colour of the cube."
 	input SetReflectFilterColor(color255) : "Changes the laser filter colour of the cube."
 	input EmitLaser(boolean) : "Makes this cube emit or stop emitting its own laser."
+	input LockEmitState(boolean) : "Locks the current laser state of the cube. Can still be changed with EmitLaser."
 
 	// Outputs
 	output OnFizzled(void) : "Fired when a cube is fizzled."
