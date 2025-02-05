@@ -1,4 +1,0 @@
-@PointClass base(light, BaseEntityPoint, BaseLight, BaseLightFalloff, BaseClusteredDynLight)
-= dynlight: "An invisible omnidirectional light-source."
-	[
-	]

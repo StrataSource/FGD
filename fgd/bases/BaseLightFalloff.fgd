@@ -11,5 +11,4 @@
 	_zero_percent_distance(string) : "0 percent falloff distance" : "256": "Distance at which brightness should fall off to negligible (1/256)%. Must set _fifty_percent_distance to use."
 	_hardfalloff(integer) : "Hard Falloff" : 0 : "If set, causes lights to fall to exactly zero beyond the zero percent distance. May cause unrealistic lighting if not used carefully."
 	_distance(integer) : "Maximum Distance" : 0 : "The distance that light is allowed to cast."
-	_use_strict_d0(boolean) : "Use strict 0 percent distance" : "1" : "Limit radius to 0 distance using a different formula. Makes lights darker, but much better for the clustered renderer"
 	]
