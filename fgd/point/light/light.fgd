@@ -1,9 +1,5 @@
-@PointClass base(BaseEntityPoint, BaseLight, BaseLightFalloff, BaseClusteredLight)
+@PointClass base(BasePointLight, BaseLightFalloff)
 	light() 
-	clusteredlight(point)
-	iconsprite("editor/light.vmt") 
-	line(255 255 255, targetname, target)
 = light: "An invisible omnidirectional light-source."
 	[
-	_removeaftercompile(boolean) : "Remove After Compile" : 0 : "If set, removes this entity after processing the map with VRAD"
 	]
