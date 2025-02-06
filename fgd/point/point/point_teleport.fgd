@@ -14,6 +14,18 @@
 		2: "Into Duck (episodic)" : 0
 		]
 
+	UseDestinationAngles[MOMENTUM](boolean) : "Use Destination Angles" : 0 : "Forces the teleported object to snap to the angles of the destination."
+
+	VelocityMode[MOMENTUM](choices) : "Velocity Mode" : 0 =
+		[
+		0 : "Keep Velocity"
+		1 : "Reset Velocity"
+		2 : "Keep Negative Z Velocity Only"
+		3 : "Redirect Velocity"
+		]
+
+	SetSpeed[MOMENTUM](float) : "Redirect Velocity Speed" : 400 : "If Velocity Mode is set to Redirect Velocity, the entity's speed will be set to this amount when teleported. When this speed is <= 0, use the entity's current speed instead."
+
 	// Inputs
 	input Teleport(void) : "Teleport the target entity."
 	input TeleportToCurrentPos(void) : "Teleport the target entity to wherever the point_teleport entity is currently. " +
