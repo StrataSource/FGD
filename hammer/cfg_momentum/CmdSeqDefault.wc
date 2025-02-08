@@ -94,7 +94,7 @@
             "enabled" "1"
             "special_cmd" "0"
             "run" "$light_exe"
-            "params" "-fast -hdr -StaticPropLighting -StaticPropPolys -game $gamedir $path\\$file"
+            "params" "-fast -StaticPropLighting -StaticPropPolys -game $gamedir $path\\$file"
             "ensure_check" "0"
             "ensure_fn" "" 
             "use_process_wnd" "1"
@@ -123,7 +123,7 @@
             "no_wait" "1" // All game_exe things apparently have no wait, but it isn't used so whatever
         }
     }
-    "HDR Full Compile"
+    "Full Compile"
     {
         "1"
         {
@@ -185,7 +185,7 @@
             "enabled" "1"
             "special_cmd" "0"
             "run" "$light_exe"
-            "params" "-hdr -StaticPropLighting -StaticPropPolys -game $gamedir $path\\$file"
+            "params" "-StaticPropLighting -StaticPropPolys -game $gamedir $path\\$file"
             "ensure_check" "0"
             "ensure_fn" "" 
             "use_process_wnd" "1"
@@ -214,7 +214,7 @@
             "no_wait" "1" // All game_exe things apparently have no wait, but it isn't used so whatever
         }
     }
-    "HDR Portal Lighting Full Compile"
+    "Portal Lighting Full Compile"
     {
         "1"
         {
@@ -276,7 +276,7 @@
             "enabled" "1"
             "special_cmd" "0"
             "run" "$light_exe"
-            "params" "-hdr -StaticPropLighting -StaticPropPolys -PortalTraversalLighting -game $gamedir $path\\$file"
+            "params" "-StaticPropLighting -StaticPropPolys -PortalTraversalLighting -game $gamedir $path\\$file"
             "ensure_check" "0"
             "ensure_fn" "" 
             "use_process_wnd" "1"
@@ -305,7 +305,7 @@
             "no_wait" "1" // All game_exe things apparently have no wait, but it isn't used so whatever
         }
     }
-    "HDR Portal Lighting+AO Full Compile"
+    "Portal Lighting+AO Full Compile"
     {
         "1"
         {
@@ -367,7 +367,7 @@
             "enabled" "1"
             "special_cmd" "0"
             "run" "$light_exe"
-            "params" "-hdr -StaticPropLighting -StaticPropPolys -PortalTraversalLighting -PortalTraversalAO -game $gamedir $path\\$file"
+            "params" "-StaticPropLighting -StaticPropPolys -PortalTraversalLighting -PortalTraversalAO -game $gamedir $path\\$file"
             "ensure_check" "0"
             "ensure_fn" "" 
             "use_process_wnd" "1"
