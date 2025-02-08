@@ -23,7 +23,7 @@ jobs:
         run: .\build.bat fgd all
 
       - name: Artifact upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build_${{ runner.os }}-${{ github.sha }}
           path: ./build/*
