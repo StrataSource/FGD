@@ -1,7 +1,7 @@
 @PointClass base(BaseEntityPoint)
 	appliesto(P2CE) 
 	studioprop("models/editor/vgui_arrows.mdl") 
-= vgui_neurotoxin_countdown: "Neurotoxin Countdown display. AddOutput can be used to change/reset timer countdown."
+= vgui_neurotoxin_countdown: "Neurotoxin Countdown display"
 	[
 	width(integer) : "Panel width" : 256 : "Width of the screen in units."
 	height(integer) : "Panel height" : 128 : "Height of the screen in units."
@@ -10,4 +10,7 @@
 	// Inputs
 	input Enable(void) : "Start/Show countdown."
 	input Disable(void) : "Hide coundown, will not reset."
+	input SetTime(float) : "Set time of countdown."
+	input Pause(void) : "Pauses the timer without hiding the panel."
+	input Resume(void) : "Resumes the paused timer."
 	]
