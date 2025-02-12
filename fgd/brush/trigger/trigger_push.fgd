@@ -13,5 +13,6 @@
 
 	// Inputs
 	input SetPushDirection(vector) : "Sets the angles indicating the direction to push touched entities."
+	input SetSpeed(integer) : "Set the push speed in units / second."
 	input SetPushSpeed(integer) : "Set the push speed in units / second."
 	]
