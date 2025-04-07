@@ -18,14 +18,6 @@
 	
 	invert_exclusion[+USE_AI](boolean) : "Invert NPC class exclusion" : "0" : "If set, then the excluded NPC class will consider this brush solid, and all other NPC classes will consider it non-solid."
 
-	solidbsp[engine](boolean) : "Solid Type" : 1
-	solidbsp(choices) : "Solid Type" : 1 : "How to calculate collisions. BSP is more rudimentary but allows more stable collision with players." =
-		[
-		0: "VPhysics"
-		1: "BSP"
-		]
-
-
 	// Inputs
 	input SetExcluded[+USE_AI](string) : "Change the NPC class excluded from collisions."
 	input SetInvert[+USE_AI](boolean) : "Set the state of inversion for NPC class exclusion (0 or 1)."
