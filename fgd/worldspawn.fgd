@@ -19,17 +19,6 @@
 		1: "Yes, clear previous levels"
 		]
 
-	timeofday[engine](integer) : "Time of day" : 0
-	timeofday(choices) : "Time of day" : 0 =
-		[
-		0: "Midnight"
-		1: "Dawn"
-		2: "Morning"
-		3: "Afternoon"
-		4: "Dusk"
-		5: "Evening"
-		]
-
 	maxoccludeearea(float) : "Max occludee area" : 0 : "[Used on PC] Prevents occlusion testing for entities that take up more than X% of the screen."
 	minoccluderarea(float) : "Min occluder area" : 0 : "[Used on PC] Prevents occluders from being used if they take up less than X% of the screen."
 	maxpropscreenwidth(float) : "Start Fade Pixels" : -1 : "Number of pixels wide at which all props in the level start to fade (<0 = use fademaxdist). " +
