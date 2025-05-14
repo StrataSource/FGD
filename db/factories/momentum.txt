@@ -171,6 +171,7 @@ handle_dummy
 handle_test
 info_camera_link
 info_constraint_anchor
+info_defrag_bonus
 info_game_event_proxy
 info_ladder_dismount
 info_landmark
