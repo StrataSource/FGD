@@ -365,7 +365,7 @@ viewmodel
 water_lod_control
 waterbullet
 weapon_cubemap
-weapon_knife
+weapon_momentum_knife
 weapon_momentum_grenade
 weapon_momentum_machinegun
 weapon_momentum_pistol
