@@ -1,0 +1,10 @@
+@BaseClass base(BaseClusteredLight) = BaseClusteredDynLight
+	[
+	_lightmode(choices) : "Light mode" : 2 = 
+		[
+		0: "Static"
+		1: "Specular"
+		2: "Static Bounce"
+		3: "Fully Dynamic"
+		]
+	]

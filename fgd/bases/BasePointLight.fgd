@@ -1,0 +1,7 @@
+@BaseClass base(BaseEntityPoint, BaseLight, BaseClusteredLight)
+	iconsprite("editor/light.vmt")
+	line(255 255 255, targetname, target)
+= BasePointLight
+	[
+	_removeaftercompile(boolean) : "Remove After Compile" : 0 : "If set, removes this entity after processing the map with VRAD"
+	]

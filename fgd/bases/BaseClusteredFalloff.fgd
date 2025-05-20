@@ -1,0 +1,11 @@
+@BaseClass
+	sphere(_rt_radius)
+	scaled_sphere(_rt_fifty_percent_scale, _rt_radius)
+	sphere(_distance)
+= BaseClusteredFalloff
+	[
+	_rt_radius(float) : "Radius" : 256 : "The radius of the light in units. Past this distance, this light emits no light whatsoever."
+	_rt_fifty_percent_scale(float) : "50 percent scale" : 0.5 : "How far along the light's radius the light should be half as bright, e.g. a value of 0.1 means 10% of the light's radius"
+	_hardfalloff(integer) : "Hard Falloff" : 0 : "If set, causes lights to fall to exactly zero beyond the zero percent distance when baked. May cause unrealistic lighting if not used carefully."
+	_distance(integer) : "Maximum Distance" : 0 : "The distance that light is allowed to cast when baked."
+	]

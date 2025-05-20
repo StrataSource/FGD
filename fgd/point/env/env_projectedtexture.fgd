@@ -27,6 +27,10 @@
 		0: "Low"
 		1: "High"
 		]
+		
+	_dynamicshadowallocation(boolean) : "Use dynamic shadow allocation" : 0 : "Determines whether the map (static) or the engine (dynamic) should dictate the size of the shadows for this light."
+	_initialshadowsize(integer) : "Initial Shadow Size" : 7 : "The initial static shadow resolution exponent. Only relevant for static shadow allocation. Adding 1 to this value doubles both dimensions of the shadowmap."
+	_shadowscale(float) : "Shadow Size Scale" : "1.0" : "Scales the shadowmap resolution exponent. Only relevant for dynamic shadow allocation. For example, a scale of 3.0 will give this light shadowmaps 8 (2^3) times as large as they would usually be."
 
 	lightonlytarget(boolean) : "Light Only Target" : 0 : "Limit flashlight effect to only effect target entity."
 	lightworld(boolean) : "Light World" : 1 : "Control whether flashlight effects static world geometry."
@@ -107,4 +111,6 @@
 	input SetVolumetricIntensity(float) : "Sets the volumetric lighting's intensity."
 
 	input SetBrightnessScale(float) : "Sets the brightness."
+	
+	input SetShadowSize(integer) : "Set the size exponent of this light's shadowmap."
 	]
