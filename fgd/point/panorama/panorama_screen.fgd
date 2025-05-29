@@ -9,25 +9,20 @@
 
 	width(integer) : "Panel Width in World (Green)" : 128 : "Width of the panel in units."
 	height(integer) : "Panel Height in World (Blue)" : 128 : "Height of the panel in units."
-	panel_scale(float) : "Panel Scale" : 32 : "Scale of the panel NOTE: Does nothing right now!"
+	panel_scale(float) : "Panel Scale" : 32 : "Scale of the panel."
 
 	panel_class_name(string) : "Panel Class" : "" : "Class to append to the panel."
 	panel_id(string) : "Panel ID" : "" : "ID to append to the panel."
 
+	start_active(boolean) : "Start Active" : "1" : "Whether or not the screen will start active."
 	ignore_input(boolean) : "Ignore Input" : "0" : "NOTE: Does nothing right now!"
 	interact_distance(float) : "Interact Distance" : "8" : "NOTE: Does nothing right now!"
 
-	//input Enable(void) : "Enable the UI"
-	//input Disable(void) : "Disable the UI"
-
 	// Inputs
-	//input SetActive(void) : "Make the vgui screen visible."
-	//input SetInactive(void) : "Make the vgui screen invisible."
+	input SetActive(void) : "Make the panorama screen visible."
+	input SetInactive(void) : "Make the panorama screen invisible."
 
-	//input IgnoreUserInput(void) : "Ignore user input."
-	//input AcceptUserInput(void) : "Accept user input."
-
-	input RunJSScript(string) : ""
+	input RunJSScript(string) : "Runs the specified javascript code or function on the panel."
 	input AddCSSClass(string) : "Add a CSS class to the panel."
 	input RemoveCSSClass(string) : "Remove a CSS class from the panel."
 	]
