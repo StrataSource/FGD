@@ -49,8 +49,9 @@
 	moviename(string) : "Movie Name" : : ".webm file used in place of the texture."
 	textureframe(integer) : "Texture Frame" : 0 : "If the VTF is multi-frame, specify the frame to use."
 
-	volumetric(boolean) : "Enable Volumetrics" : 0 : "Enables/disables volumetrics from this projected texture."
-	volumetricintensity(float) : "Volumetric Intensity" : "1.0" : "Sets the intensity of the volumetric lighting."
+	// Re-enable these when volumetrics are brought back
+	// volumetric(boolean) : "Enable Volumetrics" : 0 : "Enables/disables volumetrics from this projected texture."
+	// volumetricintensity(float) : "Volumetric Intensity" : "1.0" : "Sets the intensity of the volumetric lighting."
 	
 	style[engine](integer) : "Appearance" : 0
 	style(choices) : "Appearance" : "0" =
@@ -103,8 +104,9 @@
 	// not implemented
 	//input Ambient(float) : "Set ambient light amount"
 	
-	input EnableVolumetrics(boolean) : "Set if the volumetrics are enabled."
-	input SetVolumetricIntensity(float) : "Sets the volumetric lighting's intensity."
+	// Re-enable these when volumetrics are brought back
+	// input EnableVolumetrics(boolean) : "Set if the volumetrics are enabled."
+	// input SetVolumetricIntensity(float) : "Sets the volumetric lighting's intensity."
 
 	input SetBrightnessScale(float) : "Sets the brightness."
 	]
