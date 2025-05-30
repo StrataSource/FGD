@@ -1,4 +1,4 @@
-@PointClass base(BasePointLight, BaseClusteredFalloff, BaseClusteredDynLight)
+@PointClass base(BasePointLight, BaseLightFalloff, BaseClusteredDynLight)
 	clusteredlight(point)
 = light_rt: "An invisible omnidirectional realtime light-source."
 	[
