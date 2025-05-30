@@ -30,6 +30,13 @@
 		1: "Blue"
 		2: "Orange"
 		]
+		
+	model(studio) : "World Model" : "models/weapons/w_portalgun.mdl" : "The model shown for the portalgun entity and in the player's hand in third-person view."
+	viewmodel(studio) : "View Model" : "models/weapons/v_portalgun.mdl" : "The model shown in the player's first-person view."
+
+	CustomPortalColors(boolean) : "Custom Portal Colors" : 0 : "Use custom portal colors."
+	Portal1Color(color255) : "Primary Portal Color" : "64 160 255" : "Color to use for the primary (Left/Blue) portal."
+	Portal2Color(color255) : "Secondary Portal Color" : "255 160 32" : "Color to use for the primary (Right/Orange) portal."
 
 	// Inputs
 	input ChargePortal1(void) : "Does charge up effect for mounted portalgun. Missing particles and sounds."
