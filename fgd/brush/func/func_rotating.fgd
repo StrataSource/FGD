@@ -23,14 +23,6 @@
 
 	dmg(integer) : "Blocking Damage" : 0 : "Damage done to any entity that blocks the rotation, per frame."
 
-	solidbsp[engine](boolean) : "Solid Type" : 1
-	solidbsp(choices) : "Solid Type" : 1 : "How to calculate collisions. BSP is more rudimentarty but allows more stable collision with players." =
-		[
-		0: "VPhysics"
-		1: "BSP"
-		]
-
-
 	// Inputs
 	input SetSpeed(integer) : "Set the speed as a ratio of the specified Max Rotation Speed, where 0 is stopped and 1 is the Max Rotation Speed.."
 	input Start(void) : "Start the rotator rotating."
