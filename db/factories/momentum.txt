@@ -378,6 +378,7 @@ window_pane
 world_items
 worldspawn
 zone_allowbhop
+zone_overbounce
 zone_timer_start
 zone_timer_cancel
 zone_timer_end
