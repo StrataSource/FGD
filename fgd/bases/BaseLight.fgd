@@ -41,4 +41,9 @@
 	input Toggle(void) : "Toggle the light's current state."
 	input SetPattern(string) : "Set a custom pattern of light brightness for this light. Pattern format is a string of characters, where 'a' is total darkness, 'z' fully bright. i.e. 'aaggnnttzz' would be a steppy fade in from dark to light."
 	input FadeToPattern(string) : "Fades from first value in old pattern, to first value in the new given pattern. Pattern format is a string of characters, where 'a' is total darkness, 'z' fully bright. i.e. 'aaggnnttzz' would be a steppy fade in from dark to light."
+	input SetLightColor(color255) : "Sets the light color. Light scale is set separately."
+	input SetLightScale(float) : "Sets the light scale."
+	input SetLightFalloff(vector) : "Vector of (Constant, Linear, Quadratic) falloff parameters for the light."
+	input SetInnerAngle(float) : "Sets the inner angle (if this is a spotlight)."
+	input SetOuterAngle(float) : "Sets the outer angle (if this is a spotlight)."
 	]
