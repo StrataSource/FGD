@@ -9,7 +9,7 @@
             "GameData0"		"..\..\templategame\templategame.fgd"
             "DefaultTextureScale"		"0.250000"
             "DefaultLightmapScale"		"16"
-            "GameExe"		"chaos.exe"
+            "GameExe"		"strata.exe"
             "DefaultSolidEntity"		"func_detail"
             "DefaultPointEntity"		"info_player_start"
             "BSP"		"vbsp.exe"
