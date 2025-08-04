@@ -9,7 +9,7 @@
             "GameData0"		"..\..\momentum\momentum.fgd"
             "DefaultTextureScale"		"0.250000"
             "DefaultLightmapScale"		"128"
-            "GameExe"		"chaos.exe"
+            "GameExe"		"momentum.exe"
             "DefaultSolidEntity"		"func_detail"
             "DefaultPointEntity"		"light"
             "BSP"		"vbsp.exe"
