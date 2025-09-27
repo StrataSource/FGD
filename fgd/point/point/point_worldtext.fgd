@@ -7,7 +7,7 @@
 		1: "Start Disabled" : 0
 		]
 
-	message(string) : "Entity Message"
+	message(string) : "Entity Message" : "New Message" 
 	textsize(float) : "Text Size" : 10 : "Text Size."
 	color(color255) : "Color" : "255 255 255"
 	font(material) : "Font Material" : "editor/worldtext" : "The font material atlas to use for the text"
