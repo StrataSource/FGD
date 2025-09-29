@@ -1,0 +1,6 @@
+LightmappedGeneric
+{
+$translucent 1
+$basetexture "tools/tools_parallax"
+"%compiletrigger" 1
+}
