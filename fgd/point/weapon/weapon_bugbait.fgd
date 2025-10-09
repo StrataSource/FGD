@@ -1,6 +1,6 @@
 @PointClass base(Weapon) 
 	appliesto(+HL2_ENTITIES)
 	studioprop("models/weapons/w_bugbait.mdl") 
-= weapon_bugbait: "Bug bait"
+= weapon_bugbait: "Sticky spores that attract Antlions.\n\nThis weapon can only function if global state condition \"Antlions are player allies\" is active."
 	[
 	]

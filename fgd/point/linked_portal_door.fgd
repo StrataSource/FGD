@@ -13,6 +13,6 @@
 	startactive(boolean) : "Start Active" : 1 : "Whether to start the linkage as active from the start."
 	
 	// Inputs
-	input SetWidth(float) : "Sets the width of this portal and the partner. Clamped to 1-1024"
-	input SetHeight(float) : "Sets the height of this portal and the partner. Clamped to 1-1024"
+	input SetWidth(float) : "Sets the width of this portal and the partner. Clamped to 1-1024 Hammer units."
+	input SetHeight(float) : "Sets the height of this portal and the partner. Clamped to 1-1024 Hammer units."
 	]
