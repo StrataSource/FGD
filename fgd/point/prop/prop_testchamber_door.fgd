@@ -5,7 +5,7 @@
 	line(255 255 0, targetname, lightingorigin) 
 	sphere(AreaPortalFadeStart) 
 	sphere(AreaPortalFadeEnd) 
-= prop_testchamber_door: "Portal Door."
+= prop_testchamber_door: "A door."
 	[
 	lightingorigin(target_destination) : "Lighting Origin" : : "Select an info_lighting to specify a location to sample lighting from for this door, instead of the origins."
 	areaportalwindow(target_destination) : "Area Portal Window Name" : : "The name of an area portal window that is controlled by the door. When closed, the window will be forced shut"

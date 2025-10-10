@@ -1,6 +1,6 @@
 @NpcClass base(BaseNPC) 
 	appliesto(+HL2_ENTITIES)
 	studio("models/Zombie/Classic_torso.mdl") 
-= npc_zombie_torso: "Zombie Torso"
+= npc_zombie_torso: "A headcrab zombie that has had its legs decapitated."
 	[
 	]
