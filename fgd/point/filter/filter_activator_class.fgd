@@ -1,6 +1,6 @@
 @FilterClass base(filter_base)
 	iconsprite("editor/filter_class.vmt")
-= filter_activator_class: "A filter that filters by the class name of the activator."
+= filter_activator_class: "A filter that checks for the class name of the activator."
 	[
 	filterclass(string) : "Filter Classname" : : "The class name to filter by. " +
 		"If the filter mode is Allow, only entities whose class name matches the given string will pass the filter. " +

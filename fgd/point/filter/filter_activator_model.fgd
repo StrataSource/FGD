@@ -1,6 +1,6 @@
 @FilterClass base(filter_base)
 	iconsprite("editor/filter_model.vmt")
-= filter_activator_model: "A filter that filters by the model of the activator."
+= filter_activator_model: "A filter that checks for the activator's model name."
 	[
 	model(studio) : "Filter Model" : : "The model to filter by. " +
 		"If the filter mode is Allow, only entities whose model matches the given string will pass the filter. " +
