@@ -10,7 +10,7 @@
 		]
 
 	crateappearance[engine](integer) : "Crate Appearance" : 0
-	crateappearance(choices) : "Crate Appearance" : 0 : "Changes the appearance of the crate. If this is set to \"Radar Beacon Crate\", this crate will show up on the Jalopy radar." =
+	crateappearance(choices) : "Crate Appearance" : 0 : "Changes the appearance of the crate." =
 		[
 		0: "Default Appearance"
 		1: "Radar Beacon Crate"

@@ -2,7 +2,7 @@
 	appliesto(+USE_VEHICLES)
 	studioprop()
 	color(240 180 250) 
-= prop_vehicle_choreo_generic: "Generic Choreo vehicle used for scripted events."
+= prop_vehicle_choreo_generic: "Generic vehicle used for complex choreography and other scripted scenes."
 	[
 	spawnflags(flags)  =
 		[
@@ -14,8 +14,8 @@
 	vehiclescript(string) : "Vehicle Script File" : "scripts/vehicles/choreo_vehicle.txt"
 	ignoremoveparent(boolean) : "Ignore Move Parent on Exit" : 0 : "Should the player ignore this vehicle's move parent when performing exit checks?"
 	ignoreplayer(boolean) : "Ignore Player collision" : 0 : "The player won't collide against this vehicle when moving around."
-	playercanshoot(boolean) : "Can the player shoot" : 0 : "Lets the player shoot their weapon while in the vehicle"
-	useattachmenteyes(boolean) : "Use attachment eyes" : 0 : "Should the driver's view use the attachment's orientation and not blend in the player's look."
+	playercanshoot(boolean) : "Can the player shoot" : 0 : "Determines whether players can use weapons while inside of the vehicle."
+	useattachmenteyes(boolean) : "Use attachment eyes" : 0 : "Should the driver's view use the attachment's orientation and not blend in the player's look?"
 
 	// Inputs
 	input Open(void) : "Plays the vehicle's open animation and unlocks the vehicle for entry or exit."
