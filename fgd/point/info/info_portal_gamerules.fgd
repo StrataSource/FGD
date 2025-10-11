@@ -1,6 +1,6 @@
 @PointClass base(BaseEntityPoint) 
 	appliesto(P2CE)
-	iconsprite("editor/info_target.vmt")
+	iconsprite("editor/info_portal_gamerules.vmt")
 = info_portal_gamerules: "Dictates specific gameplay aspects in Portal."
 	[
 	enableregen(boolean) : "Enable health regeneration" : 1 : "Enabling this will allow players to restore health over time."

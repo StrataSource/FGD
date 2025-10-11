@@ -2,11 +2,11 @@
 	iconsprite("editor/ficool2/light_environment.vmt") 
 	color(255 255 0)
 	lightprop("models/editor/spot.mdl")
-= light_environment: "Sets the color and angle of the light from the sun and sky."
+= light_environment: "A global spotlight, also known as the sun. Sets the color and angle of the light from the sun/moon and sky. Light emitted by this entity will be projected from brushes that have skybox tool textures applied."
 	[
 	pitch(angle_negative_pitch) : "Pitch" : "0" : "The downward pitch of the light from the sun. 0 is horizontal, -90 is straight down."
-	_ambient(color255) : "Ambient light" : "255 255 255 20"
-	_ambienthdr(color255) : "AmbientHDR" : "-1 -1 -1 1"
-	_ambientscalehdr(float) : "AmbientScaleHDR" : 1 : "Amount to scale the ambient light by when compiling for hdr."
-	sunspreadangle(float) : "SunSpreadAngle" : 5 : "The angular extent of the sun for casting soft shadows. Higher numbers are more diffuse. 5 is a good starting value."
+	_ambient(color255) : "Ambient light" : "255 255 255 20" : "Global shadow color. This varies based on the overall lighting conditions of certain areas in your map."
+	_ambienthdr(color255) : "Ambient light (HDR)" : "-1 -1 -1 1" : "Global shadow color used when compiling under HDR mode. Set to \"-1 -1 -1 1\" to copy values from the Ambient light variable."
+	_ambientscalehdr(float) : "Ambient Scale Multiplier (HDR)" : 1 : "Shadow color multiplier used when compiling under HDR mode."
+	sunspreadangle(float) : "Sun Spread Angle" : 5 : "The angular extent of the sun for casting soft shadows. Higher numbers are more diffuse. 5 is a good starting value."
 	]

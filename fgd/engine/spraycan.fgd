@@ -1,5 +1,0 @@
-@PointClass base(BaseEntityPoint)
-	appliesto(+engine)
-= spraycan: "Applies a player-specified decal texture."
-	[
-	]   
