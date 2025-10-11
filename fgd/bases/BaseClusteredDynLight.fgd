@@ -1,5 +1,11 @@
 @BaseClass base(BaseClusteredLight) = BaseClusteredDynLight
 	[
+	spawnflags(flags)  =
+		[
+		1: "Initially dark" : 0
+		2: "Shadowed" : 0
+		4: "Always Update": 0
+		]
 	_lightmode(choices) : "Light mode" : 2 = 
 		[
 		0: "Static"
