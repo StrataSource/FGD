@@ -1,7 +1,7 @@
 @PointClass base(Weapon) 
 	appliesto(P2CE)
 	studioprop("models/weapons/w_portalgun.mdl") 
-= weapon_portalgun: "The Aperture Science Handheld Portal Device. This is the sole weapon entity used throughout the Portal series."
+= weapon_portalgun: "The Aperture Science Handheld Portal Device. It shoots linked gates. This is the sole weapon entity used throughout the Portal series."
 	[
 
 	spawnflags(flags) =

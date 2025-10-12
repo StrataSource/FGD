@@ -1,6 +1,6 @@
 @PointClass base(Weapon) 
 	appliesto(+HL2_ENTITIES)
 	studioprop("models/weapons/w_smg1.mdl") 
-= weapon_smg1: "SMG1"
+= weapon_smg1: "Standard-issue sub-machine gun with grenade launcher."
 	[
 	]

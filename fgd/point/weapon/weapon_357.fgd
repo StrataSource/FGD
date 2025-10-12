@@ -1,6 +1,6 @@
 @PointClass base(Weapon) 
 	appliesto(+HL2_ENTITIES)
 	studioprop("models/weapons/w_357.mdl")
-= weapon_357: "357"
+= weapon_357: "A .357 Magnum revolver."
 	[
 	]

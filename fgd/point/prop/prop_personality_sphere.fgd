@@ -1,0 +1,7 @@
+@PointClass base(prop_glados_core)
+	studioprop()
+	appliesto(P2CE)
+	studio("models/npcs/personality_sphere/personality_sphere.mdl") 
+= prop_personality_sphere: "Alias for prop_glados_core, albeit with a different model assigned. Does not function."
+	[
+	]

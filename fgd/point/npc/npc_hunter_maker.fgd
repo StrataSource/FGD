@@ -1,6 +1,6 @@
 @PointClass base(npc_template_maker) 
 	appliesto(+HL2_ENTITIES)
 	iconsprite("editor/npc_maker.vmt") 
-= npc_hunter_maker: "An entity that creates hunters. The NPCs it creates are clones of a template NPC."
+= npc_hunter_maker: "A specialized version of npc_template_maker that spawns Hunters. Hunters spawned by this entity will be forced to assemble in packs and follow their assigned Strider."
 	[
 	]

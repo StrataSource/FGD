@@ -1,6 +1,6 @@
 @PointClass base(Weapon) 
 	appliesto(+HL2_ENTITIES)
 	studioprop("models/weapons/w_grenade.mdl") 
-= weapon_frag: "Frag Grenade"
+= weapon_frag: "Standard-issue fragmentation grenade."
 	[
 	]
