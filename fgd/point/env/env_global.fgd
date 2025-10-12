@@ -5,9 +5,9 @@
 	[
 
 	globalstate[engine](string) : "Global State to Set"
-	globalstate(string) : "Global State to Set"
+	globalstate(string) : "Global State to Set" : : "The global condition to set in this map. This will influence the behavior of specific entities."
 
-	globalstate[P2CE](choices) : "Global State to Set" =
+	globalstate[P2CE](choices) : "Global State to Set" : : "The global condition to set in this map. This will influence the behavior of specific entities." =
 		[
 		"no_pinging_blue": "Disable Atlas's ping tool (Co-op)"
 		"no_pinging_orange": "Disable P-body's ping tool (Co-op)"
@@ -28,8 +28,8 @@
 		"hunters_to_run_over": "Hunter roadkills to dodge counter (Ep2)"
 		]
 
-	initialstate[engine](integer) : "Initial State" : 0 : "Controls the active state for this global. Setting this to \"Dead\" permanently disables this global, and will not persist during level transitions."
-	initialstate(choices) : "Initial State" : 0 =
+	initialstate[engine](integer) : "Initial State" : 0
+	initialstate(choices) : "Initial State" : 0 : "Controls the active state for this global. Setting this to \"Dead\" permanently disables this global, and will not persist during level transitions." =
 		[
 		0: "Off"
 		1: "On"
