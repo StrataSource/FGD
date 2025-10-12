@@ -20,11 +20,4 @@
 		2: "Fully-upgraded paint gun"
 		]
 	maxhealth(integer) : "Maximum player health" : 100 : "Specifies the maximum health limit for players."
-	gametype(choices) : "Co-op gamemode" : 0 : "Controls the multiplayer/co-op game type. This is ignored if the game is not running in co-op mode." =
-		[
-		0: "Standard Co-op (Default)"
-		1: "Two Guns (Paintgun Mode)"
-		2: "Deathmatch"
-		3: "Deathmatch w/ Two Guns (Paintgun Mode)"
-		]
 	]

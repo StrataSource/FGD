@@ -29,8 +29,6 @@
 	detailvbsp(string) : "Detail.vbsp file" : "detail.vbsp" : "Detail .vbsp file to use for emitting detail props (found in directory <root>/modname)"
 
 	detailmaterial(material) : "Detail material file" : "detail/detailsprites" : "Material for detail sprites to use for drawing detail props"
-
-	coldworld(boolean) : "World is cold" : 0 : "Emit steam from NPC's mouths and similar effects."
 	
 	paintinmap[-MOMENTUM](boolean) : "Enable Paint" : 0 : "Enable code for spreading paint on surfaces, and bouncing physics objects around."
 	maxblobcount[-MOMENTUM](integer) : "Gel Blob Limit" : 250 : "Number of Gel blobs that can exist. Maximum is 250."

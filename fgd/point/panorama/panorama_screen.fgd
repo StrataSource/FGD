@@ -3,7 +3,7 @@
 	color(200 200 0) 
 	orientedwidthheight(width, height)
 	studio("models/editor/angle_helper.mdl")
-= panorama_screen: "An entity that exposes a user-defined Panorama panel to the world. Supports running custom JavaScript code and modifying (sanitized) CSS3 classes."
+= panorama_screen: "An entity that exposes a user-defined Panorama panel to the world. Supports running custom JavaScript code and modifying CSS classes."
 	[
 	layout(string) : "Layout File" : : "Panorama layout file to display. Example: file://{resources}/layout/mycoollayout.xml"
 
@@ -20,7 +20,7 @@
 
 	// Inputs
 	input SetActive(void) : "Show this world panel."
-	input SetInactive(void) : "Hides this world panel."
+	input SetInactive(void) : "Hide this world panel."
 
 	input RunJSScript(string) : "Runs the specified JavaScript code or function on the panel."
 	input AddCSSClass(string) : "Add a CSS class to the panel."

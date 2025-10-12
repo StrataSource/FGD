@@ -4,7 +4,7 @@
 = item_paint_power_pickup: "Gives the player a paint power on touch. Requires the paint gun to be equipped."
 	[
 		PaintType(choices) : "Paint Type" : 0 :
-		"The kind of paint power to grant when touched." =
+		"The type of paint power to grant when touched." =
 		[
 			0 : "Bounce (Repulsion Gel)"
 			1 : "Reflect"

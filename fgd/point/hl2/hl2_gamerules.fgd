@@ -1,7 +1,0 @@
-@PointClass base(BaseEntityPoint) 
-	appliesto(+HL2_ENTITIES) 
-	iconsprite("editor/hl2_gamerules.vmt") 
-= hl2_gamerules: "Proxy entity that sets up core behavior of Half-Life 2 and Episodic."
-	[
-		// Not applicable
-	]

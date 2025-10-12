@@ -12,7 +12,7 @@
 		256: "Large Thumper"
 		]
 
-	effectradius(integer) : "Effect Radius" : 1000 : "The radius of the thumper's sound. Exclusive to Episodic."
+	effectradius(integer) : "Effect Radius" : 1000 : "The radius of the thumper's sound."
 
 	// Inputs
 	input Enable(void) : "Enables this thumper."

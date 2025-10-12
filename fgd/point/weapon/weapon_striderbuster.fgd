@@ -6,6 +6,11 @@
 	studioprop("models/magnusson_device.mdl") 
 = weapon_striderbuster: "A sticky grenade that kills Striders.\n\n\"We call it the Magnusson Device. Not my chosen label, you understand, but it seemed to please the personnel.\" - Dr. Arne Magnusson"
 	[
+	spawnflags(flags) : "spawnflags" =
+		[
+		8388608: "Don't use game_weapon_manager" : 0
+		]
+	
 	dud(boolean) : "Dud Bomb" : 0 : "Is this Magnusson Device nonfunctional? Select \"Yes\" to prevent it from destroying Striders."
 
 	// Outputs
