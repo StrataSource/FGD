@@ -3,7 +3,7 @@
 	line(192 192 192, targetname, templatename)
 	size(-8 -8 -8, 8 8 8) 
 	color(0 0 255) 
-= npc_antlion_template_maker: "Antlion Template Maker"
+= npc_antlion_template_maker: "A unique version of npc_template_maker tailored specifically for Antlions. Antlions will continually spawn at its origin or at a specified destination target, and is further influenced by bugbait."
 	[
 	spawnflags(flags) : "spawnflags" =
 		[

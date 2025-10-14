@@ -1,24 +1,19 @@
 @NpcClass base(BaseNPC) 
 	appliesto(+HL2_ENTITIES)
 	studio("models/hunter.mdl") 
-= npc_hunter: "A smaller, faster, strider that can pursue the player into buildings."
+= npc_hunter: "A smaller and faster Strider that can stalk people, impale others, and force the player into buildings. Hunters can protect a fellow Strider and walk in packs."
 	[
-	followtarget(target_destination) : "Strider to Follow" : : "The name of the strider that this hunter should follow."
+	followtarget(target_destination) : "Strider to Follow" : : "The name of the Strider that this Hunter should protect. If this is specified, Hunters will also attempt to shoot down any Magnusson Devices (weapon_striderbuster) that are being held by the player's gravity gun or are attached to Striders."
 
 	// Inputs
-	input FollowStrider(target_destination) : "Sets the name of the strider that this hunter should follow."
-	input SetMinigunTime(float) : "Time to shoot at any set minigun target."
-	input SetMinigunTarget(string) : "Hunter will shoot minigun at the named target."
+	input Dodge(void) : "Force this Hunter to start dodging."
+	input FlankEnemy(void) : "Force this Hunter to flank the enemy it's currently targeting."
 	input DisableShooting(void) : "Forces the hunter to be melee-only."
 	input EnableShooting(void) : "Allows the hunter to use range attacks or melee attacks."
-	input DisableSquadShootDelay(void) : "Disables the delay between range attacks for squads of hunters, allowing them to shoot as frequently as they wish."
+	input UseSiegeTargets(string) : "Pass in the name of info_targets to shoot at when I can't shoot at the player."
+	input FollowStrider(target_destination) : "Sets the name of the strider that this hunter should follow."
 	input EnableSquadShootDelay(void) : "Enables the delay between range attacks for squads of hunters."
+	input DisableSquadShootDelay(void) : "Disables the delay between range attacks for squads of hunters, allowing them to shoot as frequently as they wish."
 	input EnableUnplantedShooting(void) : "Used mainly for scripted attacks against bullseyes. Enables the hunter to shoot without having to plant first."
 	input DisableUnplantedShooting(void) : "Returns the hunter to normal after a call to EnableUnplantedShooting."
-	input DoPhysicsBlast(void) : "Hunter will instantly do the defensive physics blast."
-	input Crouch(void) : "Crouch down."
-	input Stand(void) : "Stand up from crouch."
-	input DisableCrouchWalk(void) : "UNUSED: Prevents the hunter from crouch walking."
-	input EnableCrouchWalk(void) : "UNUSED: Allows the hunter to crouch walk."
-	input UseSiegeTargets(string) : "Pass in the name of info_targets to shoot at when I can't shoot at the player."
 	]

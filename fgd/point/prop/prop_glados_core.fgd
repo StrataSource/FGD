@@ -1,12 +1,12 @@
 @PointClass base(BasePropPhysics)
 	studioprop()
 	appliesto(P2CE)
-= prop_glados_core: "The P1 personality cores for GlaDOS. Resemble little eyeballs with handles. " +
+= prop_glados_core: "The personality cores as seen in Portal 1. Animated balls with handles. " +
 	"These play lines and look around when near the player. "
 	[
 
-	coretype[engine](integer) : "Core Personality" : 1
-	coretype(choices) : "Core Personality" : 1 : "Which personality VO set the core is set to." =
+	coretype[engine](integer) : "Core Personality" : 0
+	coretype(choices) : "Core Personality" : 0 : "Which personality VO set the core is set to." =
 		[
 		0: "Curious"
 		1: "Aggressive"
@@ -14,14 +14,14 @@
 		3: "None"
 		]
 
-	delaybetweenlines(float) : "Pause (in secs) between VO Lines." : 0.4 : "When the core is talking, this is the number of seconds delay between it's spoken lines."
+	delaybetweenlines(float) : "Voiceover delay" : 0.4 : "The delay (in seconds) between spoken lines."
 
-	model(studio) : "Model" : "models/props_bts/glados_ball_reference.mdl" : "Model to use in game."
+	model(studio) : "Model" : "models/props_bts/glados_ball_reference.mdl" : "Model to use in-game."
 
 	// Inputs
-	input Panic(void) : "Core is near death, panic."
+	input Panic(void) : "Emit panic voiceover."
 	input StartTalking(void) : "Start playing lines, play looking animations."
 
 	// Outputs
-	output OnPlayerPickup(void) : "Player picked up core."
+	output OnPlayerPickup(void) : "Fired when the player picks up this personality core."
 	]

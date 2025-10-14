@@ -4,7 +4,7 @@
 = BaseLogicalNPC
 	[
 	health(integer): "Health" : : "Overrides the NPC's default health. Cannot be higher than Max Health."
-	max_health(integer): "Max Health" : : "Overrides the NPC's max health. Health cannot exceed this amount."
+	max_health(integer): "Max Health" : : "Overrides the NPC's maximum health. Health will not be able to exceed this amount."
 	squadname(string) : "Squad Name" : : "NPCs that are in the same squad (i.e. have matching squad names) will share information about enemies, and will take turns attacking and covering each other."
 	hintgroup(string) : "Hint Group" : : "Hint groups are used by NPCs to restrict their hint-node searching to a subset of the map's hint nodes. Only hint nodes with matching hint group names will be considered by this NPC."
 	hintlimiting(boolean) : "Hint Limit Nav" : 0 : "Limits NPC to using specified hint group for navigation requests, but does not limit local navigation."
@@ -18,19 +18,19 @@
 	
 	spawnflags(flags) : "spawnflags" =
 		[
-		1: "Wait Till Seen" : 0
+		1: "Wait till seen" : 0
 		2: "Gag (No IDLE sounds until angry)" : 0
 		4: "Fall to ground (unchecked means *teleport* to ground)" : 1
-		8: "Drop Healthkit" : 0
+		8: "Drop a health kit" : 0
 		16: "Efficient - Don't acquire enemies or avoid obstacles" : 0
-		128: "Wait For Script" : 0
+		128: "Wait for script" : 0
 		256: "Long Visibility/Shoot" : 0
 		512: "Fade Corpse" : 1
 		1024: "Think outside PVS" : 0
-		2048: "Template NPC (used by npc_maker, will not spawn)" : 0
-		4096: "Do Alternate collision/player avoidance for this NPC (largely obsolete, use Start/StopScripting)" : 0
+		2048: "Template NPC (used by npc_template_maker, will not spawn)" : 0
+		4096: "Do alternate collision/player avoidance for this NPC (largely obsolete, use Start/StopScripting)" : 0
 		8192: "Don't drop weapons" : 0
-		16384: "Ignore player push (dont give way to player)" : 0
+		16384: "Ignore player push (don't give way to player)" : 0
 		]
 
 	sleepstate(choices) : "Sleep State" : "0" : "Holds the NPC in stasis until specified condition. See also 'Wake Radius' and 'Wake Squad'." =

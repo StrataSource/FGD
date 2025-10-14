@@ -1,6 +1,6 @@
 @PointClass base(Weapon) 
 	appliesto(+HL2_ENTITIES)
 	studioprop("models/weapons/w_shotgun.mdl") 
-= weapon_shotgun: "Shotgun"
+= weapon_shotgun: "Standard-issue SPAS-12 shotgun.\n\nAssigning this entity to npc_alyx in Episodic will enable special combat behaviors against zombies."
 	[
 	]

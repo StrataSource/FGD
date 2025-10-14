@@ -1,6 +1,6 @@
 @PointClass base(Item) 
 	appliesto(+HL2_ENTITIES) 
 	studio("models/items/healthkit.mdl")
-= item_healthkit: "Small Health Kit"
+= item_healthkit: "A health kit. Restores health to the player on touch."
 	[
 	]

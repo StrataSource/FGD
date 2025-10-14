@@ -1,35 +1,35 @@
 @PointClass base(BaseEntityPoint)
 	color(200 0 0) 
 	iconsprite("editor/env_global.vmt")
-= env_global: "An entity to control a game-specific global states."
+= env_global: "An entity that controls game-specific global states."
 	[
 
 	globalstate[engine](string) : "Global State to Set"
-	globalstate(string) : "Global State to Set"
+	globalstate(string) : "Global State to Set" : : "The global condition to set in this map. This will influence the behavior of specific entities."
 
-	globalstate[P2CE](choices) : "Global State to Set" =
+	globalstate[P2CE](choices) : "Global State to Set" : : "The global condition to set in this map. This will influence the behavior of specific entities." =
 		[
-		"no_pinging_blue": "Prevent Pinging ATLAS"
-		"no_pinging_orange": "Prevent Pinging P-Body"
-		"no_taunting_blue": "Prevent Taunting ATLAS"
-		"no_taunting_orange": "Prevent Taunting P-Body"
-		"player_regenerates_health": "Prevent player health regen from turrets"
+		"no_pinging_blue": "Disable Atlas's ping tool (Co-op)"
+		"no_pinging_orange": "Disable P-body's ping tool (Co-op)"
+		"no_taunting_blue": "Disable Atlas gestures (Co-op)"
+		"no_taunting_orange": "Disable P-body gestures (Co-op)"
+		"player_regenerates_health": "Disable player health regeneration"
 		"slowtime_enabled": "Enable player usage of +slowtime"
-		"gordon_precriminal": "Gordon is pre-criminal"
-		"antlion_allied": "Antlions are player allies"
+		"gordon_precriminal": "Police neutrality towards player/citizens"
+		"citizens_passive": "Citizen neutrality towards player/Combine NPCs"
+		"gordon_invulnerable": "Player is invincible"
 		"suit_no_sprint": "HEV suit sprint disabled"
-		"super_phys_gun": "Super gravity gun enabled"
-		"citizens_passive": "Citizens are neutral to Gordon & combine"
-		"gordon_invulnerable": "Gordon is invulnerable"
+		"friendly_encounter": "Lower player weapons"
 		"no_seagulls_on_jeep": "Don't spawn seagulls on jeep"
-		"friendly_encounter": "Lower HL2 weapons"
-		"ep2_alyx_injured": "Alyx injured behavior from EP2"
-		"ep_alyx_darknessmode": "Alyx darkness behavior from EP1"
-		"hunters_to_run_over": "Amount of hunters to run over before they dodge"
+		"antlion_allied": "Friendly antlions"
+		"super_phys_gun": "Supercharged gravity gun enabled"
+		"ep_alyx_darknessmode": "Lowlife \"darkness mode\" (Ep1)"
+		"ep2_alyx_injured": "Debuffed Alyx Gun/\"Alyx Injured Mode\" (Ep2)"
+		"hunters_to_run_over": "Hunter roadkills to dodge counter (Ep2)"
 		]
 
 	initialstate[engine](integer) : "Initial State" : 0
-	initialstate(choices) : "Initial State" : 0 =
+	initialstate(choices) : "Initial State" : 0 : "Controls the active state for this global. Setting this to \"Dead\" permanently disables this global, and will not persist during level transitions." =
 		[
 		0: "Off"
 		1: "On"
@@ -44,10 +44,10 @@
 
 
 	// Inputs
-	input TurnOn(void) : "Set state of global to ON."
-	input TurnOff(void) : "Set state of global to OFF."
+	input TurnOn(void) : "Turns on this global."
+	input TurnOff(void) : "Turns off this global."
 	input Toggle(void) : "Toggles state of global between ON and OFF."
-	input Remove(void) : "Set state of global to DEAD."
+	input Remove(void) : "Permanently disables this global and prevents it from persisting during level transitions."
 	input SetCounter(integer) : "Sets the counter value of this global."
 	input AddToCounter(integer) : "Adds to the counter value of this global. Negative numbers subtract."
 	input GetCounter(void) : "Causes the Counter output to be fired, passing the current counter value for this global. This doesn't work properly."

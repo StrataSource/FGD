@@ -25,7 +25,7 @@
 
 
 	// Inputs
-	input SetAnimation(string) : "Force the prop to play an animation. The parameter should be the name of the animation."
+	input SetAnimation(string) : "Make this prop play an animation. The parameter should be the name of the animation."
 	input SetDefaultAnimation(string) : "Set the Default Animation to the one specified in the parameter."
 	input SetPlaybackRate(float) : "Set the playback rate for the animation."
 	input SetBodyGroup(integer) : "Set the visible bodygroup, by index."
@@ -33,7 +33,7 @@
 	input TurnOff(void) : "Make the prop invisible."
 	input EnableCollision(void) : "Enable collision on the prop."
 	input DisableCollision(void) : "Disable collision on the prop."
-	input SetAnimationNoReset(string) : "Force the prop to play an animation unless the prop is already playing the animation. The parameter should be the name of the animation."
+	input SetAnimationNoReset(string) : "Make this prop play an animation unless it is already playing one. The parameter should be the name of the animation."
 	input BecomeRagdoll(void) : "Change into a ragdoll immediately."
 	input FadeAndKill(void) : "Fade out then remove this prop."
 

@@ -1,6 +1,6 @@
 @NpcClass base(BaseHeadcrab) 
 	appliesto(+HL2_ENTITIES)
 	studio("models/Headcrabblack.mdl") 
-= npc_headcrab_poison: "Black Poison Headcrab"
+= npc_headcrab_poison: "A headcrab that applies temporary poison damage against enemies."
 	[
 	]

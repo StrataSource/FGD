@@ -1,7 +1,7 @@
 @PointClass base(BasePropPhysics, Angles, DamageFilter, BaseFadeProp) 
 	studioprop("models/items/item_item_crate.mdl")
 	appliesto(+HL2_ENTITIES)
-= item_item_crate: "Item Crate"
+= item_item_crate: "A small crate that holds an item inside. Resupply crates can have a specific item defined or automatically grant specific items based on the player's health, suit armor and remaining ammunition."
 	[
 	cratetype[engine](integer) : "Crate Contents": 0
 	cratetype(choices) : "Crate Contains" : 0 =
@@ -10,7 +10,7 @@
 		]
 
 	crateappearance[engine](integer) : "Crate Appearance" : 0
-	crateappearance(choices) : "Crate Appearance" : 0 =
+	crateappearance(choices) : "Crate Appearance" : 0 : "Changes the appearance of the crate." =
 		[
 		0: "Default Appearance"
 		1: "Radar Beacon Crate"

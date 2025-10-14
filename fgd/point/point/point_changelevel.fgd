@@ -1,7 +1,7 @@
 @PointClass base(BaseEntityPoint) 
 	appliesto(P2CE) 
-	iconsprite("editor/game_end.vmt") 
-= point_changelevel: "Level Change Entity"
+	iconsprite("editor/point_changelevel.vmt") 
+= point_changelevel: "Transitions to another map."
 	[
 
 	// Inputs

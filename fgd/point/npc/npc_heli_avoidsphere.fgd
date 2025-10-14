@@ -3,12 +3,12 @@
 	iconsprite("editor/env_firesource") 
 	color(255 255 0) 
 	sphere(radius)
-= npc_heli_avoidsphere: "Helicopter avoidance sphere"
+= npc_heli_avoidsphere: "Makes Combine helicopters and gunships avoid this area."
 	[
 	spawnflags(flags) : "spawnflags" =
 		[
 		65536: "Avoid the sphere above and below" : 0
 		]
 
-	radius(float) : "Radius" : 128
+	radius(float) : "Radius" : 128 : "The radius of the avoidance sphere."
 	]

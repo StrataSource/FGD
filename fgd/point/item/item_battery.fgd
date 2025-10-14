@@ -1,6 +1,6 @@
 @PointClass base(Item) 
 	appliesto(+HL2_ENTITIES) 
 	studio("models/items/battery.mdl")
-= item_battery: "HEV battery"
+= item_battery: "HEV suit battery."
 	[
 	]

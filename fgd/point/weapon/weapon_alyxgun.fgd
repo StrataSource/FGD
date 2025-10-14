@@ -1,6 +1,6 @@
 @PointClass base(Weapon) 
 	appliesto(+HL2_ENTITIES)
 	studioprop("models/weapons/W_Alyx_Gun.mdl") 
-= weapon_alyxgun: "Alyx's Gun"
+= weapon_alyxgun: "Alyx Vance's pistol."
 	[
 	]

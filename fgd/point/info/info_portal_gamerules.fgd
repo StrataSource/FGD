@@ -1,30 +1,23 @@
 @PointClass base(BaseEntityPoint) 
 	appliesto(P2CE)
-	iconsprite("editor/info_target.vmt")
-= info_portal_gamerules: "Determines game various rules for gameplay"
+	iconsprite("editor/info_portal_gamerules.vmt")
+= info_portal_gamerules: "Dictates specific gameplay aspects in Portal."
 	[
-	enableregen(boolean) : "Enable health regeneration" : 1
-	equipboots(boolean) : "Equip long-fall boots" : 1 : "Disabling this will essentially enable fall damage"
-	equipportalgun(choices) : "Equip Portal Gun" : 0 =
+	enableregen(boolean) : "Enable health regeneration" : 1 : "Enabling this will allow players to restore health over time."
+	equipboots(boolean) : "Equip long-fall boots" : 1 : "Controls fall damage. Enabling this will make the player immune to fall damage."
+	equipportalgun(choices) : "Equip Portal Gun" : 0 : "Automatically grants the player a portal gun based on type, if enabled." =
 		[
 		0: "None"
-		1: "Orange"
-		2: "Blue"
+		2: "Blue portal only"
+		1: "Orange portal only"
 		3: "Dual Portal Device"
-		4: "Potato Gun"
+		4: "Dual Portal Device (PotatOS attached)"
 		]
-	equippaintgun(choices) : "Equip paint gun" : 0 =
+	equippaintgun(choices) : "Equip Paint Gun" : 0 : "Automatically grants the player a paint gun if enabled.\n\nThe \"basic paint gun\" option will give the player a paint gun with no powers assigned by default - paint powers must be obtained by touching an item_paint_power_pickup entity. Selecting the \"Fully-upgraded paint gun\" option will give the player all applicable paint powers for the paint gun." =
 		[
 		0: "None"
 		1: "Basic paint gun"
 		2: "Fully-upgraded paint gun"
 		]
-	maxhealth(integer) : "Max health for players" : 100
-	gametype(choices) : "Co-op Game type" : 0 : "Sets the co-op game type. This is ignored if the game isn't running in co-op mode." =
-		[
-		0: "Default"
-		1: "Co-op 2-guns"
-		2: "Co-op versus mode"
-		3: "Co-op versus mode and 2-guns"
-		]
+	maxhealth(integer) : "Maximum player health" : 100 : "Specifies the maximum health limit for players."
 	]

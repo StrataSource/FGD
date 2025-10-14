@@ -1,6 +1,6 @@
 @PointClass base(Weapon) 
 	appliesto(+HL2_ENTITIES)
 	studioprop("models/weapons/w_rocket_launcher.mdl") 
-= weapon_rpg: "Missile Launcher"
+= weapon_rpg: "Fires laser-guided rockets."
 	[
 	]

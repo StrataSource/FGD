@@ -1,40 +1,40 @@
 @PointClass base(Weapon) 
 	appliesto(P2CE)
 	studioprop("models/weapons/w_portalgun.mdl") 
-= weapon_portalgun: "Aperture Science Handheld Portal Device"
+= weapon_portalgun: "The Aperture Science Handheld Portal Device. It shoots linked gates. This is the sole weapon entity used throughout the Portal series."
 	[
 
 	spawnflags(flags) =
 		[
-		8 : "Disable pickup sounds" : 0	
+		8 : "Disable pickup sounds" : 0
 		]
 
-	canfireportal1(boolean) : "Can Fire Blue Portals" : 1 : "Can this portalgun create blue portals?"
-	canfireportal2(boolean) : "Can Fire Orange Portals" : 1 : "Can this portalgun create orange portals?"
+	canfireportal1(boolean) : "Can Fire Blue Portals" : 1 : "Determines whether this portal gun can shoot blue portals."
+	canfireportal2(boolean) : "Can Fire Orange Portals" : 1 : "Determines whether this portal gun can shoot orange portals. If this entity is manually spawned, it will not be able to fire orange portals by default."
 	
-	showingpotatos(boolean) : "Show PoTaToS" : 0 : "Show PoTaToS on the portal gun."
+	showingpotatos(boolean) : "Show PotatOS" : 0 : "Attach PotatOS to the portal gun by enabling its respective bodygroup. PotatOS will animate if the @glados entity is given a VCD to play.\n\nThis feature is cosmetic and does not impact gameplay."
 
-	startingteamnum[engine](integer) : "Player" : 0 : "Which player this gun belongs to.  Will decide which portals it fires before being picked up, as well as the skin."
-	startingteamnum(choices) : "Player" : 0 : "Which player this gun belongs to.  Will decide which portals it fires before being picked up, as well as the skin." =
+	startingteamnum[engine](integer) : "Player" : 0 : "Which player/\"team\" does this portal gun belong to?  Will decide which portals it fires before being picked up, as well as the skin."
+	startingteamnum(choices) : "Player" : 0 : "Which player/\"team\" does this portal gun belong to?  Will decide which portals it fires before being picked up, as well as the skin." =
 		[
 		0: "Chell/Bendy"
-		2: "P-Body"
-		3: "ATLAS"
+		2: "P-body"
+		3: "Atlas"
 		]
 
 
-	skin[engine](integer) : "Stripes" : 0 : "Which stripes to show in Hammer."
-	skin(choices) : "[H] Stripes" : 0 : "Which stripes to show in Hammer." =
+	skin[engine](integer) : "Model Skin" : 0 : "Changes the world and view model skin for this entity. If no custom model is declared, this will determine what portal gun stripes to use."
+	skin(choices) : "[H] Model Skin" : 0 : "Changes the world and view model skin for this entity. If no custom model is declared, this will determine what portal gun stripes to use." =
 		[
-		0: "None"
-		1: "Blue"
-		2: "Orange"
+		0: "0 - Default"
+		1: "1 - Atlas (Coop)"
+		2: "2 - P-body (Coop)"
 		]
 		
 	model(studio) : "World Model" : "models/weapons/w_portalgun.mdl" : "The model shown for the portalgun entity and in the player's hand in third-person view."
 	viewmodel(studio) : "View Model" : "models/weapons/v_portalgun.mdl" : "The model shown in the player's first-person view."
 
-	CustomPortalColors(boolean) : "Custom Portal Colors" : 0 : "Use custom portal colors."
+	CustomPortalColors(boolean) : "Custom Portal Colors" : 0 : "Use custom portal colors. This boolean is ignored if ConVar cl_alternate_portal_colors is set to 1."
 	Portal1Color(color255) : "Primary Portal Color" : "64 160 255" : "Color to use for the primary (Left/Blue) portal."
 	Portal2Color(color255) : "Secondary Portal Color" : "255 160 32" : "Color to use for the primary (Right/Orange) portal."
 

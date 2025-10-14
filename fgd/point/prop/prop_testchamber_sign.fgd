@@ -1,7 +1,7 @@
 @PointClass base(BaseEntityPoint) 
 	appliesto(P2CE)
 	studioprop("models/editor/prop_testchamber_sign.mdl")
-= prop_testchamber_sign: "Portal 2 Test chamber sign"
+= prop_testchamber_sign: "Configurable test chamber sign."
 	[
 
 	spawnflags(flags) : "spawnflags" =

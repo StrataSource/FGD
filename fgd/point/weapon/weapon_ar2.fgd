@@ -1,6 +1,6 @@
 @PointClass base(Weapon) 
 	appliesto(+HL2_ENTITIES)
 	studioprop("models/weapons/w_irifle.mdl") 
-= weapon_ar2: "Assault Rifle 2"
+= weapon_ar2: "Standard-issue energy-based assault rifle given to Overwatch soldiers. Can disintegrate enemies with a charged blast."
 	[
 	]

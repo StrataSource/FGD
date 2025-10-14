@@ -1,10 +1,10 @@
 @PointClass base(BaseEntityPhysics) 
 	appliesto(P2CE)
 	studioprop()
-= prop_monster_box: "FrankenCubes, they walk about when oriented correctly but otherwise behave like normal Storage Cubes."
+= prop_monster_box: "Frankencubes: turrets shoved into storage cube chassis that walk erratically when oriented correctly, but behave identically to standard cubes."
 	[
-	startasbox(boolean) : "Start As Box" : 0 : "Start the FrankenTurret in cube form."
-	boxswitchspeed(float) : "Box Switch Speed" : 400 : "Speed to force switch to a box."
+	startasbox(boolean) : "Start as Box" : 0 : "Start the Frankencube in cube form."
+	boxswitchspeed(float) : "Box Switch Speed" : 400 : "If the cube exceeds this terminal velocity (in Hammer units), it will be forced to enter its box position."
 
 	model[engine](studio) : "Model" : "models/npcs/monsters/monster_a.mdl"
 	model(choices) : "[H] Pose" : "models/npcs/monsters/monster_a.mdl" : "What pose to show in Hammer." =
@@ -15,13 +15,13 @@
 
 
 	// Inputs
-	input BecomeBox(string) : "Force the FrankenTurret to switch to cube form."
-	input BecomeMonster(void) : "Return the FrankenCube to extended form."
-	input BecomeShortcircuit(void) : "Short circuit this FrankenCube and permanently switch to cube form. " +
+	input BecomeBox(string) : "Force the Frankencube to switch to cube form."
+	input BecomeMonster(void) : "Return the Frankencube to extended form."
+	input BecomeShortcircuit(void) : "Short-circuit this Frankencube and permanently switch to cube form. " +
 		"Creates arc particles randomly across the cube, and the turret's eyes flicker randomly."
 
 	// Outputs
-	output OnPlayerUse(void) : "Any player +USEd the cube."
-	output OnPlayerPickup(void) : "Any player picked up the cube."
-	output OnPhysGunDrop(void) : "Any player dropped the cube."
+	output OnPlayerUse(void) : "Fires if the player uses the cube."
+	output OnPlayerPickup(void) : "Fires if the player picks up the cube."
+	output OnPhysGunDrop(void) : "Fires if the player drops the cube."
 	]
