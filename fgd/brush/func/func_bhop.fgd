@@ -9,7 +9,7 @@
 	target(target_destination) : "Remote Destination" : : "The entity specifying the point to which the player should be teleported (overrides progress teleport setting)."
 	UseDestinationAngles(boolean) : "Use Destination Angles" : 1 : "Snap the player's angles and velocity direction to the angles of the destination entity."
 	ResetVelocityOnTeleport(boolean) : "Reset Velocity on Teleport" : 0 : "Reset the player's velocity when teleported."
-	LandingLimit(integer) : "Landing Limit" : 0 : "The maximum amount of times the player is allowed to land on this. A limit of zero allows unlimited landings/bhops. Only full groundings count toward this, not just touching from above."
+	LandingLimit(integer) : "Landing Limit" : 0 : "The maximum amount of times the player is allowed to land on this. A limit of 0 allows unlimited landings/bhops. A limit of -1 uses gamemode-specific behavior emulating func_door blocks from the appropriate game. Only full groundings count toward this, not just touching from above."
 
 	spawnflags(flags) =
 		[
