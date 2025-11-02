@@ -31,7 +31,7 @@
 	landmark(target_destination) : "Local Destination Landmark" : : "In landmark mode, teleported entities are offset from the target by " +
 		"their initial offset from the landmark. Angles and velocity are also reoriented to the destination if enabled."
 
-	uselandmarkangles(boolean) : "Use Destination Angles" : 0 : "Forces the teleported object to snap to the angles of the destination."
+	uselandmarkangles(boolean) : "Use Destination Angles" : 1 : "Forces the teleported object to snap to the angles of the destination."
 
 	checkdestifclearforplayer[-MOMENTUM](boolean) : "Only Spawn-Valid Destinations" : 0 : "Only teleport if there is a clear teleport destination."
 
