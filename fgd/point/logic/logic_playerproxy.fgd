@@ -32,6 +32,7 @@
 	input RemovePortalGun[P2CE](void) : "Removes the portal gun from the player, if they have it."
 	input RemovePaintGun[P2CE](void) : "Removes the paint gun from the player, if they have it."
 	input LowerWeapon[P2CE](void) : "Lowers the weapon, setting it to a disabled state."
+	input ReadyWeapon[P2CE](void) : "Raises the weapon, setting it to the default enabled state."
 	input SetFallDamageEnabled(boolean) : "Whether or not fall damage is enabled"
 	
 	// Outputs
