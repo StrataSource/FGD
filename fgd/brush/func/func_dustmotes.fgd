@@ -1,6 +1,7 @@
 @SolidClass base(BaseDustParticleSpawner) 
 = func_dustmotes: "A brush entity that spawns sparkling dust motes within its volume."
 	[
+	origin(string) readonly : "Origin" : "0 0 0" : "The origin keyvalue is required for this entity to work properly in game."
 	sizemin(string) : "Minimum Particle Size" : 10 : "This value determines the minimum size the particles can be."
 	sizemax(string) : "Maximum Particle Size" : 20 : "This value determines the maximum size the particles can be."
 	alpha(integer) : "Particle Translucency (0 - 255)" : 255 : "Translucency of the particles."
