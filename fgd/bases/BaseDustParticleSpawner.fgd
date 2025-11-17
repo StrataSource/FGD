@@ -12,6 +12,7 @@
 	distmax(integer) : "Maximum Visible Distance" : 1024 : "Maximum distance at which particles are visible. They fade to translucent at this distance."
 	frozen(boolean) : "Frozen" : 0 : "When set, this entity spawns the number of particles in SpawnRate immediately, and then goes inactive."
 	affectedbywind(boolean) : "Affected by Wind" : 1 : "When set, the dust will be affected by any env_wind entity settings in the map."
+	origin(string) readonly : "Origin" : "0 0 0" : "The origin keyvalue has to be set to 0 0 0 for this entity to work properly in game. If this value isn't 0 0 0, reset it."
 
 	linedivider_base[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 
