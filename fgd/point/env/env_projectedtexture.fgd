@@ -55,6 +55,7 @@
 
 	volumetric(boolean) : "Enable Volumetrics" : 0 : "Enables/disables volumetrics from this projected texture."
 	volumetricintensity(float) : "Volumetric Intensity" : "1.0" : "Sets the intensity of the volumetric lighting."
+	volumetricfalloff(float) : "Volumetric Falloff" : "1.0" : "Sets the falloff exponent of the volumetric lighting."
 	
 	style[engine](integer) : "Appearance" : 0
 	style(choices) : "Appearance" : "0" =
@@ -107,8 +108,10 @@
 	// not implemented
 	//input Ambient(float) : "Set ambient light amount"
 	
-	input EnableVolumetrics(boolean) : "Set if the volumetrics are enabled."
+	input EnableVolumetrics(void) : "Enables volumetrics."
+	input DisableVolumetrics(void) : "Disables volumetrics."
 	input SetVolumetricIntensity(float) : "Sets the volumetric lighting's intensity."
+	input SetVolumetricFalloff(float) : "Sets the volumetric lighting's falloff exponent."
 
 	input SetBrightnessScale(float) : "Sets the brightness."
 	
