@@ -92,6 +92,7 @@ filter_activator_model
 filter_activator_name
 filter_base
 filter_momentum_collectibles
+filter_momentum_gamemode
 filter_momentum_surface_collision
 filter_momentum_timer_progress
 filter_multi
