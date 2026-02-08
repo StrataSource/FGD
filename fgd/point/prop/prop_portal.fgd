@@ -50,4 +50,5 @@
 	output OnPlayerTeleportFromMe(void) : "When the player is teleported from this portal to the linked partner."
 	output OnEntityTeleportToMe(void) : "When any entity is teleported from this linked partner to the portal."
 	output OnPlayerTeleportToMe(void) : "When the player is teleported from this linked partner to the portal."
+	output OnFizzled(void) : "When the portal is fizzled."
 	]
