@@ -338,6 +338,7 @@ trigger_hierarchy
 trigger_impact
 trigger_jumppad
 trigger_look
+trigger_momentum_bhop
 trigger_momentum_limitmovement
 trigger_momentum_progress
 trigger_momentum_promptinput
