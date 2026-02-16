@@ -7,7 +7,7 @@
 		0 : "Solid"
 		1 : "Non-Solid"
 		]
-	filtername(filterclass) : "Filter Name" : : "A filter entity that restricts which things can press the button, beyond the builtin filter."
+	filtername(filterclass) : "Filter Name" : : "A filter entity that restricts which things can press the button. If set, the builtin filtering is disabled."
 
 	// Inputs
 	input PressIn(void) : "Activate the button as if it was pressed, sending it to the bottom position."
