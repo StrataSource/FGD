@@ -1,0 +1,66 @@
+@FilterClass base(filter_base) 
+	appliesto(P2CE)
+	iconsprite("editor/filter_paint_power.vmt")
+	line(0 255 0, targetname, twinfilter)
+= filter_cube_type : "A filter that filters based on cube properties. When testing cubes, irrelevant conditions are always ignored, if that cube type is enabled.\n" +
+	"Tip: This works well with a filter_multi, if you want to match different cube configurations or check for specific models.\n" +
+	"Additionally, keep in mind filters are only checked when items initially touch a trigger or other events occur, you'll need repeated checks to handle events."
+	[
+		allowedtypes(flags): "Allowed Types" : "Which cube types are allowed." = 
+		[
+			1: "Standard" : 1
+			2: "Companion": 1
+			4: "Reflection": 1
+			8: "Sphere": 1
+			16: "Antique (Old Aperture)": 1
+			32: "Schrodinger": 1
+			64: "Frankenturret (prop_monster_box)" : 1
+		]
+
+		boxmode[engine](integer) : "Frankenturret Pose" : 0
+		activated[engine](integer) : "Button Activation" : 0
+		powered[engine](integer) : "Laser State" : 0 
+		laserfilter[engine](integer) : "Laser Filter" : 0
+		lasermodifier[engine](integer) : "Laser Modifier" : 0
+
+		boxmode(choices) : "Frankenturret Pose" : 0 : "If a frankenturret, require it to be in this pose." =
+			[
+			0: "Don't care"
+			1: "Extended"
+			2: "Retracted (box)"
+			]
+		activated(choices) : "Button Activation" : 0 : "For non-frankenturrets, check whether the cube is currently 'active' from pressing a button." =
+			[
+			0: "Don't care"
+			1: "Inactive"
+			2: "Active"
+			]
+
+		powered(choices) : "Laser State" : 0 : "If a Reflection or Schrodinger cube, check whether it is being powered by a laser." =
+			[
+			0: "Don't care"
+			1: "Unpowered"
+			2: "Powered"
+			]
+
+		laserfilter(choices) : "Laser Filter" : 0 : "If a Reflection or Schrodinger cube, check which laser filter is defined." =
+			[
+			0: "Don't care"
+			1: "No filter"
+			2: "Specific color"
+			3: "Any filter set"
+			]
+		laserfiltercolor(color255) : "Laser Filter Color" : "255 255 255 255" : "If 'Laser Filter' is set to 'specific color', this is the color to check. It must match exactly."
+		lasermodifier(choices) : "Laser Modifier" : 0 : "If a Reflection or Schrodinger cube, check which laser modifier is defined." =
+			[
+			0: "Don't care"
+			1: "No filter"
+			2: "Specific colour"
+			3: "Any filter set"
+			]
+		lasermodifiercolor(color255) : "Laser Modifier Color" : "255 255 255 255" : "If 'Laser Modifier' is set to 'specific color', this is the color to check. It must match exactly."
+
+		twinfilter(filterclass) : "Schrodinger Twin Filter" : : "If a Schrodinger cube and this is set, test this other filter against the partner cube."
+
+		@resources []
+	]
