@@ -2,7 +2,7 @@
 = Trigger
 	[
 	// Need to redefine spawnflags from TriggerOnce so the entities that inherit from Trigger have the correct default values
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Clients/Players" : 1
 		8192: "Allow ghosts to fire this trigger" : 0 [MOMENTUM]

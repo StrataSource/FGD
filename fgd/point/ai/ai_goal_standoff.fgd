@@ -12,7 +12,7 @@
 		1: "Classname"
 		]
 
-	startactive(boolean) : "Start Active" : 0
+	startactive(boolean) : "Start Active" : 0 :"Should this entity be active on spawn?"
 
 	hintgroupchangereaction[engine](integer) : "Reaction to tactical change" : 1
 	hintgroupchangereaction(choices) : "Reaction to tactical change" : 1 : "What to do if leader moves, threat is neutralized, hint group changes, etc" =

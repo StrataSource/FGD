@@ -6,13 +6,13 @@
 	target(target_destination) : "Position entity" : : "Name of the entity that the NPC should move to in order to perform the operation."
 	contexttarget(target_destination) : "Context target" : : "(Optional) Name of an entity that the operator will use within context."
 	state[engine](integer) : "Initial State" : 0
-	state(choices) : "Initial State" : 0 =
+	state(choices) : "Initial State" : 0 : "Determines if the item can be used (not blocked or locked)" =
 		[
 		0: "Not ready (closed, locked, etc)"
 		1: "Ready (open and accessible)"
 		]
 	moveto[engine](integer) : "How should NPC approach?" : 1
-	moveto(choices) : "How should NPC approach?" : 1 =
+	moveto(choices) : "How should NPC approach?" : 1 : "Should this entity's NPCs run or walk?" =
 		[
 		0: "DO NOT USE THIS SETTING"
 		1: "Walk"

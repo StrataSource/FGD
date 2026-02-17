@@ -7,7 +7,7 @@
 	line(255 0 0, targetname, pathcornername)
 = npc_launcher: "Launches missiles that appear to fly to a target."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Check LOS" : 1
 		]

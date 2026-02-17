@@ -12,14 +12,14 @@
 	endnode(node_dest) : "End node ID" : : "The node ID of one end of the node connection."
 
 	initialstate[engine](boolean) : "Initial State" : 1
-	initialstate(choices) : "Initial State" : 1 =
+	initialstate(choices) : "Initial State" : 1 : "Initial state of this entity." =
 		[
 		0: "Off"
 		1: "On"
 		]
 
 	linktype[engine](integer) : "Type of Connection" : 1
-	linktype(choices) : "Type of Connection" : 1 =
+	linktype(choices) : "Type of Connection" : 1 : "Type of connection between the nodes. NPCs will be forced to do specific actions to move between the nodes." =
 		[
 		1: "Ground"
 		2: "Jump"
@@ -31,7 +31,7 @@
 	allowuse(target_name_or_class) : "Allow Pass When Off" : : "Entity or class to allow passage even when node is off"
 	invertallow(boolean) : "Invert exclusion rules" : 0 : "Allowed entity is the only entity NOT allowed when this is set to 'yes'"
 
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Force human connect" : 0
 		2: "Force small centered connect" : 0

@@ -7,11 +7,11 @@
 	
 	MovieFilename[P2CE](choices) : "Movie to display" : "aperture_logo.bik" : "The movie to display. You can also type in the filename of a custom movie that is present in the media/ folder. The BIK file extension must be included." =
 		[
-		"coop_black_screen.bik"		: "Black Screen"
-		"aperture_logo.bik"			: "Aperture Logo"
+		"coop_black_screen.bik"		: "Black Screen - coop_black_screen.bik"
+		"aperture_logo.bik"			: "Aperture Logo - aperture_logo.bik"
 		
 		// Elevator videos
-		"animalking.bik"			: "Animal King"
+		"animalking.bik"			: "Animal King - animalking.bik"
 		"aperture_appear_horiz.bik" : "Aperture Appear (Horizontal)"
 		"aperture_appear_vert.bik" 	: "Aperture Appear (Vertical)"
 		"bluescreen.bik"			: "Blue Screen Of Death"

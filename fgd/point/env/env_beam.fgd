@@ -18,7 +18,7 @@
 	lightningstart(target_destination) : "Start Entity" : : "Entity that the beam starts at."
 	lightningend(target_destination) : "Ending Entity" : : "Entity that the beam ends at. If not set, the Ending Location will be used instead."
 	decalname(string) : "Decal Name" : "Bigshot" : "Decal to be applied at the end of the beam"
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start On" : 0
 		2: "Toggle" : 0

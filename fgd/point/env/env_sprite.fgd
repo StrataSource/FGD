@@ -8,7 +8,7 @@
 	framerate(float) : "Framerate" : "10.0" : "Rate at which the sprite should animate, if at all."
 	model(sprite) : "Sprite Name" : "sprites/glow01.spr" : "Material of the sprite to be drawn."
 	scale(float) : "Scale" : 0.25 : "Scale multiplier of the sprite."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start on" : 0
 		2: "Play Once" : 0

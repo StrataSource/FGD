@@ -24,7 +24,7 @@
 "If you don't want the name fixup to happen, because you're only spawning the template once, or you want inputs to trigger all instances of the template, check the 'Preserve entity names' spawnflag. \n" +
 "To spawn the template in other places, use an env_entity_maker."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Don't remove template entities" : 0
 		2: "Preserve entity names (Don't do name fixup)" : 1

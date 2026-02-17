@@ -16,7 +16,7 @@
 		]
 	relationship(string) : "Relationship" : : "Changes whether this NPC likes or dislikes certain others. Format is: <string|targetname or classname> <string|disposition> <integer|rank>. Values for disposition are: D_HT (Hate), D_FR (Fear), D_LI (Like), D_NU, (Neutral)."
 	
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Wait till seen" : 0
 		2: "Gag (No IDLE sounds until angry)" : 0

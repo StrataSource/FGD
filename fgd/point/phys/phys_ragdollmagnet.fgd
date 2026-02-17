@@ -12,7 +12,7 @@
 	radius(float) : "Effective Radius" : "512" : "Radius in which ragdolls are affected around this entity's origin."
 	force(float) : "Force" : "5000" : "Magnetic force to apply to ragdolls within the radius. Expressed as kilograms per unit per second. So a force of 1000 will add 1" + "0 units/second to a 100kg man. It will add 100 units per second to a 10kg headcrab."
 	target(target_destination) : "Entity to affect" : : "If specified, the phys_ragdollmagnet will only affect the target entity."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		2: "Bar Magnet (use axis helper)" : 0
 		]

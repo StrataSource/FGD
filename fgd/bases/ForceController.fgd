@@ -2,7 +2,7 @@
 	line(128 128 128, targetname, attach1)
 = ForceController
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start On" : 0
 		2: "Apply Force" : 1

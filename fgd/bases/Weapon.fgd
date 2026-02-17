@@ -2,7 +2,7 @@
 	color(0 0 200)
 = Weapon
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start constrained" : 0
 		2: "Deny player pickup (reserve for NPC)" : 0 [+USE_AI]

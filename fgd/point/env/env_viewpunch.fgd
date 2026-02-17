@@ -4,7 +4,7 @@
 	color(200 200 0)
 = env_viewpunch: "Causes a view punch on players."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Punch all players (ignore radius)" : 0
 		2: "Punch players in the air" : 0

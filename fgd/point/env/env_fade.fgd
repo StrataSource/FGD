@@ -3,7 +3,7 @@
 	color(200 0 0)
 = env_fade: "An entity that controls screen fades."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Fade From" : 0
 		2: "Modulate" : 0

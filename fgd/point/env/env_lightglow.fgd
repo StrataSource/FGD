@@ -26,7 +26,7 @@
 
 	hdrcolorscale(float) : "HDR color scale." : "0.5" : "float value to multiply sprite color by when running in HDR mode."
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Visible only from front" : 0
 		]

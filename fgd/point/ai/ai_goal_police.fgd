@@ -7,7 +7,7 @@
 	"Warnings will be given, before forcing the target back. " +
 	"Optionally the target can be knocked out, so they can be teleported back."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		2: "Knock-out target past crossing plane" : 0
 		4: "Do not leave post" : 0

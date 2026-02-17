@@ -9,7 +9,7 @@
 	"Useful for triggering when players are driving a vehicle at something. " +
 	"NOTE: Only designed for single-player game. "
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		128: "Fire Once" : 1
 		256: "Use Velocity instead of facing" : 0

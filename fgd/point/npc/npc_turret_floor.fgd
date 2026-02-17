@@ -4,7 +4,7 @@
 	frustum(_frustum_fov, _frustum_near, _frustum_far, _frustum_color, -1)
 = npc_turret_floor: "Combine Floor Turret"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		32: "Autostart" : 0
 		64: "Start Inactive" : 0

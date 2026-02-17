@@ -3,7 +3,7 @@
 	color(200 0 0)
 = env_tonemap_controller: "An entity that controls the HDR tonemapping for the player. Think of it as a method of controlling the exposure of the player's eyes."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Master (Has priority if multiple env_tonemap_controllers exist)" : 0
 		]

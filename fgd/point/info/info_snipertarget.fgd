@@ -5,7 +5,7 @@
 	[
 	speed(integer) : "Sweep to speed" : 2
 	groupname(string) : "Group Name"
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Shoot Me" : 0
 		2: "No Interruptions" : 0

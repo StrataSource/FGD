@@ -18,7 +18,7 @@
 	screenblurstrength(float) : "Full-screen blur strength [0..1]" : "0"
 	filmgrainstrength(float) : "Film grain strength [0..x]" : "0"
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Master (Has priority if multiple postprocess_controllers exist)" : 0
 		]

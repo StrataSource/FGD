@@ -5,7 +5,7 @@
 = env_citadel_energy_core: "Special effect for the energy cores in the Citadel, or for the Portal Unstationary Scaffold. " +
 	"Appears as a blue-white sphere with streams of energy coming from the direction the entity is pointing."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "No small particles" : 0
 		2: "Start on" : 0

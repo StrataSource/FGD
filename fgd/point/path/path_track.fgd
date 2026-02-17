@@ -7,7 +7,7 @@
 = path_track: "An entity used to build paths for other entities to follow. " +
 	"Each path_track is a node on the path, each holding the name of the next path_track in the path."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Disabled" : 0
 		4: "Branch Reverse" : 0

@@ -4,7 +4,7 @@
 	iconsprite("editor/ficool2/env_firesensor.vmt")
 = env_firesensor: "An entity that detects changes in heat nearby."
 	[
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start On" : 1
 		]

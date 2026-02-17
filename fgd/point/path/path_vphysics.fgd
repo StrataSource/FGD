@@ -7,7 +7,7 @@
 	animator() keyframe("target")
 = path_vphysics: "An entity that spawns invisible tractor beams in the path specified"
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		]
 

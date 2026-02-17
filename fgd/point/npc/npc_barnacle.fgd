@@ -5,7 +5,7 @@
 	sphere(fademaxdist) 
 = npc_barnacle: "Barnacle"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Cheap death" : 0
 		131072: "Ambush Mode" : 0

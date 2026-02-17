@@ -8,7 +8,7 @@
 	sphere(farz)
 = env_projectedtexture: "Projected texture entity."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Enabled" : 1
 		2: "Always Update (moving light)" : 0

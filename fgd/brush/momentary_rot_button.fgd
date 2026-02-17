@@ -5,7 +5,7 @@
 	speed(float) : "Speed (deg/sec)" : 50 : "The amount, in degrees, that the wheel turns per second."
 	
 	sounds[engine](integer) : "Sounds" : 0
-	sounds(choices) : "Sounds" : 0 : "Sound played when pressed. Choose from sounds in the Buttons.snd* category." =
+	sounds(choices) : "Sounds" : 0 : "Sound played when pressed. Choose only from sounds in this category." =
 		[
 		0: "None (Silent)"
 		1: "Buttons.snd1: Big zap & Warmup"
@@ -57,7 +57,7 @@
 	returnspeed(float) : "Auto-return speed" : 0 : "If the 'Toggle' spawnflag is not set, " +
 		"the speed at which the wheel auto-returns when left alone, in degrees per second."
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Not Solid" : 1
 		32: "Toggle (Disable Auto Return)" : 1

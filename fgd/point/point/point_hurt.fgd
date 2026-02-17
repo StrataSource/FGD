@@ -10,7 +10,7 @@
 	damage(integer) : "Damage" : 5 : "Damage done to all affected entities each time this entity fires."
 	damagedelay(float) : "Delay" : 1 : "Delay between refires, in seconds."
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start Active" : 0
 		]

@@ -3,7 +3,7 @@
 	studio("models/manhack.mdl") 
 = npc_manhack: "Manhack"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Start packed up (folded and engine off)" : 0
 		131072: "Don't use any damage effects" : 0

@@ -12,7 +12,7 @@
 	magnitude(string) : "Magnitude" : 100 : "Amount of physics force applied by the explosion. A negative value can be used to suck entities inward."
 	radius(string) : "Clamp Radius (0 = auto)" : 0 : "If specified, the radius in which the explosion damages entities. If unspecified, the radius will be based on the magnitude."
 	targetentityname(target_destination) : "Limit to Entity" : : "If specified, the explosion will only affect the matching entity."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "No Damage - Only Force" : 1
 		2: "Push players" : 0

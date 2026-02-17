@@ -14,7 +14,7 @@
 	"This makes it easy to tweak the desired loadout of many resupplies. " +
 	"The BecomeMaster input allows you to switch Masters dynamically as the level progresses."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Use Master's values" : 1
 		2: "Is Master" : 0

@@ -8,7 +8,7 @@
 	[
 	target(target_destination) : "Entity To Teleport" : : "Name of the entity that will be teleported."
 	model[!engine](studio) : "[H] Model" : "models/editor/angle_helper.mdl" : "The model shown in Hammer, to use for positioning."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Teleport Home" : 0
 		2: "Into Duck (episodic)" : 0

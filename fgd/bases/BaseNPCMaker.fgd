@@ -3,9 +3,9 @@
 	color(0 0 255) 
 = BaseNPCMaker
 	[
-	startdisabled(boolean) : "Start Disabled" : 1
+	startdisabled(boolean) : "Start Disabled" : 1 : "Sets this entity as disabled on map spawn."
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		16: "Fade Corpse" : 0
 		32: "Infinite Children" : 0

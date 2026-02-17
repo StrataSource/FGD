@@ -6,7 +6,7 @@
 	// Keys
 	startvalue(vector) : "Initial Value" : "0 0 0" : "The vector this entity shuold start with."
 	
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1 : "Disable X" : 0
 		2 : "Disable Y" : 0

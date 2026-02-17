@@ -11,7 +11,7 @@
 	DontQueueWhenDisabled(boolean) : "Don't queue when disabled" : 0 : "Prevents the relay from queuing inputs when disabled. " +
 		"This means inputs will only be queued when enabled and still handling its current I/O connections." 
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Only trigger once" : 0
 		2: "Allow fast retrigger" : 0

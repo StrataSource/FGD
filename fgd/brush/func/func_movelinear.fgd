@@ -3,7 +3,7 @@
 = func_movelinear: "A brush entity that moves linearly along a given distance, in a given direction."
 	[
 	movedir(angle) : "Move Direction (Pitch Yaw Roll)" : "0 0 0" : "The direction the brushes will move, when told to open or passed a positive SetPosition value."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		8: "Not Solid" : 0
 		]

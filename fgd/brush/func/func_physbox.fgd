@@ -1,7 +1,7 @@
 @SolidClass base(BreakableBrush)
 = func_physbox: "A brush entity that's physically simulated."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		4096: "Start Asleep" : 0
 		8192: "Ignore +USE for Pickup" : 0

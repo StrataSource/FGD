@@ -3,7 +3,7 @@
 	[
 	delaymin(string) : "Min Delay Between Announcements" : 15
 	delaymax(string) : "Max Delay Between Announcements" : 135
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start Silent" : 0
 		2: "Play Everywhere" : 0

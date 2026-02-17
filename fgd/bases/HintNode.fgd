@@ -1,13 +1,13 @@
 @BaseClass base(Node) 
 = HintNode
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Allow jump up" : 0
 		]
 
 	hinttype[engine](integer) : "Hint" : 0
-	hinttype(choices) : "Hint" : "0" =
+	hinttype(choices) : "Hint" : "0" : "Type of hint for this node. Basically determines what this node is." =
 		[
 		0: "None"
 		1: "World: Door (Not Used)"

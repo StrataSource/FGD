@@ -6,7 +6,7 @@
 = env_cubemap: "An entity that creates a sample point for the Cubic Environment Map."
 	[
 	cubemapsize[engine](integer) : "Cubemap Size" : 0
-	cubemapsize(choices) : "Cubemap Size" : 0 =
+	cubemapsize(choices) : "Cubemap Size" : 0 : "The resolution of this cubemap's texture." =
 		[
 		0: "Default"
 		1: "1x1"
@@ -18,6 +18,9 @@
 		7: "64x64"
 		8: "128x128"
 		9: "256x256"
+		10: "512x512"
+		11: "1024x1024"
+		12: "2048x2048"
 		]
 
 	sides(sidelist) : "Brush faces" : : "(Optional) Brushes faces to directly attach to the env_cubemap. Press Pick then click on faces in the 3D View to select them. Use CTRL while clicking to add or remove from the selection."

@@ -556,8 +556,8 @@
 	easing_start(choices) : "Easing Start" : "linear" : "Controls how the animation begins." =
 		[
 		"linear": "None"
-		"quad": "Quadratic (x²)"
-		"cubic": "Cubic (x³)"
+		"quad": "Quadratic (xï¿½)"
+		"cubic": "Cubic (xï¿½)"
 		"quartic": "Quartic (x^4)"
 		"sine": "Sinusoidal"
 		]
@@ -565,8 +565,8 @@
 	easing_end(choices) : "Easing End" : "linear" : "Controls how the animation ends." =
 		[
 		"linear": "None"
-		"quad": "Quadratic (x²)"
-		"cubic": "Cubic (x³)"
+		"quad": "Quadratic (xï¿½)"
+		"cubic": "Cubic (xï¿½)"
 		"quartic": "Quartic (x^4)"
 		"sine": "Sinusoidal"
 		]
@@ -787,7 +787,7 @@
 	appliesto(SRCTOOLS)
 = comp_prop_cable_dynamic: "Allows using comp_prop_rope/comp_prop_cable as a dynamic prop."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		256: "Start with collision disabled" : 0
 		]
@@ -912,7 +912,7 @@
 	appliesto(SRCTOOLS)
 = comp_prop_rope_dynamic: "Allows using comp_prop_rope/comp_prop_cable as a prop_dynamic."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		256: "Start with collision disabled" : 0
 		]

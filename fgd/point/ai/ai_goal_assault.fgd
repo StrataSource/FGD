@@ -14,7 +14,7 @@
 		1: "Classname"
 		]
 
-	startactive(boolean) : "Start Active" : 0
+	startactive(boolean) : "Start Active" : 0 :"Should this entity be active on spawn?"
 
 	assaultcue[engine](integer): "Assault Cue" : 1
 	assaultcue(choices) : "Assault Cue" : 1 =

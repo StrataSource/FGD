@@ -12,7 +12,7 @@
 	"When you attach something to the spring, it will stretch longer than its 'natural length'. " +
 	"The amount of stretch is determined by the 'Sprint Constant'. The larger the spring constant the less stretch the spring."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Force only on stretch" : 0
 		]

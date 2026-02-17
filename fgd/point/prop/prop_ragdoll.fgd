@@ -5,7 +5,7 @@
 = prop_ragdoll: "A prop that physically simulates and can be articulated with internal joints. " +
 	"The joint constraints are part of the physics model."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		4: "Debris - Don't collide with the player or other debris" : 1
 		4096: "Use LRU Retirement" : 0

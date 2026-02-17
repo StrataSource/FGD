@@ -1,7 +1,7 @@
 @SolidClass base(BaseEntityBrush, Origin) 
 	appliesto(P2CE) = func_noportal_volume: "A region which prevents portal placement."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start inactive" : 0
 		]

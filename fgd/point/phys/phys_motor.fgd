@@ -9,7 +9,7 @@
 	spinup(float) : "Spin up time" : 1 : "spin up time in seconds (also affects the rate at which speed changes happen)"
 	inertiafactor(float) : "System Interia Scale" : "1.0" : "Make this larger if the object being driven is constrained to a set of heavier objects."
 	axis(vecline) : "Rotation Axis"
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start On" : 1
 		2: "No world collision" : 0

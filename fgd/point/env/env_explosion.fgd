@@ -17,7 +17,7 @@
 		5: "Additive"
 		]
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "No Damage" : 0
 		2: "Repeatable" : 0

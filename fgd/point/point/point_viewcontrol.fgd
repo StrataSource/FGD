@@ -17,7 +17,7 @@
 
 	interpolatepositiontoplayer(boolean) : "Interpolate Position To Player" : 0 : "Gradually interpolate player's position to here on start. (Episodic only)"
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start At Player" : 1
 		2: "Follow Player" : 1

@@ -33,12 +33,12 @@
 	renderamt(integer) : "Alpha" : 255 : "Alpha of the fade, where 0 = fully transparent and 255 = fully opaque."
 	rendercolor(color255) : "Color (R G B)" : "255 255 255"
 
-	uniformscale(float) : "Uniform Scale Override" : 1 : "Resize the static prop uniformly."
-	scale(vector) : "Scale Override" : "1 1 1" : "Resize the static prop."
+	uniformscale(float) : "Uniform Scale Override" : 1 : "Resizes the static prop uniformly."
+	scale(vector) : "Scale Override" : "1 1 1" : "Resizes the static prop."
 
 
 	solid[engine](integer) : "Collisions" : 6
-	solid(choices) : "Collisions" : 6 =
+	solid(choices) : "Collisions" : 6 : "Collision method for this prop." =
 		[
 		0: "Not Solid"
 		1: "Use BSP (QPhysics)"
@@ -50,14 +50,14 @@
 
 	preventpropcombine[PROPCOMBINE](boolean) : "Disable Prop Combine" : 0 : "Prevent this static prop from combining with any other static props in vbsp."
 
-	linedivider_levels[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_levels[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
-	mincpulevel[engine](integer): "Minimum CPU Level": 0
-	maxcpulevel[engine](integer): "Maximum CPU Level": 0
+	mincpulevel[engine](integer): "Minimum CPU Level": 0 
+	maxcpulevel[engine](integer): "Maximum CPU Level": 0 
 	mingpulevel[engine](integer): "Minimum GPU Level": 0
 	maxgpulevel[engine](integer): "Maximum GPU Level": 0
 
-	mincpulevel(choices) : "Minimum CPU Level" : 0 =
+	mincpulevel(choices) : "Minimum CPU Level" : 0 : "This entity will not render if settings set are lower than this value." =
 		[
 		0: "default (low)"
 		1: "low"
@@ -65,7 +65,7 @@
 		3: "high"
 		]
 
-	maxcpulevel(choices) : "Maximum CPU Level" : 0 =
+	maxcpulevel(choices) : "Maximum CPU Level" : 0 : "This entity will not render if settings set are higher than this value." =
 		[
 		0: "default (high)"
 		1: "low"
@@ -73,7 +73,7 @@
 		3: "high"
 		]
 
-	mingpulevel(choices) : "Minimum GPU Level" : 0 =
+	mingpulevel(choices) : "Minimum GPU Level" : 0 : "This entity will not render if settings set are lower than this value." =
 		[
 		0: "default (very low)"
 		1: "very low"
@@ -82,7 +82,7 @@
 		4: "high"
 		]
 
-	maxgpulevel(choices) : "Maximum GPU Level" : 0 =
+	maxgpulevel(choices) : "Maximum GPU Level" : 0 : "This entity will not render if settings set are higher than this value." =
 		[
 		0: "default (high)"
 		1: "very low"
@@ -91,7 +91,7 @@
 		4: "high"
 		]
 
-	linedivider_light[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_light[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
 	disableshadows(boolean) : "Disable Shadows" : 0
 	disableshadowdepth(boolean) : "Disable ShadowDepth" : 0 : "Used to disable rendering into shadow depth (for clustered lights) for this entity."
@@ -104,7 +104,7 @@
 	
 	lightingorigin(target_destination) : "Lighting Origin" : : "Select an info_lighting to specify a location to sample lighting from, instead of using this entity's origin."
 
-	linedivider_fade[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_fade[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
 	screenspacefade(boolean) : "Screen Space Fade" : 0 : "The method by which the fading distance should be determined. If 'No', the fade distances is the distance from the player's view to the object, in units. " +
 		"If 'Yes', the fade distance is the size of the object onscreen, in pixels."

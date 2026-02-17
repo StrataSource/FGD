@@ -13,7 +13,7 @@
 
 	graball(boolean) : "All in radius" : 0 : "Whether to grab all matching NPCs in the specified radius, instead of just one."
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		4: "Repeatable" : 1
 		1024: "Search Cyclically" : 0

@@ -7,7 +7,7 @@
 	[
 	enabled(boolean) : "Start Enabled" : 1
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Do not call antlions to position" : 0
 		2: "Don't activate on thrown bugbait splashes" : 0

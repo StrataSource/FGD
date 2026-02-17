@@ -36,7 +36,7 @@
 		59: "10 SPEAKER TINY"
 		]
 
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Hears combat sounds" : 1
 		2: "Hears world sounds" : 1

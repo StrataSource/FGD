@@ -5,7 +5,7 @@
 	"Occluders are used to dynamically determine what things are behind them, to prevent trying to draw them at all."
 	[
 	startactive[engine](boolean) : "Start Active"
-	startactive(choices) : "Initial State" : "1" =
+	startactive(choices) : "Initial State" : "1" : "Initial state of the entity." =
 		[
 		0: "Inactive"
 		1: "Active"

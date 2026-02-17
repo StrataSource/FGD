@@ -1,10 +1,13 @@
 @BaseClass = BaseClusteredLight
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Initially dark" : 0
 		2: "Shadowed" : 0
 		]
+
+	linedivider_clus1[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
+
 	_specularmode(choices) : "Specular light mode" : 0 : "The type of specular lighting to use for the light." = 
 		[
 		0: "None"
@@ -21,6 +24,8 @@
 		0: "None"
 		1: "Static Only"
 		]
+
+	linedivider_clus2[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 		
 	_initialshadowsize(integer) : "Initial Shadow Size" : 3 : "The initial static shadow resolution exponent. Only relevant for static shadow allocation. Adding 1 to this value doubles both dimensions of the shadowmap."
 	nearz(float) : "Near Z" : 4.0 : "Near Z for this light. Determines where shadows start to be cast. Inside the nearz radius, the light is still visible, but anything inside it won't cast shadows"

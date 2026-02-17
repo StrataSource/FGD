@@ -4,7 +4,7 @@
 	"Behavior can be either based on viewing direction or proximity alone, or on a combination of both.  "+
 	"If inverted the doors behavior will be the opposite."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		8192: "LookDoor Threshold" : 0
 		16384: "LookDoor Invert" : 0

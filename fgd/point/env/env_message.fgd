@@ -3,7 +3,7 @@
 = env_message: "An entity that draws a text message on player's HUDs."
 	[
 	message(string) : "Message Text"
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Play Once" : 0
 		2: "All Clients" : 0 [+USE_MULTIPLAYER]

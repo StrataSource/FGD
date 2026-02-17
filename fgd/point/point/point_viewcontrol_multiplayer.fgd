@@ -21,7 +21,7 @@
 		3: "ATLAS"
 		]
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Disable when move finished" : 1
 		2: "Set FOV" : 0

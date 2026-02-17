@@ -4,7 +4,7 @@
 	color(200 200 0) 
 = env_firesource: "An entity that provides heat to all nearby env_fire entities. Cannot be extinguished."
 	[
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start On" : 0
 		]

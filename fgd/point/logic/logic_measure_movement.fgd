@@ -26,7 +26,7 @@
 		2 : "Attachment point"
 		]
 
-	spawnflags(Flags) = 
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" = 
 		[
 		1 : "Ignore X" : 0
 		2 : "Ignore Y" : 0

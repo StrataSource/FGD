@@ -4,7 +4,7 @@
 	iconsprite("editor/phys_convert.vmt") 
 = phys_convert: "Turns an arbitrary entity into a physically simulated entity. i.e. brush entities will behave like func_physbox, model entities behave like prop_physics."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Convert Asleep" : 0
 		2: "Convert As Debris" : 0

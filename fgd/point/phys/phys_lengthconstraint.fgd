@@ -11,7 +11,7 @@
 	addlength(float) : "Additional Length" : 0 : "Add (or subtract) this amount to the rest length of the rope."
 	minlength(float) : "Minimum Length" : 0 : "If the constraint is not rigid, this is the minimum length it can be."
 	attachpoint(vecline) : "Attached object 2 point" : "The position the rope attaches to object 2"
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "No Collision until break" : 1
 		2: "Keep Rigid" : 0

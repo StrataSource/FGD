@@ -4,7 +4,7 @@
 	color(240 180 250) 
 = prop_vehicle_choreo_generic: "Generic vehicle used for complex choreography and other scripted scenes."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		16384: "Keep Player Position" : 0
 		]

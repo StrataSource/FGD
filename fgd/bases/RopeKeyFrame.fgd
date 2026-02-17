@@ -1,7 +1,7 @@
 @BaseClass base(SystemLevelChoice) 
 = RopeKeyFrame
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Auto Resize" : 0
 		]
@@ -21,7 +21,7 @@
 	barbed(boolean) : "Barbed" : 0 : "Test effect that makes the rope look sharper and more barbed."
 	width(float) : "Width (1-64)" : 2 : "Width of the rope."
 	texturescale(float) : "Texture Scale" : 1 : "This changes the texture resolution. The default resolution is 4 pixels per unit. Larger values stretch the texture and smaller values scrunch it up."
-	collide(boolean) : "Collide with world" : 0
+	collide(boolean) : "Collide with world" : 0 : "Should this rope collide with world?"
 
 	dangling[engine](boolean) : "Start Dangling" : 0
 	dangling(choices) : "Start Dangling" : 0 : "When set to Yes, the rope starts out detached from its target endpoint." = 
@@ -39,7 +39,7 @@
 
 	ropematerial(material) : "Rope Material" : "cable/cable.vmt" : "The material to use when rendering the rope."
 	
-	usewind(choices) : "Wind" : "0" : "Is the rope affected by wind?" =
+	usewind(choices) : "Wind" : "0" : "Is the rope affected by env_wind?" =
 		[
 		0: "Ignore Wind"
 		1: "Affected by Wind"

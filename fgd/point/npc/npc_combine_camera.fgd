@@ -5,7 +5,7 @@
 	studio("models/combine_camera/combine_camera.mdl")
 = npc_combine_camera: "Combine security camera"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		32: "Always Become Angry On New Enemy" : 1
 		64: "Ignore Enemies (Scripted Targets Only)" : 0

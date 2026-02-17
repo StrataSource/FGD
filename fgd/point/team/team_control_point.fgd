@@ -3,7 +3,7 @@
 	studio("models/effects/cappoint_hologram.mdl") 
 = team_control_point: "Control Point"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Hide Control Point on HUD" : 0
 		2: "Start with model hidden" : 0

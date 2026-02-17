@@ -2,7 +2,7 @@
 	appliesto(P2CE) 
 = trigger_portal_cleanser: "A trigger volume that disolves any entities that touch it and fizzles active portals when the player touches it.|||An Aperture Science Material Emancipation Grid."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Clients/Players" : 1
 		2: "NPCs" : 0

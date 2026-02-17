@@ -7,7 +7,7 @@
 	wait(integer) : "Delay Before Reset (-1 stay)" : 3 : "Amount of time, in seconds, after the button has been pressed before it returns to the starting position. Once it has returned, it can be used again. If the value is set to -1, the button never returns."
 	distance(integer) : "Distance (deg)" : 90 : "The amount, in degrees, that the button should rotate when it's pressed."
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Not solid" : 0
 		2: "Reverse Direction" : 0

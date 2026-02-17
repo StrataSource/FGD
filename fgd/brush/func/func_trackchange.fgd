@@ -17,7 +17,7 @@
 	bottomtrack(target_destination) : "Bottom Track" : : "Name of first path_track of the bottom track (if Start at Bottom flag is selected, this is the name of the last path_track at the bottom path)."
 	speed(integer) : "Move/Rotate Speed" : 0 : "Speed in which func_trackchange travel the whole way up/down (units per seconds)."			
 	
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Auto Activate Train - see description" : 0
 		2: "Relink Track" : 0

@@ -9,7 +9,7 @@
 	magnitude(integer) : "Magnitude" : 100 : "Strength of the impact."
 	distance(integer) : "Distance" : 0 : "How far to project the impact (if 0 uses a default value)."
 	directionentityname(target_destination) : "Point to Entity" : : "If set, 'Distance' and Angle settings are ignored and the direction and distance to the target entity will be used."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "No fall-off" : 0
 		2: "Infinite Length" : 0

@@ -4,7 +4,7 @@
 	[
 	scale(float) : "Scale" : 1
 	duration(float) : "Duration" : 30
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "No DLight" : 0
 		2: "No Smoke" : 0

@@ -3,7 +3,7 @@
 	iconsprite("editor/math_colorblend.vmt")
 = math_colorblend: "Used to create a blend between two colors for controlling the color of another entity."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Ignore out of range input values" : 1
 		]

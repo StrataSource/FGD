@@ -4,7 +4,7 @@
 	sphere(fademaxdist)
 = prop_dynamic_base
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		64: "Use Hitboxes for Renderbox" : 0
 		256: "Start with collision disabled" : 0

@@ -3,7 +3,7 @@
 	studio("models/roller.mdl")
 = npc_apcdriver: "NPC used to drive an APC vehicle."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "No Rocket Attacks" : 0
 		131072: "No Gun Attacks" : 0

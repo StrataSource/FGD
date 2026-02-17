@@ -1,5 +1,6 @@
 @PointClass base(BaseEntityPoint)
 	appliesto(+engine)
+	studio("models/props/cs_militia/fishriver01.mdl")
 = fish: "Individual fish spawned by func_fish_pool."
 	[
 	]

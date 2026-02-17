@@ -4,7 +4,7 @@
 	studio("models/editor/cone_helper.mdl")
 = point_energy_ball_launcher: "Launches Aperture Science High Energy Pellets. "
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Override ball material" : 0
 		]

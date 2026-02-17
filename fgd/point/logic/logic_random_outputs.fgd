@@ -3,7 +3,7 @@
 	color(0 100 250)
 = logic_random_outputs: "A message forwarder. Fires up to eight separate outputs, each with a different chance of firing."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Only trigger once" : 0
 		2: "Allow fast retrigger" : 0

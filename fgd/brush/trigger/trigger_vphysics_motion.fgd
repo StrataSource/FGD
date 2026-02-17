@@ -1,7 +1,7 @@
 @SolidClass base(Trigger) 
 = trigger_vphysics_motion: "A volumetric trigger that affects the motion of vphysics objects that touch it."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		4096: "Can move (through hierarchical attachment)" : 0
 		]

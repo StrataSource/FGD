@@ -2,7 +2,7 @@
 	appliesto(MOMENTUM)
 = trigger_momentum_limitmovement : "Trigger that prevents the player from doing specific keypress movements inside the volume."
 	[
-	spawnflags(flags) = 
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" = 
 		[
 		8192: "Prevent the player from moving forward" : 0
 		16384: "Prevent the player from moving to the left" : 0

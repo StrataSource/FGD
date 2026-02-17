@@ -2,7 +2,7 @@
 	line(255 255 0, targetname, target) 
 = BaseTrain
 	[
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "No Pitch (X-rot)" : 0
 		2: "No User Control" : 0
@@ -37,16 +37,16 @@
 
 	wheels(integer) : "Distance Between the Wheels" : 50 : "Used for turning and stopping."
 	height(integer) : "Height above track" : 4 : "The height above the track that this train moves."
-	bank(string) : "Bank Angle on Turns" : 0
+	bank(string) : "Bank Angle on Turns" : 0 : "Angle that will be banked on turns."
 	dmg(integer) : "Damage on Crush" : 0 : "The amount of damage this train does to entities that block it."
 
-	line_basetrain[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	line_basetrain[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
 	movesound(sound) : "Move Sound" : : "A sound that is played (and looped) while the train is moving."
 	movepingsound(sound) : "Move Ping Sound" : : "A sound that is played more frequently as the train speeds up."
 	startsound(sound) : "Start Sound" : : "A sound played when the train starts moving."
 	stopsound(sound) : "Stop Sound" : : "A sound played when the train stops moving."
-	volume(integer) : "Volume (10 = loudest)" : 10
+	volume(integer) : "Volume (10 = loudest)" : 10 : "Volume of this train."
 	movesoundminpitch(integer) : "Min pitch (1-255, > 100 = higher)" : 60 : "The sound pitch value that the train will approach as it comes to a stop."
 	movesoundmaxpitch(integer) : "Max pitch (1-255, > 100 = higher)" : 200 : "The sound pitch value that the train will approach as it approaches its max speed " +
 		" or 1000 units/second if the 'Use max speed for pitch shifting move sound' flag is not set."

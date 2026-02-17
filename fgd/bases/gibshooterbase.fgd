@@ -16,7 +16,7 @@
 	m_flgiblife(float) : "Gib Life" : 4 : "Time in seconds for gibs to live +/- 5%."
 
 	simulation[engine](integer) : "Simulate"
-	simulation(choices) : "Simulate" : "0" =
+	simulation(choices) : "Simulate" : "0" : "How the gibs from this gib shooter will be physically simulated." =
 		[
 		0: "Point"
 		1: "Physics"
@@ -25,7 +25,7 @@
 
 	lightingorigin(target_destination) : "Lighting Origin" : : "Select an info_lighting to specify a location to sample lighting from " +
 		"for all gibs spawned by this shooter, instead of their own origins."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Repeatable" : 0
 		]

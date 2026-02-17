@@ -5,9 +5,9 @@
 = env_wind: "An entity to control wind in the map. Partially functional."
 	[
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
-		1: "Start disabled" : 0
+		1: "Start Disabled" : 0
 		]
 
 	minwind(integer) : "Min normal speed" : 20 : "Minimum speed of the wind while idling."

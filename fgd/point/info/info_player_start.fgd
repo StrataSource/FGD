@@ -5,7 +5,7 @@
 	"When multiple info_player_start entities are present in a map, " +
 	"set the 'Master' spawnflag on one of them to indicate which one should be used when running the entire map."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Master (Has priority if multiple info_player_starts exist)" : 0
 		]

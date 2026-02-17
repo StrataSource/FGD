@@ -6,7 +6,7 @@
 	"To use, add new keys to this entity, where each key is the classname of a weapon/item, " + 
 	"and the corresponding value is the number of those weapons/items to give to the player who uses this entity. "
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Use Only" : 0
 		]

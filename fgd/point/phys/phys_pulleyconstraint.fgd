@@ -14,7 +14,7 @@
 		"The pulley for Entity 1 is the origin of this constraint entity. " +
 		"Entity 1 is always suspended from pulley point 1, " +
 		"and Entity 2 is always suspended from pulley point 2."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "No Collision until break" : 1
 		2: "Keep Rigid" : 0

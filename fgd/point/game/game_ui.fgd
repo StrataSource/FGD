@@ -3,7 +3,7 @@
 	iconsprite("editor/ficool2/game_ui.vmt") 
 = game_ui: "An entity used to override player input when the player is looking at it."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		32: "Freeze Player" : 1
 		64: "Hide Weapon" : 1

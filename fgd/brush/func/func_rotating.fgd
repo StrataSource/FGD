@@ -6,7 +6,7 @@
 		"Lower values make the brush speed up and slow down faster."
 	message(sound) : "Rotating sound WAV" : : "Sound to play while rotating."
 	volume(integer) : "Volume (10 = loudest)" : 10 : "The volume of the rotation sound."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start ON" : 0
 		2: "Reverse Direction" : 0

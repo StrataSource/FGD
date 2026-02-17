@@ -2,13 +2,13 @@
 	appliesto(P2CE)
 = env_lightrail_endpoint: "Special effects for the endpoints of the lightrail.|||Special effects for the endpoints of the Unstationary Scaffold."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start On (w/ Small FX)" : 0
 		]
 
-	small_fx_scale(float) : "Scale Small FX" : 1 : "Scale of the small effect.  1 is the default size, 2 is twice that, etc."
-	large_fx_scale(float) : "Scale Large FX" : 1 : "Scale of the large effect.  1 is the default size, 2 is twice that, etc."
+	small_fx_scale(float) : "Scale Small FX" : 1 : "Scale of the small effect. 1 is the default size, 2 is twice that, etc."
+	large_fx_scale(float) : "Scale Large FX" : 1 : "Scale of the large effect. 1 is the default size, 2 is twice that, etc."
 
 	// Inputs
 	input StartCharge(float) : "Start charging the endpoint from the small to large state over a specified amount of seconds."

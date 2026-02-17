@@ -1,0 +1,9 @@
+// It's quite funny how projected_wall_entity is in the FGD but projected_tractor_beam_entity is not,
+// considering that both are similar to each other.
+// So here it is now. New entity :P
+
+@PointClass base(BaseEntityPoint)
+	appliesto(P2CE)
+= projected_tractor_beam_entity: "The actual Excursion Funnel itself, projected from prop_tractor_beam."
+	[
+	]   

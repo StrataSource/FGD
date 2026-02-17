@@ -7,7 +7,7 @@
 	[
 	rate(float) : "Seconds to reach target" : "1.0" : "Amount of time it should take to reach the specified FOV."
 	fov(integer) : "Target FOV" : 75 : "FOV that this entity should set the player's FOV to when active."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Allow Suit Zoom" : 0
 		]

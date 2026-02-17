@@ -4,7 +4,7 @@
 	studio("models/editor/angle_helper.mdl")
 = env_entity_maker: "Spawns the specified entity template at its origin. If set to auto-spawn, it will spawn the template whenever there's room and the player is looking elsewhere."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Enable AutoSpawn (will spawn whenever there's room)" : 0
 		2: "AutoSpawn: Wait for entity destruction" : 0

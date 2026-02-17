@@ -2,7 +2,7 @@
 	iconsprite("editor/env_hudhint.vmt")
 = env_hudhint: "An entity to control the display of HUD hints. HUD hints are used to show the player what key is bound to a particular command."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "All Players" : 0 [+USE_MULTIPLAYER]
 		]

@@ -37,7 +37,7 @@
 
 	AllowSilentDissolve[+P2](boolean) : "Allow SilentDissolve input" : 1 : "Allow the SilentDissolve input to dissolve this object."
 
-	linedivider_phys[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_phys[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "One thing..."
 
 	// Inputs
 	input Skin(integer) : "Changes the model skin to the specified number."

@@ -5,7 +5,7 @@
 = npc_antlion: "Antlions will run away from ai_sound, type: Thumper."
 	[
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Burrow when eluded" : 0
 		131072: "Use Ground Checks" : 0

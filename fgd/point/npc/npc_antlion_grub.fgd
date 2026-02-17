@@ -5,7 +5,7 @@
 	sphere(fademaxdist)
  = npc_antlion_grub: "Antlion grubs, seen in EP2."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Do not automatically attach to surface" : 0
 		]

@@ -4,7 +4,7 @@
 	iconsprite("editor/point_apc_controller.vmt")
 = point_apc_controller: "APC Controller"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Active" : 0
 		]

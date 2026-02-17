@@ -7,7 +7,7 @@
 	color(128 128 128)
 = phys_slideconstraint: "A constraint that constrains an entity along a line segment."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "No Collision until break" : 1
 		2: "Limit Endpoints" : 0

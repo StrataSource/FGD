@@ -3,14 +3,14 @@
 	frustum(FOV,fogstart,fogend,_frustum_color,-1)
 = point_camera: "Camera"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start Off" : 0
 		]
 
 	fov(float) : "FOV" : 90 : "Field of view in degrees"
 	usescreenaspectratio(boolean) : "Screen Aspect Ratio" : 0
-	fogenable(boolean) : "Fog Enable" : 0
+	fogenable(boolean) : "Fog Enable" : 0 : "Whether or not the fog should start enabled."
 	fogcolor(color255) : "Fog Color" : "0 0 0"
 	fogstart(float) : "Fog Start" : 2048 : "The near fog plane."
 	fogend(float) : "Fog End" : 4096 : "The far fog/clipping plane."

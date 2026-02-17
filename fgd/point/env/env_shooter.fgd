@@ -18,7 +18,7 @@
 		]
 
 	skin(integer) : "Gib Skin" : 0 : "Some models have multiple versions of their textures, called skins. Set this to a number other than 0 to use that skin on all gi" + "bs produced by this shooter."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		2: "On fire" : 0
 		4: "Strict remove after lifetime" : 0

@@ -4,7 +4,7 @@
 = weapon_portalgun: "The Aperture Science Handheld Portal Device. It shoots linked gates. This is the sole weapon entity used throughout the Portal series."
 	[
 
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		8 : "Disable pickup sounds" : 0
 		]

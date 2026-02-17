@@ -3,7 +3,7 @@
 	line(255 255 255, targetname, filtername) 
 = TriggerOnce
 	[
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Clients/Players" : 1
 		8192: "Allow ghosts to fire this trigger" : 0 [MOMENTUM]

@@ -5,7 +5,7 @@
 	sphere(minrange) sphere(maxrange)
 = BaseTank
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Active" : 0
 		16: "Only Direct" : 0
@@ -22,31 +22,32 @@
 	
 	master(string) : "(Team) Master"
 
-	yawrate(string) : "Yaw rate" : "30"
-	yawrange(string) : "Yaw range" : "180"
-	yawtolerance(string) : "Yaw tolerance" : "15"
-	pitchrate(string) : "Pitch rate" : "0"
-	pitchrange(string) : "Pitch range" : "0"
-	pitchtolerance(string) : "Pitch tolerance" : "5"
-	barrel(string) : "Barrel Length" : "0"
-	barrely(string) : "Barrel Horizontal" : "0"
-	barrelz(string) : "Barrel Vertical" : "0"
+	yawrate(string) : "Yaw rate" : "30" : "How fast tank can look left or right."
+	yawrange(string) : "Yaw range" : "180" : "How far tank can turn left or right."
+	yawtolerance(string) : "Yaw tolerance" : "15" : "Additional left-right range. If the gun tries to turn beyond Yaw range + Yaw tolerance, the gun will snap back to the maximum Yaw range."
+	pitchrate(string) : "Pitch rate" : "0" : "How fast tank can look up or down"
+	pitchrange(string) : "Pitch range" : "0" : "How fast tank can look up or down"
+	pitchtolerance(string) : "Pitch tolerance" : "5" : "Additional up-down range. If the gun tries to turn beyond Pitch range + Pitch tolerance, the gun will snap back to the maximum Pitch range."
+	barrel(string) : "Barrel Length" : "0" : "Solid length of the tank barrel. Any part of the barrel beyond this length may clip through objects."
+	barrely(string) : "Barrel Horizontal" : "0" : "How wide the tank barrel is, horizontally."
+	barrelz(string) : "Barrel Vertical" : "0" : "How wide the tank barrel is, vertically."
 
 	spritesmoke(sprite) : "Smoke Sprite" : "" : "A specific sprite to use for the muzzle's smoke effect."
 	spriteflash(sprite) : "Flash Sprite" : "" : "A specific sprite to use for the muzzle's flash effect."
 	spritescale(string) : "Sprite scale" : "1" : "The scale for smoke and flash sprites."
 
-	rotatestartsound(sound) : "Rotate Start Sound"
-	rotatesound(sound) : "Rotate Loop Sound"
-	rotatestopsound(sound) : "Rotate Stop Sound"
-	firerate(string) : "Rate of Fire" : "1"
+	rotatestartsound(sound) : "Rotate Start Sound" : : "Sound to play when tank starts to turn."
+	rotatesound(sound) : "Rotate Loop Sound" : : "Sound to play when tank is turning." + 
+	"If the tank stops being controlled while turning, the sound will continue to loop until the tank is being turned again."
+	rotatestopsound(sound) : "Rotate Stop Sound" : : "Sound to play when tank stops turning."
+	firerate(string) : "Rate of Fire" : "1" : "Number of bullets to fire in a second."
 	bullet_damage(string) : "Damage Per Bullet" : "0" : "If set to 0, it'll use the base weapon bullet's damage."
 	bullet_damage_vs_player(string) : "Damage Per Bullet Vs Player" : "0" : "If set to 0, it'll use the Damage Per Bullet value."
 	persistence(string) : "Firing persistence" : "1" : "(Seconds) How long to keep firing at last known position after lose sight of target"
 	persistence2(string) : "Firing persistence2" : "0" : "(Seconds) After lost enemy and persistence time has passed, how long to occasionally fire at enemy's last known position"
 
 	firespread[engine](integer) : "Bullet accuracy" : 0
-	firespread(choices) : "Bullet accuracy" : 0 =
+	firespread(choices) : "Bullet accuracy" : 0 : "How accurately the tank can fire." =
 		[
 		0: "Perfect Shot"
 		1: "Small cone"
@@ -55,8 +56,8 @@
 		4: "Extra-large cone"
 		]
 
-	minrange(string) : "Minimum target range" : "0"
-	maxrange(string) : "Maximum target range" : "0"
+	minrange(string) : "Minimum target range" : "0" : "Minimum range to target something (for NPCs). If a target is closer than this amount, the NPC will switch to any close-range weapon they have on them."
+	maxrange(string) : "Maximum target range" : "0" : "Maximum range to target something (for NPCs). Refer as the distance for aim assistance."
 
 	gun_base_attach(string) : "Gun Base Attachment" : : "If Parent is specified, this is the attachment point on the parent to aim from."
 	gun_barrel_attach(string) : "Gun Barrel Attachment" : : "If Parent is specified, this is the attachment point on the parent to fire from. If you specify this, you'll want to specify the Gun Base Attachment too."
@@ -67,7 +68,7 @@
 
 	ammo_count(integer) : "Ammunition Count" : -1 : "Only applies to player use. -1 = unlimited ammo."
 
-	leadtarget(boolean) : "Lead Target" : 0
+	leadtarget(boolean) : "Lead Target" : 0 : "Should this entity aim ahead to hit moving targets."
 
 	npc_man_point[+USE_AI](target_destination) : "NPC Man Point" : : "Point where NPC must stand to man this func_tank."
 	playergraceperiod[+USE_AI](float) : "Post-NPC Attack Grace Period" : 0 : "If specified, NPC's manning this func tank won't fire at the player, after firing at a non-player, for this amount of time."

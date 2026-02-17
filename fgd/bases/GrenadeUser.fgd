@@ -2,7 +2,7 @@
 	[
 	// Most grenade users shouldn't use grenades by default, override this in derived classes if otherwise
 	numgrenades[engine](integer) : "Number of Grenades" : 0
-	NumGrenades(choices) : "Number of Grenades" : 0 =
+	NumGrenades(choices) : "Number of Grenades" : 0 : "Number of grenades this NPC has. Note - 'Unlimited' is 999999." =
 		[
 		0 : "None"
 		1 : "1"

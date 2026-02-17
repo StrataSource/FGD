@@ -5,7 +5,7 @@
 	color(247 181 82)
 = path_corner: "Path points for func_train or NPC entities to follow."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Wait for retrigger" : 0
 		2: "Teleport to THIS path_corner" : 0

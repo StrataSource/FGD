@@ -3,7 +3,7 @@
 	color(255 123 2) 
 = logic_gate: "A general logic gate with two inputs. Supports AND, OR, NOT, NAND, NOR, XOR, and XNOR operations, which can also be changed through inputs."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Spawn A enabled" : 0
 		2: "Spawn B enabled" : 0

@@ -25,7 +25,7 @@
 		2: "Winner"
 		]
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Scout" : 1
 		2: "Sniper" : 1

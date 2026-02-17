@@ -3,7 +3,7 @@
 	color(255 255 0) 
 = npc_heli_avoidbox: "Makes Combine helicopters and gunships avoid this area."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Avoid the box above and below" : 0
 		]

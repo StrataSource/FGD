@@ -3,7 +3,7 @@
 	size(-2 -2 -2, 2 2 2)
 = npc_spotlight: "Spotlight"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Start Track On" : 1
 		131072: "Start Light On" : 1

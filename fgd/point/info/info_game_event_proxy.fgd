@@ -5,7 +5,7 @@
 	[
 	event_name(string) : "Event Name" : : "The event to trigger by name from modevents.res"
 	range(float) : "Range" : "512" : "Distance that the player must be before the event is generated."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Automatically detect visibility" : 1
 		]

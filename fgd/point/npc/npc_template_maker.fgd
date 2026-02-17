@@ -7,7 +7,7 @@
 = npc_template_maker: "An entity that creates NPCs. The NPCs it creates are clones of a template NPC. " +
 	"NPCs are spawned around this maker's origin, or at specified destination points."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		256: "Always use radius spawn" : 0
 		512: "Don't preload template models" : 0

@@ -6,7 +6,7 @@
 		"When a portal is opened behind it it will fall off the wall. " + 
 		"If gestured to in Coop the player's camera will switch to looking out of the camera lens, with a viewfinder effect."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		32: "Start Active" : 1
 		]

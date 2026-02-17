@@ -9,7 +9,7 @@
 	lookatname(target_destination) : "Look At Entity" : : "The entity we want to check to see if the Target Entity is looking at."
 	duration(float) : "Duration" : : "The amount of time the Target Entity must look at the 'Look at Entity' to trigger this entity, in seconds."
 	tolerance(integer) : "Tolerance" : : "The tolerance, in degrees, in the checking to determine when the Target Entity is looking at the Look At Entity."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Use target entity's angles (NOT position)" : 0
 		]

@@ -1,7 +1,8 @@
+
 @SolidClass base(BaseEntityVisBrush, EnableDisable, Toggle) 
 = func_brush: "An brush built entity with various features."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		2: "Ignore player +USE" : 1
 		]

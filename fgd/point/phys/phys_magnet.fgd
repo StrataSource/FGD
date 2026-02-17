@@ -3,7 +3,7 @@
 	color(128 128 128) 
 	iconsprite("editor/phys_magnet") = phys_magnet: "An entity that acts like a magnet, attaching metallic physics objects to itself when they touch it."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start Asleep" : 0
 		2: "Motion Disabled" : 0

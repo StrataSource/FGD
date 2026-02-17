@@ -35,13 +35,13 @@
 	unlocked_sound(sound) : "Unlocked Sound" : : "Sound played when the door is unlocked."
 
 	spawnpos[engine](integer) : "Spawn Position" : 0
-	spawnpos(choices) : "Spawn Position" : 0 =
+	spawnpos(choices) : "Spawn Position" : 0 : "Spawn position of this door." =
 		[
 		0: "Closed"
 		1: "Open"
 		]
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Starts Open - OBSOLETE, use 'Spawn Position' key instead" : 0
 		4: "Non-solid to Player" : 0

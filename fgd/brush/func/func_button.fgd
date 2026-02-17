@@ -1,3 +1,4 @@
+
 @SolidClass base(BaseEntityVisBrush, Button) 
 = func_button: "A brush entity that's designed to be used for a player-useable button. " +
 	"When used by the player, it moves to a pressed position. " +
@@ -13,7 +14,7 @@
 	wait(float) : "Delay Before Reset (-1 stay)" : 3 : "Amount of time, in seconds, after the button has been pressed before it returns to the starting position. " +
 		"Once it has returned, it can be used again. If the value is set to -1, the button never returns."
 		
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Don't move" : 0
 		32: "Toggle" : 0

@@ -15,7 +15,7 @@
 	paintinterval(float) : "Paint interval" : 1 : "Sniper will keep a target painted for this many seconds before shooting. 'Faster Shooting' sniper flag multiplies this by 0.75."
 	paintintervalvariance(float) : "Paint interval variance" : 0.75 : "When shooting at NPCs, a random number between 0 and this is added to PaintInterval for every shot."
 	
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Hidden" : 1
 		131072: "Laser Viewcone" : 0

@@ -48,7 +48,7 @@
 	forceclosed(boolean) : "Force Closed" : "0" : "If set, this door will close no matter what. " +
 		"Useful for doors that have to close even if the player tries to block them with objects."
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		// 1: "Starts Open" : 0
 		2048: "Starts locked" : 0

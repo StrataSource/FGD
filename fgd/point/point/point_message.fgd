@@ -5,12 +5,12 @@
 	sphere(radius)
 = point_message: "An entity that displays a text message in the world, at its origin."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start Disabled" : 0
 		]
 
-	message(string) : "Entity Message"
+	message(string) : "Entity Message" : : "Message to show. It will follow this entity's position."
 	radius(integer) : "Show message radius" : 128 : "Distance the player must be within to see this message."
 	developeronly(boolean) : "Developer Only?" : 0 : "If set, this message will only be visible when developer mode is on."
 

@@ -6,7 +6,7 @@
 	[
 	damageforce(boolean) : "Damage Pushes Player" : 0 : "Being hit by this turret will push the player back."
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		32: "Start Active" : 0
 		64: "Start Inactive" : 0

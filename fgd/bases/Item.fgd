@@ -4,7 +4,7 @@
 	sphere(fademaxdist) 
 = Item
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start Constrained" : 0
 		]

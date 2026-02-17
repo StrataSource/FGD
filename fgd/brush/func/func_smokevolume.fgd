@@ -1,7 +1,7 @@
 @SolidClass base(BaseEffectBrush) 
 = func_smokevolume: "A brush entity that spawns smoke particles within its volume."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Emissive" : 0
 		]

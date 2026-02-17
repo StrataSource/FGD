@@ -4,7 +4,7 @@
 	line(255 255 0, targetname, sourceEntityName) 
 = ambient_generic: "Universal ambient sound. Use it to play and control a single sound."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Infinite Range" : 0
 		16: "Start Silent" : 1

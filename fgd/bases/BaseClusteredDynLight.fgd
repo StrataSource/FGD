@@ -1,6 +1,6 @@
 @BaseClass base(BaseClusteredLight) = BaseClusteredDynLight
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Initially dark" : 0
 		2: "Shadowed" : 0
@@ -23,8 +23,9 @@
 		1: "Static Only"
 		]
 		
-	texturename(string) : "Cookie Texture Name" : "" : "The cookie texture to use for the light. An empty value means no cookie texture."
-	textureframe(integer) : "Cookie Texture Frame" : 0 : "The frame of the cookie texture to use for the light."
+	texturename(string) : "Cookie Texture Name" : "" : "The cookie texture to use for the light. Must be a greyscale VTF file. " +
+	"An empty value means no cookie texture. This light will project the specified texture (aka making artificial shadows)."
+	textureframe(integer) : "Cookie Texture Frame" : 0 : "If cookie texture specified is multi-frame, this frame will be used for the light."
 	
 	input SetCookieTexture(string) : "Set the cookie texture of this light. An empty value means no cookie texture."
 	input SetCookieTextureFrame(integer) : "Set the frame texture of the cookie texture for this light."

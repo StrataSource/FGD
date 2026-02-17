@@ -44,7 +44,7 @@
 	shadowdepthnocache[engine](integer) : "Projected Texture Cache" : 0
 	disableflashlight(boolean) : "Disable flashlight" : 0 : "Used to disable flashlight (env_projectedtexture) lighting and shadows on this entity."
 		
-	linedivider_visbrush[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_visbrush[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
 	// Inputs
 	input DisableShadow(void) : "Allows the entity to draw a render target (dynamic) shadow."

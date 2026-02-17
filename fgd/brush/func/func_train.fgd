@@ -4,7 +4,7 @@
 "While mostly made obsolete by func_tracktrain, this entity is not affected by the turning inaccuracy "+
 "issues that that entity has, and may be more suitable for fast-moving objects."
 	[
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		8 : "Non-solid" : 0
 		]

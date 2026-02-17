@@ -1,13 +1,13 @@
 @BaseClass = BaseObject
 	[
 	teamnum[engine](integer) : "Team" : 2
-	teamnum[+USE_TEAM](choices) : "Team" : 2 : "Team" =
+	teamnum[+USE_TEAM](choices) : "Team" : 2 : "Player team" =
 		[
 		2: "Red"
 		3: "Blue"
 		]
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		2: "Invulnerable" : 0
 		]

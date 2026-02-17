@@ -4,7 +4,7 @@
 	"All faces but the desired visible one must be marked as NODRAW and that face must be 4 sided. " +
 	"The material applied to the visible face must be set up to be breakable."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Physics damage decals" : 0
 		2: "Take damage from held objects" : 0

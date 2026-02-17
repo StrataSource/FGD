@@ -1,13 +1,13 @@
 @BaseClass base(_Breakable, DamageFilter) 
 = BreakableProp
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		16: "Break on Touch" : 0
 		32: "Break on Pressure" : 0
 		]
 		
-	exploitablebyplayer[engine](integer) : "Exploitable by Player" : 0
+	exploitablebyplayer[engine](integer) : "Exploitable by Player" : 0 : "Should this entity explode when interacting with player?"
 	
 	// Inputs
 	input EnableDamageForces(void) : "Damaging the entity applies physics forces to it."

@@ -7,7 +7,7 @@
 = phys_ragdollconstraint: "A constraint that fixes the position of two entities, relative to this constraint's origin. " +
 	"Also allows for limits on the rotation around each axis, in the space of this constraint."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "No Collision until break" : 1
 		2: "Only limit rotation (free movement)" : 0

@@ -8,7 +8,7 @@
 	bullseyename(target_source) : "Name of bullseye" : : "If you select the Attach Bullseye spawnflag, " +
 		"you may specify a name here which will be given to the bullseye."
 	maxballbounces(integer) : "Max number of bounces" : 8 : "Maximum number of bounces the balls are allowed to do before they are removed."
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Attach Bullseye" : 0
 		2: "Balls should collide against player" : 0

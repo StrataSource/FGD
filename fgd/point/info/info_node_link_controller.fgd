@@ -11,7 +11,7 @@
 	maxs(vector) : "Maxs" : "8 32 36"
 
 	initialstate[engine](boolean): "Initial State": 1
-	initialstate(choices) : "Initial State" : "1" =
+	initialstate(choices) : "Initial State" : "1" : "Initial state of the entity." =
 		[
 		0: "Off"
 		1: "On"

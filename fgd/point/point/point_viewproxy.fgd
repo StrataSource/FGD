@@ -6,7 +6,7 @@
 	"Use this if you want the player to retain control of where the player looks but want " +
 	"to move the position to another location."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		4: "Freeze Player" : 0
 		32: "Make Player non-solid" : 0

@@ -4,7 +4,7 @@
 	color(200 0 0)
 = env_shake: "An entity to control screen shake on players."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "GlobalShake" : 0
 		4: "In Air" : 0

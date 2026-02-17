@@ -8,7 +8,7 @@
 	fogenable(boolean) : "Fog Enable" : 1 : "Whether or not the fog should start enabled."
 	fogblend(boolean) : "Fog Blend" : 0 : "Enables color blending between the primary color and the secondary color. " + "When looking at the Primary Fog Direction, the primary fog color will appear. When looking away, the secondary color will. " +
 	"Looking between directly at the direction and directly away will cause color blending."
-	use_angles(boolean) : "Use Angles for Fog Dir" : 0
+	use_angles(boolean) : "Use Angles for Fog Dir" : 0 : "Uses this entity's angles, which the viewer camera is checked against to figure out the blend between the primary and secondary fog colors."
 	fogcolor(color255) : "Primary Fog Color" : "255 255 255" : "The color of the fog. If fog blend is enabled, this color blends with the secondary color when not looking at the primary fog direction."
 	fogcolor2(color255) : "Secondary Fog Color" : "255 255 255" : "The secondary fog color. If fog blend is disabled, this color will never appear."
 	fogdir(string) : "Primary Fog Direction" : "1 0 0" : "If fog blend is enabled, this is the direction that shows only the primary color. Directly away is the secondary color and in-between the colors are blended."
@@ -17,7 +17,7 @@
 	fogmaxdensity(float) : "Fog Max Density [0..1]" : 1 : "The max density the fog can get to, 0-1."
 	foglerptime(float) : "Interpolate time" : 0 : "The fade time for the StartFogTransition input."
 	farz(string) : "Far Z Clip Plane" : "-1" : "The distance at which the world will not be rendered."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Master (Has priority if multiple env_fog_controllers exist)" : 0
 		]

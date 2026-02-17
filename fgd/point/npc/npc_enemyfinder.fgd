@@ -6,7 +6,7 @@
 	sphere(MaxSearchDist) 
 = npc_enemyfinder: "EnemyFinder"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Check Visibility" : 1
 		131072: "APC Visibility checks" : 0

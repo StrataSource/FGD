@@ -2,7 +2,7 @@
 	appliesto(P2CE) 
 = func_portal_detector: "A region that fires an output if a portal is placed inside it."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start inactive" : 0
 		]

@@ -23,7 +23,7 @@
 
 	weapondrawn(boolean) : "Pistol starts drawn" : 0 
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		131072: "Simple cops" : 0
 		// 262144: "Rappel (UNCHECK THIS IF IT IS CHECKED!)" : 0

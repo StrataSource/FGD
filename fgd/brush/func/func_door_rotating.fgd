@@ -1,7 +1,7 @@
 @SolidClass base(Door, Angles, Origin) 
 = func_door_rotating: "A brush entity for use as a rotating player-useable door."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		2: "Reverse Dir" : 0
 		16: "One-way" : 0

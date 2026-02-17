@@ -1,5 +1,6 @@
 @PointClass base(BaseEntityPoint) 
 	appliesto(engine)
+	iconsprite("editor/env_fire")
 = _firesmoke: "Internal entity used for natural-type env_fires."
 	[
 	]

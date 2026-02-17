@@ -14,7 +14,7 @@
 		"If the filter mode is Disallow, all entities outside the radius will pass the filter."
 	filter_outer_radius(float) : "Outer Radius" : "0" : "Enemies outside this radius are considered invalid if Allow is set and valid if Disallow is set."
 	filter_max_per_enemy(integer) : "Max Squadmates Per Enemy" : 0 : "Maximum number of squadmates allowed to target any given entity."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Do not lose target if already aquired but filter failed." : 0
 		]

@@ -5,7 +5,7 @@
 = logic_navigation: "An entity that is used to set navigation properties on other entities. Useful to make NPCs ignore physics props in their way that they can easily push."
 	[
 	target(target_destination) : "Navigation Entity" : : "Name of the entity to set navigation properties on."
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start On" : 1
 		]

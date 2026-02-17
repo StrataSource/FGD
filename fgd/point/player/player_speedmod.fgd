@@ -2,7 +2,7 @@
 	iconsprite("editor/player_speedmod.vmt")
 = player_speedmod: "Speeds up or slows down player velocity over time (slow mo/fast forward)"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Suppress weapons" : 0
 		2: "Suppress HUD" : 0

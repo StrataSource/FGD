@@ -3,7 +3,7 @@
 	iconsprite("editor/npc_maker.vmt") 
 = npc_maker: "NPC Maker"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		16: "Fade Corpse" : 0
 		]

@@ -19,7 +19,7 @@
 	lifetime(integer) : "Particle Lifetime (seconds)" : 4
 	speed(integer) : "Particle Speed (units per second)" : 32
 	rendercolor(color255) : "Ember Color (R G B)" : "255 255 255"
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start On" : 0
 		2: "Toggle" : 0

@@ -3,7 +3,7 @@
 	studio("models/gunship.mdl") 
 = npc_combinegunship: "Combine Gunship"
 	[
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		4096: "No ground attack" : 0
 		8192 : "Use chopper model (Lost Coast chopper)" : 0

@@ -6,7 +6,7 @@
 	"If the 'find water surface' spawnflag is set, it will instead trace down below itself to find the water surface on which to create splashes."
 	[
 	scale(float) : "Scale of the splash" : 8.0
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Automatically find water surface (place entity above water)" : 0
 		2: "Diminish with depth (diminished completely in 10 feet of water)" : 1

@@ -1,7 +1,7 @@
 @SolidClass base(Trigger) 
 = trigger_playermovement: "An entity that can be used to disable player's automatic ducking/unducking when jumping."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Clients/Players" : 1
 		128 : "Disable auto player movement" : 1

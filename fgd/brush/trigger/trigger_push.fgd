@@ -2,7 +2,7 @@
 = trigger_push: "A trigger volume that pushes entities that touch it."
 	[
 	pushdir(angle) : "Push Direction (Pitch Yaw Roll)" : "0 0 0" : "Angles indicating the direction to push touched entities."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		128: "Once Only" : 0
 		256: "Affects Ladders (Half-Life 2)" : 0

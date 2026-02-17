@@ -19,7 +19,7 @@
 	studio("models/combine_dropship.mdl") 
 = npc_combinedropship: "Combine Dropship"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		32768: "Wait for input before dropoff" : 0
 		]

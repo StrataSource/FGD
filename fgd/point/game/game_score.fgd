@@ -4,7 +4,7 @@
 	color(200 0 0)
 = game_score: "An entity that awards/deducts points from the player who activates it or to a specific team."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Allow Negative" : 0
 		2: "Team Points" : 0 [+USE_TEAM]

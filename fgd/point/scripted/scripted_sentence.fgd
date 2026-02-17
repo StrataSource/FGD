@@ -4,7 +4,7 @@
 	iconsprite("editor/scripted_sentence.vmt")
 = scripted_sentence: "Scripted Sentence"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Fire Once" : 1
 		2: "Followers Only" : 0

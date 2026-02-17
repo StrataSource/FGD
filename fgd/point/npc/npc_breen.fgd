@@ -4,7 +4,7 @@
 = npc_breen: "Dr Breen"
 	[
 	model(studio) : "World model" : "models/breen.mdl"
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Ignore speech semaphore" : 0
 		]

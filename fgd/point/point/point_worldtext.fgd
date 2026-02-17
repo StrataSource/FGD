@@ -2,14 +2,14 @@
 	worldtext() 
 = point_worldtext: "An entity that displays a text message oriented in the world, at its origin."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
-		1: "Start Disabled" : 0
+		1: "Start Disabled" : 0 
 		]
 
-	message(string) : "Entity Message" : "New Message" 
+	message(string) : "Entity Message" : "point_worldtext" : "Text to display. It will be shown in-game as well."
 	textsize(float) : "Text Size" : 10 : "Text Size."
-	color(color255) : "Color" : "255 255 255"
+	color(color255) : "Color" : "255 255 255" : "Color of the text"
 	font(material) : "Font Material" : "editor/worldtext" : "The font material atlas to use for the text"
 
 	// Inputs

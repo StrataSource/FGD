@@ -19,7 +19,7 @@
 		1: "Yes, NPC may not move to attack"
 		]
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Clear this point upon arrival, UNCONDITIONALLY" : 0
 		]

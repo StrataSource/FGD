@@ -129,7 +129,7 @@
 		2: "Don't care"
 		]
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Fire outputs with the Actor as Activator" : 0
 		]

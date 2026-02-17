@@ -3,7 +3,7 @@
 	color(200 200 0)
 = env_funnel: "The suck-in effect from the HL1 Resonance Cascade sequence."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Reverse (repel particles instead of suck in)" : 0
 		]

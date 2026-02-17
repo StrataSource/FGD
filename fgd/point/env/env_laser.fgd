@@ -10,7 +10,7 @@
 
 	endsprite(sprite) : "End Sprite" : : "If specified, this sprite will be drawn at the end of the laser beam."
 
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start On" : 0
 		16: "StartSparks" : 0

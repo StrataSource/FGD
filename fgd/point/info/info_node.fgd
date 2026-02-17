@@ -5,7 +5,7 @@
 = info_node: "A navigation node for ground moving NPCs. Navigation nodes are baked into the nodegraph so that NPCs can move to them. " +
 	"Ground nodes fall to the ground when they spawn."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Force human permission" : 0
 		2: "Force small_centered permission" : 0

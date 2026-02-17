@@ -11,7 +11,7 @@
 	ResetVelocityOnTeleport(boolean) : "Reset Velocity on Teleport" : 0 : "Reset the player's velocity when teleported."
 	LandingLimit(integer) : "Landing Limit" : 0 : "The maximum amount of times the player is allowed to land on this. A limit of 0 allows unlimited landings/bhops. A limit of -1 uses gamemode-specific behavior emulating func_door blocks from the appropriate game. Only full groundings count toward this, not just touching from above."
 
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Reset landing counter when this is activated" : 1
 		2: "Reset landing counter when the player lands on something that isn't a func_bhop" : 1

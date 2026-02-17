@@ -5,7 +5,7 @@
 	color(0 0 255) 
 = npc_antlion_template_maker: "A unique version of npc_template_maker tailored specifically for Antlions. Antlions will continually spawn at its origin or at a specified destination target, and is further influenced by bugbait."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1024: "Random spawn node" : 0
 		2048: "Try to spawn close to the current target" : 0

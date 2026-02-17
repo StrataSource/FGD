@@ -6,7 +6,7 @@
 "Unless the 'No Dynamic Light' spawnflag is checked, it will also create a dynamic light wherever the end of the spotlight rests." +
 "This spotlight is entirely client side, it is not sync'd across clients."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start On" : 1
 		2: "No Dynamic Light" : 0

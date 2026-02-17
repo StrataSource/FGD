@@ -13,7 +13,7 @@
 
 	material_name(string) : "Material Name" : : "The name of the material to check for when the filter mode is set to 'Touching material'"
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Include interactions with brushes" : 1
 		2: "Include interactions with displacements" : 1

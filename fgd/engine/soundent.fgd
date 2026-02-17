@@ -1,5 +1,6 @@
 @PointClass base(BaseEntityPoint)
 	appliesto(+engine)
+	iconsprite("editor/ambient_generic.vmt")
 = soundent: "Keeps track of all sounds playing in the level."
 	[
 	]   

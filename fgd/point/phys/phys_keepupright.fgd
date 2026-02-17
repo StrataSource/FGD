@@ -4,7 +4,7 @@
 	line(128 128 128, targetname, attach1) 
 = phys_keepupright: "A controller that tries to keep an entity facing a particular direction."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Start inactive" : 0
 		]

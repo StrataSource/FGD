@@ -6,7 +6,7 @@
 	frustum(spreadspeed, _frustum_near, jetlength, rendercolor, -1)
 = env_steam: "An entity used to create a jet of steam."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Emissive" : 0
 		]

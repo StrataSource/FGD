@@ -5,13 +5,13 @@
 	sphere(_hard_radius_override)
 = BaseLightFalloff
 	[
-	_constant_attn(string)	: "Constant" : "0"
-	_linear_attn(string)	: "Linear" : "0"
-	_quadratic_attn(string)	: "Quadratic" : "1"
-	_fifty_percent_distance(string) : "50 percent falloff distance" : "0": "Distance at which brightness should fall off to 50%. If set, overrides linear constant and quadratic parameters."
-	_zero_percent_distance(string) : "0 percent falloff distance" : "0": "Distance at which brightness should fall off to negligible (1/256)%. Must set _fifty_percent_distance to use."
+	_constant_attn(string)	: "Constant" : "0" : "A direct light value used for this light source."
+	_linear_attn(string)	: "Linear" : "0" : "A linear falloff value used for this light source."
+	_quadratic_attn(string)	: "Quadratic" : "1" : "An exponential falloff value used for this light source."
+	_fifty_percent_distance(string) : "50 percent falloff distance" : "0" : "Distance at which brightness should fall off to 50%. If set, overrides linear constant and quadratic parameters."
+	_zero_percent_distance(string) : "0 percent falloff distance" : "0" : "Distance at which brightness should fall off to negligible (1/256)%. Must set _fifty_percent_distance to use."
 	_hardfalloff(integer) : "Hard Falloff" : 0 : "If set, causes lights to fall to exactly zero beyond the zero percent distance. May cause unrealistic lighting if not used carefully."
 	_distance(integer) : "Maximum Distance" : 0 : "The distance that light is allowed to cast."
 	_hard_radius_threshold(float) : "Hard radius minimum brightness threshold" : 32
-	_hard_radius_override(float) : "Hard radius override" : 0
+	_hard_radius_override(float) : "Hard radius override" : 0 : "The distance that light is allowed to cast."
 	]

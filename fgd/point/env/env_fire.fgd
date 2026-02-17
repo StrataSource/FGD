@@ -16,7 +16,7 @@
 		1: "Plasma"
 		]
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Infinite Duration" : 0
 		2: "Smokeless" : 0

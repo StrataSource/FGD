@@ -3,7 +3,7 @@
 	color(200 0 0) 
 = game_text: "An entity that displays text on player's screens."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "All Players" : 0 [+USE_MULTIPLAYER]
 		]

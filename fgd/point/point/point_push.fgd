@@ -9,7 +9,7 @@
 		"In Portal 2, if a portal is placed nearby it will transfer the suction and " +
 		"produce a 'broken_tube_suck' effect for Diversity Vents."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Test LOS before pushing" : 0
 		2: "Use angles for push direction" : 0

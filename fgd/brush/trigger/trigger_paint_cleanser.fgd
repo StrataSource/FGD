@@ -7,7 +7,7 @@
 	"Likely intended to be used with paint_cleanser particle effect (like P1 fizzlers, but red)."
 	[
 	// Flags, filters aren't functional on this entity.
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		]
 

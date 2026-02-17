@@ -7,7 +7,7 @@
 	"If a Local Destination Landmark is specified, teleported entities are offset from " +
 	"the target by their initial offset from the landmark, and their angles are left alone."
 	[
-	spawnflags(flags) =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		32: "Preserve angles even when a local landmark is not specified" : 0
 		8388608: "Teleport explosives" : 0 [MOMENTUM]

@@ -4,7 +4,7 @@
 	color(200 0 0) 
 = game_player_team: "An entity that changes the team of the player who activates it."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Remove On fire" : 0
 		2: "Kill Player" : 0

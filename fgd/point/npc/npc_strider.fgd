@@ -10,7 +10,7 @@
 		"models/combine_strider_vsdog.mdl": "The Strider that fights Dog"
 		]
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Can Stomp Player" : 0
 		131072: "Minimal damage taken from NPCs (1 point per missile)" : 0

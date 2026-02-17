@@ -4,7 +4,7 @@
 	color(255 0 0) 
 = npc_bullseye: "Dummy NPC for targeting or other behavior."
 	[
-	linedivider_npc[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_npc[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
 	rendermode(choices) readonly : "Render Mode" : 1 : "This must be set to Color for Hammer to render the sprite correctly. It is not used in the engine." = 
 		[
@@ -14,7 +14,7 @@
 	minangle(float) : "Minimum Angle" : 360: "Angle from the bullseye required for bullseye to be a valid enemy."
 	mindist(float) : "Minimum Distance" : 0 : "Distance from the bullseye required for bullseye to be a valid enemy."
 	autoaimradius(float) : "Autoaim Radius" : 0 : "Radius of autoaim influence. Use ent_autoaim <picker> to visualize."
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		65536: "Not Solid" : 0
 		131072: "Take No Damage" : 0

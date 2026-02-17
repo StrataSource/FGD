@@ -5,7 +5,7 @@
 		"to synchronize the material movement and push effect."
 	[
 	movedir(angle) : "Move Direction (Pitch Yaw Roll)" : "0 0 0" : "The direction conveyor moves."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "No Push" : 0
 		2: "Not Solid" : 0

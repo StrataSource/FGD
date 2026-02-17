@@ -3,7 +3,7 @@
 	studio()
 = cycler: "An entity used to display a model for testing purposes. Shooting it with cycle through the model's animations."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		1: "Not Solid" : 0
 		]
