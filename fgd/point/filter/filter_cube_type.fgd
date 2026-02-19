@@ -36,31 +36,31 @@
 			2: "Active"
 			]
 
-		powered(choices) : "Laser State" : 0 : "If a Reflection or Schrodinger cube, check whether it is being powered by a laser." =
+		powered(choices) : "Laser State" : 0 : "If a Reflection or Schrödinger's cube, check whether it is being powered by a laser." =
 			[
 			0: "Don't care"
 			1: "Unpowered"
 			2: "Powered"
 			]
 
-		laserfilter(choices) : "Laser Filter" : 0 : "If a Reflection or Schrodinger cube, check which laser filter is defined." =
+		laserfilter(choices) : "Laser Filter" : 0 : "If a Reflection or Schrödinger's cube, check which laser filter is defined." =
 			[
 			0: "Don't care"
 			1: "No filter"
-			2: "Specific color"
+			2: "Specific filter color"
 			3: "Any filter set"
 			]
 		laserfiltercolor(color255) : "Laser Filter Color" : "255 255 255 255" : "If 'Laser Filter' is set to 'specific color', this is the color to check. It must match exactly."
-		lasermodifier(choices) : "Laser Modifier" : 0 : "If a Reflection or Schrodinger cube, check which laser modifier is defined." =
+		lasermodifier(choices) : "Laser Modifier" : 0 : "If a Reflection or Schrödinger's cube, check which laser modifier is defined." =
 			[
 			0: "Don't care"
-			1: "No filter"
-			2: "Specific colour"
-			3: "Any filter set"
+			1: "No modifier"
+			2: "Specific modifier colour"
+			3: "Any modifier set"
 			]
 		lasermodifiercolor(color255) : "Laser Modifier Color" : "255 255 255 255" : "If 'Laser Modifier' is set to 'specific color', this is the color to check. It must match exactly."
 
-		twinfilter(filterclass) : "Schrodinger Twin Filter" : : "If a Schrodinger cube and this is set, test this other filter against the partner cube."
+		twinfilter(filterclass) : "Schrodinger Twin Filter" : : "If a Schrödinger's cube and this is set, test this other filter against the partner cube."
 
 		@resources []
 	]
