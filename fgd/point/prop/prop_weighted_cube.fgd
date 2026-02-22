@@ -6,16 +6,24 @@
 	line_cube[-engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	CubeBehavior[engine](integer) : "Cube Behavior" : 0
-	CubeBehavior(choices) : "Cube Behavior" : 0 : "How does this cube function? Use a prop_monster_box for Frankenturrets." =
+	CubeBehavior(choices) : "Cube Behavior" : 0 : "How does this cube function? Use a prop_monster_box for Frankenturrets. If Auto, this is chosen based on the cube model." =
 		[
-		0: "Standard Cube"
-		1: "Reflection Cube"
-		2: "Sphere (presses sphere buttons)"
+		0: "Auto (from model)"
+		1: "Standard Cube"
+		2: "Reflection Cube"
 		3: "Schrodinger's Cube"
+		]
+	CubeShape[engine](integer) : "Cube Shape" : 0
+	CubeShape(choices) : "Cube Behavior" : 0 : "What shape is this cube? This determines how it presses buttons. If Auto, this is chosen based on the cube model." =
+		[
+		0: "Auto (from model)"
+		1: "Cubic"
+		2: "Spherical"
 		]
 
 	model[engine](studio) : "Model" : ""
-	model(choices) : "Cube Model" : "models/props/cubes/standard_cube.mdl" : "What model to use. You can also type/paste in a custom model path here." =
+	model(choices) : "Cube Model" : "models/props/cubes/standard_cube.mdl" : "What model to use. You can also type/paste in a custom model path here. " +
+		"If using a custom model, Cube Behavior and Shape must be set." =
 		[
 		"models/props/cubes/standard_cube.mdl": "Weighted Storage Cube"
 		"models/props/cubes/standard_cube_rusty.mdl": "Weighted Storage Cube (rusty)"
@@ -25,6 +33,7 @@
 		"models/props/cubes/sphere.mdl": "Edgeless Safety Cube"
 		"models/props/cubes/antique_cube.mdl": "Antique Cube"
 		"models/props/cubes/schrodinger_cube.mdl": "Schrodinger's Cube"
+		"models/props/cubes/schrodinger_cube_rusty.mdl": "Schrodinger's Cube (rusty)"
 		]
 
 	paintpower[engine](integer) : "Starting Paint" : 4
@@ -98,9 +107,9 @@
 	input EnablePortalFunnel(void) : "Enable portal funneling behavior."
 	input DisablePortalFunnel(void) : "Disable portal funneling behavior."
 	input EnableMotion(void) : "Allow physics simulation."
-	input DisableMotion(void) : "Prevent Physics simulation, freezing the cube in place."
+	input DisableMotion(void) : "Prevent physics simulation, freezing the cube in place."
 	input ExitDisabledState(void) : "Exits the disabled state of a reflective cube."
-	input SetPaint(integer) : "Force the cube to be painted with 0 (Repulsion), 2 (Propulsion), or 4 (No) gel."
+	input SetPaint(integer) : "Force the cube to be painted with 0 (Repulsion), 1 (Reflection), 2 (Propulsion), 3 (Conversion) or 4 (No) gel."
 
 	input SetReflectModifyColor(color255) : "Changes the laser modifier colour of the cube."
 	input SetReflectFilterColor(color255) : "Changes the laser filter colour of the cube."
