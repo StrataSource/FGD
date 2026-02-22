@@ -19,5 +19,6 @@
 		1: "Basic paint gun"
 		2: "Fully-upgraded paint gun"
 		]
+	showportalpaintprops(boolean) : "Show Conversion Gel on Props" : 0 : "Force Conversion Gel to be visible on props like cubes and turrets. This should be set for situations where this serves some gameplay purpose."
 	maxhealth(integer) : "Maximum player health" : 100 : "Specifies the maximum health limit for players."
 	]
