@@ -1,4 +1,4 @@
-@PointClass base(BaseNPC)
+@PointClass base(BaseNPC, PaintableProp)
 	appliesto(P2CE) 
 	studioprop()
 	frustum(_frustum_fov, _frustum_near, TurretRange, _frustum_color, -1)
@@ -88,5 +88,4 @@
 	output OnExplode(void) : "Turret has exploded."
 	output OnPhysGunPickup(void) : "Turret was picked up by player."
 	output OnPhysGunDrop(void) : "Turret was dropped by player."
-	output OnPainted(void) : "Fires when the turret is first painted or if repainted by a different color."
 	]
