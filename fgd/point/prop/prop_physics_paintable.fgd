@@ -1,4 +1,4 @@
-@PointClass base(prop_physics) 
+@PointClass base(prop_physics, PaintableProp) 
 	appliesto(P2CE) 
 	sphere(fademindist) 
 	sphere(fademaxdist) 

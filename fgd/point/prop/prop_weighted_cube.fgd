@@ -1,4 +1,4 @@
-@PointClass base(BasePropPhysics) 
+@PointClass base(BasePropPhysics, PaintableProp) 
 	appliesto(P2CE)
 	studioprop() 
 = prop_weighted_cube: "Aperture Science Weighted Cube. Presses floor buttons, and can be moved around."
@@ -43,8 +43,8 @@
 		1: "Reflection Gel"
 		2: "Propulsion Gel"
 		3: "Conversion Gel"
-		4: "None"
 		5: "Adhesion Gel"
+		4: "None"
 		]
 
 	allowfunnel(boolean) : "Allow Portal Funneling" : 1 : "Whether or not this object should auto-funnel into a floor portal."
@@ -121,7 +121,6 @@
 	output OnBluePickUp(void) : "ATLAS picked up the cube."
 	output OnPlayerPickup(void) : "Any player picked up the cube."
 	output OnPhysGunDrop(void) : "Any player dropped the cube."
-	output OnPainted(integer) : "Cube got painted, only if the state changed. Has the paint type as parameter."
 	output OnPowered(void) : "Cube got powered by a laser."
 	output OnUnpowered(void) : "Cube is no longer powered by a laser."
 	output OnActivated(void) : "Fired when a cube is placed on a button."
