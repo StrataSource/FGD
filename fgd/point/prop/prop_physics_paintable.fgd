@@ -3,16 +3,21 @@
 	sphere(fademindist) 
 	sphere(fademaxdist) 
 	studioprop()
-= prop_physics_paintable: "A version of prop_physics that can be painted by Gel. Does not appear to show up on the model."
+= prop_physics_paintable: "A version of prop_physics that can be painted by Gel."
 	[
 	paintpower[engine](integer) : "Paint Power" : 4
 	paintpower(choices) : "Paint Power" : 4 : "The starting gel type for the prop." =
 		[
 		0: "Repulsion Gel"
-		1: "Adhesion Gel"
+		1: "Reflection Gel"
 		2: "Propulsion Gel"
 		3: "Conversion Gel"
+		5: "Adhesion Gel"
 		4: "None"
 		]
+	cleanskin(integer) : "Unpainted Skin" : -1 : "The skin to switch to whenever this is cleaned. Painted skin must also be set."
+	paintskin(integer) : "Painted Skin" : -1 : "The skin to switch to whenever this is painted. Unpainted skin must also be set."
 
+	input SetPaintedSkin(integer) : "Set the skin to use whenever this is painted. If currently painted the prop will swap skins."
+	input SetUnpaintedSkin(integer) : "Set the skin to use whenever this is not painted. If currently unpainted the prop will swap skins."
 	]
