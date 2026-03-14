@@ -6,15 +6,33 @@
 	"Tip: This works well with a filter_multi, if you want to match different cube configurations or check for specific models.\n" +
 	"Additionally, keep in mind filters are only checked when items initially touch a trigger or other events occur, you'll need repeated checks to handle events."
 	[
-		allowedtypes(flags): "Allowed Types" : "Which cube types are allowed." = 
+		allowedbehaviors(flags): "Allowed Behaviors" : : "Which cube behaviors are allowed." = 
 		[
-			1: "Standard" : 1
-			2: "Companion": 1
+			1: "Frankenturret (prop_monster_box)" : 1
+			2: "Regular" : 1
 			4: "Reflection": 1
-			8: "Sphere": 1
-			16: "Antique (Old Aperture)": 1
-			32: "Schrodinger": 1
-			64: "Frankenturret (prop_monster_box)" : 1
+			8: "Schrodinger": 1
+		]
+		allowedshapes(flags) : "Allowed Shapes" : : "Which cube shapes are allowed, matching how buttons check. 'Custon' types must be set manually in the cube keyvalues." = 
+		[
+			// Shape 0 is 'auto', shape 1 is bit 1, shape 2 is bit 2 etc.
+			1 : "1: Cubic": 1
+			2 : "2: Spherical": 1
+			4 : "3: Custom": 0
+			8 : "4: Custom": 0
+			16: "5: Custom": 0
+			32: "6: Custom": 0
+			64: "7: Custom": 0
+			128  : "8: Custom": 0
+			256  : "9: Custom": 0
+			512  : "10: Custom": 0
+			1024 : "11: Custom": 0
+			2048 : "12: Custom": 0
+			8192 : "13: Custom": 0
+			16384: "14: Custom": 0
+			32768: "15: Custom": 0
+			65536: "16: Custom": 0
+			// ETC up to 64.
 		]
 
 		boxmode[engine](integer) : "Frankenturret Pose" : 0
