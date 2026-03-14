@@ -14,7 +14,7 @@
 		3: "Schrodinger's Cube"
 		]
 	CubeShape[engine](integer) : "Cube Shape" : 0
-	CubeShape(choices) : "Cube Behavior" : 0 : "What shape is this cube? This determines how it presses buttons. If Auto, this is chosen based on the cube model." =
+	CubeShape(choices) : "Cube Shape" : 0 : "What shape is this cube? This determines how it presses buttons. If Auto, this is chosen based on the cube model." =
 		[
 		0: "Auto (from model)"
 		1: "Cubic"
