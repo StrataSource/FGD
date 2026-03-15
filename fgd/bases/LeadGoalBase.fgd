@@ -61,7 +61,7 @@
 	comingbackconceptmodifier(string) : "Coming Back concept modifier" : : "Appended to the keyvalues passed into the response rules when the 'TLK_LEAD_RETRIEVE' concept is spoken. Spoken as the NPC starts returning to the player to retrieve them."
 	retrieveconceptmodifier(string) : "Retrieve concept modifier" : : "Appended to the keyvalues passed into the response rules when the 'TLK_LEAD_COMINGBACK' concept is spoken. Spoken when NPC has finally reached the player to retrieve them."
 	
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "No def success" : 0
 		2: "No def failure" : 0

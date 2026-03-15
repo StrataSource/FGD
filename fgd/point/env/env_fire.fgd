@@ -16,7 +16,7 @@
 		1: "Plasma"
 		]
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Infinite Duration" : 0
 		2: "Smokeless" : 0

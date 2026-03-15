@@ -3,7 +3,7 @@
 	studio("models/items/hevsuit.mdl")
 = item_suit: "HEV Suit"
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Short Logon" : 0
 		]

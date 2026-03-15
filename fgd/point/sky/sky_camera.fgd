@@ -12,7 +12,7 @@
 		"Fire the ForceUpdate or StartUpdating inputs to update the sky_camera's position! " +
 		"You might also want to enable Use Angles for Sky."
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Master (takes priority if multiple sky_cameras exist)" : 0
 		2: "Continuously update position (for moving sky_cameras)" : 0

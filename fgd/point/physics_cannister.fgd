@@ -8,7 +8,7 @@
 		"which is where gas will escape and thrust will be produced from."
 	[
 	model(studio) : "World model" : : "The model used for the cannister. The original model is fire_equipment/w_weldtank.mdl."
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Start Asleep" : 0
 		2: "Explodes" : 1

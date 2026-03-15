@@ -5,7 +5,7 @@
 = env_wind: "An entity to control wind in the map. Partially functional."
 	[
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Start Disabled" : 0
 		]

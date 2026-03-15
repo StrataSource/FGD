@@ -3,7 +3,7 @@
 	studio() 
 = npc_combine_s: "Combine Soldier"
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		65536: "Start LookOff" : 0
 		131072: "Don't drop grenades" : 0

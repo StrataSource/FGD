@@ -3,7 +3,7 @@
 	studioprop() 
 = prop_vehicle: "Studiomodel vehicle that can be driven via inputs."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Always Think (Run physics every frame)" : 0
 		]

@@ -3,7 +3,7 @@
 	sphere(DamageRadius) 
 	studio("models/props_combine/headcrabcannister01b.mdl") = env_headcrabcanister: "Headcrab canister"
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "No Impact Sound" : 0
 		2: "No Launch Sound" : 0

@@ -7,7 +7,7 @@
 
 	cargovisible(boolean) : "Hopper Visible" : "0" : "Is the Magnusson Device cargo hopper visible?"
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "HUD Locator Precache" : 0
 		]

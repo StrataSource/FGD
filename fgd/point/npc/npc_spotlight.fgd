@@ -3,7 +3,7 @@
 	size(-2 -2 -2, 2 2 2)
 = npc_spotlight: "Spotlight"
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		65536: "Start Track On" : 1
 		131072: "Start Light On" : 1

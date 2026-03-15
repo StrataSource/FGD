@@ -5,7 +5,7 @@
 	sphere(radius)
 = npc_heli_avoidsphere: "Makes Combine helicopters and gunships avoid this area."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		65536: "Avoid the sphere above and below" : 0
 		]

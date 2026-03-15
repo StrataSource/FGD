@@ -3,7 +3,7 @@
 	studio("models/editor/axis_helper_thick.mdl") 
 	color(200 0 0) = env_tilt: "An entity to control screen tilt on players."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "GlobalTilt" : 0
 		128: "Ease in/out" : 0
