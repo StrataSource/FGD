@@ -1,0 +1,5 @@
+@SolidClass base(Trigger)
+	appliesto(MOMENTUM)
+= trigger_momentum_disallowcheckpoint : "Trigger that prevents the player from using checkpoints inside the volume."
+	[
+	]

@@ -23,6 +23,13 @@
 		3: "Long"
 		]
 
+	sparktype(choices) : "Spark Type" : 0 =
+		[
+		0: "ConVar (fx_new_sparks)"
+		1: "New"
+		2: "Old"
+		]
+
 	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
 		[
 		64: "Start ON" : 0
