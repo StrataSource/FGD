@@ -1,6 +1,6 @@
 @BaseClass = BaseClusteredLight
 	[
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Initially dark" : 0
 		2: "Shadowed" : 0

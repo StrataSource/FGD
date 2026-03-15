@@ -9,7 +9,7 @@
 	[
 	map(string) : "New Map Name" : : "Name of the map to transist to. Must not include .bsp extention."
 	landmark(target_destination) : "Landmark Name"
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		2: "Disable Touch" : 0
 		4: "To Previous Chapter" : 0

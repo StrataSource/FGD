@@ -1,7 +1,7 @@
 @BaseClass base(BaseEntityPhysics, BreakableProp, SystemLevelChoice, BaseFadeProp) 
 = BasePropPhysics: "For prop_physics-like entities."
 	[
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Start Asleep" : 0
 		2: "Don't take physics damage" : 0
@@ -35,7 +35,7 @@
 	overridescript(string) : "Override Parameters" : : "A list of physics key/value pairs that are usually in a physics prop .qc file. Format is 'key,value,key,value,etc'."
 	damagetoenablemotion(integer) : "Health Level to Override Motion" : 0 : "If specified, this object will start motion disabled. Once its health has dropped below this specified amount, it will enable motion."
 	forcetoenablemotion(float) : "Physics Impact Force to Override Motion" : 0 : "If specified, this object will start motion disabled. Any impact that imparts a force greater than this value on the physbox will enable motion."
-	puntsound(sound) : "Sound to make when punted." : : "As the title impiles."
+	puntsound(sound) : "Sound to make when punted." : : "Sound to make when punted."
 	
 	
 	// Inputs

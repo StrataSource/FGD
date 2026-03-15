@@ -1,17 +1,17 @@
 @BaseClass = CombineScanner
 	[
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		65536: "No Dynamic Light" : 0
 		131072: "Strider Scout Scanner" : 0
 		]
 
-	spotlightlength(integer) : "Spotlight Length" : 500 : "Length of scanner's spotlight."
-	spotlightwidth(integer) : "Spotlight Width" : 50 : "Length of scanner's spotlight."
+	spotlightlength(integer) : "Spotlight Length" : 500 : "Length of this scanner's spotlight."
+	spotlightwidth(integer) : "Spotlight Width" : 50 : "Width of this scanner's spotlight."
 
 	spotlightdisabled(boolean) : "Disable Spotlight" : 0 : "Should this scanner's spotlight be disabled?"
 	shouldinspect(boolean) : "Should inspect" : 1 : "Should this scanner inspect NPCs?"
-	onlyinspectplayers(boolean) : "Only Inspect Players" : 0 : "Should this scanner inspect only player?"
+	onlyinspectplayers(boolean) : "Only Inspect Players" : 0 : "Should this scanner only inspect player?"
 	neverinspectplayers(boolean) : "Never Inspect Players" : 0 : "Should this scanner avoid player?"
 
 	// Inputs

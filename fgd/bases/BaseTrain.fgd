@@ -2,7 +2,7 @@
 	line(255 255 0, targetname, target) 
 = BaseTrain
 	[
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "No Pitch (X-rot)" : 0
 		2: "No User Control" : 0

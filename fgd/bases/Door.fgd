@@ -41,7 +41,7 @@
 		1: "Open"
 		]
 
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Starts Open - OBSOLETE, use 'Spawn Position' key instead" : 0
 		4: "Non-solid to Player" : 0

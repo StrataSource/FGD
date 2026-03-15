@@ -57,7 +57,7 @@
 	returnspeed(float) : "Auto-return speed" : 0 : "If the 'Toggle' spawnflag is not set, " +
 		"the speed at which the wheel auto-returns when left alone, in degrees per second."
 
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Not Solid" : 1
 		32: "Toggle (Disable Auto Return)" : 1

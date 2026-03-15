@@ -3,7 +3,7 @@
 = VehicleDriverNPC
 	[
 	vehicle(target_destination) : "Vehicle to drive"
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		65536: "Start Inactive" : 1
 		]

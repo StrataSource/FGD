@@ -1,9 +1,9 @@
 @BaseClass base(BaseNPC)
 = BaseHeadcrab
 	[
-	startburrowed(boolean) : "Start burrowed" : 0 : "Should this headcrab start buried?"
+	startburrowed(boolean) : "Start burrowed" : 0 : "Should this headcrab spawn inside the ground?"
 
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		65536: "Start hidden" : 0
 		131072: "Start hanging from ceiling" : 0

@@ -5,7 +5,7 @@
 	[
 	startdisabled(boolean) : "Start Disabled" : 1 : "Sets this entity as disabled on map spawn."
 
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		16: "Fade Corpse" : 0
 		32: "Infinite Children" : 0

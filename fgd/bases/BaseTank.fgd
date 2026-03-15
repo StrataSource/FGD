@@ -5,7 +5,7 @@
 	sphere(minrange) sphere(maxrange)
 = BaseTank
 	[
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Active" : 0
 		16: "Only Direct" : 0

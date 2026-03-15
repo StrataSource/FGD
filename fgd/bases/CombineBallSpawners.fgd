@@ -1,7 +1,7 @@
 @BaseClass base(BaseEntityPoint) 
 = CombineBallSpawners
 	[
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		4096: "Start inactive" : 1
 		8192: "Combine power supply" : 0

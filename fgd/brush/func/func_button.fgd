@@ -14,7 +14,7 @@
 	wait(float) : "Delay Before Reset (-1 stay)" : 3 : "Amount of time, in seconds, after the button has been pressed before it returns to the starting position. " +
 		"Once it has returned, it can be used again. If the value is set to -1, the button never returns."
 		
-	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Don't move" : 0
 		32: "Toggle" : 0

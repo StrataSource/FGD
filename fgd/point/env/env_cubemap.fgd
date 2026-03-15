@@ -6,7 +6,7 @@
 = env_cubemap: "An entity that creates a sample point for the Cubic Environment Map."
 	[
 	cubemapsize[engine](integer) : "Cubemap Size" : 0
-	cubemapsize(choices) : "Cubemap Size" : 0 : "The resolution of this cubemap's texture." =
+	cubemapsize(choices) : "Cubemap Size" : 0 : "Resolution of this cubemap's texture." =
 		[
 		0: "Default"
 		1: "1x1"
