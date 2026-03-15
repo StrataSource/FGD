@@ -1,7 +1,7 @@
 @BaseClass base(SystemLevelChoice) 
 = RopeKeyFrame
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "Auto Resize" : 0
 		]

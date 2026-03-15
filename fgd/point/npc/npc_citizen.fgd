@@ -3,7 +3,7 @@
 	studio() 
 = npc_citizen: "Citizen"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		65536: "Follow player on spawn" : 0
 		131072: "Medic" : 0

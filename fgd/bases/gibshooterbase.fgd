@@ -25,7 +25,7 @@
 
 	lightingorigin(target_destination) : "Lighting Origin" : : "Select an info_lighting to specify a location to sample lighting from " +
 		"for all gibs spawned by this shooter, instead of their own origins."
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "Repeatable" : 0
 		]

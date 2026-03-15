@@ -7,7 +7,7 @@
 		3: "Blue"
 		]
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		2: "Invulnerable" : 0
 		]

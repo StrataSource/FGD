@@ -5,7 +5,7 @@
 	sphere(teleportfollowdistance)
 = TwoObjectPhysics
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "No Collision until break" : 0
 		4: "Start inactive" : 0

@@ -3,7 +3,7 @@
 	studio("models/combine_helicopter/helicopter_bomb01.mdl")
 = grenade_helicopter: "HL2 Combine Helicopter's bomb."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		65536: "Is a dud" : 0
 		]

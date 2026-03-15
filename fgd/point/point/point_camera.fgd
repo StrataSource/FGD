@@ -3,7 +3,7 @@
 	frustum(FOV,fogstart,fogend,_frustum_color,-1)
 = point_camera: "Camera"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "Start Off" : 0
 		]

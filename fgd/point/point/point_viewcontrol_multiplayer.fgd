@@ -21,7 +21,7 @@
 		3: "ATLAS"
 		]
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "Disable when move finished" : 1
 		2: "Set FOV" : 0

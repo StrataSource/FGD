@@ -37,7 +37,7 @@
 		]
 
 	counter(integer) : "Counter" : 0 : "An integer counter value associated with this global."
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "Set Initial State" : 0
 		]

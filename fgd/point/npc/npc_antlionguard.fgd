@@ -4,7 +4,7 @@
 	studio("models/antlion_guard.mdl") 
 = npc_antlionguard: "Antlion Guard"
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		65536: "Create server-side ragdoll on death" : 0
 		131072: "Use inside footsteps" : 0

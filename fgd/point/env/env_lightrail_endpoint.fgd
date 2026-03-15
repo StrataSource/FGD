@@ -2,7 +2,7 @@
 	appliesto(P2CE)
 = env_lightrail_endpoint: "Special effects for the endpoints of the lightrail.|||Special effects for the endpoints of the Unstationary Scaffold."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "Start On (w/ Small FX)" : 0
 		]
