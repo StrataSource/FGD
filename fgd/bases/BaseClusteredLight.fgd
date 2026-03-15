@@ -20,9 +20,17 @@
 		[
 		0: "None"
 		1: "Static Only"
+		]	
+	_initialshadowsize(choices) : "Initial Shadow Size" : 3 : "The initial shadow resolution exponent for shadowed lights. Each increment of one doubles both dimensions of the shadowmap, making shadows appear sharper as a result." =
+		[
+		1: "1"
+		2: "2"
+		3: "3"
+		4: "4"
+		5: "5"
+		6: "6"
+		7: "7"
 		]
-		
-	_initialshadowsize(integer) : "Initial Shadow Size" : 3 : "The initial static shadow resolution exponent. Only relevant for static shadow allocation. Adding 1 to this value doubles both dimensions of the shadowmap."
 	nearz(float) : "Near Z" : 4.0 : "Near Z for this light. Determines where shadows start to be cast. Inside the nearz radius, the light is still visible, but anything inside it won't cast shadows"
 
 	input SetShadowSize(integer) : "Set the size exponent of this light's shadowmap(s)."

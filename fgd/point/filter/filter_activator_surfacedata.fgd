@@ -1,5 +1,5 @@
 @FilterClass base(filter_base)
-	iconsprite("editor/filter_generic.vmt") 
+	iconsprite("editor/l2/filter_activator_surfacedata.vmt") 
 = filter_activator_surfacedata : "A filter that tests the activator's surface data."
 	[
 	filtersurfaceprop[engine](string) : "Surface"
