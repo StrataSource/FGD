@@ -31,7 +31,7 @@
 	allowuse(target_name_or_class) : "Allow Pass When Off" : : "Entity or class to allow passage even when node is off"
 	invertallow(boolean) : "Invert exclusion rules" : 0 : "Allowed entity is the only entity NOT allowed when this is set to 'yes'"
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "Force human connect" : 0
 		2: "Force small centered connect" : 0

@@ -1,6 +1,6 @@
 @BaseClass = CombineScanner
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		65536: "No Dynamic Light" : 0
 		131072: "Strider Scout Scanner" : 0

@@ -129,7 +129,7 @@
 		2: "Don't care"
 		]
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "Fire outputs with the Actor as Activator" : 0
 		]

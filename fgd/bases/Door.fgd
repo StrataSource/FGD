@@ -41,7 +41,7 @@
 		1: "Open"
 		]
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "Starts Open - OBSOLETE, use 'Spawn Position' key instead" : 0
 		4: "Non-solid to Player" : 0

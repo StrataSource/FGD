@@ -1,7 +1,7 @@
 @BaseClass base(BaseEntityPhysics, BreakableProp, SystemLevelChoice, BaseFadeProp) 
 = BasePropPhysics: "For prop_physics-like entities."
 	[
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "Start Asleep" : 0
 		2: "Don't take physics damage" : 0

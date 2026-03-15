@@ -17,7 +17,7 @@
 	fogmaxdensity(float) : "Fog Max Density [0..1]" : 1 : "The max density the fog can get to, 0-1."
 	foglerptime(float) : "Interpolate time" : 0 : "The fade time for the StartFogTransition input."
 	farz(string) : "Far Z Clip Plane" : "-1" : "The distance at which the world will not be rendered."
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		1: "Master (Has priority if multiple env_fog_controllers exist)" : 0
 		]

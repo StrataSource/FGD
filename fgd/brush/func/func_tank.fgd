@@ -12,7 +12,7 @@
 		"StriderMinigun" : "Strider Minigun"
 		]
 
-	spawnflags(flags) : "spawnflags" =
+	spawnflags(flags)  =
 		[
 		8192: "Ignore range when making viewcone checks" : 0
 		256: "Aiming Assistance (Player Only)" : 0
