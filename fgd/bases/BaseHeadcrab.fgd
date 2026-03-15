@@ -3,7 +3,7 @@
 	[
 	startburrowed(boolean) : "Start burrowed" : 0 : "Should this headcrab spawn inside the ground?"
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		65536: "Start hidden" : 0
 		131072: "Start hanging from ceiling" : 0

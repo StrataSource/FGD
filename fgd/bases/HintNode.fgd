@@ -1,7 +1,7 @@
 @BaseClass base(Node) 
 = HintNode
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		65536: "Allow jump up" : 0
 		]

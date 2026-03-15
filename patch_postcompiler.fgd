@@ -787,7 +787,7 @@
 	appliesto(SRCTOOLS)
 = comp_prop_cable_dynamic: "Allows using comp_prop_rope/comp_prop_cable as a dynamic prop."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		256: "Start with collision disabled" : 0
 		]
@@ -912,7 +912,7 @@
 	appliesto(SRCTOOLS)
 = comp_prop_rope_dynamic: "Allows using comp_prop_rope/comp_prop_cable as a prop_dynamic."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		256: "Start with collision disabled" : 0
 		]

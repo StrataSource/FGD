@@ -30,7 +30,7 @@
 		2: "Old"
 		]
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		64: "Start ON" : 0
 		128: "Glow" : 0

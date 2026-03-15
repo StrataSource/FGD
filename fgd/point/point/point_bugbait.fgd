@@ -7,7 +7,7 @@
 	[
 	enabled(boolean) : "Start Enabled" : 1
 
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Do not call antlions to position" : 0
 		2: "Don't activate on thrown bugbait splashes" : 0

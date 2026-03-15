@@ -5,7 +5,7 @@
 	"See also 'info_ladder_dismount', used to specify ladder auto-dismount points.\n\n" +
 	"Note: This entity is non-functional in Counter-Strike: Source. Use func_ladder instead."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Fake Ladder" : 0
 		]

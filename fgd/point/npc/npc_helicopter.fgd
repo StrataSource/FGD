@@ -3,7 +3,7 @@
 	studio("models/combine_helicopter.mdl") 
 = npc_helicopter: "Helicopter"
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		65536: "Loud rotor wash sound" : 0
 		131072: "Electrical drone" : 0

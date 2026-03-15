@@ -5,7 +5,7 @@
 	sphere(radius)
 = point_message: "An entity that displays a text message in the world, at its origin."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Start Disabled" : 0
 		]

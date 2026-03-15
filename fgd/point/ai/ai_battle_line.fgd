@@ -3,7 +3,7 @@
 	iconsprite("editor/ficool2/ai_battle_line")
  = ai_battle_line: "Battle line"
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Use parent's orientation" : 0
 		]

@@ -4,7 +4,7 @@
 	sphere(turretrange)
 = npc_rocket_turret: "Aims a rocket at a target."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Start Retracted" : 0
 		]

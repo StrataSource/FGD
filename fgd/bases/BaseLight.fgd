@@ -24,7 +24,7 @@
 		12 : "Underwater light mutation"
 		]
 		
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Initially dark" : 0
 		]

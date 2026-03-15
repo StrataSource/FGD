@@ -1,6 +1,6 @@
 @BaseClass = BaseClusteredLight
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Initially dark" : 0
 		2: "Shadowed" : 0
