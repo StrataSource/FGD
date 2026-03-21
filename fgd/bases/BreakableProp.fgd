@@ -7,7 +7,7 @@
 		32: "Break on Pressure" : 0
 		]
 		
-	exploitablebyplayer[engine](integer) : "Exploitable by Player" : 0 : "Should this entity explode when interacting with player?"
+	exploitablebyplayer[engine](integer) : "Exploitable by Player" : 0
 	
 	// Inputs
 	input EnableDamageForces(void) : "Damaging the entity applies physics forces to it."

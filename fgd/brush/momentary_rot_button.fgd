@@ -5,7 +5,7 @@
 	speed(float) : "Speed (deg/sec)" : 50 : "The amount, in degrees, that the wheel turns per second."
 	
 	sounds[engine](integer) : "Sounds" : 0
-	sounds(choices) : "Sounds" : 0 : "Sound played when pressed. Choose only from sounds in this category." =
+	sounds(choices) : "Sounds" : 0 : "Sound played when pressed." =
 		[
 		0: "None (Silent)"
 		1: "Buttons.snd1: Big zap & Warmup"

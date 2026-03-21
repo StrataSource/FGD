@@ -5,9 +5,12 @@
 	sphere(_hard_radius_override)
 = BaseLightFalloff
 	[
-	_constant_attn(string)	: "Constant" : "0" : "A direct light value used for this light source."
-	_linear_attn(string)	: "Linear" : "0" : "A linear falloff value used for this light source."
-	_quadratic_attn(string)	: "Quadratic" : "1" : "An exponential falloff value used for this light source."
+	_constant_attn(string)	: "Constant Falloff Ratio" : "0" : "Constant/Linear/Quadratic define a ratio which determines the falloff behaviour. " +
+		"The constant term causes the light to remain at a constant brightness."
+	_linear_attn(string)	: "Linear Falloff Ratio" : "0" : "Constant/Linear/Quadratic define a ratio which determines the falloff behaviour. " +
+		"The linear term falls off at a constant rate depending on the distance travelled."
+	_quadratic_attn(string)	: "Quadratic Falloff Ratio" : "1" : "Constant/Linear/Quadratic define a ratio which determines the falloff behaviour. " +
+		"The quadratic term falls off by the square of the distance. This is how light works in reality."
 	_fifty_percent_distance(string) : "50 percent falloff distance" : "0" : "Distance at which brightness should fall off to 50%. If set, overrides linear constant and quadratic parameters."
 	_zero_percent_distance(string) : "0 percent falloff distance" : "0" : "Distance at which brightness should fall off to negligible (1/256)%. Must set _fifty_percent_distance to use."
 	_hardfalloff(integer) : "Hard Falloff" : 0 : "If set, causes lights to fall to exactly zero beyond the zero percent distance. May cause unrealistic lighting if not used carefully."
