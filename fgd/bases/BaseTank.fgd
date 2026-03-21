@@ -28,9 +28,11 @@
 	pitchrate(string) : "Pitch rate" : "0" : "How fast tank can look up or down"
 	pitchrange(string) : "Pitch range" : "0" : "How fast tank can look up or down"
 	pitchtolerance(string) : "Pitch tolerance" : "5" : "Additional up-down range. If the gun tries to turn beyond Pitch range + Pitch tolerance, the gun will snap back to the maximum Pitch range."
-	barrel(string) : "Barrel Length" : "0" : "Solid length of the tank barrel. Any part of the barrel beyond this length may clip through objects."
-	barrely(string) : "Barrel Horizontal" : "0" : "How wide the tank barrel is, horizontally."
-	barrelz(string) : "Barrel Vertical" : "0" : "How wide the tank barrel is, vertically."
+	barrel(string) : "Barrel Length" : "0" : "Length of the tank barrel. If the target is closer than the barrel length, it won't aim at its target."
+	barrely(string) : "Barrel Horizontal" : "0" : "Position of the barrel, horizontally." +
+	" Ignored if Gun Barrel Attachment is set."
+	barrelz(string) : "Barrel Vertical" : "0" : "Position of the barrel, vertically." +
+	" Ignored if Gun Barrel Attachment is set."
 
 	spritesmoke(sprite) : "Smoke Sprite" : "" : "A specific sprite to use for the muzzle's smoke effect."
 	spriteflash(sprite) : "Flash Sprite" : "" : "A specific sprite to use for the muzzle's flash effect."
