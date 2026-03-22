@@ -3,7 +3,7 @@
 = BaseVehicle
 	[
 	vehiclescript(string) : "Vehicle Script File" : "scripts/vehicles/jeep_test.txt"
-	actionscale(float) : "Scale of action input / framerate" : 1
+	actionscale(float) : "Scale of action input / framerate" : 1 : "Scale of the action input (or framerate) for this entity."
 
 	// Inputs
 	input Action(float) : "Set the speed of the action animation"

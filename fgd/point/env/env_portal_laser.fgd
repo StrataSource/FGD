@@ -12,7 +12,7 @@
 		"models/props/laser_emitter.mdl": "Offset"
 		]
 
-	startstate(boolean) : "Start Disabled" : 0
+	startstate(boolean) : "Start Disabled" : 0 : "Should this entity be disabled on spawn?"
 
 	lethaldamage[engine](boolean) : "Lethal" : 0
 	lethaldamage(choices) : "Lethal" : 0 : "Instant kill on contact. Buggy when redirected through cubes/portals." =

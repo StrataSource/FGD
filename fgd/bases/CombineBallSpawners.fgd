@@ -12,7 +12,7 @@
 	maxspeed(float) : "Max ball speed" : 600.0 : "The maximum speed of balls that fly in the spawner"
 
 	ballradius(float) : "Ball radius" : 20.0 : "The radius of the energy balls."
-	balltype(choices) : "Ball Type" : 0 =
+	balltype(choices) : "Ball Type" : 0 : "Ball type. Doesn't seem to do anything, except in Rexaura it spawns green balls." =
 		[
 		0: "Combine Energy Ball 1"
 		1: "Combine Energy Ball 2"

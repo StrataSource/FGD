@@ -1,7 +1,7 @@
 @BaseClass base(_Breakable, DamageFilter) 
 = BreakableProp
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		16: "Break on Touch" : 0
 		32: "Break on Pressure" : 0

@@ -2,5 +2,5 @@
 	line(255 255 255, targetname, target)
 = Target
 	[
-	target(target_destination) : "Target"
+	target(target_destination) : "Target" : : "Target destination of this entity."
 	]

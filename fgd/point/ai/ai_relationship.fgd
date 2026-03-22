@@ -19,10 +19,10 @@
 		4: "Neutral"
 		]
 
-	radius(float) : "Radius for subject" : 0
+	radius(float) : "Radius for subject" : 0 : "Radius in which to check for relationships"
 	rank(integer) : "Disposition Priority" : 0 : "How much the Subject(s) should Like/Hate/Fear the Target(s). Higher priority = stronger feeling."
 
-	startactive(boolean) : "Start Active" : 0
+	startactive(boolean) : "Start Active" : 0 : "Should this entity be active on spawn?"
 
 	reciprocal(boolean) : "Reciprocal" : 0 : "Set this to YES to have the new relationship mirrored by Target"
 

@@ -17,7 +17,7 @@
 		]
 
 	LoopCount(integer) : "Loop Count" : 0 : "How many times to loop the replay. If -1, will loop indefinitely"
-	StartDisabled(boolean) : "Start Disabled" : 0
+	StartDisabled(boolean) : "Start Disabled" : 0 : "Should this entity be disabled on spawn?"
 
 	// Inputs
 	input Enable(void) : "Enable this entity"

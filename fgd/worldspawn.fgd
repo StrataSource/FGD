@@ -1,15 +1,15 @@
 // Super-extra special, so don't use normal bases.
 @SolidClass base(BaseEntity, ResponseContext) 
-= worldspawn: "This is the world entity. Each map can only contain one, and it's automatically created for you."
+= worldspawn: "This is the world entity. Each map can only contain one, and it's automatically created on map spawn."
 	[
-	message(string) : "Map Description / Title"
+	message(string) : "Map Description / Title."
 
 	skyname(string) : "SkyBox Texture Name" : : "Texture used for the 2D skybox."
 	skyname[P2CE](string) : "SkyBox Texture Name" : "sky_black_nofog" : "Texture used for the 2D skybox."
 
 	chaptertitle(string) : "Chapter Title" : : "Chapter Title that appears onscreen when this level starts."
 
-	startdark(boolean) : "Level Fade In" : 0
+	startdark(boolean) : "Level Fade In" : 0 : "Should the map have the fade-in effect upon loading?"
 
 	newunit[engine, +USE_SAVE_RESTORE](boolean) : "New Level Unit" : 0
 	newunit[+USE_SAVE_RESTORE](choices) : "New Level Unit" : 0 : "Used to clear out savegame data of previous levels to keep the savegame size as small as possible. " +
@@ -30,7 +30,7 @@
 
 	detailmaterial(material) : "Detail material file" : "detail/detailsprites" : "Material for detail sprites to use for drawing detail props"
 	
-	paintinmap[-MOMENTUM](boolean) : "Enable Paint" : 0 : "Enable code for spreading paint on surfaces, and bouncing physics objects around."
+	paintinmap[-MOMENTUM](boolean) : "Enable Paint" : 0 : "Enables code for spreading paint on surfaces, and bouncing physics objects around."
 	maxblobcount[-MOMENTUM](integer) : "Gel Blob Limit" : 250 : "Number of Gel blobs that can exist. Maximum is 250."
 	
 	maxprojectedtextures(integer) : "Maximum Projected Textures" : 8 : "Maximum number of env_projectedtexture entities that can be enabled at once. Maximum is 8."
