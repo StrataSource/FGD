@@ -2,7 +2,7 @@
 // but it was moved to the engine category.
 
 @PointClass base(BaseEntityPoint)
-	appliesto(P2CE)
+	appliesto(+engine, P2CE)
 = projected_tractor_beam_entity: "The actual Excursion Funnel itself, projected from prop_tractor_beam."
 	[
 	]   
