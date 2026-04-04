@@ -1,6 +1,6 @@
 @SolidClass base(Trigger, RenderFields, Reflection) 
 	appliesto(P2CE) 
-= trigger_portal_cleanser: "A trigger volume that disolves any entities that touch it and fizzles active portals when the player touches it.|||An Aperture Science Material Emancipation Grid."
+= trigger_portal_cleanser: "A trigger volume that disolves any entities that touch it and fizzles active portals when the player touches it."
 	[
 	spawnflags(flags) : "spawnflags" =
 		[
@@ -17,6 +17,12 @@
 		
 	visible(boolean) : "Visible" : 1 : "If the fizzler is visible. This controls whether sounds will play."
 	usescanline(boolean) : "Use Scanline" : 1 : "If the field uses a scanline particle effect."
+	scanlinecolor(color255) : "Scanline Color" : "106 178 198 15" : "The color to use for the scanline particle effect."
+	blockportalshots(boolean) : "Block Portal Shots" : 1 : "Whether the fizzler will block portal shots."
+	obstructportals(boolean) : "Obstruct Portals" : 1 : "Whether the fizzler will act like a portal bumper, and fizzle portals when enabled."
+	loopsound(sound) : "Looping Sound" : "VFX.FizzlerLp" : "Sound played continuously while the fizzler is active."
+	startsound(sound) : "Start Sound" : "VFX.FizzlerStart" : "Sound played when the fizzler turns on."
+	stopsound(sound) : "Stop Sound" : "VFX.FizzlerStop" : "Sound played when the fizzler turns off."
 
 	// Inputs
 	input FizzleTouchingPortals(void) : "Cause any portals in our volume to immediately fizzle."
