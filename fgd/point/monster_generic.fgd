@@ -1,7 +1,7 @@
 @PointClass base(BaseNPC) 
 	studio() 
-	bbox(-4 -4 -4, 4 4 4)
-= monster_generic: "Generic Script NPC"
+	size(-4 -4 -4, 4 4 4)
+= monster_generic: "A generic script monster, being the predecessor to `generic_actor`. Note: some keyvalues may not affect this NPC, even though they are listed."
 	[
 	spawnflags(flags) : "spawnflags" =
 		[

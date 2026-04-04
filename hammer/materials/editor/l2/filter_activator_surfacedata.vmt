@@ -1,0 +1,7 @@
+"Sprite"
+{
+	"$spriteorientation" "vp_parallel"
+	"$spriteorigin" "[ 0.50 0.50 ]"
+	"$baseTexture" "editor/l2/filter_activator_surfacedata"
+	"$no_fullbright" 1
+}

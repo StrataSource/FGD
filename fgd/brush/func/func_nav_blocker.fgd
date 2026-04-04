@@ -2,7 +2,7 @@
 	appliesto(+USE_NAV_MESH)
 = func_nav_blocker: "A brush entity that can block nav areas touching its AABB."
 	[
-	StartDisabled(boolean) : "Start Disabled" : 0
+	StartDisabled(boolean) : "Start Disabled" : 0 : "Should this entity be disabled on spawn?"
 
 	// Inputs
 	input BlockNav(string) : "Starts blocking nav areas."

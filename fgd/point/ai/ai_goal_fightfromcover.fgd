@@ -11,7 +11,7 @@
 	length(float) : "Zone Length" : 480 : "Length of the hint search area"
 	height(float) : "Zone Height" : 2400 : "Offset in the direction of the hint search area"
 	bias(float) : "Zone Bias" : 60 : "Offset in the direction of the hint search area"
-	startactive(boolean) : "Start Active" : 0
+	startactive(boolean) : "Start Active" : 0 :"Should this entity be active on spawn?"
 
 	// Inputs
 	input Activate(void)

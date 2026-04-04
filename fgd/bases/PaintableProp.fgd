@@ -1,0 +1,7 @@
+@BaseClass 
+	appliesto(P2CE) 
+= PaintableProp
+	[
+	output OnPainted(integer): "Fired when the prop has been painted with a new paint type, other than cleansing gel. The parameter is the paint type number."
+	output OnUnPainted(void): "Fired when the prop has been cleaned after being painted."
+	]

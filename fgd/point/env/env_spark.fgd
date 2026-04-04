@@ -38,6 +38,8 @@
 		512: "Directional" : 0
 		]
 
+	sound(sound) : "Sound" : "DoSpark" : "The sound script to play when sparking."
+
 
 	// Inputs
 	input StartSpark(void) : "Start the spark effect."

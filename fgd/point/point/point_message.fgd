@@ -10,7 +10,7 @@
 		1: "Start Disabled" : 0
 		]
 
-	message(string) : "Entity Message"
+	message(string) : "Entity Message" : : "Message to show. It will follow this entity's position."
 	radius(integer) : "Show message radius" : 128 : "Distance the player must be within to see this message."
 	developeronly(boolean) : "Developer Only?" : 0 : "If set, this message will only be visible when developer mode is on."
 

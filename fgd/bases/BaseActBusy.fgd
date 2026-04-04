@@ -3,15 +3,15 @@
 = BaseActBusy
 	[
 	actor(target_name_or_class) : "Actor(s) to affect" : : "NPC's that should act busy"
-	startactive(boolean) : "Start Active" : 0
+	startactive(boolean) : "Start Active" : 0 : "Should this entity be active on spawn?"
 	searchtype[engine](integer) : "Search Type" : 0
 	searchtype(choices) : "Search Type" : 0 : "How to search for the entities using the targetname." =
 		[
 		0: "Entity Name"
 		1: "Classname"
 		]
-	busysearchrange(float) : "Search Range for Busy Hints" : 2048
-	visibleonly(boolean) : "Visible Busy Hints Only" : 0
+	busysearchrange(float) : "Search Range for Busy Hints" : 2048 : "Range in which this NPC will search for busy hints."
+	visibleonly(boolean) : "Visible Busy Hints Only" : 0 : "Should this NPC use only visible busy hints?"
 
 	// Inputs
 	input Activate(void) : "Begin acting busy"

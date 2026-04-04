@@ -1,4 +1,4 @@
-@PointClass base(BaseEntityPhysics) 
+@PointClass base(BaseEntityPhysics, PaintableProp) 
 	appliesto(P2CE)
 	studioprop()
 = prop_monster_box: "Frankencubes: turrets shoved into storage cube chassis that walk erratically when oriented correctly, but behave identically to standard cubes."

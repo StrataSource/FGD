@@ -1,3 +1,4 @@
+
 @SolidClass base(BaseEntityVisBrush, EnableDisable, Toggle) 
 = func_brush: "An brush built entity with various features."
 	[

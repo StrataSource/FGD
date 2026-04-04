@@ -1,7 +1,7 @@
 @PointClass base(BaseEntityPoint, PortalBase) 
 	appliesto(P2CE) 
 	studioprop("models/editor/prop_portal.mdl") 
-	bbox(-32 -16 -64, 32 16 64) 
+	size(-32 -16 -64, 32 16 64) 
 = prop_portal: "A portal."
 	[
 	activated[engine](boolean) : "Start Activated" : 0
@@ -32,8 +32,8 @@
 		2: "Generic Portal"
 		]
 
-	halfwidth(float) : "Half-Width of the Portal." : 0
-	halfheight(float) : "Half-Height of the Portal." : 0
+	halfwidth(float) : "Half-Width of the Portal." : 0 : "Half-width of this entity's portal."
+	halfheight(float) : "Half-Height of the Portal." : 0 : "Half-height of this entity's portal."
 	
 
 	// Inputs
