@@ -33,6 +33,18 @@
 	renderamt(integer) : "Alpha" : 255 : "Alpha of the fade, where 0 = fully transparent and 255 = fully opaque."
 	rendercolor(color255) : "Color (R G B)" : "255 255 255"
 
+	colorvar(string) : "Color Var" : : "If set, override the tint by the specified color var."
+	colorvar[P2CE](choices) : "Paint Tinting" : : "If enabled, override the tint by the color of the specified paint type." = 
+		[
+		"": "Disabled"
+		"paint_bounce": "Repulsion Gel"
+		"paint_reflect": "Reflection Gel"
+		"paint_speed": "Propulsion Gel"
+		"paint_portal": "Conversion Gel"
+		"paint_erase": "Cleansing Gel"
+		"paint_stick": "Adhesion Gel"
+		]
+
 	uniformscale(float) : "Uniform Scale Override" : 1 : "Resizes the static prop uniformly."
 	scale(vector) : "Scale Override" : "1 1 1" : "Resizes the static prop."
 
