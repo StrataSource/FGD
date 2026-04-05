@@ -22,10 +22,10 @@
 		2: "Third"
 		3: "Fourth"
 		]
-	tint(color255) : "Tint Color" : "255 255 255 255" : "Applies a color tint using multiply mix mode. Color will be put as $color shader parameter. Alpha will be put as $alpha shader parameter, so make sure the overlay's material allows the use of those parameters."
+	tint(color255) : "Tint Color" : "255 255 255 255" : "Tint the overlay using multiply mix mode."
 
-	colorvar(string) : "Color Var" : : "If set, override the $color tint by the specified color var."
-	colorvar[P2CE](choices) : "Paint Tinting" : : "If enabled, override the $color tint by the color of the specified paint type." = 
+	colorvar(string) : "Color Var" : : "If set, override the color tint by the specified color var."
+	colorvar[P2CE](choices) : "Paint Tinting" : : "If enabled, override the color tint by the color of the specified paint type." = 
 		[
 		"": "Disabled"
 		"paint_bounce": "Repulsion Gel"
