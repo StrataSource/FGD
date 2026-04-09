@@ -1,0 +1,5 @@
+UnlitGeneric
+{
+	$basetexture "tools/toolsnodraw"
+	$model 1
+}
