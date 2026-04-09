@@ -14,11 +14,11 @@
 
 	parentname(target_destination) : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent. Set an attachment point via 'parentname,attachment'."
 
-	linedivider_vscript[+VSCRIPT, !engine](string) readonly : "-------------------------------------------------------------------------------------------------------" : ""
+	linedivider_broken[!engine](string) readonly : "-------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
 	vscripts[VSCRIPT](scriptlist) : "Entity Scripts" : : "Name(s) of script files that are executed after all entities have spawned."
 	thinkfunction[VSCRIPT](string) : "Script think function" : : "Name of a function in this entity's script scope which will be called automatically."
 
-	linedivider_base[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_base[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
 	]

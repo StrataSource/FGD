@@ -6,53 +6,52 @@
 = _CBaseEntity_
 	[
 	classname(string) : "Classname" : : "The class of the entity, and is changed."
-	origin(origin) : "Position" : "0 0 0"
-	angles(angle) : "Pitch Yaw Roll (X Y Z)" : "0 0 0"
+	origin(origin) : "Position" : "0 0 0" : "Range in which this NPC will search for busy hints."
+	angles(angle) : "Pitch Yaw Roll (X Y Z)" : "0 0 0" : "This entity's orientation in the world. Pitch is rotation around the Y axis, yaw is the rotation around the Z axis, roll is the rotation around the X axis."
 
 	targetname(target_source) : "Name"
 	hammerid(integer) : "Hammer ID"
 	// Defined here, but don't include - it's treated as 
 	// many different types.
 	// target(target_destination) : "Target" 
-	spawnflags(flags) = []
+	spawnflags(flags) : "spawnflags" : "Flags that can be set on spawn (i.e. in Hammer Editor)" = []
 
 
-	vscripts[VSCRIPT](scriptlist) : "Entity Scripts"
-	thinkfunction[VSCRIPT](string) : "Script think function"
-	nextthink(integer) : "Next Think"
+	vscripts[VSCRIPT](scriptlist) : "Entity Scripts" : : "Name(s) of script files that are executed after all entities have spawned."
+	thinkfunction[VSCRIPT](string) : "Script think function" : : "Name of a function in this entity's script scope which will be called automatically."
+	nextthink(integer) : "Next Think" : : "Name of another function in this entity's script scope which will be called automatically."
+	globalname(string) : "Global Entity Name" : : "Name by which this entity is linked to another entity in a different map. When the player transitions to a new map, entities in the new map with globalnames matching entities in the previous map will have the previous map's state copied over their state."
 
-	globalname(string) : "Global Entity Name"
+	mincpulevel(integer) : "Min CPU Level" : 0 : "This entity will not render if settings are lower than this value."
+	maxcpulevel(integer) : "Max CPU Level" : 0 : "This entity will not render if settings are higher than this value."
+	mingpulevel(integer) : "Min GPU Level" : 0 : "This entity will not render if settings are lower than this value."
+	maxgpulevel(integer) : "Max GPU Level" : 0 : "This entity will not render if settings are higher than this value."
 
-	mincpulevel(integer) : "Min CPU Level" : 0
-	maxcpulevel(integer) : "Max CPU Level" : 0
-	mingpulevel(integer) : "Min GPU Level" : 0
-	maxgpulevel(integer) : "Max GPU Level" : 0
-
-	parentname(target_destination) : "Parent"
+	parentname(target_destination) : "Parent" : "Parent entity that this (child) entity will be attached to and move with."
 
 	teamnumber[+USE_TEAM](integer) : "Team number" : : "Team number this entity is on."
 	pendingteamnumber[+USE_TEAM](integer) : "Pending Team Number" : : "Team numer this entity will be on at the beginning of the next round."
 
-	responseContext(string) : "Response Context" : ""
+	responseContext(string) : "Response Context" : : "Response system context(s) for this entity. Format should be: 'key:value,key2:value2,etc'. When this entity speaks, the list of keys & values will be passed to the response rules system."
 	addon(string) : "AI Addon" : : "Broken ASW feature."
 	
-	health(integer) : "Health"
-	max_health(integer) : "Max Health"
-	is_autoaim_target(boolean) : "Is Autoaim Target" : 0
-	damagefilter(filterclass) : "Damage Filter"
-	nodamageforces(boolean) : "No damage forces"
+	health(integer) : "Health" : : "Number of points of damage to take before breaking. 0 means don't break."
+	max_health(integer) : "Max Health" : : "Overrides the NPC's max health. Health cannot exceed this amount."
+	is_autoaim_target(boolean) : "Is Autoaim Target" : 0 : "Should this entity automatically aim at its target."
+	damagefilter(filterclass) : "Damage Filter" : : "Name of the filters that control which entities can be damaged by this entity."
+	nodamageforces(boolean) : "No damage forces" : : "Should this entity receive damage forces?"
 
-	renderfx(integer) : "Render FX" : 0
-	rendermode(integer) : "Render Mode" : 0
-	renderamt(integer) : "Render Alpha" : 255
-	effects(integer) : "Effects" : 0
-	rendercolor(color255) : "Render Color" : "255 255 255"
+	renderfx(integer) : "Render FX" : 0 : "Various somewhat legacy alpha effects. Material Proxies are more modern."
+	rendermode(integer) : "Render Mode" : 0 : "Used to set a non-standard rendering mode on this entity. See also 'FX Amount' and 'FX Color'.* Color & Texture = src*a+dest*(1-a)* Glow = src*a + dest, fixed on screen for sprites* Solid = Performs alphatest transparency* Additive = src*a + dest* Additive FF = blend between sprite nimation frames* Alpha Add = src + dest*(1-a)* World Space Glow = src*a + dest"
+	renderamt(integer) : "Render Alpha" : 255 : "Opacity of this entity. 255 is fully opaque. Requires Additive render mode to be set."
+	effects(integer) : "Effects" : 0 : "For configuring visual effects. If you want to combine effects, turn SmartEdit off and add the effect numbers together, i.e. 64 + 8 = 72."
+	rendercolor(color255) : "Render Color" : "255 255 255"  : "A color to mix with the model/sprite."
 	modelindex(integer) : "Model Index" : 0 : "Internal model index, shouldn't be used."
 	model(studio) : "Model" : "" : "Model/sprite name, or brush index."
-	shadowcastdist(integer) : "Shadow Cast Distance" : 0
-	texframeindex(integer) : "Texture Frame" : 0
-	drawinfastreflection(boolean) : "Draw In Fast Reflections"
-	disableshadows(boolean) : "Disable Shadows"
+	shadowcastdist(integer) : "Shadow Cast Distance" : 0 : "Sets how far the entity casts dynamic shadows, in units. 0 means default distance from the shadow_control entity."
+	texframeindex(integer) : "Texture Frame" : 0 : "If the VTF is multi-frame, specifies the frame to use."
+	drawinfastreflection(boolean) : "Draw In Fast Reflections" : 0 : "If enabled, causes this entity/prop to to render in fast water reflections (i.e. when a water material specifies $reflectonlymarkedentities) and in the world impostor pass."
+	disableshadows(boolean) : "Disable Shadows" : 0 : "Prevent the entity from creating render-to-texture (dynamic) shadows."
 	disablereceiveshadows(boolean) : "Disable Recieving Shadows"
 	disableflashlight(boolean) : "Disable Projected Texture Shadows"
 	disableshadowdepth(boolean) : "Disable Shadow Depth"

@@ -1,4 +1,5 @@
 @BaseClass = Origin
 	[
-	origin(origin) : "Origin (X Y Z)" : : "The position of this entity's center in the world. Rotating entities typically rotate around their origin."
+	origin(origin) : "Origin (X Y Z)" : : "The position of this entity's origin in the world. " +
+	"Origin is always this entity's center, except if this entity uses a model (is prop_, npc_, etc.) - then it usually isn't."
 	]

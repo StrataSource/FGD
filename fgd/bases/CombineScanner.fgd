@@ -6,13 +6,13 @@
 		131072: "Strider Scout Scanner" : 0
 		]
 
-	spotlightlength(integer) : "Spotlight Length" : 500
-	spotlightwidth(integer) : "Spotlight Width" : 50
+	spotlightlength(integer) : "Spotlight Length" : 500 : "Length of this scanner's spotlight."
+	spotlightwidth(integer) : "Spotlight Width" : 50 : "Width of this scanner's spotlight."
 
-	spotlightdisabled(boolean) : "Disable Spotlight" : 0
-	shouldinspect(boolean) : "Should inspect" : 1
-	onlyinspectplayers(boolean) : "Only Inspect Players" : 0
-	neverinspectplayers(boolean) : "Never Inspect Players" : 0
+	spotlightdisabled(boolean) : "Disable Spotlight" : 0 : "Should this scanner's spotlight be disabled?"
+	shouldinspect(boolean) : "Should inspect" : 1 : "Should this scanner inspect NPCs?"
+	onlyinspectplayers(boolean) : "Only Inspect Players" : 0 : "Should this scanner only inspect player?"
+	neverinspectplayers(boolean) : "Never Inspect Players" : 0 : "Should this scanner avoid player?"
 
 	// Inputs
 	input DisableSpotlight(void) : "Disable the spotlight."

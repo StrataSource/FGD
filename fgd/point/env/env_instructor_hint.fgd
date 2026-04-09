@@ -27,7 +27,7 @@
 	hint_color(color255) : "Caption Color" : "255 255 255" : "The color of the caption text"
 
 	hint_forcecaption[engine](integer): "Show through walls" : 0
-	hint_forcecaption(choices) : "Show through walls" : 0 : "Do we show the caption text even if the hint is occluded by a wall?" =
+	hint_forcecaption(choices) : "Show through walls" : 0 : "Show the caption text appear even if the hint is occluded by a wall?" =
 		[
 		0: "No"
 		1: "Show when occluded"

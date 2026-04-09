@@ -1,7 +1,7 @@
 @BaseClass base(BaseEntityBrush, TeamNum) 
 = NavCost
 	[
-	start_disabled(boolean) : "Start Disabled" : 0
+	start_disabled(boolean) : "Start Disabled" : 0 : "Sets this entity as disabled on map spawn."
 
 	// Inputs
 	input Enable(void) : "Enable"

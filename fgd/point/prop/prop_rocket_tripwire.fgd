@@ -5,7 +5,7 @@
 	[
 	rocketspeed(float) : "Rocket Speed" : 450 : "Speed the rocket will travel at."
 	rocketlifetime(float) : "Rocket Lifetime" : 20 : "The rocket will automatically detonate after this number of seconds."
-	startdisabled[engine](boolean) : "Start Disabled" : 0
+	startdisabled[engine](boolean) : "Start Disabled" : 0 : "Should this entity be disabled on spawn?"
 	startdisabled(choices) : "Initial State" : 0 =
 		[
 		0: "Enabled"

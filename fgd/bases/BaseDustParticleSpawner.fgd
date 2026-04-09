@@ -2,9 +2,9 @@
 	sphere(distmax)
 = BaseDustParticleSpawner
 	[
-	startdisabled(boolean) : "Start Disabled" : 0
-	color(color255) : "Start Particle Color (R G B)" : "255 255 255"
-	color2(color255) : "End Particle Color (R G B)" : "255 255 255"
+	startdisabled(boolean) : "Start Disabled" : 0 : "Sets this brush as disabled on map spawn."
+	color(color255) : "Start Particle Color (R G B)" : "255 255 255" : "Color of the particle after spawning."
+	color2(color255) : "End Particle Color (R G B)" : "255 255 255" : "Color of the particle when fading."
 	spawnrate(integer) : "Particle Per Second" : 40 : "Number of particles to spawn, per second."
 	speedmax(integer) : "Maximum Particle Speed" : 13 : "Maximum speed that the particles can move after spawning."
 	fallspeed(integer) : "Particle Fall Speed" : 0 : "How fast the particles fall to the ground. This value is subtracted from the particle speed in the Z-axis only."
@@ -16,7 +16,7 @@
 	affectedbywind(boolean) : "Affected by Wind" : 1 : "When set, the dust will be affected by any env_wind entity settings in the map."
 	origin(string) readonly : "Origin" : "0 0 0" : "The origin keyvalue has to be set to 0 0 0 for this entity to work properly in game. If this value isn't 0 0 0, reset it."
 
-	linedivider_base[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_base[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
 	// Inputs
 	input TurnOn(void) : "Turn on."

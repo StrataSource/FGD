@@ -1,7 +1,7 @@
 @PointClass base(Angles) 
 	appliesto(!engine) // Not an actual entity.
 	instance()
-	size(-2 -2 -2, 2 2 2)
+	size(-4 -4 -4, 4 4 4)
 = func_instance: "An entity for placing an instance of a map file.  You may translate and rotate this entity. " +
 	"You can use the replace keys to do parameter changes on the instance contents in a $ at the beginning of a variable name. " +
 	"Then just use the $variable name inside of the instance contents on any value portion of a key/value pair."

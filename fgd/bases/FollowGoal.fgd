@@ -1,7 +1,7 @@
 @BaseClass base(BaseEntityPoint) 
 = FollowGoal
 	[
-	actor(target_name_or_class) : "Actor(s) to affect"
+	actor(target_name_or_class) : "Actor(s) to affect" : : "NPCs that are affected by this entity"
 	goal(string) : "Target Entity" : : "The name of the entity to follow. If blank, and the actor likes the player, then defaults to player"
 
 	searchtype[engine](integer) : "Search Type" : 0
@@ -11,10 +11,10 @@
 		1: "Classname"
 		]
 
-	startactive(boolean) : "Start Active" : 0
+	startactive(boolean) : "Start Active" : 0 : "Sets this entity as active on map spawn."
 	
 	maximumstate[engine](integer) : "Maximum state" : 1
-	maximumstate(choices) : "Maximum state" : 1 =
+	maximumstate(choices) : "Maximum state" : 1 : "Maximum state that this entity can reach. Setting it to 1 mean this entity will never fight." =
 		[
 		1: "Idle"
 		2: "Alert"
@@ -22,7 +22,7 @@
 		]
 
 	formation[engine](integer) : "Formation" : 0
-	formation(choices) : "Formation" : 0 =
+	formation(choices) : "Formation" : 0 : "What formation should this entity follow. Some formations are NPC-specific (i.e. Hunter)." =
 		[
 		0: "Close circle"
 		1: "Wide circle"

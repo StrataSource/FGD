@@ -8,7 +8,7 @@
 		"This will override the spotlight's angles."
 	_inner_cone(integer) : "Inner (bright) angle" : 30
 	_cone(integer) : "Outer (fading) angle" : 45
-	_exponent(integer) : "Focus" : 1
+	_exponent(integer) : "Focus" : 1 : "Focus point of the light."
 	_removeaftercompile(boolean) : "Remove After Compile" : 0 : "If set, removes this entity after processing the map with VRAD"
-	pitch(angle_negative_pitch) : "Pitch" : -90
+	pitch(angle_negative_pitch) : "Pitch" : -90 : "Pitch rotation of this entity. Overrides the Pitch Yaw Roll value"
 	]

@@ -2,7 +2,7 @@
 // Engine-wise they're exactly identical.
 // So we want to combine the definitions, so Hammer behaves the same with them.
 // It only detects @MoveClass, so we're alright not using @KeyFrameClass.
-//@MoveClass and animator() is required to allow them to be the first in a chain.
+// @MoveClass and animator() is required to allow them to be the first in a chain.
 // keyframe() causes them to automatically rename when copied.
 
 @MoveClass base(BaseEntityPoint, RopeKeyFrame) 

@@ -1,3 +1,6 @@
+// This entity can receive the same inputs as the projected_wall_entity,
+// but it was moved to the engine category.
+
 @PointClass base(BaseEntityPoint)
 	appliesto(+engine, P2CE)
 = projected_tractor_beam_entity: "The actual Excursion Funnel itself, projected from prop_tractor_beam."

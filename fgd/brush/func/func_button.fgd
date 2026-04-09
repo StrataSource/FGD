@@ -1,3 +1,4 @@
+
 @SolidClass base(BaseEntityVisBrush, Button) 
 = func_button: "A brush entity that's designed to be used for a player-useable button. " +
 	"When used by the player, it moves to a pressed position. " +

@@ -1,6 +1,6 @@
 @BaseClass base(BaseVehicle)
 	appliesto(+USE_VEHICLES)
-= BaseDriveableVehicle
+= BaseDriveableVehicle: "Internal entity. Contains code about drivable vehicles."
 	[
 	vehiclelocked(boolean) : "Start locked" : 0 : "Whether to start the vehicle locked. A locked vehicle cannot be entered or exited."
 

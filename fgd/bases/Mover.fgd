@@ -1,6 +1,6 @@
 @BaseClass = Mover
 	[
-	positioninterpolator(choices) : "Position Interpolator" : 0 =
+	positioninterpolator(choices) : "Position Interpolator" : 0 : "Position interpolation for this moving rope." =
 		[
 		0: "Linear"
 		1: "Catmull-Rom Spline"

@@ -4,7 +4,7 @@
 	animator() 
 = move_track: "Track Move Behavior"
 	[
-	wheelbaselength(integer) : "Distance between the wheels" : 50
-	damage(integer) : "Damage done to blocking entities" : 0
+	wheelbaselength(integer) : "Distance between the wheels" : 50 : "Sets the new distance between train's wheels."
+	damage(integer) : "Damage done to blocking entities" : 0 : "Sets the new amount of damage done to entities that block the train."
 	norotate(boolean) : "Turn to face down path" : 0
 	]

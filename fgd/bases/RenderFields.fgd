@@ -55,7 +55,7 @@
 		18: "Glow Shell"
 		]
 
-	disablereceiveshadows(boolean) : "Disable Receiving Shadows" : 0
+	disablereceiveshadows(boolean) : "Disable Receiving Shadows" : 0 : "Should this entity receive no dynamic shadows?"
 
 	viewhideflags[engine](integer) : "View Hide Flags" : 0
 	viewhideflags(choices) : "View ID nodraw" : 0 : "This keyvalue can control whether an entity should only draw on things like monitors or mirrors, " +

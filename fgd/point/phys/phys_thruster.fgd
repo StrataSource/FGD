@@ -8,7 +8,7 @@
 	"Torque can be removed by unchecking the 'apply torque' flag. " +
 	"The position of the thruster can be forced to be at the object's center by checking to 'ignore pos' flag."
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		32: "Ignore Pos" : 0
 		]

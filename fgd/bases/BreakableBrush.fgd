@@ -1,7 +1,7 @@
 @BaseClass base(BaseEntityVisBrush, _Breakable, DamageFilter) 
 = BreakableBrush
 	[
-	spawnflags(flags)  =
+	spawnflags(flags) : "spawnflags" =
 		[
 		1: "Only Break on Trigger" : 0
 		2: "Break on Touch" : 0

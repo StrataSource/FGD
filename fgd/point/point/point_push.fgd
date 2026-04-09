@@ -16,6 +16,7 @@
 		4: "No falloff (constant push at any distance)" : 0
 		8: "Push players" : 1
 		16: "Push physics" : 1
+		32: "Respect block-los when checking line of sight" : 1
 		]
 
 	enabled(boolean) : "Start Enabled" : 1
