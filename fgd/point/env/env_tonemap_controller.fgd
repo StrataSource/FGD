@@ -5,7 +5,7 @@
 	[
 	spawnflags(flags) : "spawnflags" =
 		[
-		1: "Default Tonemapper" : 0
+		1: "Primary Tonemapper" : 0
 		]
 
 	// Inputs

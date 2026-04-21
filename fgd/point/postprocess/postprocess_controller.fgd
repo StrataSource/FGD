@@ -4,27 +4,30 @@
 = postprocess_controller: "When present, enables post-processing effects from Left 4 Dead 2, which include film grain, contrast adjustment, depth-of-field and vignettes."
 	[
 	fadetime(float) : "Fade-in time" : "2"
-	localcontraststrength(float) : "Local contrast strength [-1..x]" : "0" : "Global contrast strength."
-	localcontrastedgestrength(float) : "Local contrast edge strength [0..1]" : "0" : "Contrast strength for edges displayed on-screen."
+	localcontraststrength(float) : "Local contrast strength [0-1]" : "0" : "Global contrast strength. Accepts negative values."
+	localcontrastedgestrength(float) : "Local contrast edge strength [0-1]" : "0" : "Contrast strength for edges displayed on-screen."
 
-	vignettestart(float) : "Vignette start distance [0..1]" : "0.8" : "The linear start point of the vignette effect."
+	vignettestart(float) : "Vignette start distance [0-1]" : "0.8" : "The linear start point of the vignette effect."
 	vignetteend(float) : "Vignette end distance [0..x]" : "1.1" : "The linear end point of the vignette effect."
 
-	// inverted in cstrike15
 	vignetteblurstrength(float) : "Vignette blur strength" : "1" : "How strong the vignette effect should be, from a range of 0 through 1." +
 	"Specifying blur strength values past 1 can invert the game's colors."
+	
+	// inverted in csgo and later
 	fadetoblackstrength(float) : "Fade to black strength" : "1" : "How strong the vignette effect should be, from a range of 0 through 1." +
 	"In CS:GO and later games, this value ranges from 1 through 0 as this parameter's output is inverted."
 
-	depthblurfocaldistance(float) : "Depth-blur focal plane distance [0..1]" : "0"
-	depthblurstrength(float) : "Depth-blur effect strength [0..x]" : "0"
-	screenblurstrength(float) : "Full-screen blur strength [0..1]" : "0"
-	filmgrainstrength(float) : "Film grain strength [0..x]" : "0" : "How strong the film grain effect should be, from a range of 0 through 1." +
+	depthblurfocaldistance(float) : "Depth-blur focal plane distance [0-1]" : "0"
+	depthblurstrength(float) : "Depth-blur effect strength [0-x]" : "0"
+	screenblurstrength(float) : "Full-screen blur strength [0-1]" : "0"
+
+	// inverted in csgo and later
+	filmgrainstrength(float) : "Film grain strength [1-0]" : "1" : "How strong the film grain effect should be, from a range of 0 through 1." +
 	"In CS:GO and later games, this value ranges from 1 through 0 as this parameter's output is inverted."
 
 	spawnflags(flags) : "spawnflags" =
 		[
-		1: "Defaut Post-Process Controller" : 0
+		1: "Primary Post-Process Controller" : 0
 		]
 
 	// Inputs

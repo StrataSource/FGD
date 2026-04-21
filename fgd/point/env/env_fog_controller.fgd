@@ -19,7 +19,7 @@
 	farz(string) : "Far Z Clip Plane" : "-1" : "The distance at which the world will not be rendered."
 	spawnflags(flags) : "spawnflags" =
 		[
-			1: "Default Fog Controller" : 0
+			1: "Primary Fog Controller" : 0
 		]
 
 	hdrcolorscale(float) : "HDR Color Scale" : "1" : "Float value to multiply fog color by when running in HDR mode."
