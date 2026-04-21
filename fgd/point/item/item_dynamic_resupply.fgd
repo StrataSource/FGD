@@ -10,17 +10,17 @@
 	"In that case, a random piece of ammo used by a weapon, that the player has, will be spawned. " +
 	"If the 'Fallback to Health Vial' spawnflag is set, a health vial will be spawned instead of the ammo." +
 	"\n\n" +
-	"By default, the item_dynamic_resupply uses the values inside the Master resupply, instead of using it's own values. " +
+	"By default, the item_dynamic_resupply uses the values inside the primary resupply, instead of using its own values. " +
 	"This makes it easy to tweak the desired loadout of many resupplies. " +
-	"The BecomeMaster input allows you to switch Masters dynamically as the level progresses."
+	"The BecomeMaster input allows you to switch primary resupplies dynamically as the level progresses."
 	[
 	spawnflags(flags) : "spawnflags" =
 		[
-		1: "Use Master's values" : 1
-		2: "Is Master" : 0
+		1: "Use primary resupply values" : 1
+		2: "Is primary resupply entity" : 0
 		4: "Spawn even if player meets all requirements" : 0
-		8: "Fallback to Health Vial" : 0
-		16: "Alternate master" : 0
+		8: "Force-spawn health vial if player inventory is full" : 0
+		16: "Alternate resupply" : 0
 		]
 
 	desiredhealth(float) : "Desired Health Ratio" : 1 : "A ratio from 0 to 1." +
@@ -50,8 +50,8 @@
 
 	// Inputs
 	input CalculateType(void) : "Force the dynamic resupply to calculate which item it should spawn."
-	input BecomeMaster(void) : "Make this resupply the master resupply. " +
-		"All other resupplies set to Use Master's Values will now use this resupply's values."
+	input BecomeMaster(void) : "Make this dynamic resupply the primary resupply. " +
+		"All other resupplies set to use the primary resupply's parameters will now use the values specified by this entity instead."
 
 	// Outputs
 	output OnItem(ehandle) : "Fired with each item created by this box."

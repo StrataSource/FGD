@@ -19,8 +19,6 @@
 		]
 
 	control_volume(target_destination) : "Control Volume" : : "Name of a trigger the specifies the volume in which a player must be to control this tank."
-	
-	master(string) : "(Team) Master"
 
 	yawrate(string) : "Yaw rate" : "30" : "How fast tank can look left or right."
 	yawrange(string) : "Yaw range" : "180" : "How far tank can turn left or right."

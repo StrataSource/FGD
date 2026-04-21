@@ -1,6 +1,6 @@
 @PointClass base(BaseEntityPoint, EnableDisable) 
 	appliesto(TF2_ENTITIES)
-= team_control_point_master: "Control Point Master"
+= team_control_point_master: "Team Fortress 2 control point manager. Defines how player control point assets are defined per-team and imposes restrictions on captures."
 	[
 	team_base_icon_2(material) : "Material for the RED Base icon" : "sprites/obj_icons/icon_base_red"
 	team_base_icon_3(material) : "Material for the BLUE Base icon" : "sprites/obj_icons/icon_base_blu"
@@ -42,10 +42,10 @@
 	input SetCapLayoutCustomPositionX(float) : "Set the cap layout custom X position [0,1]"
 	input SetCapLayoutCustomPositionY(float) : "Set the cap layout custom Y position [0,1]"
 
-	input RoundSpawn(void) : "Clear out old control points,round AND find the new control points,round and if successful, do CPMThink AND also tell  the resource to ResetControlPoints."
-	input RoundActivate(void) : "if we're using mini-rounds and haven't picked one yet, find one to play OR Tell the objective resource what control points are in use in the selected mini-round."
+	input RoundSpawn(void) : "Reset all control points to their default states."
+	input RoundActivate(void) : "Activate all control points for the current game's round or stage."
 
 	// Outputs
 	output OnWonByTeam1(void) : "Sent when RED wins the game."
-	output OnWonByTeam2(void) : "Sent when BLUE wins the game."
+	output OnWonByTeam2(void) : "Sent when BLU wins the game."
 	]
