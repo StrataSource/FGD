@@ -14,7 +14,7 @@
 	output OnPlayerPickup(void) : "Fires when the player picks up this weapon."
 	output OnNPCPickup[+USE_AI](void) : "Fires when an NPC picks up this weapon."
 	output OnCacheInteraction[+HL2_ENTITIES](void) : "Fires when the player 'proves' they've found this weapon. " +
-		"Fires on: Player Touch, +USE pickup, Physcannon pickup, Physcannon punt."
+		"Fires on player touch, +USE pickup, gravity gun/portal gun pickup, gravity gun punt."
 	output OnCacheInteraction[-HL2_ENTITIES](void) : "Fires when the player 'proves' they've found this weapon. " +
-		"Fires on: Player Touch and +USE pickup."
+		"Fires on player touch and +USE pickup."
 	]
