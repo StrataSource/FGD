@@ -26,6 +26,9 @@
 
 	// Inputs
 	input FizzleTouchingPortals(void) : "Cause any portals in our volume to immediately fizzle."
+	input SetBlockPortalShots(boolean) : "Set whether the fizzler will block portal shots."
+	input SetObstructPortals(boolean): "Set whether the fizzler will act like a portal bumper, and fizzle portals when enabled."
+	input SetScanlineColor(color255) : "Set the color to use for the scanline particle effect."
 
 	// Outputs
 	output OnDissolve(void) : "Fired whenever an entity is dissolved."
