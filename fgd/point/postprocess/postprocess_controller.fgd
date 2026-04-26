@@ -27,7 +27,7 @@
 
 	spawnflags(flags) : "spawnflags" =
 		[
-		1: "Primary Post-Process Controller" : 0
+		1: "Primary Post-Process Controller (takes priority over existing controllers)" : 0
 		]
 
 	// Inputs
