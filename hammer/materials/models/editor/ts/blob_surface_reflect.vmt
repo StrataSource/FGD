@@ -1,7 +1,7 @@
 VertexLitGeneric
 {
 
-$baseTexture "paintblobs\blob_surface_stick"
+$baseTexture "paintblobs\blob_surface_reflect"
 
 $normalMap "paintblobs\blob_surface_normal"
 $bumpstrength "0.4"
