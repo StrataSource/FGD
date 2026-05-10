@@ -1,4 +1,4 @@
-@SolidClass base(Trigger, MasterEnt, DamageType) 
+@SolidClass base(Trigger, DamageType) 
 = trigger_hurt: "A trigger volume that damages entities that touch it."
 	[
 	damage(integer) : "Damage" : 20 : "The amount of damage done to entities that touch this trigger. " +

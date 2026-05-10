@@ -18,7 +18,7 @@
 
 	itemclass(pointentityclass) : "Item Type" : "item_dynamic_resupply" : "Class name of the entity to spawn when the crate is broken"
 	itemcount(integer) : "Item Count" : 1 : "Number of items to emit upon breakage"
-	specificresupply(target_destination) : "Specific resupply" : : "If item type is item_dynamic_resupply, specify a specific one to use instead of the master"
+	specificresupply(target_destination) : "Specific resupply" : : "If item type is item_dynamic_resupply, specify a specific one to use instead of the primary resupply."
 
 	// Inputs
 	input Kill(void) : "Remove the item crate"

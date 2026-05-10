@@ -41,18 +41,18 @@
 		"media/menu_act04.webm"				: "Menu Background: Act 4"
 		"media/menu_act05.webm"				: "Menu Background: Act 5"
 		"media/sp_30_a4_finale5.webm"		: "SP Ending"
-		"media/sp_credits_bg.webm"			: "Want You Gone Background"
+		"media/sp_credits_bg.webm"			: "SP Credits Background"
 		"media/sp_a5_credits.webm"			: "Space"
-		"media/sp_ending_callback.webm"		: "Space Wheatley"
+		"media/sp_ending_callback.webm"		: "Post-Credits Sequence"
 		
 		// Coop
 		"media/coop_bluebot_load.webm"		: "ATLAS Schematic"
-		"media/coop_orangebot_load.webm"		: "P-Body Schematic"
+		"media/coop_orangebot_load.webm"	: "P-Body Schematic"
 		"media/coop_bots_load.webm"			: "Conveyor Bots"
-		"media/coop_bots_load_wave.webm"		: "Waving Bots"
+		"media/coop_bots_load_wave.webm"	: "Waving Bots"
 		"media/coop_intro.webm"				: "Coop Intro"
 		"media/coop_outro.webm"				: "Coop Outro"
-		"media/coop_bts_blueprints.webm"		: "Coop Disc: Blueprints"
+		"media/coop_bts_blueprints.webm"	: "Coop Disc: Blueprints"
 		"media/coop_bts_powergrid_01.webm"	: "Coop Disc: Power Grid 1"
 		"media/coop_bts_powergrid_02.webm"	: "Coop Disc: Power Grid 2"
 		"media/coop_bts_radar_01.webm"		: "Coop Disc: Radar 1"
@@ -61,7 +61,7 @@
 		"media/coop_bts_security_02.webm"	: "Coop Disc: Security 2"
 		"media/coop_bts_radar.webm"			: "Coop Disc: Unused Radar"
 		"media/coop_bts_security.webm"		: "Coop Disc: Unused Security"
-		"media/insert_disc.webm"				: "Insert Disc"
+		"media/insert_disc.webm"			: "Insert Disc"
 		"media/dlc1_endmovie.webm"			: "Art Therapy Outro"
 		
 		// Other
@@ -74,13 +74,14 @@
 		"media/attract_panels.webm"			: "Extras: Panels"
 		"media/attract_turrets.webm"			: "Extras: Turrets"
 		]
-	groupname(string) : "Group Name"
-	looping(boolean) : "Loop Movie" : 0
+	groupname(string) : "Group Name" : "" : "Specify the group that this video panel belongs to. Any commands issued to the primary video panel in this group will cause all other panels to follow its behavior."
+	looping(boolean) : "Loop Movie" : 0 : "Should this video play in an infinite loop?"
 	
 	width(integer) : "Panel Width in World (Green)" : 256 : "Width of the panel in units."
 	height(integer) : "Panel Height in World (Blue)" : 128 : "Height of the panel in units."
 	stretch(boolean) : "Stretch to Fill" : 0
-	forcedslave(boolean) : "Forced slave" : 0
+	// Needs to be changed in code!!!
+	forcedslave(boolean) : "Linked panel" : 0 : "Inputs from the primary vgui_movie_display entity this is linked to should also be redirected to this entity."
 	forceprecache(boolean) : "Force precache" : 0 : "Precache the movie referred to by Movie Filename on entity spawn."
 
 	noscanline(boolean) : "Disable Scanline Overlay" : 0 : "Disables the default scanline overlay."
@@ -100,7 +101,7 @@
 	input SetDisplayText(string) : "Sets the display text."
 	input SetMovie(string) : "Sets the movie to display."
 	input SetUseCustomUVs(boolean) : "Use custom UVs."
-	input TakeOverAsMaster(void) : "Start using this video as the master of it's group."
+	input TakeOverAsMaster(void) : "Set this specific panel as the primary video display entity."
 	input SetUMin(float) : "Set the minimum U."
 	input SetUMax(float) : "Set the maximum U."
 	input SetVMin(float) : "Set the minimum V."

@@ -1,4 +1,4 @@
-@BaseClass base(BaseEntityVisBrush, MasterEnt) 
+@BaseClass base(BaseEntityVisBrush) 
 	line(255 255 255, targetname, chainstodoor)
 = Door
 	[

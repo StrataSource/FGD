@@ -5,7 +5,7 @@
 	[
 	spawnflags(flags) : "spawnflags" =
 		[
-		1: "Master (Has priority if multiple env_tonemap_controllers exist)" : 0
+		1: "Primary Tonemapper (takes priority over existing controllers)" : 0
 		]
 
 	// Inputs

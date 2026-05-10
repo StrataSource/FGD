@@ -4,7 +4,8 @@
 	// line(255, 255, 255, targetname, slavename)
 = prop_door_rotating: "An entity used to place a door in the world."
 	[
-	slavename(target_destination) : "Slave Name" : : "The name of any doors that should be slaved to this door " +
+	// This param name really needs to be replaced in code!!
+	slavename(target_destination) : "Secondary Door Name" : : "The secondary door name(s) that should be tied/linked to this specific door " +
 		"(i.e. should open when this one opens, and close when this one closes)."
 
 	hardware[engine](integer) : "Hardware Type" : 1
