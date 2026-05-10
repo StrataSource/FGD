@@ -30,5 +30,5 @@
 	// Outputs
 	output OnBreak(void) : "Fires when broken."
 	output OnHealthChanged(float) : "Fires when the health of this breakable changes, passing the new value of health as a percentage of max health, from [0..1]."
-	output OnCacheInteraction(void) : "This output fires when the player proves they have 'found' this crate. Fires on player touch, +USE pickup, gravity gun/portal gun pickup, gravity gun punt."
+	output OnCacheInteraction(void) : "This output fires when the player proves they have 'found' this crate. Fires on player touch, +USE pickup, and with gravity gun pull/punt."
 	]

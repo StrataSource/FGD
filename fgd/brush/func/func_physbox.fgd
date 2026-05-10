@@ -11,8 +11,8 @@
 		131072: "Enable motion on grab" : 0	
 		262144: "Not affected by rotor wash" : 0
 		524288: "Generate output on +USE" : 1
-		1048576: "Always allow the gravity gun/portal gun to pick this entity up" : 0
-		2097152: "Disallow pickup from gravity gun/portal gun" : 0
+		1048576: "Always allow the gravity gun to pick this entity up" : 0
+		2097152: "Disallow pickup from gravity gun" : 0
 		4194304: "Disallow punting from gravity gun" : 0
 		8388608: "Prevent motion enable on player bump" : 0
 		]
@@ -29,7 +29,7 @@
 	damagetoenablemotion(integer) : "Health Level to Override Motion" : 0 : "If specified, this object will start motion disabled. Once its health has dropped below this specified amount, it will enable motion."
 	forcetoenablemotion(float) : "Physics Impact Force to Override Motion" : 0 : "If specified, this object will start motion disabled. Any impact that imparts a force greater than this value on the physbox will enable motion."
 	health(integer) : "Strength" : 0 : "Number of points of damage to take before breaking.  0 means don't break."
-	preferredcarryangles(vector) : "Preferred Player-carry Angles" : "0 0 0" : "If the 'Use Preferred Carry Angles' spawnflag is set, this angle is the angle which the object should orient to when the player picks it up, with the physgun or +USE."
+	preferredcarryangles(vector) : "Preferred Player-carry Angles" : "0 0 0" : "If the 'Use Preferred Carry Angles' spawnflag is set, this is the angle which the object should orient to when the player picks it up with the gravity gun or +USE."
 
 	notsolid[engine](boolean): "Not solid to world?"
 	notsolid(choices) : "Not solid to world" : 0 =
@@ -44,7 +44,7 @@
 		"Note that physics objects go to sleep automatically after coming to rest for a while, so you don't really need to use this."
 	input EnableMotion(void) : "Enable physics motion/collision response."
 	input DisableMotion(void) : "Disable physics motion/collision response."
-	input ForceDrop(void) : "If this object is being carried by a player, with the physgun or +USE, force it to be dropped."
+	input ForceDrop(void) : "If this object is being carried by a player, with the gravity gun or +USE, force it to be dropped."
 	input Enable(void) : "Show this object and allow it to collide, doesn't override notsolid."
 	input Disable(void) : "Hide this object and stop collisions."
 	input BecomeDebris(void) : "Change the collision to act like debris"
@@ -52,10 +52,10 @@
 	// Outputs
 	output OnDamaged(void) : "Fired when this entity is damaged."
 	output OnAwakened(void) : "Fired when this entity becomes awake (collision/force is applied)."
-	output OnMotionEnabled(void) : "Fired when motion is enabled due to damage/physcannon/force."
-	output OnPhysGunPickup(void) : "Fired when a player picks this object up, either with the physgun or +USE."
+	output OnMotionEnabled(void) : "Fires when motion is enabled due to this entity either receiving damage, being impacted by physics forces or if it is the subject of a gravity gun interaction."
+	output OnPhysGunPickup(void) : "Fired when a player picks this object up, either with the gravity gun or +USE."
 	output OnPhysGunPunt(void) : "Fired when a player punts this object with the gravity gun."
-	output OnPhysGunOnlyPickup(void) : "Fired when a player picks this object up with the gravity gun or portal gun ONLY. " +
+	output OnPhysGunOnlyPickup(void) : "Fired when a player picks this object up with the gravity gun ONLY. " +
 		"+USE pickups do not fire this output."
 	output OnPhysGunDrop(void) : "Fired when a player drops this object."
 	output OnPlayerUse(void) : "Fired when the player tries to +USE this physbox." +

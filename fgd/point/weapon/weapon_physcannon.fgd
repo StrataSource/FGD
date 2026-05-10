@@ -1,6 +1,7 @@
 @PointClass base(Weapon) 
 	appliesto(+HL2_ENTITIES)
 	studioprop("models/weapons/w_physics.mdl") 
-= weapon_physcannon: "The Zero-Point Energy Field Manipulator, aka the \"Gravity Gun\"."
+= weapon_physcannon: "The Zero-Point Energy Field Manipulator, aka the \"Gravity Gun\". Can pull, hold and throw small and large objects at the player's will.\n\n" +
+	"This weapon can additionally be given the ability to instantly electrocute enemies using pull/punt by enabling the \"Supercharged gravity gun enabled\" global state."
 	[
 	]

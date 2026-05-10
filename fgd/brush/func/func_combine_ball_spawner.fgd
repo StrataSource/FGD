@@ -5,5 +5,5 @@
 
 	// Outputs
 	output OnBallReinserted(void) : "Fired when a Combine energy ball is reinserted into the field. (Only gets triggered when Combine Power Supply spawnflag is enabled.)"
-	output OnLastBallGrabbed(void) : "Fired when the last Combine energy ball is grabbed from the field by a mega physcannon"
+	output OnLastBallGrabbed(void) : "Fired when the last Combine energy ball is grabbed from the field by a supercharged gravity gun."
 	]

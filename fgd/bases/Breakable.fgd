@@ -28,8 +28,8 @@
 	input SetHealth(integer) : "Sets a new value for the breakable's health. If the breakable's health reaches zero it will break."
 	input AddHealth(integer) : "Adds health to the breakable. If the breakable's health reaches zero it will break."
 	input RemoveHealth(integer) : "Removes health from the breakable. If the breakable's health reaches zero it will break."
-	input EnablePhyscannonPickup(void) : "Makes the breakable able to picked up by the gravity/portal gun."
-	input DisablePhyscannonPickup(void) : "Makes the breakable not able to picked up by the gravity/portal gun."
+	input EnablePhyscannonPickup(void) : "Makes the breakable able to picked up by the gravity gun."
+	input DisablePhyscannonPickup(void) : "Makes the breakable not able to picked up by the gravity gun."
 	input SetMass(float) : "Set mass of this object."
 
 	// Outputs
