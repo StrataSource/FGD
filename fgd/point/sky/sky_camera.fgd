@@ -14,7 +14,7 @@
 
 	spawnflags(flags) : "spawnflags" =
 		[
-		1: "Primary Sky Camera" : 0
+		1: "Primary Sky Camera (takes priority if multiple sky_cameras exist)" : 0
 		2: "Continuously update position (for moving sky_cameras)" : 0
 		]
 
