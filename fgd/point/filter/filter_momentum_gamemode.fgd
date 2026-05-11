@@ -1,5 +1,0 @@
-@FilterClass base(filter_base, Gamemodes)
-	appliesto(MOMENTUM)
-= filter_momentum_gamemode : "A filter that filters by the current gamemode."
-	[
-	]
