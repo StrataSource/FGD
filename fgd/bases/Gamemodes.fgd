@@ -2,22 +2,20 @@
 	appliesto(MOMENTUM)
 = Gamemodes
 	[
-	gamemode[engine](integer) : "Gamemode" : 0
-	gamemode(choices) : "Gamemode" : 0 =
+	gamemodes(flags) : 0 : "Gamemodes" : "Which gamemodes this entity is active in. If no flags are set, the entity is active in all gamemodes." =
 		[
-		0 : "Unknown"
-		1 : "Surf"
-		2 : "Bhop"
-		3 : "Bhop (HL1)"
-		4 : "Climb (Mom)"
-		5 : "Climb (KZT)"
-		6 : "Climb (1.6)"
-		7 : "RJ"
-		8 : "SJ"
-		9 : "Ahop"
-		10 : "Conc"
-		11 : "Defrag (CPM)"
-		12 : "Defrag (VQ3)"
-		13 : "Defrag (VTG)"
+		1    : "Surf"         : 0
+		2    : "Bhop"         : 0
+		4    : "Bhop (HL1)"   : 0
+		8    : "Climb (Mom)"  : 0
+		16   : "Climb (KZT)"  : 0
+		32   : "Climb (1.6)"  : 0
+		64   : "RJ"           : 0
+		128  : "SJ"           : 0
+		256  : "Ahop"         : 0
+		512  : "Conc"         : 0
+		1024 : "Defrag (CPM)" : 0
+		2048 : "Defrag (VQ3)" : 0
+		4096 : "Defrag (VTG)" : 0
 		]
 	]
