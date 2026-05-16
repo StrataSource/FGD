@@ -1,0 +1,17 @@
+@colorvar paint_speed[P2CE] = 255 106 0 : "Propulsion Gel"
+@colorvar paint_bounce[P2CE] = 0 165 255 : "Repulsion Gel"
+@colorvar paint_reflect[P2CE] = 128 128 128 : "Reflection Gel"
+@colorvar paint_portal[P2CE] = 250 250 250 : "Conversion Gel"
+@colorvar paint_stick[P2CE] = 0 200 33 : "Adhesion Gel"
+@colorvar paint_erase[P2CE] = 192 199 211 : "Cleansing Gel"
+
+
+
+// Material exclusion lists for different games.
+
+// Example:
+//
+// @MaterialExclusion(MOMENTUM) [
+//     "models"
+//     "vgui"
+// ]
