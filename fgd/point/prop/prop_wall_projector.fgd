@@ -10,4 +10,5 @@
 		1: "Rusted"
 		]
 	model(studio) : "Model" : "models/props/wall_emitter.mdl" : "Model to use in game."	
+	musicname(sound): "Music" : : "The 'music' audible from the bridge. If unset, 'music.nameofmap_lbout' is used, or 'music.sp_all_maps_lbout'."
 	]
