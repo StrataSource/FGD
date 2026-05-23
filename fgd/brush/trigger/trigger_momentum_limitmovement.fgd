@@ -2,6 +2,8 @@
 	appliesto(MOMENTUM)
 = trigger_momentum_limitmovement : "Trigger that prevents the player from doing specific keypress movements inside the volume."
 	[
+	BhopCooldown(float) : "Bhop Cooldown" : "0.2" : "Cooldown in seconds before jumping is re-enabled after landing (requires the 'Prevent the player from bhopping' flag)."
+		
 	spawnflags(flags) : "spawnflags" = 
 		[
 		8192: "Prevent the player from moving forward" : 0
