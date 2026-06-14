@@ -20,7 +20,7 @@
 		1024 : "Mark for fast reflections"
 		2048 : "No shadow depth, for use with env_cascade_light"
 		4096 : "Dont cache in shadow depthmap (render every frame)"
-		8192 : "No flashlight"
+		8192 : "No clustered lighting"
 		16384 : "No CSM"
 		]
 	
@@ -70,7 +70,7 @@
 		2: "Cache it = render only once"
 		]
 	shadowdepthnocache[engine](integer): "": 0
-	disableflashlight(boolean) : "Disable flashlight" : 0 : "Used to disable flashlight (env_projectedtexture) lighting and shadows on this entity."
+	disableflashlight(boolean) : "Disable clustered lights" : 0 : "Used to disable clustered lighting and shadows on this entity."
 
 	linedivider_anim[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
@@ -90,8 +90,8 @@
 	
 	input DisableShadow(void) : "Allows the entity to draw a render target (dynamic) shadow."
 	input EnableShadow(void) : "Prevents the entity from drawing a render target (dynamic) shadow."
-	input DisableReceivingFlashlight(void) : "This object will not recieve light or shadows from projected textures (flashlights)."
-	input EnableReceivingFlashlight(void) : "This object may recieve light or shadows from projected textures (flashlights)."
+	input DisableReceivingFlashlight(void) : "This object will not recieve light or shadows from clustered lights."
+	input EnableReceivingFlashlight(void) : "This object will recieve light or shadows from clustered lights."
 	
 	input AlternativeSorting(boolean) : "Used to attempt to fix sorting problems when rendering. True activates, false deactivates"
 
