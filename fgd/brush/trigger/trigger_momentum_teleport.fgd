@@ -9,4 +9,5 @@
 	"the target by their initial offset from the landmark, and their angles are left alone."
 	[
 	ProgressTeleport(boolean) : "Teleport to Progress Checkpoint" : 0 : "If enabled, a player that activates this will be teleported to their progress checkpoint destination, set by trigger_momentum_progress."
+	TeleportDelay(float) : "Teleport Delay" : "0" : "Teleport the player if they have been inside of the trigger's volume for this amount of time (in seconds)."
 	]
