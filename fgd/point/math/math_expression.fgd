@@ -1,0 +1,56 @@
+@PointClass base(BaseEntityPoint, EnableDisable)
+	iconsprite("editor/math_expression.vmt")
+= math_expression : "Evaluates custom math expression, even more advanced version of math_counter_advanced."
+	[
+	spawnflags(flags) : "spawnflags" =
+		[
+		1 : "Evaluate manually" : 0
+		]
+
+	// Keys
+	Expression0(string) : "Expression 0" : ""
+	Expression1(string) : "Expression 1" : ""
+	Expression2(string) : "Expression 2" : ""
+	Expression3(string) : "Expression 3" : ""
+	Input0(float) : "Input 0" : ""
+	Input1(float) : "Input 1" : ""
+	Input2(float) : "Input 2" : ""
+	Input3(float) : "Input 3" : ""
+	Input4(float) : "Input 4" : ""
+	Input5(float) : "Input 5" : ""
+	Input6(float) : "Input 6" : ""
+	Input7(float) : "Input 7" : ""
+	Input8(float) : "Input 8" : ""
+	Input9(float) : "Input 9" : ""
+	Input10(float) : "Input 10" : ""
+	Input11(float) : "Input 11" : ""
+	Input12(float) : "Input 12" : ""
+	Input13(float) : "Input 13" : ""
+	Input14(float) : "Input 14" : ""
+	Input15(float) : "Input 15" : ""
+
+	// Inputs
+	input Eval(void) : "Evaluates all expressions."
+	input SetInput0(float) : "Set the value for parameter 0"
+	input SetInput1(float) : "Set the value for parameter 1"
+	input SetInput2(float) : "Set the value for parameter 2"
+	input SetInput3(float) : "Set the value for parameter 3"
+	input SetInput4(float) : "Set the value for parameter 4"
+	input SetInput5(float) : "Set the value for parameter 5"
+	input SetInput6(float) : "Set the value for parameter 6"
+	input SetInput7(float) : "Set the value for parameter 7"
+	input SetInput8(float) : "Set the value for parameter 8"
+	input SetInput9(float) : "Set the value for parameter 9"
+	input SetInput10(float) : "Set the value for parameter 10"
+	input SetInput11(float) : "Set the value for parameter 11"
+	input SetInput12(float) : "Set the value for parameter 12"
+	input SetInput13(float) : "Set the value for parameter 13"
+	input SetInput14(float) : "Set the value for parameter 14"
+	input SetInput15(float) : "Set the value for parameter 15"
+
+	// Outputs
+	output Output0(float) : "Fired in response to any of the inputs changing with value calculated from expression 0."
+	output Output1(float) : "Fired in response to any of the inputs changing with value calculated from expression 1."
+	output Output2(float) : "Fired in response to any of the inputs changing with value calculated from expression 2."
+	output Output3(float) : "Fired in response to any of the inputs changing with value calculated from expression 3."
+	]
