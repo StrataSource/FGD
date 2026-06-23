@@ -1,0 +1,10 @@
+@PointClass base(MomentumPickup)
+	appliesto(MOMENTUM)
+	size(-43 -43 -36, 43 43 66)
+= momentum_powerup_doublejump : "Double Jump Powerup"
+	[
+	SingleUse(boolean) : "Single Use" : 1 : "When enabled, the double jump does not refresh on landing and the powerup is removed as soon as the player double jumps."
+
+	// Outputs
+	output OnPickup(void) : "Fired when the item is picked up."
+	]
