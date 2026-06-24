@@ -17,6 +17,14 @@
 	LockonTime(float) : "Lockon Time" : 1.5 : "The time it takes for the rocket turret to fire a rocket after locking onto a target."
 	LockonSound(sound): "Lockon Sound" : "RocketTurret.LockonBeep" : "The sound played when locking onto a target."
 	AcquireEnemies(boolean) : "Acquire Enemies" : 0 : "If enabled, the turret will automatically find enemies with a HATE relationship."
+	AllowShootThroughPortals[engine](integer): "Shooting Through Portals": 0
+	AllowShootThroughPortals(choices): "Shooting Through Portals" : 0 : "Determines which enemies the turret will shoot at through portals." = 
+	[
+		0: "Disabled"
+		1: "Players Only"
+		2: "Players + NPCs"
+	]
+
 	TripwireMode(boolean) : "Tripwire Mode" : 0 : "Makes the turret aim in a specific direction instead of following the target. When the beam is crossed, a rocket instantly fires."
 	TripwireAimTarget(target_destination) : "Tripwire Aim Target" : : "In tripwire mode, the entity to aim at."
 	TripwireFilter(filterclass) : "Tripwire Filter" : : "If set, overrides which entities trigger rockets in tripwire mode. For normal mode, use an ai_relationship and 'Acquire Enemies'."
