@@ -29,7 +29,7 @@
 		1 : "BSP"
 		]
 
-	health(integer) : "Door Health" : : "The health of the door (allows someone to shoot it open). 0 means invincible."
+	health(integer) : "Door Health" : : "OBSOLETE - no longer used. To make a door shootable, use the 'Damage Opens' spawnflag instead."
 
 	locked_sound(sound) : "Locked Sound" : : "Sound played when the player tries to use the door, and fails because it's locked."
 	unlocked_sound(sound) : "Unlocked Sound" : : "Sound played when the door is unlocked."
@@ -53,6 +53,7 @@
 		2048: "Starts locked" : 0
 		4096: "Door Silent" : 0
 		65536: "New +USE rules - Allow +USE only when when the door is closed/closing or is open/opening and can be manually closed" : 0
+		131072: "Damage Opens" : 0
 		]
 
 	locked_sentence[engine](integer) : "Locked Sentence" : 0
