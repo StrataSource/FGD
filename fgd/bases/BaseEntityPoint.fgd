@@ -1,5 +1,5 @@
 @BaseClass
-	base(BaseEntityIO)
+	base(BaseEntityIO, Gamemodes)
 = BaseEntityPoint
 	[
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
