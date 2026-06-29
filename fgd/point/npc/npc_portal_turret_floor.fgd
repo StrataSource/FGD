@@ -36,7 +36,13 @@
 	usedasactor(boolean) : "Used As Actor" : 0 : "Turret will not run the standard floor turret code so it can be used as an actor."
 	pickupenabled(boolean) : "Turret Pickup Allowed" : 1 : "Disables pickup by player."
 	disablemotion(boolean) : "Disable Motion" : 0 : "Set for turrets that can't move in the world."
-	allowshootthroughportals(boolean) : "Allow Shooting Through Portals" : 0 : "Turrets will not try to shoot through portals unless this is set."
+	AllowShootThroughPortals[engine](integer): "Shooting Through Portals": 0
+	AllowShootThroughPortals(choices): "Shooting Through Portals" : 0 : "Determines which enemies the turret will shoot at through portals." = 
+	[
+		0: "Disabled"
+		1: "Players Only"
+		2: "Players + NPCs"
+	]
 	turretrange(float) : "Maximum Range" : 1024 : "How far the turret will be able to see targets."
 	loadalternativemodels(boolean) : "Load Defective Models" : 0 : "Should this turret precache the defective models? Needed for late switching."
 	usesuperdamagescale(boolean) : "Use Super Damage" : 0 : "Setting this to true will scale the turret's damage by a very large amount."

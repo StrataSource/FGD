@@ -1,5 +1,7 @@
 @PointClass base(BaseNPC, ResponseContext)
-	studioprop() line(0 0 255, targetname, TripwireAimTarget) 
+	studioprop() 
+	line(0 0 255, targetname, TripwireAimTarget) 
+	line(128 128 128, targetname, TripwireFilter)
 	appliesto(P2CE)
 	sphere(turretrange)
 = npc_rocket_turret: "Aims a rocket at a target."
@@ -13,22 +15,47 @@
 	rocketlifetime(float) : "Rocket Lifetime" : 20 : "The rocket will automatically detonate after this number of seconds."
 	FireCooldown(float) : "Fire Cooldown" : 4 : "The time it takes for the rocket turret to reset after firing a rocket."
 	LockonTime(float) : "Lockon Time" : 1.5 : "The time it takes for the rocket turret to fire a rocket after locking onto a target."
+	LockonSound(sound): "Lockon Sound" : "RocketTurret.LockonBeep" : "The sound played when locking onto a target."
+	AcquireEnemies(boolean) : "Acquire Enemies" : 0 : "If enabled, the turret will automatically find enemies with a HATE relationship."
+	AllowShootThroughPortals[engine](integer): "Shooting Through Portals": 0
+	AllowShootThroughPortals(choices): "Shooting Through Portals" : 0 : "Determines which enemies the turret will shoot at through portals." = 
+	[
+		0: "Disabled"
+		1: "Players Only"
+		2: "Players + NPCs"
+	]
+
 	TripwireMode(boolean) : "Tripwire Mode" : 0 : "Makes the turret aim in a specific direction instead of following the target. When the beam is crossed, a rocket instantly fires."
 	TripwireAimTarget(target_destination) : "Tripwire Aim Target" : : "In tripwire mode, the entity to aim at."
-	model(studio) : "Model" : "models/props_bts/rocket_sentry.mdl" : "Model to use in-game"
+	TripwireFilter(filterclass) : "Tripwire Filter" : : "If set, overrides which entities trigger rockets in tripwire mode. For normal mode, use an ai_relationship and 'Acquire Enemies'."
+	model(studio) : "Model" : "models/props_bts/rocket_sentry.mdl" : "Model to use for the turret."
+
+	beamcolor(color255) : "Beam Color" : "100 100 255 100" : "The color and brightness of the laser beam and glow sprite. The default beam material is not tintable."
+	beammaterial(sprite) : "Beam Material" : "effects/bluelaser1.vmt" : "Material to use for the laser beam."
+	glowmaterial(sprite) : "Glow Material" : "sprites/light_glow03.vmt" : "Material to use for the glow sprite at the end of the laser beam."
 
 	turretrange(float) : "Maximum Range" : 8192 : "How far the turret will be able to see targets."
 
 	// Inputs
 	input Toggle(void) : "Toggles between activated and deactivated states."
-	input Enable(void) : "Activate Rocket Turret, and allow it to begin scanning."
-	input Disable(void) : "Deactivate and retract the Rocket Turret."
-	input SetTarget(target_destination) : "Sets the target for this turret to attack."
+	input Enable(void) : "Activate the rocket turret, and allow it to begin scanning."
+	input Disable(void) : "Deactivate and retract the rocket turret."
+	input SetTarget(target_destination) : "Sets the target for this turret to attack. The turret will ignore everything else until a new target is given."
+	input SetAutoTarget(void) : "Allow this turret to automatically find enemies."
 	input Destroy(void) : "Sets this turret to it's destroyed state."
 	input ForceFire(void) : "Makes the turret immediately fire a rocket where it is pointing."
+	input SetTripwireTarget(target_destination) : "Set the aim target for tripwire mode."
+	input SetTripwireFilter(filterclass) : "Set the filter to determine which entities trigger the tripwire. Pass nothing to revert to default."
+	input ToggleTripwire(void) : "Toggle tripwire mode on and off."
+	input EnableTripwire(void) : "Enable tripwire mode."
+	input DisableTripwire(void) : "Disable tripwire mode."
 
 	// Outputs
 	output OnFoundTarget(void) : "Fired when the rocket turret finds an unobstructed target."
 	output OnLostTarget(void) : "Fired when turret's target is blocked."
 	output OnDeath(void) : "Fired after this turret finishes it's destroy think and begins it's death think."
+	output OnTripped(void): "Fired when the beam intersects an enemy, and is either locking on or immediately firing for tripwire mode. The target is passed as !activator."
+	output OnRocketFired(void): "Triggers when a rocket is fired, passing the rocket as !activator."
+	output OnRocketFizzled(void): "Triggers when a rocket hits a fizzler, or the turret itself."
+	output OnRocketExploded(void): "Triggers when a rocket impacts something."
 	]
