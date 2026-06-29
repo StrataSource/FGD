@@ -4,4 +4,7 @@
 = momentum_powerup_damage_boost : "Damage Boost Powerup"
 	[
 	DamageBoostTime(float) : "Damage Boost Time" : "30" : "The amount of time in seconds the damage boost effect lasts. Any negative value is infinite duration."
+
+	// Outputs
+	output OnPickup(void) : "Fired when the item is picked up."
 	]
