@@ -16,10 +16,19 @@
 		]
 
 	target(target_destination) : "Look Target" : : "The name of the entity to be looked at."
-	looktime(string) : "LookTime" : "0.5" : "The time, in seconds, that the player must look at the target before firing the output. Resets if player leaves trigger, or looks o" + "utside the Field of View threshold."
-	fieldofview(string) : "FieldOfView" : "0.9" : "How close the player has to be looking at the target. " +
+	looktime(string) : "Look Time" : "0.5" : "The time, in seconds, that the player must look at the target before firing the output. " + "Resets if player leaves trigger, or looks outside the Field of View threshold."
+	fieldofview(float) : "Field Of View" : "0.9" : "How close the player has to be looking at the target. " +
 		"1.0 = straight ahead\n 0.0 = +/- 90 degrees\n -1.0 = all directions)."
 	timeout(float) : "Timeout" : 0 : "The time, in seconds, to wait after player enters the trigger before firing the OnTimeout output, 0 = never."
+
+	requireLOS(choices) : "Check LOS" : 0 : "If enabled, require the player to have a clear line of sight to the target to count as looking." = 
+	[
+		0 : "Disabled"
+		1 : "Check visiblity (allow glass)"
+		2 : "Check solidity"
+		3 : "Check bullet shot (allow grates)"
+	]
+	invertLOS(boolean) : "Invert LOS Check" : 0 : "If set, require the player to instead have NO clear LOS to the target."
 
 	// Inputs
 	input LookTime(float) : "Set the time, in seconds, that the player has to look at the target before firing."
@@ -27,4 +36,7 @@
 	
 	// Outputs
 	output OnTimeout(void) : "Fired after the timeout interval expires if the player never looked at the target."
+	output OnNotLooking(void) : "Fired repeatedly when the player is inside the trigger, but not looking at the target."
+	output OnStartLooking(void) : "Fired when the player starts looking at the target."
+	output OnStopLooking(void) : "Fired when the player stops looking at the target."
 	]
