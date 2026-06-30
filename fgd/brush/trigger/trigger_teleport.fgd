@@ -33,6 +33,8 @@
 
 	uselandmarkangles(boolean) : "Use Destination Angles" : 1 : "Forces the teleported object to snap to the angles of the destination."
 
+	snapvelocitytodestinationangles[MOMENTUM](boolean) : "Snap Velocity To Destination Angles" : 1 : "If Use Destination Angles is enabled, also snap the teleported object's horizontal velocity direction to the angles of the destination."
+
 	checkdestifclearforplayer[-MOMENTUM](boolean) : "Only Spawn-Valid Destinations" : 0 : "Only teleport if there is a clear teleport destination."
 
 	TeleportOnEndTouch(choices) : "Teleport On" : 0 =
