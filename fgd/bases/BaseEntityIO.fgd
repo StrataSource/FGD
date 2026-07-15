@@ -26,6 +26,7 @@
 	input RunScriptCode[VSCRIPT](script) : "Execute a string of script source code."
 	input CallScriptFunction[VSCRIPT](string) : "Execute the given function name."
 	input SetScriptThinkFunction[VSCRIPT](string) : "Sets the current think function of the script."
+	input ClearScriptThinkFunction[VSCRIPT](string) : "Clears the current think function of the script."
 	
 	input PassUser1(string) : "Causes this entity's OutUser1 output to be fired, passing along the parameter unchanged."
 	input PassUser2(string) : "Causes this entity's OutUser2 output to be fired, passing along the parameter unchanged."
