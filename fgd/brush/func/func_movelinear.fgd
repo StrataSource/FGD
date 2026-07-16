@@ -27,11 +27,17 @@
 	// Inputs
 	input Open(void) : "Move the brush to the end position (starting position + (move direction * move distance))."
 	input Close(void) : "Move the brush to the starting position."
+	input Toggle(void): "If the brush is at the start or end positions, move to the other one."
+	input Pause(void) : "Stop the brush at its current position."
+	input Resume(void) : "If the brush was paused, resume the previous destination. Otherwise, toggle position."
 	input SetPosition(string) : "Move the brush to a specific position, where 0 is the starting position and 1 is the opened position. " +
+		"Accepts any value, with negatives moving in the opposite direction."
+	input SetPositionImmediately(string) : "Move the brush instantly to a specific position, where 0 is the starting position and 1 is the opened position. " +
 		"Accepts any value, with negatives moving in the opposite direction."
 	input SetSpeed(float) : "Set the speed and update immediately."
 
 	// Outputs
 	output OnFullyOpen(void) : "Fired when the brush reaches the end position (starting position + (move direction * move distance))."
 	output OnFullyClosed(void) : "Fired when the brush reaches the starting position."
+	output OnReachedPosition(float) : "Fired when the brush stops, passing along the position as a parameter."
 	]
