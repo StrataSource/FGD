@@ -1,0 +1,33 @@
+@PointClass base(BaseEntityPoint, Angles)
+	appliesto(MOMENTUM)
+	iconsprite("editor/env_shooter.vmt")
+	line(255 255 0, targetname, target)
+= momentum_shooter : "Fires a Defrag-style projectile each time it receives the Shoot input. Aims along its own angles, at a target entity, or directly at the player with optional velocity leading."
+	[
+	ProjectileType[engine](integer) : "Projectile Type" : 0
+	ProjectileType(choices) : "Projectile Type" : 0 : "Which projectile to fire." =
+		[
+		0: "Rocket"
+		1: "Grenade"
+		2: "Plasma"
+		]
+
+	target(target_destination) : "Aim Target" : : "Optional entity to aim at. If set (and Target Player is off), the shooter fires toward this entity instead of using its own angles."
+
+	speed(float) : "Horizontal Lead Scale" : 1 : "Scales how far the player's horizontal velocity is led when Predict XY is set. 1 = full first-order lead."
+	count(float) : "Vertical Lead Scale" : 1 : "Scales how far the player's vertical velocity is led when Predict Z is set. 1 = full first-order lead."
+
+	spawnflags(flags) =
+		[
+		1: "Target Player (aim at the player instead of angles/target)" : 0
+		2: "Predict XY (lead the player's horizontal movement)" : 0
+		4: "Predict Z (lead the player's vertical movement; freefall only)" : 0
+		8: "Quad Damage" : 0
+		]
+
+	// Inputs
+	input Shoot(void) : "Fire a single projectile."
+
+	// Outputs
+	output OnShoot(void) : "Fired each time a projectile is shot."
+	]

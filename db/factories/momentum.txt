@@ -230,6 +230,7 @@ momentary_door
 momentary_rot_button
 momentum_df_weaponspawner
 momentum_generic_bomb
+momentum_shooter
 mom_replay_playback
 mortarshell
 move_keyframed
