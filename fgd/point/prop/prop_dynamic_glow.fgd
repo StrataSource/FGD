@@ -2,14 +2,4 @@
 = prop_dynamic_glow: "A prop that can be placed in hierarchy and can play animations. It can also be configured to break when it takes enough damage.\nWorks exactly like a prop_dynamic, but it can optionally have a custom glow around it."
 	[
 	glowenabled(boolean) : "Does the prop glow by default?" : 1
-
-	glowstyle[engine](integer) : "Glow Style" : 0
-	glowstyle(choices) : "Glow Style" : 0 : "What style of glow should be used." =
-		[
-		0: "Default (through walls)"
-		1: "Shimmer (doesn't glow through walls)"
-		2: "Outline (doesn't glow through walls)"
-		3: "Outline Pulse (doesn't glow through walls)"
-		]
-
 	]
