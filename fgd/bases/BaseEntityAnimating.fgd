@@ -64,10 +64,10 @@
 	glowdist(integer) : "Glow Distance" : 1024 : "The max distance before the glow outline fades out."
 	glowstyle(choices) : "Glow Style" : 0 : "What style of glow should be used." =
 		[
-		0: "Default (through walls)"
-		1: "Shimmer (doesn't glow through walls)"
-		2: "Outline (doesn't glow through walls)"
-		3: "Outline Pulse (doesn't glow through walls)"
+		0: "Outline (glows through walls)"
+		1: "Full Glow (doesn't glow through walls)"
+		2: "Wireframe (doesn't glow through walls)"
+		3: "Wireframe Pulse (doesn't glow through walls)"
 		]
 	
 	disablereceiveshadows(boolean) : "Disable Receiving Shadows?" : 0 : "Prevents dynamic shadows (e.g. player and prop shadows) from appearing on this entity."
