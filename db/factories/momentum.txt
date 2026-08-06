@@ -230,8 +230,8 @@ momentary_door
 momentary_rot_button
 momentum_df_weaponspawner
 momentum_generic_bomb
+momentum_powerup_airjump
 momentum_powerup_damageboost
-momentum_powerup_doublejump
 momentum_powerup_flight
 momentum_powerup_haste
 mom_replay_playback
