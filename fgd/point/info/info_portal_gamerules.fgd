@@ -13,6 +13,16 @@
 		3: "Dual Portal Device"
 		4: "Dual Portal Device (PotatOS attached)"
 		]
+
+	portalguntravelmode[engine](integer): "Travel Mode" : 0
+	portalguntravelmode(choices) : "Portal Gun Travel Mode" : 0 : "Determines whether shots take time to land like in Portal 1, or are instant like in Portal 2. \n" +
+		"If 'auto', this is determined automatically based on the BSP version." = 
+	[
+		0 : "Auto"
+		1 : "Projectile"
+		2 : "Instant"
+	]
+
 	equippaintgun(choices) : "Equip Paint Gun" : 0 : "Automatically grants the player a paint gun if enabled.\n\nThe \"basic paint gun\" option will give the player a paint gun with no powers assigned by default - paint powers must be obtained by touching an item_paint_power_pickup entity. Selecting the \"Fully-upgraded paint gun\" option will give the player all applicable paint powers for the paint gun." =
 		[
 		0: "None"
