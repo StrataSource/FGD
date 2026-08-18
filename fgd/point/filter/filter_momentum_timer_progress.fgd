@@ -4,5 +4,6 @@
 	[
 	track_number(integer) : "Track Number" : 0 : "The track number to check for. 0 = main map, 1+ = bonus number."
 	stage_number(integer) : "Stage Number" : 0 : "The stage number to check for. 0 = ignore, 1+ = stage number."
-	checkpoint_number(integer) : "Checkpoint Number" : 0 : "The checkpoint number to check for. 0 = ignore, 1 = stage start, 2+ = checkpoint number."
+	checkpoint_number(integer) : "Checkpoint Number" : 0 : "The checkpoint number to check for. 0 = ignore, 1 = stage start, 2+ = checkpoint number. For unordered checkpoints, this only matches the last checkpoint touched, not total progress; use Minimum Checkpoints Activated instead."
+	checkpoints_activated(integer) : "Minimum Checkpoints Activated" : 0 : "The minimum number of checkpoints activated within the current stage that the player needs to have reached (regardless of order). 0 = ignore. Useful for unordered/optional checkpoint stages."
 	]
