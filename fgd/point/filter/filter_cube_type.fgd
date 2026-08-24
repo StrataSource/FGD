@@ -1,6 +1,6 @@
 @FilterClass base(filter_base) 
 	appliesto(P2CE)
-	iconsprite("editor/filter_paint_power.vmt")
+	iconsprite("editor/filter_cube_type.vmt")
 	line(0 255 0, targetname, twinfilter)
 = filter_cube_type : "A filter that filters based on cube properties. When testing cubes, irrelevant conditions are always ignored, if that cube type is enabled.\n" +
 	"Tip: This works well with a filter_multi, if you want to match different cube configurations or check for specific models."
