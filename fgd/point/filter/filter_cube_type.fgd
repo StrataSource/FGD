@@ -3,7 +3,8 @@
 	iconsprite("editor/filter_cube_type.vmt")
 	line(0 255 0, targetname, twinfilter)
 = filter_cube_type : "A filter that filters based on cube properties. When testing cubes, irrelevant conditions are always ignored, if that cube type is enabled.\n" +
-	"Tip: This works well with a filter_multi, if you want to match different cube configurations or check for specific models."
+	"Tip: This works well with a filter_multi, if you want to match different cube configurations or check for specific models.\n" +
+	"Additionally, keep in mind filters are only checked when items are actively moving inside a trigger or other events occur, you'll need repeated checks to handle events."
 	[
 		allowedbehaviors(flags): "Allowed Behaviors" : : "Which cube behaviors are allowed." = 
 		[
@@ -27,10 +28,10 @@
 			512  : "10: Custom": 0
 			1024 : "11: Custom": 0
 			2048 : "12: Custom": 0
-			8192 : "13: Custom": 0
-			16384: "14: Custom": 0
-			32768: "15: Custom": 0
-			65536: "16: Custom": 0
+			4096 : "13: Custom": 0
+			8192 : "14: Custom": 0
+			16384: "15: Custom": 0
+			32768: "16: Custom": 0
 			// ETC up to 64.
 		]
 
@@ -39,6 +40,8 @@
 		powered[engine](integer) : "Laser State" : 0 
 		laserfilter[engine](integer) : "Laser Filter" : 0
 		lasermodifier[engine](integer) : "Laser Modifier" : 0
+
+		allowplayer(boolean) : "Allow Players" : 0 : "As a convenience for things like floor buttons, if enabled this filter will succeed for any player entities in addition to cubes. This saves needing a filter_multi."
 
 		boxmode(choices) : "Frankenturret Pose" : 0 : "If a frankenturret, require it to be in this pose." =
 			[
