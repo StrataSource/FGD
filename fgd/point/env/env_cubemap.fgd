@@ -24,10 +24,23 @@
 		13: "4096x4096"
 		]
 
-	sides(sidelist) : "Brush faces" : : "(Optional) Brushes faces to directly attach to the env_cubemap. Press Pick then click on faces in the 3D View to select them. Use CTRL while clicking to add or remove from the selection."
+	brushmode( choices ) : "Brush Mode" : 1 : "Determines which brush faces can be automatically selected for this cubemap." =
+	[
+		0 : "None"
+		1 : "All (prefer in front)"
+		2 : "Only facing towards cubemap"
+		3 : "Only facing away from cubemap"
+	]
+	dynprops( boolean ) : "Usable for props" : 1 : "Whether props and other dynamic objects can automatically select this cubemap. If disabled, only brushes can use the cubemap."
+
+	sides(sidelist) : "Brush faces" : : "(Optional) Brush faces to directly attach to the env_cubemap. Press Pick then click on faces in the 3D View to select them. Use CTRL while clicking to add or remove from the selection."
+	sides_2(sidelist) : "Brush faces 2" : : "(Optional) Brush faces to directly attach to the env_cubemap. Press Pick then click on faces in the 3D View to select them. Use CTRL while clicking to add or remove from the selection."
+	sides_3(sidelist) : "Brush faces 3" : : "(Optional) Brush faces to directly attach to the env_cubemap. Press Pick then click on faces in the 3D View to select them. Use CTRL while clicking to add or remove from the selection."
+
 	
-	parallaxobb(target_destination) : "Cubemap Bounds" : :
-		"Optionally assigns this cubemap a bounding box for parallax correction " +
+	parallaxobb(target_destination) : "Cubemap Bounds" : : "Optionally assigns this cubemap a bounding box for parallax correction " +
 		"(brush entity tied to parallax_obb). " +
 		"This means the cubemap reflection will move as the camera moves, similar to func_reflective_glass. "
+
+	parallaxbounds(boolean) : "Restrict to Bounds" : 0 : "If parallax correction is enabled, only brushes or props inside the volume will be eligable for this cubemap. Manually set faces bypass this option."
 	]
