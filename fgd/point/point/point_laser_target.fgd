@@ -9,8 +9,18 @@
 		"When on, lasers will auto-aim towards this, and lasers that hit it will not show end sparks or be able to activate " +
 		"later laser targets. When off, these behaviors do not occur, and it has a taller hitbox to match a laser relay."
 
-	filtercolor(color255) : "Laser Filter Color (R G B A)" : "255 255 255 255" : "Filter lasers by this colour."
-
+	uselaserfilter(bool) : "Use Laser Filter" : 0 : "If enabled, this laser target can only be activated by the specified laser color."
+	filtercolor(choices) : "Laser Filter Color" : "255 255 255 255" : "Filter lasers by this color. You can also specify a custom RGBA color here." =
+		[
+		"255 255 255 255" : "White"
+		"255 0 0 255" : "Default Red"
+		"100 255 100 255" : "Lethal Green"
+		"32 112 202 255" : "Blue"
+		"255 212 91 255" : "Yellow"
+		"212 60 146 255" : "Pink"
+		"65 97 0 255" : "Dark Green"
+		]
+	
 	// Outputs
 	output OnPowered(void) : "Fired when a laser hits the target."
 	output OnUnpowered(void) : "Fired when a laser has stopped hitting the target."
