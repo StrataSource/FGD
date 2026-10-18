@@ -7,8 +7,7 @@
 		]
 
 	setgravityscale(float) : "Gravity Scale" : 1.0 : "Scale gravity of objects in the field by this amount."
-	setgravitydirection(vector) : "Gravity Direction" : "0 0 0" : "Orient gravity for objects in the field towards this direction."
-	disableaircontrol(boolean) : "Disable Air Control" : 1 : "Disable air control for players touching this volume."
+	setgravitydirection(vector) : "Gravity Direction" : "0 0 0" : "Direction of gravity"
 	setadditionalairdensity(float) : "Additional air density for drag" : 0
 	setvelocitylimit(float) : "Velocity Limit" : 0.0 : "Max velocity in field (0 disables)"
 	setvelocitylimitdelta(float) : "Velocity Limit Force" : 0.0 : "Max amount to reduce velocity per second when it exceeds the velocity limit (0 disables)"
@@ -18,6 +17,8 @@
 	setangvelocityscale(float) : "Angular Velocity scale/drag" : 1.0
 	setlinearforce(float) : "Linear force" : 0.0 : "Amount of force to apply while in the trigger (0 disables)"
 	setlinearforceangles(angle) : "Force Direction" : "0 0 0" : "Direction of linear force (Pitch Yaw Roll or Y Z X)"
+	disableaircontrol(boolean) : "Disable Air Control" : 0 : "Disables air control for players in the trigger"
+	SetIgnoreTractorBeams[P2CE+](boolean) : "Don't affect objects in tractor beams" : 1 : "When true, objects that are in a tractor beam and also in this trigger will be unaffected by this trigger so the tractor beam works uninterrupted. Can be disabled to intentionally bump objects out of beams for example"
 	
 	particletrailmaterial(material) : "Particle Trail Material" : : "Name of a material to use for the particle trail, no name means no particle trail"
 	particletraillifetime(float) : "Particle Trail Lifetime" : 4 : "Lifetime of the particles to emit"
@@ -34,5 +35,4 @@
 	input SetAngVelocityLimit(float) : "Max angular velocity in field."
 	input SetAngVelocityScale(float) : "Angular Velocity scale/drag"
 	input SetLinearForce(float) : "Linear force (0 disables)"
-	input SetGravityDirection(vector) : "Update the gravity direction."
 	]
