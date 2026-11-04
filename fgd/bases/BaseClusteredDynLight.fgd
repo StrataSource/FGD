@@ -23,6 +23,13 @@
 		1: "Static Only"
 		]
 	slopescale(float) : "Slope Scale" : 1.0 : "Shadowmap slope scale. Higher values tend to eat away at the contact shadow, but can get rid of shadow acne. Higher values will also tend to shine through small shadow blockers"
+	_castdynamicgeometryshadows(boolean) : "Cast Dynamic Geometry Shadows" : 1 : "If false, dynamic geometry (props, entities, etc) will not cast shadows for this light. This can reduce shadow update frequency significantly."
+	_shadowfreezemode(choices) : "Shadow Freeze Mode" : 0 : "Prevents the light's shadowmaps from updating. 'Freeze while visible' renders once when the light becomes visible, and deallocates normally, and 'Freeze always' freezes regardless of light visibility." =
+		[
+		0: "Unfrozen"
+		1: "Freeze while visible"
+		2: "Freeze always"
+		]
 		
 	texturename(string) : "Cookie Texture Name" : "" : "The cookie texture to use for the light. Must be a greyscale VTF file. " +
 	"An empty value means no cookie texture. This light will project the specified texture (aka making artificial shadows)."
@@ -40,4 +47,9 @@
 	input SetCookieTextureFrame(integer) : "Set the frame texture of the cookie texture for this light."
 	input SetVolumetricLightScale(float) : "Set the volumetric light scale of this light."
 	input SetVolumetricDensity(float) : "Set the volumetric density of this light."
+
+	input FreezeShadows(void) : "Freeze this light's shadows regardless of light visibility."
+	input FreezeShadowsWhenVisible(void) : "Enable freezing this light's shadows when the light is or becomes visible."
+	input UnfreezeShadows(void) : "Stop freezing this light's shadows."
+	input RedrawShadows(void) : "Redraw this light's shadows once, even if they are frozen."
 	]
