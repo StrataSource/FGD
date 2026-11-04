@@ -23,6 +23,7 @@
 		1: "Static Only"
 		]
 	slopescale(float) : "Slope Scale" : 1.0 : "Shadowmap slope scale. Higher values tend to eat away at the contact shadow, but can get rid of shadow acne. Higher values will also tend to shine through small shadow blockers"
+	_castdynamicgeometryshadows(boolean) : "Cast Dynamic Geometry Shadows" : 1 : "If false, dynamic geometry (props, entities, etc) will not cast shadows for this light. This can reduce shadow update frequency significantly."
 		
 	texturename(string) : "Cookie Texture Name" : "" : "The cookie texture to use for the light. Must be a greyscale VTF file. " +
 	"An empty value means no cookie texture. This light will project the specified texture (aka making artificial shadows)."
