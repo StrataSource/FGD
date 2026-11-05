@@ -10,4 +10,5 @@
 		2: "Fizzle upon landing instead of on attempted detonation."
 		3: "Fizzle explosive immediately upon it entering the trigger."
 		]
+	fizzle_handheld(boolean) : "Fizzle handheld concs" : 1 : "Determines if handheld concs should be included in fizzle checks"
 	]
