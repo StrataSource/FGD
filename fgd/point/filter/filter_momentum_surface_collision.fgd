@@ -9,9 +9,12 @@
 		1 : "Touching standable surfaces"
 		2 : "Touching surfable surfaces"
 		3 : "Touching material"
+		4 : "Touching surface property"
 		]
 
 	material_name(string) : "Material Name" : : "The name of the material to check for when the filter mode is set to 'Touching material'"
+
+	surfaceprop_name(string) : "Surface Property" : : "The name of the surface property (e.g. 'metal') to check for when the filter mode is set to 'Touching surface property'. Unlike material names, this also works for displacements."
 
 	spawnflags(flags) : "spawnflags" =
 		[
