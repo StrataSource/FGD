@@ -12,7 +12,9 @@
 		1: "Wet Bomb"
 		]
 
-	allowfunnel(boolean) : "Allow Portal Funneling" : 1 : "Whether or not this object should auto-funnel into a portal."
+	ignoregrating[P2CE](boolean) : "Ignore Grating" : 0 : "Whether paint bombs will collide with gratings, or pass through."
+
+	allowfunnel(boolean) : "Allow Portal Funneling" : 1 : "Whether or not this bomb should auto-funnel into a portal."
 	playspawnsound(boolean) : "Play Spawn Sound" : 1 : "Whether or not this bomb should play a sound on spawn (PaintBlob.Inception)."
 	
 	// Inputs
