@@ -34,7 +34,8 @@
 	_minlight(float) : "Minimum Light Level" : 0 : "The minimum level of ambient light that hits this brush."
 
 	disablereceiveshadows(boolean) : "Disable Receiving Shadows?" : 0 : "Prevents dynamic shadows (e.g. player and prop shadows) from appearing on this entity."
-	disableshadowdepth(boolean) : "Disable ShadowDepth" : 0 : "Used to disable rendering into shadow depth (for clustered lights) for this entity."
+	disableshadowdepth(boolean) : "Disable Clustered Lights" : 0 : "When enabled, this entity does not produce any shadows from clustered lights. Shadows from other entities will still appear on this entity."
+	disableflashlight(boolean) : "Disable Flashlight" : 0 : "When enabled, this entity does not produce any shadows from the flashlight."
 	drawinfastreflection(boolean) : "Render in fast reflections" : 0 : "If enabled, this entity will render in fast water reflections (i.e. when a water material specifies $reflectonlymarkedentities) and in the world impostor pass."
 	shadowdepthnocache(choices) : "Projected Texture Cache" : "0" : "Used to hint projected texture system whether it is sufficient to cache shadow volume of this entity or to force render it every frame instead." =
 		[
@@ -43,8 +44,7 @@
 		2: "Cache it = render only once"
 		]
 	shadowdepthnocache[engine](integer) : "Projected Texture Cache" : 0
-	disableflashlight(boolean) : "Disable clustered lights" : 0 : "Used to disable clustered lighting and shadows on this entity."
-		
+
 	linedivider_visbrush[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
 	// Inputs
