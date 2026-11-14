@@ -1,4 +1,4 @@
-@SolidClass base(Trigger) 
+@SolidClass base(Trigger)
 	appliesto(MOMENTUM)
 = func_nogrenades : "Rockets, stickybombs, conc grenades, and other explosives will not detonate/explode inside this area."
 	[
@@ -6,8 +6,11 @@
 	explosion_prevention_type(choices) : "Method of explosive prevention." : 0 =
 		[
 		0: "[Default] Fizzle explosives upon detonation."
-		1: "Fizzle only airborne (handheld concs included) explosives upon detonation."
+		1: "Fizzle only airborne explosives upon detonation."
 		2: "Fizzle upon landing instead of on attempted detonation."
 		3: "Fizzle explosive immediately upon it entering the trigger."
+		4: "Fizzle explosives upon detonation (ignore handheld concs)."
+		5: "Fizzle only airborne explosives upon detonation (ignore handheld concs)."
+		6: "Fizzle explosive immediately upon it entering the trigger (ignore handheld concs)."
 		]
 	]
