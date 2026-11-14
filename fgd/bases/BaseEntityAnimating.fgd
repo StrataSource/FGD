@@ -80,7 +80,7 @@
 	linedivider_animbase2[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 	
 	disableflashlight(boolean) : "Disable Flashlight" : 0 : "When enabled, this entity does not produce any shadows from the flashlight."
-	disableshadowdepth(boolean) : "Disable Clustered Lights" : 0 : "When enabled, this entity does not produce any shadows from clustered lights. Shadows from other entities will still appear on this entity."
+	disableshadowdepth(boolean) : "Disable Clustered Shadows" : 0 : "This entity will not produce shadows cast from clustered lights (light_rt, etc). Clustered shadows will still appear on this entity."
 	disablereceiveshadows(boolean) : "Disable Receiving Shadows?" : 0 : "Prevents dynamic shadows (e.g. player and prop shadows) from appearing on this entity."
 
 	shadowdepthnocache(choices) : "Projected Texture Cache" : "0" : "Used to hint projected texture system whether it is sufficient to cache shadow volume of this entity or to force render it every frame instead." =
