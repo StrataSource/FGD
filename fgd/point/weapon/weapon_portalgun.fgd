@@ -48,8 +48,8 @@
 	]
 
 	// Inputs
-	input ChargePortal1(void) : "Does charge up effect for mounted portalgun. Missing particles and sounds."
-	input ChargePortal2(void) : "Does charge up effect for mounted portalgun. Missing particles and sounds."
+	input ChargePortal1(void) : "Does charge up effect for mounted portalgun."
+	input ChargePortal2(void) : "Does charge up effect for mounted portalgun."
 	input FirePortal1(void) : "Projects the	'blue' portal onto a wall in the facing direction of the gun."
 	input FirePortal2(void) : "Projects the 'orange' portal onto a wall in the facing direction of the gun."
 	input FirePortalDirection1(vector) : "Fires the 'blue' portal in the specified direction."
