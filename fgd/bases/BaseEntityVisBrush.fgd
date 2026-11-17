@@ -34,8 +34,8 @@
 	_minlight(float) : "Minimum Light Level" : 0 : "The minimum level of ambient light that hits this brush."
 
 	disablereceiveshadows(boolean) : "Disable Receiving Shadows?" : 0 : "Prevents dynamic shadows (e.g. player and prop shadows) from appearing on this entity."
-	disableshadowdepth(boolean) : "Disable Clustered Shadows" : 0 : "This entity will not produce shadows cast from clustered lights (light_rt, etc). Clustered shadows will still appear on this entity."
-	disableflashlight(boolean) : "Disable Flashlight" : 0 : "When enabled, this entity does not produce any shadows from the flashlight."
+	disableshadowdepth(boolean) : "Disable Clustered Shadows" : 0 : "Used to disable rendering into shadow depth (for clustered lights) for this entity."
+	disableflashlight(boolean) : "Disable Flashlight" : 0 : "Used to disable clustered lighting and shadows on this entity."
 	drawinfastreflection(boolean) : "Render in fast reflections" : 0 : "If enabled, this entity will render in fast water reflections (i.e. when a water material specifies $reflectonlymarkedentities) and in the world impostor pass."
 	shadowdepthnocache(choices) : "Projected Texture Cache" : "0" : "Used to hint projected texture system whether it is sufficient to cache shadow volume of this entity or to force render it every frame instead." =
 		[
