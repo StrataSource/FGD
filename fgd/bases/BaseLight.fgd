@@ -2,9 +2,7 @@
 	color(255 255 0)
 = BaseLight
 	[
-	_light(color255) : "Brightness" : "255 255 255 200" : "Color and brightness of the light."
-	_lightHDR(color255) : "Brightness HDR" : "-1 -1 -1 1" : "Color and brightness of this light when compiling in HDR mode. '-1 -1 -1 1' copies values from Brightness."
-	_lightscaleHDR(float) : "Brightness Scale" : 1 : "Amount to scale the light brightness."
+	_lightHDR(color255) : "Brightness" : "255 255 255 200" : "Color and brightness of this light."
 
 	style[engine](integer) : "Appearance" : 0
 	style(choices) : "Appearance" : 0 : "Controls this light's visual appearance." =
