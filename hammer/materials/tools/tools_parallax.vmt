@@ -2,5 +2,7 @@ LightmappedGeneric
 {
 $translucent 1
 $basetexture "tools/tools_parallax"
-"%compiletrigger" 1
+%compiletrigger 1
+%compiledetail 1
+%compilenodraw 1
 }

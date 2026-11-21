@@ -6,6 +6,10 @@
 	startasbox(boolean) : "Start as Box" : 0 : "Start the Frankencube in cube form."
 	boxswitchspeed(float) : "Box Switch Speed" : 400 : "If the cube exceeds this terminal velocity (in Hammer units), it will be forced to enter its box position."
 
+	legacypaintbehavior(boolean) : "Use Legacy Paint Behavior" : 0 : "If set, the Frankencube will use the buggy Portal 2 paint behavior. " +
+		"In this state they can be painted which affects other objects (primarily causing them to bounce off), but will not themselves apply paint behavior. " +
+		"They will still show proper gel visuals instead of being tinted however."
+
 	model[engine](studio) : "Model" : "models/npcs/monsters/monster_a.mdl"
 	model(choices) : "[H] Pose" : "models/npcs/monsters/monster_a.mdl" : "What pose to show in Hammer." =
 		[

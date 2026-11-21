@@ -52,4 +52,5 @@
 	input SetPosY(float) : "Set the Y position of the text. (0 - 1.0 = top to bottom) (-1 centers)"
 	input SetTextColor(color255) : "Set color of the front text."
 	input SetTextColor2(color255) : "Set color of the transition text."
+	input SetHoldTime(float) : "Set the hold time in seconds."
 	]

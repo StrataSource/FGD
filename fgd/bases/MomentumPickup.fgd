@@ -3,4 +3,7 @@
 = MomentumPickup
 	[
 	ResetTime(float) : "Delay before reset" : 10 : "How long until the pickup reappears after being picked up. 0 means it won't disappear and negative values mean it won't reappear."
+
+	// Outputs
+	output OnPickup(void) : "Fired when the item is picked up."
 	]

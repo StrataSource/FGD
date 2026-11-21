@@ -25,6 +25,7 @@
 	input GivePortalGunPrimary[P2CE](void) : "Gives the player a portal gun with primary color. (Overrides if player is already holding one)"
 	input GivePortalGunSecondary[P2CE](void) : "Gives the player a portal gun with only secondary color. (Overrides if player is already holding one)"
 	input GivePortalGunNone[P2CE](void) : "Gives the player a portal gun with no activated colors. (Overrides if player is already holding one)"
+	input SetPortalGunTravelMode[P2CE](string) : "Set the player's portalgun travel mode. Valid parameters: auto, slow/projectile, fast/instant."
 	input GiveBoots[P2CE](void) : "Gives the player long fall boots."
 	input RemoveBoots[P2CE](void) : "Removes long fall boots from the player, if they have them."
 	input GivePaintGunFull[P2CE](void) : "Gives the player a fully upgraded paint gun."
@@ -34,7 +35,7 @@
 	input LowerWeapon[P2CE](void) : "Lowers the weapon, setting it to a disabled state."
 	input ReadyWeapon[P2CE](void) : "Raises the weapon, setting it to the default enabled state."
 	input SetFallDamageEnabled(boolean) : "Whether or not fall damage is enabled"
-	
+
 	// Outputs
 	output PlayerHealth[+HL2_ENTITIES, -P2CE](integer) : "The player's current health value, fired in response to RequestPlayerHealth. (Episodic only)"
 	output PlayerHasAmmo[+HL2_ENTITIES, -P2CE](void)   : "Fired by request if the player has any ammo. (Episodic only)"
@@ -42,7 +43,7 @@
 	output OnFlashlightOn[+HL2_ENTITIES, -P2CE](float) : "Fired when the player turns on their flashlight. This output has the value of how much energy the player had when this happened [0..1]. (Episodic only)"
 	output OnFlashlightOff[+HL2_ENTITIES, -P2CE](float) : "Fired when the player turns off their flashlight. This output has the value of how much energy the player had when this happened [0..1]. (Episodic only)"
 	output PlayerMissedAR2AltFire[+HL2_ENTITIES, -P2CE](void)	: "Player fired an AR2 combine ball that didn't kill any enemies. (Episodic only)"
-	
+
 	output PlayerDied(void) : "Fires when the player dies."
 	output OnStartSlowingTime(void) : "Fired when a Portal player initiates slow time."
 	output OnStopSlowingTime(void) : "Fired when a Portal player stops slowing time."

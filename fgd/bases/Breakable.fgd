@@ -3,6 +3,12 @@
 	sphere(exploderadius) 
 = _Breakable
 	[
+	linedivider_breakable[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
+
+	health(integer) : "Health" : 0 : "Number of points of damage to take before breaking. 0 means don't break."
+	minhealthdmg(integer) : "Minimum Damage to Hurt" : 0 : "The entity will ignore any damage events if the damage is less than this amount."	
+	physdamagescale(float) : "Physics Impact Damage Scale" : "1.0" : "Scales damage energy when this object is hit by a physics object. Set to 1.0 for materials as strong as flesh, smaller numbers indicate stronger materials."
+
 	explodedamage(float) : "Explosion Damage" : 0 : "If non-zero, when this entity breaks it will create an explosion that causes the specified amount of damage. See also 'Explosion Radius'."
 	exploderadius(float) : "Explosion Radius" : 0 : "If non-zero, when this entity breaks it will create an explosion with a radius of the specified amount. See also 'Explosion Damage'."
 	// Todo - damage vs magnitude
@@ -18,11 +24,9 @@
 		]
 
 	pressuredelay(float) : "Pressure Delay" : 0 : "Delay, in seconds, after 'broken' by pressure before breaking apart (allows for sound to play before breaking apart)."
-
-	minhealthdmg(integer) : "Minimum Damage to Hurt" : 0 : "The entity will ignore any damage events if the damage is less than this amount."	
-	health(integer) : "Health" : 0 : "Number of points of damage to take before breaking. 0 means don't break."
-	physdamagescale(float) : "Physics Impact Damage Scale" : "1.0" : "Scales damage energy when this object is hit by a physics object. Set to 1.0 for materials as strong as flesh, smaller numbers indicate stronger materials."
 	
+	linedivider_dynbase2[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
+
 	// Inputs
 	input Break(void) : "Breaks the breakable."
 	input SetHealth(integer) : "Sets a new value for the breakable's health. If the breakable's health reaches zero it will break."

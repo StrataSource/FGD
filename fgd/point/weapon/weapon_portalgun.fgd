@@ -38,6 +38,15 @@
 	Portal1Color(color255) : "Primary Portal Color" : "64 160 255" : "Color to use for the primary (Left/Blue) portal."
 	Portal2Color(color255) : "Secondary Portal Color" : "255 160 32" : "Color to use for the primary (Right/Orange) portal."
 
+	TravelMode[engine](integer): "Travel Mode" : 0
+	TravelMode(choices) : "Travel Mode" : 0 : "Determines whether shots take time to land like in Portal 1, or are instant like in Portal 2. \n" +
+		"If 'auto', this is determined automatically based on the BSP version." = 
+	[
+		0 : "Auto"
+		1 : "Projectile"
+		2 : "Instant"
+	]
+
 	// Inputs
 	input ChargePortal1(void) : "Does charge up effect for mounted portalgun. Missing particles and sounds."
 	input ChargePortal2(void) : "Does charge up effect for mounted portalgun. Missing particles and sounds."
@@ -45,6 +54,7 @@
 	input FirePortal2(void) : "Projects the 'orange' portal onto a wall in the facing direction of the gun."
 	input FirePortalDirection1(vector) : "Fires the 'blue' portal in the specified direction."
 	input FirePortalDirection2(vector) : "Fires the 'orange' portal in the specified direction."
+	input SetTravelMode(string) : "Set the portalgun's travel mode. Valid parameters: auto, slow/projectile, fast/instant."
 
 	// Outputs
 	output OnFiredPortal1(void) : "Fires when the 'blue' portal is fired."

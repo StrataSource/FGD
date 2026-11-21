@@ -14,10 +14,17 @@
 		2: "Always Update (moving light)" : 0
 		]
 
-	target(target_destination) : "target" : : "target"
 	lightfov(float) : "FOV" : 90.0 : "FOV"
 	nearz(float) : "NearZ" : 4.0 : "Near Z for projected texture"
 	farz(float) : "FarZ" : 750.0 : "Far Z for projected texture"
+	pitch(float) : "Pitch" : 0.0 : "This entity's orientation in the world. "
+	cameraspace(boolean) : "Camera Space" : 0 : "Angles are interpreted as being relative to camera."
+	target(target_destination) : "Target" : : "Target of this projected texture."
+
+	linedivider_ptex1[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
+	
+	lightcolor(color255) : "Light Color" : "255 255 255 200" : "Light Color RGB-Intensity"
+	brightnessscale(float) : "Brightness Scale" : 1.0 : "Scale the light color by this brightness"
 
 	enableshadows(boolean) : "Enable Shadows" : 1 : "Enables/disables shadows from this projected texture."
 
@@ -28,23 +35,20 @@
 		1: "High"
 		]
 		
-	_dynamicshadowallocation(boolean) : "Use dynamic shadow allocation" : 0 : "Determines whether the map (static) or the engine (dynamic) should dictate the size of the shadows for this light."
 	_initialshadowsize(integer) : "Initial Shadow Size" : 7 : "The initial static shadow resolution exponent. Only relevant for static shadow allocation. Adding 1 to this value doubles both dimensions of the shadowmap."
 	_shadowscale(float) : "Shadow Size Scale" : "1.0" : "Scales the shadowmap resolution exponent. Only relevant for dynamic shadow allocation. For example, a scale of 3.0 will give this light shadowmaps 8 (2^3) times as large as they would usually be."
 
 	lightonlytarget(boolean) : "Light Only Target" : 0 : "Limit flashlight effect to only effect target entity."
 	lightworld(boolean) : "Light World" : 1 : "Control whether flashlight effects static world geometry."
 	simpleprojection(boolean) : "Simple Projection" : 0 : "Indicates if this is a simple, non-light casting texture projection"
+	_dynamicshadowallocation(boolean) : "Use dynamic shadow allocation" : 0 : "Determines whether the map (static) or the engine (dynamic) should dictate the size of the shadows for this light."
 
-	lightcolor(color255) : "Light Color" : "255 255 255 200" : "Light Color RGB-Intensity"
-	brightnessscale(float) : "Brightness Scale" : 1.0 : "Scale the light color by this brightness"
-
-	cameraspace(boolean) : "Camera Space" : 0 : "Angles are interpreted as being relative to camera."
+	linedivider_ptex2[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 
 	// not implemented
 	//ambient(float) : "Ambient" 0.0 : "Controls light ambient."
 
-	colortransitiontime(float) : "Color Transition Time" : 0.5 : "Amount of time it takes for a color change to occur."
+	colortransitiontime(float) : "Color Transition Time" : 0.5 : "Amount of time it takes for a color change to occur. 0.1 is 10 seconds, 0.99 is 1 second."
 
 	// Extension type to tell code what this is, converted to material in exports.
 	texturename(texture) : "Texture Name" : "effects/flashlight001" : "VTF Texture to 'project' onto the enviroment. " + 
@@ -53,8 +57,7 @@
 	moviename(string) : "Movie Name" : : ".webm file used in place of the texture."
 	textureframe(integer) : "Texture Frame" : 0 : "If the VTF is multi-frame, specify the frame to use."
 
-	volumetric(boolean) : "Enable Volumetrics" : 0 : "Enables/disables volumetrics from this projected texture."
-	volumetricintensity(float) : "Volumetric Intensity" : "1.0" : "Sets the intensity of the volumetric lighting."
+	linedivider_ptex3[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
 	
 	style[engine](integer) : "Appearance" : 0
 	style(choices) : "Appearance" : "0" =
@@ -76,6 +79,11 @@
 	pattern(string) : "Custom Appearance" : : "Set a custom pattern of light brightness for this light. " +
 		"Pattern format is a string of characters, where 'a' is total darkness, 'z' fully bright. " +
 		"i.e. 'aaggnnttzz' would be a steppy fade in from dark to light."
+
+	linedivider_ptex4[!engine](string) readonly : "----------------------------------------------------------------------------------------------------------" : : "Oops, you must've misclicked."
+
+	volumetric(boolean) : "Enable Volumetrics" : 0 : "Enables/disables volumetrics from this projected texture."
+	volumetricintensity(float) : "Volumetric Intensity" : "1.0" : "Sets the intensity of the volumetric lighting."
 
 	// Inputs
 	input TurnOn(void) : "Turn on the texture"

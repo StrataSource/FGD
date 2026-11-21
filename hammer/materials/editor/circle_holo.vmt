@@ -1,0 +1,32 @@
+UnLitTwoTexture
+{
+	$basetexture 		"particle/particle_ring_wave"
+	$texture2	 		"particle/particle_crescent"
+	$additive 			"1"
+	$nocull				"1"
+	$srgbtint			"{33 252 33}"
+	$decal				"1"
+
+	$temp1				"1"
+
+Proxies
+{
+LinearRamp
+{
+	rate				"90"
+	resultVar			$temp1
+}
+TextureTransform
+{
+	rotateVar			$temp1
+	resultvar			$texture2transform
+}
+Sine
+	{
+	Sineperiod 			"2"
+	SineMax 			"1"
+	SineMin 			"0.7"
+	resultVar 			$color
+	}
+}
+}
