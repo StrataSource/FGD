@@ -5,8 +5,12 @@
 = prop_indicator_panel: "Indicator signs for the end of modern antlines. Shows either a tick/cross, or a circular countdown. " +
 	"Can also function as a env_texturetoggle for indicator lights."
 	[
+	model(studio) : "Model" : "models/props_gameplay/p2ce_indicator_panel.mdl" : "Allows changing the model used. Any model must have the 'quad' and 'slice1'-'slice8' bodygroups."
+
 	timerduration(float) : "Timer Duration" : 0 : "Amount of time the counter will count down."
-	enabled(boolean) : "Start visible?" : 1 : "Appears non-functional."
+
+	enabletimersound(boolean) : "Enable Timer Sound" : 0 : "If set, play a timer sound from this panel while ticking. Useful if the panel is started without a prop_button."
+	timersound(sound) : "Timer Sound" : "Portal.room1_TickTock" : "The timer sound to play. This repeats every second."
 
 	istimer[engine](boolean) : "Is Timer?" : 0
 	istimer(choices) : "Starting State" : 0 : "Does this start as a checkmark or countdown display? " +
@@ -16,9 +20,25 @@
 		1: "Timer"
 		]
 
+	iscountup[engine](boolean) : "Is Count Up?": 0
+	iscountup(choices) : "Count Mode" : 0 : "Whether the timer counts up, or down." =
+	[
+		1: "Count Up"
+		0: "Count Down"
+	]
+
 	ischecked(boolean) : "Starts checked?" : 0 : "If this is a checkmark sign, whether this starts checked or not."
 
-	indicatorlights(target_destination) : "Indicator Lights" : : "If supplied, assumes this is a group of indicators lights to toggle when the indicator is toggled."
+	indicatorlights(target_destination) : "Indicator Lights" : : "If supplied, this is a group of indicators lights to set to match the background color."
+
+	colormode[engine](integer) : "Color Mode" : 2
+	colormode(choices) : "Color Mode" : 2 : "Controls which background color to use. Also affects connected indicator lights." = 
+	[
+		2: "Normal (orange if checked/timer running)"
+		0: "Always blue"
+		1: "Always orange"
+		3: "Inverted (orange if unchecked/timer not running)"
+	]
 
 	skin[engine](integer) : "[H] Skin" : "0" : "What kind of indicator to show as inside Hammer."
 	skin(choices) : "[H] Skin" : "0" : "What kind of indicator to show as inside Hammer." =
@@ -32,7 +52,18 @@
 	// Inputs
 	input Check(void) : "Sets the indicator state to be 'checked', switching the screen to tick/cross mode."
 	input Uncheck(void) : "Sets the indicator state to be 'unchecked'."
-	input Start(void) : "Start counting down, switching the screen to timer mode."
-	input Stop(void) : "Stop the counter at its current value."
+	input Start(void) : "Start counting up or down, switching the screen to timer mode."
+	input CountDown(void) : "Start counting down, switching the screen to timer mode."
+	input CountUp(void) : "Start counting up, switching the screen to timer mode."
+	input Stop(void) : "This does nothing."
 	input Reset(void) : "Reset the timer back to its default value."
+	input SetWedges(string) : "Set a specific wedge pattern. The parameter should be like \"01010101 0.25\" - eight 0/1 specifying which wedges in clockwise order, optionally followed by a fade duration."
+	input SetColorNormal(void) : "Set background color to blue if off, orange if on."
+	input SetColorInverted(void) : "Set background color to orange if off, blue if on."
+	input SetColorBlue(void) : "Set background color to always blue, ignoring state."
+	input SetColorOrange(void) : "Set background color to always orange, ignoring state."
+
+	output OnTimerElapsed(void) : "Fired when the timer has elapsed without being reset."
+
+	@resources []
 	]
